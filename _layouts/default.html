@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <link rel="alternate" type="application/atom+xml" title="hecticjeff - feed" href="/index.xml" />
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
+    <script type="text/javascript" src="/js/vendor/jquery.konami.js"></script>
+    <script type="text/javascript" src="http://cachedcommons.org/cache/jquery-color/0.0.0/javascripts/jquery-color-min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-13038794-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a rel="me" href="http://twitter.com/hecticjeff">tweets</a>
+        <a rel="me" href="https://github.com/hecticjeff">codes</a>
+        <a rel="me" href="http://scraps.hecticjeff.net/">scraps</a>
+        <a href="/about" title="Words about me">about</a>
+      </nav>
+      <h1><a href="/">hecticjeff</a></h1>
+    </header>
+    <section>
+      {{ content }}
+    </section>
+    <footer>
+      <p>Powered by <a href="https://github.com/mojombo/jekyll" title="Simple, blog aware, static site generator">jekyll</a> |
+      <a href="/archives" title="My thoughts and words">archive</a></p>
+    </footer>
+  </body>
+</html>

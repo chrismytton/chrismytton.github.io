@@ -1,0 +1,4 @@
+exclude: ["CNAME", "Rakefile", "README.md", "public"]
+markdown: redcarpet
+permalink: pretty
+pygments: true

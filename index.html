@@ -1,0 +1,30 @@
+---
+layout: default
+title: hecticjeff
+---
+<section id="articles">
+  {% for post in site.posts limit: 3 %}
+    <article class="post">
+      <header>
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+        <span class="date">{{ post.date | date_to_long_string }}</span>
+        <p class="author">Posted by <em>Hectic Jeff</em></p>
+      </header>
+
+      <section class="content">
+        {{ post.content }}
+      </section>
+      <hr />
+    </article>
+  {% endfor %}
+</section>
+
+<section id="archives">
+  <ul>
+    {% for post in site.posts offset: 3 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
