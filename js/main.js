@@ -1,7 +1,7 @@
 jQuery(function ($) {
   var interval = null, count = 0;
   $(window).konami(function () {
-    // Shuffle randomly through multiple background colours in a psycadelic way
+    // Shuffle randomly through multiple background colours in a psychedelic way
     interval = setInterval(function () {
       if (count > 30) {
         count = 0;
