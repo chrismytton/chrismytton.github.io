@@ -132,8 +132,3 @@ body > footer {
   font-size: 18px;
   color: #888;
   height: 100px; }
-
-/* Gists */
-.gist .gist-file .gist-meta {
-  line-height: 8px !important;
-  font-size: 50% !important; }
