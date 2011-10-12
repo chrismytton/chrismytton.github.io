@@ -1,6 +1,5 @@
 ---
 title: hecticjeff.net
-date: 04/06/2010
 layout: post
 ---
 

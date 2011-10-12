@@ -1,6 +1,5 @@
 ---
 title: Test Driven Development Lifecycle
-date: 22/03/2011
 layout: post
 ---
 

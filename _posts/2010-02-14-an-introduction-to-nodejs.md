@@ -1,6 +1,5 @@
 ---
 title: An introduction to node.js
-date: 14/02/2010
 layout: post
 ---
 
