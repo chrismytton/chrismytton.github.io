@@ -45,7 +45,12 @@ a:active {
 }
 #sidebar .internal a {
   display: block;
-  padding-bottom: 5px;
+  line-height: 1.5;
+}
+#sidebar .external a {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
 }
 #main {
   float: left;
