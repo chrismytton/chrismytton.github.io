@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <title>{{ page.title }}</title>
     <link rel="alternate" type="application/atom+xml" title="hecticjeff - feed" href="/index.xml" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/vendor/jquery.color.min.js"></script>
     <script type="text/javascript" src="/js/vendor/jquery.konami.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
@@ -25,21 +27,24 @@
     </script>
   </head>
   <body>
-    <header>
-      <nav>
-        <a rel="me" href="http://twitter.com/hecticjeff">tweets</a>
-        <a rel="me" href="https://github.com/hecticjeff">codes</a>
-        <a rel="me" href="http://scraps.hecticjeff.net/">scraps</a>
-        <a href="/about" title="Words about me">about</a>
+    <aside id="sidebar">
+      <h1 class="logo">
+        <a href="/"><img class="avatar" src="/img/hecticjeff.jpg" alt="hecticjeff" width="38" height="38" /> hecticjeff</a>
+      </h1>
+      <nav class="internal">
+        <a href="/about" title="About me">About</a>
+        <a href="/archives" title="The full archives">Archive</a>
       </nav>
-      <h1><a href="/">hecticjeff</a></h1>
-    </header>
-    <section>
+      <nav class="external">
+        <a rel="me" class="twitter" href="http://twitter.com/hecticjeff">Twitter</a>
+        <a rel="me" class="github" href="https://github.com/hecticjeff">GitHub</a>
+        <a rel="me" class="posterous" href="http://scraps.hecticjeff.net/">Posterous</a>
+      </nav>
+    </aside>
+    <section id="main">
       {{ content }}
     </section>
     <footer>
-      <p>Powered by <a href="https://github.com/mojombo/jekyll" title="Simple, blog aware, static site generator">jekyll</a> |
-      <a href="/archives" title="My thoughts and words">archive</a></p>
     </footer>
     <script type="text/javascript">
       var _gauges = _gauges || [];

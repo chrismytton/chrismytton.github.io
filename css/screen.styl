@@ -1,40 +1,36 @@
 @import './mixin'
-@import './normalize.css'
-@import './syntax.css'
+@import './global'
 
-html, body
-  margin 0
-  padding 0
+#sidebar
+  width 200px
+  padding 0 40px 0 30px
+  float left
 
-body
-  font-family "Helvetica Neue", helvetica, arial, sans-serif
-  background #fff
-  color #333
+  .logo a
+    color #333
+    margin-left 6px
 
-  h1, h2, h3, h4, h5, h6
-    line-height 1.1
+    &:hover
+      text-decoration none
+      color #444
+
+    .avatar
+      float left
+
+  .internal a
+    display block
+    padding-bottom 5px
+
+#main
+  float left
+  width 550px
+
+  .post
+    .date
+      margin 20px 0 -10px 0
+
+  .title a
     color #000
-
-  p, pre > code
-    line-height: 1.5
-
-  a
-    text-decoration none
-    color #2382C8
-
-    &:hover, &:active
-      text-decoration underline
-
-  & > header
-    position fixed
-    top 15px
-    left 15px
-    width 200px
-
-    img
-      margin 0 auto
-      display block
-
-  & > section
-    margin 0 20px 0 230px
-    width 550px
+    &:hover
+      text-decoration none
+      color #444
