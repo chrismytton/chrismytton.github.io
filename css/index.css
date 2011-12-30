@@ -57,6 +57,7 @@ a:active {
   width: 550px;
 }
 #main .post .date {
+  font-size: 14px;
   margin: 20px 0 -10px 0;
 }
 #main .title a {
