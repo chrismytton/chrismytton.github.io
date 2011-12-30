@@ -1,0 +1,34 @@
+@import './normalize.css';
+@import './syntax.css';
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  background: #fff;
+}
+body a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #2382c8;
+}
+body a:hover,
+body a:active {
+  text-decoration: underline;
+}
+body > header {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 200px;
+}
+body > section {
+  margin: 0 20px 0 230px;
+  width: 500px;
+}
+body p,
+body pre > code {
+  line-height: 1.5;
+}

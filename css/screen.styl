@@ -1,0 +1,32 @@
+@import './mixin'
+@import './normalize.css'
+@import './syntax.css'
+
+html, body
+  margin 0
+  padding 0
+
+body
+  font-family "Helvetica Neue", helvetica, arial, sans-serif
+  background #fff
+
+  a
+    cursor pointer
+    text-decoration none
+    color #2382C8
+
+    &:hover, &:active
+      text-decoration underline
+
+  & > header
+    position fixed
+    top 15px
+    left 15px
+    width 200px
+
+  & > section
+    margin 0 20px 0 230px
+    width 500px
+
+  p, pre > code
+    line-height: 1.5
