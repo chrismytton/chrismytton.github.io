@@ -8,9 +8,22 @@ body {
 body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
   background: #fff;
+  color: #333;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  line-height: 1.1;
+  color: #000;
+}
+body p,
+body pre > code {
+  line-height: 1.5;
 }
 body a {
-  cursor: pointer;
   text-decoration: none;
   color: #2382c8;
 }
@@ -24,11 +37,11 @@ body > header {
   left: 15px;
   width: 200px;
 }
+body > header img {
+  margin: 0 auto;
+  display: block;
+}
 body > section {
   margin: 0 20px 0 230px;
-  width: 500px;
-}
-body p,
-body pre > code {
-  line-height: 1.5;
+  width: 550px;
 }
