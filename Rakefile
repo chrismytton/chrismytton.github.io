@@ -13,3 +13,5 @@ namespace :build do
     system('cat js/vendor/jquery.color.min.js js/vendor/jquery.konami.js js/main.js | uglifyjs > js/hecticjeff.js')
   end
 end
+
+task :default => :build
