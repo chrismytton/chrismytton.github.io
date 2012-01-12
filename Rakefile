@@ -5,7 +5,7 @@ task :build => ['build:css', 'build:js']
 namespace :build do
   desc 'Build blog css'
   task :css do
-    system('stylus -c css/hecticjeff.styl')
+    system('stylus --compress css/hecticjeff.styl')
   end
 
   desc 'Build blog javascripts'
