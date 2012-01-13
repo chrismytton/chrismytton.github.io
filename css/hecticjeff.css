@@ -42,7 +42,8 @@ table{border-collapse:collapse;border-spacing:0}
 body{font-family:"Helvetica Neue",helvetica,arial,sans-serif;background:#fff;color:#333}
 h1,h2,h3,h4,h5,h6{line-height:1.1;color:#000}
 h1{margin:20px 0}
-p,pre > code{line-height:1.5}
+p{line-height:1.5}
+pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:1.5;overflow:auto;padding:6px 10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;white-space:pre;word-wrap:normal}
 a{text-decoration:none;color:#2382c8;}
 a:hover,a:active{text-decoration:underline}
 .highlight{background:#fff}
