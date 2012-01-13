@@ -23,7 +23,7 @@ Feature: Creating activity
   Scenario: POST to /activity
     Given I am an authorized activity producer
     When I post some activity
-    I should receive a 200 success status
+    Then I should receive a 200 success status
 {% endhighlight %}
 
 This defines the high level picture of what the application aims to
