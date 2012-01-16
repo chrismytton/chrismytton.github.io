@@ -10,7 +10,11 @@ namespace :build do
 
   desc 'Build blog javascripts'
   task :js do
-    system('cat js/vendor/jquery.color.min.js js/vendor/jquery.konami.js js/main.js | uglifyjs > js/hecticjeff.js')
+    system("cat #{javascripts.join(' ')} | uglifyjs > js/hecticjeff.js")
+  end
+
+  def javascripts
+    %w{js/vendor/jquery.color.min.js js/vendor/jquery.konami.js js/vendor/jquery.timeago.js js/main.js}
   end
 end
 

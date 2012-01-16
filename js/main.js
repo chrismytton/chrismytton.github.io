@@ -15,4 +15,6 @@ jQuery(function ($) {
       count += 1;
     }, timeout);
   });
+
+  $('.date').timeago();
 });
