@@ -2,8 +2,11 @@
 layout: default
 title: hecticjeff
 ---
+
+{% assign per_page = 5 %}
+
 <section id="articles">
-  {% for post in site.posts limit: 3 %}
+  {% for post in site.posts limit: per_page %}
     {% if post.type == 'link' %}
       <article class="post link">
         <p class="date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</p>
@@ -28,7 +31,7 @@ title: hecticjeff
 
 <section id="archives">
   <ul>
-    {% for post in site.posts offset: 3 %}
+    {% for post in site.posts offset: per_page %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
