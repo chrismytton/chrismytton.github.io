@@ -25,24 +25,32 @@
     </script>
   </head>
   <body>
-    <aside id="sidebar">
-      <h1 class="logo">
-        <a href="/"><img class="avatar" src="/img/hecticjeff.jpg" alt="hecticjeff" width="38" height="38" /> hecticjeff</a>
-      </h1>
-      <nav class="internal">
-        <a href="/about" title="About me">About</a>
-        <a href="/archives" title="The full archives">Archive</a>
-      </nav>
-      <nav class="external">
-        <a rel="me" class="twitter" href="http://twitter.com/hecticjeff">Twitter</a>
-        <a rel="me" class="github" href="https://github.com/hecticjeff">GitHub</a>
-        <a rel="me" class="posterous" href="http://scraps.hecticjeff.net/">Posterous</a>
-      </nav>
-    </aside>
-    <section id="main">
-      {{ content }}
-    </section>
-    <footer>
-    </footer>
+    <div class="container">
+      <div class="row">
+        <aside id="sidebar" class="span3">
+          <h1 class="logo">
+            <a href="/"><img class="avatar" src="/img/hecticjeff.jpg" alt="hecticjeff" width="38" height="38" /> hecticjeff</a>
+          </h1>
+          <nav class="internal">
+            <ul class="unstyled">
+              <li><a href="/about" title="About me">About</a></li>
+              <li><a href="/archives" title="The full archives">Archive</a></li>
+            </ul>
+          </nav>
+          <nav class="external">
+            <ul class="unstyled">
+              <li><a rel="me" class="twitter" href="http://twitter.com/hecticjeff">Twitter</a></li>
+              <li><a rel="me" class="github" href="https://github.com/hecticjeff">GitHub</a></li>
+              <li><a rel="me" class="posterous" href="http://scraps.hecticjeff.net/">Posterous</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <section id="main" class="span9">
+          {{ content }}
+        </section>
+      </div>
+      <footer>
+      </footer>
+    </div>
   </body>
 </html>
