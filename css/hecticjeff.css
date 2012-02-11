@@ -1,51 +1,9 @@
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}
-audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
-audio:not([controls]){display:none}
-[hidden]{display:none}
-html{font-size:100%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
-body{margin:0}
-body,button,input,select,textarea{font-family:sans-serif}
-a:focus{outline:thin dotted}
-a:hover,a:active{outline:0}
-h1{font-size:2em}
-abbr[title]{border-bottom:1px dotted}
-b,strong{font-weight:bold}
-blockquote{margin:1em 40px}
-dfn{font-style:italic}
-mark{background:#ff0;color:#000}
-pre,code,kbd,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}
-pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}
-q{quotes:none}
-q:before,q:after{content:'';content:none}
-small{font-size:75%}
-sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-sup{top:-.5em}
-sub{bottom:-.25em}
-ul,ol{margin-left:0;padding:0 0 0 40px}
-dd{margin:0 0 0 40px}
-nav ul,nav ol{list-style:none;list-style-image:none}
-img{border:0;-ms-interpolation-mode:bicubic;}
-svg:not(:root){overflow:hidden}
-figure{margin:0}
-form{margin:0}
-fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
-legend{border:0;*margin-left:-7px;}
-button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
-button,input{line-height:normal;}
-button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;*overflow:visible;}
-input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
-input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
-input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
-button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
-textarea{overflow:auto;vertical-align:top;}
-table{border-collapse:collapse;border-spacing:0}
-body{font-family:"Helvetica Neue",helvetica,arial,sans-serif;background:#fff;color:#333}
-h1,h2,h3,h4,h5,h6{line-height:1.1;color:#000}
+@import './bootstrap.css';
+@import './bootstrap-responsive.css';
 h1{margin:20px 0}
-p{line-height:1.5}
-pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:1.5;overflow:auto;padding:6px 10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;white-space:pre;word-wrap:normal}
-a{text-decoration:none;color:#2382c8;}
-a:hover,a:active{text-decoration:underline}
+pre{white-space:pre;overflow:auto}
+code{color:#333;}
+pre > code{border:none}
 .highlight{background:#fff}
 .highlight .c{color:#998;font-style:italic}
 .highlight .err{color:#a61717;background-color:#e3d2d2}
@@ -106,14 +64,21 @@ a:hover,a:active{text-decoration:underline}
 .highlight .vg{color:#008080}
 .highlight .vi{color:#008080}
 .highlight .il{color:#099}
-#sidebar{width:200px;padding:0 40px 0 30px;float:left;}
+#sidebar .logo{margin:20px 0;}
 #sidebar .logo a{color:#333;margin-left:6px;}
 #sidebar .logo a:hover{text-decoration:none;color:#444}
-#sidebar .logo a .avatar{float:left}
-#sidebar .internal a{display:block;line-height:1.5}
-#sidebar .external a{display:block;font-size:14px;line-height:1.5}
-#main{float:left;width:550px;}
-#main .post{margin-top:20px;}
-#main .post .date{font-size:14px;color:#666;margin:20px 0 -10px 0}
+#sidebar .logo .avatar{float:left}
+#sidebar nav{display:block;line-height:1.5;}
+#sidebar nav.internal a{font-size:14px}
+#sidebar nav.external a{font-size:14px}
+#main .post{margin:20px 0 40px;}
+#main .post .date{font-size:14px;color:#666}
+#main .post p{font-size:16px;line-height:22px}
+#main .title{margin:10px 0;}
 #main .title a{color:#000;}
 #main .title a:hover{text-decoration:none;color:#444}
+#main .definition{margin-top:20px}
+@media (max-width: 480px){}@media (max-width: 768px){#sidebar .external{display:none}
+#sidebar .internal li{display:inline}
+}@media (min-width: 480px) and (max-width: 768px){}@media (min-width: 768px) and (max-width: 980px){}@media (max-width: 980px){#sidebar .logo{font-size:24px}
+}@media (min-width: 1200px){}
