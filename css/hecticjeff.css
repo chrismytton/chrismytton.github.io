@@ -113,6 +113,7 @@ a:hover,a:active{text-decoration:underline}
 #sidebar .internal a{display:block;line-height:1.5}
 #sidebar .external a{display:block;font-size:14px;line-height:1.5}
 #main{float:left;width:550px;}
+#main .post{margin-top:20px;}
 #main .post .date{font-size:14px;color:#666;margin:20px 0 -10px 0}
 #main .title a{color:#000;}
 #main .title a:hover{text-decoration:none;color:#444}
