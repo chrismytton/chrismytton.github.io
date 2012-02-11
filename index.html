@@ -4,16 +4,24 @@ title: hecticjeff
 ---
 <section id="articles">
   {% for post in site.posts limit: 3 %}
-    <article class="post">
-      <header class="meta">
+    {% if post.type == 'link' %}
+      <article class="post link">
         <p class="date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</p>
-        <h2 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      </header>
+        <p><a href="{{ post.link }}">{{ post.title }}</a></p>
+        <section class="content">{{ post.content }}</section>
+      </article>
+    {% else %}
+      <article class="post">
+        <header class="meta">
+          <p class="date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</p>
+          <h2 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        </header>
 
-      <section class="content">
-        {{ post.content }}
-      </section>
-    </article>
+        <section class="content">
+          {{ post.content }}
+        </section>
+      </article>
+    {% endif %}
     <hr />
   {% endfor %}
 </section>
