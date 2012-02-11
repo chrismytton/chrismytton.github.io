@@ -10,8 +10,9 @@ title: hecticjeff
     {% if post.type == 'link' %}
       <article class="post link">
         <p class="date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</p>
-        <p><a href="{{ post.link }}">{{ post.title }}</a></p>
-        <section class="content">{{ post.content }}</section>
+        <blockquote class="content">
+          <h3><a href="{{ post.link }}">{{ post.title }}</a></h3>
+          {{ post.content }}</blockquote>
       </article>
     {% else %}
       <article class="post">
@@ -25,7 +26,6 @@ title: hecticjeff
         </section>
       </article>
     {% endif %}
-    <hr />
   {% endfor %}
 </section>
 
