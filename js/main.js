@@ -16,5 +16,17 @@ jQuery(function ($) {
     }, timeout);
   });
 
+  // Timestamps are all from midnight, so we make the text suitably
+  // vague.
+  var text = "less than a day";
+
+  $.extend($.timeago.settings.strings, {
+    seconds: text,
+    minute: text,
+    minutes: text,
+    hour: text,
+    hours: text
+  });
+
   $('.date').timeago();
 });
