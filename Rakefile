@@ -1,4 +1,9 @@
 
+desc 'Watch js and css files for changes and rebuild'
+task :watch do
+  system("command -v kicker && kicker -e 'rake build' css/*.styl 'js/main.js' || echo 'You need to \"gem install kicker\" to watch files'")
+end
+
 desc 'Build blog css and js'
 task :build => ['build:css', 'build:js']
 
