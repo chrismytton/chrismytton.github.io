@@ -21,8 +21,8 @@ retrieve the user and check if they're an admin.
 class AdminRestriction
   def self.matches?(request)
     user_id = request.env['rack.session'][:user_id]
-    user = User.find(user_id) if User.exists?(user_id)
-    user && user.admin?
+    user = User.find_by_id(user_id)
+    return user && user.admin?
   end
 end
 
