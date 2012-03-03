@@ -24,3 +24,18 @@ namespace :build do
 end
 
 task :default => :build
+
+desc "Create a new post"
+task :new do
+  print "Post title: "
+  title = STDIN.gets.chomp!
+  slug = title.downcase.gsub(/[^a-zA-Z0-9]+/, ' ').gsub(/ +/, '-')
+
+  File.open "#{Dir.pwd}/_posts/#{Time.now.strftime('%Y-%m-%d')}-#{slug}.md", 'w' do |post|
+    post.puts '---'
+    post.puts "title: #{title}"
+    post.puts 'layout: post'
+    post.puts '---'
+    post.puts
+  end
+end
