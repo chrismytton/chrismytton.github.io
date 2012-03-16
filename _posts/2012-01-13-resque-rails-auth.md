@@ -27,7 +27,7 @@ class AdminRestriction
 end
 
 MyApplication::Application.routes.draw do
-  mount Resque::Server => '/resque', :constraint => AdminRestriction
+  mount Resque::Server => '/resque', :constraints => AdminRestriction
   # Other application routes.
 end
 {% endhighlight %}
