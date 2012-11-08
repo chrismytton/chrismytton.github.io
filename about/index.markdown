@@ -9,5 +9,5 @@ My name is **Chris Mytton**, I'm a **Web Geek** at
 I can often be found
 [writing code](https://github.com/hecticjeff),
 [tweeting](https://twitter.com/hecticjeff),
-[taking pictures](http://followgram.me/hecticjeff) and
+[taking pictures](http://instagram.com/hecticjeff) and
 [listening to music](https://last.fm/user/mytton).
