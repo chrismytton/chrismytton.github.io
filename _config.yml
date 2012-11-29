@@ -1,4 +1,3 @@
-exclude: ["CNAME", "Rakefile", "README.md", "public"]
-markdown: redcarpet
+exclude: ["CNAME"]
 permalink: pretty
 pygments: true
