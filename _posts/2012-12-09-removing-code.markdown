@@ -9,9 +9,10 @@ title: Removing code
 > side of the ledger.
 > <small>Edsger W. Dijkstra</small>
 
+I take great pleasure in reducing the size of a codebase.
 
 When you first start a project there is a lot of code churn. As your
-understanding of a problem changes the code changes with it.
+understanding of a problem changes the code changes and grows with it.
 
 The real skill comes in being able to recognise smaller problems that
 are solved in the course of solving the bigger problem. If you can
@@ -24,12 +25,9 @@ internal projects get bloated because the overall project was never observed
 from afar, from a technical standpoint and broken down into the pieces
 that form the solution.
 
-By extracting parts of your application into reusable components
-
-The side benefit of seeing these reusable components and extracting them
-is that it forces you to re-approach the API you designed, in the
-process of extracting it into something reusable it's often easier to
-see where you've made some parts of the interface specific to the
-application.
+By decomposing your application into smaller reusable components, you
+have the potential to combine them in new and interesting ways, and
+potentially open source them so anyone can use it and contribute back to
+the project.
 
 ![](http://img.hecticjeff.net/Screen_Shot_2012-12-09_at_15.23.38-20121209-152357.jpg)
