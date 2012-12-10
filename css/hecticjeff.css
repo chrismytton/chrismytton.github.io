@@ -78,6 +78,13 @@ pre > code {
   background-position: 0px -2px;
 }
 
+.nav.nav-big > li > a {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 16px;
+}
+
 @media (max-width: 480px) {
 }
 
