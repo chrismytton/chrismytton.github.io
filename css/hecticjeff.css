@@ -19,65 +19,55 @@ pre > code {
   border: none;
 }
 
-#sidebar .logo {
+/* Logo component */
+.logo {
   margin: 20px 0;
 }
 
-#sidebar .logo a {
+.logo a {
   color: #333;
   margin-left: 6px;
 }
 
-#sidebar .logo a:hover {
+.logo a:hover {
   text-decoration: none;
   color: #444;
 }
 
-#sidebar .logo .avatar {
+.logo .avatar {
   float: left;
 }
 
-#sidebar nav {
-  display: block;
-  line-height: 1.5;
-}
+/* Post component */
 
-#sidebar nav.internal a {
-  font-size: 14px;
-}
-
-#sidebar nav.external a {
-  font-size: 14px;
-}
-
-#main .post {
+.post {
   margin: 20px 0 40px;
 }
 
-#main .post .date {
+.post .date {
   font-size: 14px;
   color: #666;
 }
 
-#main .post p {
+.post p {
   font-size: 16px;
   line-height: 22px;
 }
 
-#main .title {
+.title {
   margin: 10px 0;
 }
 
-#main .title a {
+.title a {
   color: #000;
 }
 
-#main .title a:hover {
+.title a:hover {
   text-decoration: none;
   color: #444;
 }
 
-#main .definition {
+.definition {
   margin-top: 20px;
 }
 
