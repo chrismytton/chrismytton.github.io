@@ -2,6 +2,10 @@
 @import './bootstrap-responsive.css';
 @import './syntax.css';
 
+body, p {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 h1 {
   margin: 20px 0;
 }
@@ -22,6 +26,7 @@ pre > code {
 /* Logo component */
 .logo {
   margin: 20px 0;
+  letter-spacing: 1px;
 }
 
 .logo a {
