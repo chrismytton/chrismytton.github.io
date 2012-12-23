@@ -12,7 +12,7 @@ slow startup times. I stepped through the startup process in my [dotfiles][],
 commenting out lines until it was fast again, it didn't take long to find
 the offending line in my `zshrc`.
 
-{% highlight 'bash' %}
+{% highlight bash %}
 for module ($DOTFILES/**/*.zsh) source "$module"
 {% endhighlight %}
 

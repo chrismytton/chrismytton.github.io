@@ -17,7 +17,7 @@ you can pass a `:constraints` options with an object that responds to
 Since the current user's id is stored in the session, we can simply
 retrieve the user and check if they're an admin.
 
-{% highlight 'ruby' %}
+{% highlight ruby %}
 class AdminRestriction
   def self.matches?(request)
     user_id = request.env['rack.session'][:user_id]

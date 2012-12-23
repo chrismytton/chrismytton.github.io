@@ -41,7 +41,7 @@ sys.puts(sayHello('World'))
 
 save this into a file and then run it from the command line like so:
 
-{% highlight shell %}
+{% highlight bash %}
 $ node hello.js
 Hello World!
 {% endhighlight %}
