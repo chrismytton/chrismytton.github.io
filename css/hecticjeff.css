@@ -14,6 +14,7 @@ pre {
   white-space: pre;
   overflow: auto;
   word-wrap: normal;
+  margin-bottom: 20px;
 }
 
 code {
@@ -22,6 +23,8 @@ code {
 
 pre > code {
   border: none;
+  font-size: 14px;
+  line-height: 175%;
 }
 
 /* Logo component */
@@ -56,8 +59,13 @@ pre > code {
 }
 
 .post p {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 175%;
+  margin: 0 0 20px 0;
+}
+
+.post p small {
+  font-size: 14px;
 }
 
 .title {
