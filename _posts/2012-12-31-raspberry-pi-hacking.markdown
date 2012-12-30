@@ -34,7 +34,7 @@ the GPIO when I pressed `ctrl-c`, so the lights remained in the position
 they were in when I interrupted the process. To fix this I [installed a
 signal handler][3] to run the GPIO cleanup code and exit cleanly.
 
-```python
+{% highlight python %}
 def cleanup_gpio(signal, frame):
     print
     GPIO.cleanup()
@@ -42,7 +42,7 @@ def cleanup_gpio(signal, frame):
 
 # Install signal handler to cleanup GPIO when user sends SIGINT
 signal.signal(signal.SIGINT, cleanup_gpio)
-```
+{% endhighlight %}
 
 The code I've been tinkering with is [on
 GitHub](https://github.com/hecticjeff/rpi-traffic_lights). This includes the example
