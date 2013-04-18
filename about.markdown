@@ -4,7 +4,8 @@ title: About - hecticjeff
 ---
 
 My name is **Chris Mytton**, I'm a **Web Geek** at
-[Simpleweb](http://simpleweb.co.uk) in Bristol, UK.
+[mySociety](http://www.mysociety.org/), currently
+residing in Bristol, UK.
 
 I can often be found
 [writing code](https://github.com/hecticjeff),
