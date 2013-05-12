@@ -2,13 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chris Mytton - Web Geek, Bristol" />
+    <meta name="author" content="Chris Mytton" />
     <title>Not Found</title>
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/atom+xml" title="hecticjeff - feed" href="/index.xml" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
     <link rel="stylesheet" type="text/css" href="/css/hecticjeff.css" />
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <aside id="sidebar" class="span3">
+        <aside class="sidebar span3">
           <h1 class="logo">
             <a href="/"><img class="avatar" src="http://www.gravatar.com/avatar/049cff7912a937a751f66c19d74919a9.png?s=76" alt="hecticjeff" width="38" height="38" /> hecticjeff</a>
           </h1>
@@ -24,7 +34,7 @@
             <a rel="me" class="twitter" href="http://twitter.com/hecticjeff"><img src="/img/twitter.png" alt="Twitter" /></a>
           </nav>
         </aside>
-        <section id="main" class="span9">
+        <section class="span9">
           <h1>Not Found</h1>
           <p>Sorry, we couldn't find the page you were looking for.</p>
           <p><a href="/archives">Browse the archive</a> for a full list of posts.</p>
@@ -35,6 +45,23 @@
     </div>
 
     <script src="/js/fastclick.js"></script>
-    <script src="/js/main.js"></script>
+    <script>
+      window.addEventListener("load", function() {
+        new FastClick(document.body);
+      }, false);
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-13038794-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </body>
 </html>
