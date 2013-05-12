@@ -89,14 +89,14 @@ pre > code {
   margin-top: 20px;
 }
 
-.alert.twitter {
+.alert-twitter {
   padding: 15px 15px 15px 50px;
   background-image: url("../img/twitter.png");
   background-repeat: no-repeat;
-  background-position: 0px -2px;
+  background-position: 0 -2px;
 }
 
-.nav.nav-big > li > a {
+.nav-big > li > a {
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -109,7 +109,6 @@ pre > code {
 @media (max-width: 767px) {
   .logo {
     width: 170px;
-    display: inline-block;
     float: left;
     margin-bottom: 10px;
   }
@@ -122,15 +121,14 @@ pre > code {
   }
   .internal li {
     float: left;
-    display: inline;
   }
-  .nav.nav-big > li > a {
+  .nav-big > li > a {
     font-size: 15px;
     padding: 5px 3px;
     line-height: 8px;
   }
 
-  #sidebar .lead {
+  .sidebar .lead {
     display: none;
   }
 
@@ -146,7 +144,7 @@ pre > code {
 }
 
 @media (max-width: 980px) {
-  #sidebar .logo {
+  .sidebar .logo {
     font-size: 24px;
   }
 }
