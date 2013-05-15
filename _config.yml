@@ -2,3 +2,4 @@ exclude: ["CNAME"]
 markdown: redcarpet
 permalink: pretty
 pygments: true
+timezone: Europe/London
