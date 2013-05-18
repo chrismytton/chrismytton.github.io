@@ -1,0 +1,140 @@
+/*
+
+Base styles
+
+ */
+
+/**
+ * @see http://paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    color: #333333;
+    font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 175%;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
+p small {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #0088cc;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0 0 9px 25px;
+}
+
+blockquote {
+    padding: 0 0 0 15px;
+    margin: 0 0 18px;
+    border-left: 5px solid #eeeeee;
+}
+
+blockquote p {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22.5px;
+}
+
+blockquote small {
+    display: block;
+    line-height: 18px;
+    color: #999999;
+}
+
+blockquote small:before {
+    content: '\2014 \00A0';
+}
+
+li {
+    line-height: 175%;
+}
+
+code, pre {
+    padding: 0 3px 2px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+code {
+    padding: 3px 4px;
+    color: #d14;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+}
+
+pre {
+    display: block;
+    padding: 8.5px;
+    margin: 0 0 9px;
+    font-size: 12px;
+    line-height: 18px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+pre code {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+}
+
+pre {
+    white-space: pre;
+    overflow: auto;
+    word-wrap: normal;
+    margin-bottom: 20px;
+}
+
+code {
+    color: #333;
+}
+
+pre > code {
+    border: none;
+    font-size: 14px;
+    line-height: 175%;
+}
+
