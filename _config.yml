@@ -1,4 +1,4 @@
-exclude: ["CNAME"]
+exclude: ["CNAME", "Makefile"]
 markdown: redcarpet
 permalink: pretty
 pygments: true
