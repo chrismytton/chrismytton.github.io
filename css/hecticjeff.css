@@ -208,12 +208,6 @@ pre > code {
 .definition {
   margin-top: 20px; }
 
-.alert-twitter {
-  padding: 15px 15px 15px 50px;
-  background-image: url("../img/twitter.png");
-  background-repeat: no-repeat;
-  background-position: 0 -2px; }
-
 .nav-big > li > a {
   font-size: 20px;
   padding-top: 10px;
