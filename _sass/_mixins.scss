@@ -1,0 +1,19 @@
+@mixin respond-to($media) {
+    @if $media == handhelds {
+        @media (max-width: 767px) { @content; }
+    }
+    @else if $media == tablets {
+        @media (min-width: 768px) and (max-width: 980px) { @content; }
+    }
+    @else if $media == wide-desktops {
+        @media (min-width: 1200px) { @content; }
+    }
+}
+
+@mixin vendor-prefix($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+}
