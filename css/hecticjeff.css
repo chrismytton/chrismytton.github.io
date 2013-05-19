@@ -472,9 +472,6 @@ pre > code {
   text-decoration: none;
   color: #444; }
 
-.logo .avatar {
-  float: left; }
-
 /* Nav component */
 .nav {
   margin-left: 0;
@@ -499,9 +496,6 @@ pre > code {
 .title a:hover {
   text-decoration: none;
   color: #444; }
-
-.definition {
-  margin-top: 20px; }
 
 .nav-big > li > a {
   font-size: 20px;

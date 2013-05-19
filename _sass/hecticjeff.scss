@@ -1,7 +1,3 @@
-$grid-width: 940px;
-$grid-gutter-width: 20px;
-$column-count: 12;
-
 @import "normalize";
 @import "base";
 @import "layout";
@@ -23,10 +19,6 @@ $column-count: 12;
 .logo a:hover {
   text-decoration: none;
   color: #444;
-}
-
-.logo .avatar {
-  float: left;
 }
 
 /* Nav component */
@@ -59,10 +51,6 @@ $column-count: 12;
 .title a:hover {
   text-decoration: none;
   color: #444;
-}
-
-.definition {
-  margin-top: 20px;
 }
 
 .nav-big > li > a {
