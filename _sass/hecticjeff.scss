@@ -4,46 +4,27 @@
 @import "layout";
 @import "modules";
 
+// Lead text
 .lead {
     font-size: 20px;
     font-weight: 200;
 }
 
-/* Logo component */
-.logo {
-    letter-spacing: 1px;
-    font-weight: normal;
-}
-
-.logo a {
-    color: #333;
-}
-
-.logo a:hover {
-    text-decoration: none;
-    color: #444;
-}
-
+// Rounded avatar
 .avatar {
     @include vendor-prefix(border-radius, 50%);
 }
 
-/* Nav component */
 .nav {
-    margin-left: 0;
-    margin-bottom: 18px;
-    list-style: none;
+    margin-bottom: 20px;
 }
 
-.github, .twitter {
+.nav-link {
+    display: block;
+}
+
+.profile {
     margin: 0 9px;
-}
-
-.nav-big > li > a {
-    font-size: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 16px;
 }
 
 @media (max-width: 767px) {
@@ -60,18 +41,13 @@
         display: none;
     }
 
-    .internal {
-        display: inline-block;
-    }
-
     .internal li {
         float: left;
     }
 
-    .nav-big > li > a {
+    .nav-link {
+        display: inline;
         font-size: 15px;
-        padding: 5px 3px;
-        line-height: 8px;
     }
 
     .sidebar .lead {
@@ -90,7 +66,7 @@
 
 @media (max-width: 980px) {
     .logo {
-        font-size: 24px;
+        font-size: 35px;
     }
 
     .avatar {
