@@ -20,10 +20,6 @@
 }
 
 @media (max-width: 767px) {
-    .logo {
-        width: 170px;
-        margin-bottom: 10px;
-    }
 
     .avatar {
         display: none;
@@ -33,26 +29,8 @@
         display: none;
     }
 
-    .internal li {
-        float: left;
-    }
-
-    .nav-link {
-        display: inline;
-        font-size: 15px;
-    }
-
     .sidebar .lead {
         display: none;
-    }
-
-    .post {
-        margin: 0 0 40px;
-    }
-
-    .post-date {
-        float: none;
-        clear: both;
     }
 }
 
@@ -63,9 +41,5 @@
 
     .avatar {
         width: 100px;
-    }
-
-    .post-date {
-        margin-left: 0;
     }
 }

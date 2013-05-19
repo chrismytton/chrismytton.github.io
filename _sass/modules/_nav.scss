@@ -8,4 +8,8 @@
 
 .nav-link {
     display: block;
+    @include respond-to(handhelds) {
+        display: inline;
+        font-size: 15px;
+    }
 }
