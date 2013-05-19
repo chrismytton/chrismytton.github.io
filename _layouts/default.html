@@ -13,35 +13,31 @@
     <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
     <link rel="stylesheet" type="text/css" href="/css/hecticjeff.css" />
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <aside class="sidebar column">
-          <hgroup>
-            <h1 class="logo">
-              <a href="/">
-                hecticjeff
-              </a>
-            </h1>
-            <img class="avatar" src="http://www.gravatar.com/avatar/049cff7912a937a751f66c19d74919a9.png?s=360" alt="hecticjeff" width="180" height="180" />
-            <h2 class="lead">Hello, I'm Chris Mytton, a laid back Web Geek currently crafting in Bristol, UK.</h2>
-          </hgroup>
-          <nav class="internal">
-            <ul class="nav nav-pills nav-stacked nav-big">
-              <li><a href="/about" title="About me">About</a></li>
-              <li><a href="/archives" title="The full archives">Archive</a></li>
-            </ul>
-          </nav>
-          <nav class="external">
-            <a rel="me" class="github" href="https://github.com/hecticjeff"><img src="/img/GitHub-Mark-64px.png" alt="Octocat" width="32" height="32" /></a>
-            <a rel="me" class="twitter" href="https://twitter.com/hecticjeff"><img src="/img/twitter-bird-light-bgs.png" alt="Twitter" width="32" height="32" /></a>
-          </nav>
-        </aside>
-        <section class="main column">
-          {{ content }}
-        </section>
-      </div>
-    </div>
+  <body class="container">
+
+    <aside class="sidebar column">
+      <h1 class="logo">
+        <a href="/">
+          hecticjeff
+        </a>
+      </h1>
+      <img class="avatar" src="http://www.gravatar.com/avatar/049cff7912a937a751f66c19d74919a9.png?s=360" alt="hecticjeff" width="180" height="180" />
+      <h2 class="lead">Hello, I'm Chris Mytton, a laid back Web Geek currently crafting in Bristol, UK.</h2>
+      <nav class="internal">
+        <ul class="nav nav-pills nav-stacked nav-big">
+          <li><a href="/about" title="About me">About</a></li>
+          <li><a href="/archives" title="The full archives">Archive</a></li>
+        </ul>
+      </nav>
+      <nav class="external">
+        <a rel="me" class="github" href="https://github.com/hecticjeff"><img src="/img/GitHub-Mark-64px.png" alt="Octocat" width="32" height="32" /></a>
+        <a rel="me" class="twitter" href="https://twitter.com/hecticjeff"><img src="/img/twitter-bird-light-bgs.png" alt="Twitter" width="32" height="32" /></a>
+      </nav>
+    </aside>
+
+    <section class="main column">
+      {{ content }}
+    </section>
 
     <script src="/js/fastclick.js"></script>
     <script>
