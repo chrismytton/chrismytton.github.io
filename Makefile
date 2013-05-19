@@ -1,13 +1,14 @@
 all: css
 
 SASS = sass _3.2.9_
+STYLE = expanded
 INPUT = _sass/hecticjeff.scss
 OUTPUT = css/hecticjeff.css
 
 css:
-	$(SASS) $(INPUT) $(OUTPUT)
+	$(SASS) --style $(STYLE) $(INPUT) $(OUTPUT)
 
 watch:
-	$(SASS) --watch $(INPUT):$(OUTPUT)
+	$(SASS) --style $(STYLE) --watch $(INPUT):$(OUTPUT)
 
 .PHONY: css watch
