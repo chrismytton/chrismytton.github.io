@@ -389,6 +389,7 @@ html, body {
 }
 
 h1 {
+  font-size: 2em;
   margin: 20px 0;
   line-height: 110%;
 }
@@ -400,7 +401,6 @@ h2, h3, h4, h5, h6 {
 p {
   margin: 0 0 20px 0;
 }
-
 p small {
   font-size: 14px;
 }
@@ -429,20 +429,17 @@ blockquote {
   margin: 0 0 18px;
   border-left: 5px solid #eeeeee;
 }
-
 blockquote p {
   margin-bottom: 0;
   font-size: 16px;
   font-weight: 300;
   line-height: 22.5px;
 }
-
 blockquote small {
   display: block;
   line-height: 18px;
   color: #999999;
 }
-
 blockquote small:before {
   content: '\2014 \00A0';
 }
@@ -474,7 +471,6 @@ pre {
   margin-bottom: 20px;
   word-wrap: break-word;
 }
-
 pre > code {
   padding: 0;
   border: 0;
@@ -570,6 +566,17 @@ pre > code {
   color: #444;
 }
 
+/**
+ * Navigation
+ */
+.nav {
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  display: block;
+}
+
 .lead {
   font-size: 20px;
   font-weight: 200;
@@ -581,14 +588,6 @@ pre > code {
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-}
-
-.nav {
-  margin-bottom: 20px;
-}
-
-.nav-link {
-  display: block;
 }
 
 .profile {
