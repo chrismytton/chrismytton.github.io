@@ -1,25 +1,26 @@
 @import "normalize";
 @import "base";
 @import "layout";
+@import "modules";
 
 .lead {
-  font-size: 20px;
-  font-weight: 200;
+    font-size: 20px;
+    font-weight: 200;
 }
 
 /* Logo component */
 .logo {
-  letter-spacing: 1px;
-  font-weight: normal;
+    letter-spacing: 1px;
+    font-weight: normal;
 }
 
 .logo a {
-  color: #333;
+    color: #333;
 }
 
 .logo a:hover {
-  text-decoration: none;
-  color: #444;
+    text-decoration: none;
+    color: #444;
 }
 
 .avatar {
@@ -39,32 +40,11 @@
     margin: 0 9px;
 }
 
-/* Post component */
-
-.post {
-  margin: 20px 0 40px;
-}
-
-.post .date {
-  font-size: 14px;
-  color: #666;
-  float: right;
-}
-
-.title a {
-  color: #333;
-}
-
-.title a:hover {
-  text-decoration: none;
-  color: #444;
-}
-
 .nav-big > li > a {
-  font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 16px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 16px;
 }
 
 @media (max-width: 480px) {
@@ -82,42 +62,43 @@
         padding: 0;
     }
 
-  .logo {
-    width: 170px;
-    margin-bottom: 10px;
-  }
+    .logo {
+        width: 170px;
+        margin-bottom: 10px;
+    }
 
-  .avatar {
-      display: none;
-  }
+    .avatar {
+        display: none;
+    }
 
-  .external {
-    display: none;
-  }
-  .internal {
-    display: inline-block;
-  }
-  .internal li {
-    float: left;
-  }
-  .nav-big > li > a {
-    font-size: 15px;
-    padding: 5px 3px;
-    line-height: 8px;
-  }
+    .external {
+        display: none;
+    }
+    .internal {
+        display: inline-block;
+    }
+    .internal li {
+        float: left;
+    }
+    .nav-big > li > a {
+        font-size: 15px;
+        padding: 5px 3px;
+        line-height: 8px;
+    }
 
-  .sidebar .lead {
-    display: none;
-  }
+    .sidebar .lead {
+        display: none;
+    }
 
-  .post {
-    margin: 0 0 40px;
+    .post {
+        margin: 0 0 40px;
+    }
 
-    .date {
+    .post-date {
+        font-size: 14px;
         float: none;
         clear: both;
     }
-  }
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
@@ -130,12 +111,18 @@
 }
 
 @media (max-width: 980px) {
-  .logo {
-    font-size: 24px;
-  }
-  .avatar {
-      width: 100px;
-  }
+    .logo {
+        font-size: 24px;
+    }
+
+    .avatar {
+        width: 100px;
+    }
+
+    .post-date {
+        font-size: 14px;
+        margin-left: 0;
+    }
 }
 
 /* LARGE DESKTOP SCREENS */

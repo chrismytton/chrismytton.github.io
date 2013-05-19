@@ -2,15 +2,14 @@
 layout: default
 ---
 <article class="post">
-  <header class="meta">
-    <p class="date" title="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</p>
-    <h1 class="title">{{ page.title }}</h1>
+  <header class="post-meta">
+    <p class="post-date" title="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
-  <section class="content">
+  <section class="post-content">
     {{ content }}
   </section>
-
 
   <footer>
     <strong>Like what you've read? Follow

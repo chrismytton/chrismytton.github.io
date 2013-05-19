@@ -462,6 +462,23 @@ pre > code {
 .main {
   width: 75%; }
 
+/**
+ * Post component
+ */
+.post {
+  margin: 20px 0 40px; }
+
+.post-date {
+  color: #aaa;
+  float: right; }
+
+.post-title a {
+  color: #333; }
+
+.post-title a:hover {
+  text-decoration: none;
+  color: #444; }
+
 .lead {
   font-size: 20px;
   font-weight: 200; }
@@ -491,22 +508,6 @@ pre > code {
 
 .github, .twitter {
   margin: 0 9px; }
-
-/* Post component */
-.post {
-  margin: 20px 0 40px; }
-
-.post .date {
-  font-size: 14px;
-  color: #666;
-  float: right; }
-
-.title a {
-  color: #333; }
-
-.title a:hover {
-  text-decoration: none;
-  color: #444; }
 
 .nav-big > li > a {
   font-size: 20px;
@@ -551,9 +552,11 @@ pre > code {
 
   .post {
     margin: 0 0 40px; }
-    .post .date {
-      float: none;
-      clear: both; } }
+
+  .post-date {
+    font-size: 14px;
+    float: none;
+    clear: both; } }
 @media (min-width: 768px) and (max-width: 980px) {
   .container {
     width: 744px; } }
@@ -562,7 +565,11 @@ pre > code {
     font-size: 24px; }
 
   .avatar {
-    width: 100px; } }
+    width: 100px; }
+
+  .post-date {
+    font-size: 14px;
+    margin-left: 0; } }
 /* LARGE DESKTOP SCREENS */
 @media (min-width: 1200px) {
   .container {
