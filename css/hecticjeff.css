@@ -350,6 +350,9 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   margin: 20px 0; }
 
+h1 {
+  line-height: 110%; }
+
 p {
   margin: 0 0 20px 0; }
 
@@ -465,7 +468,8 @@ pre > code {
 
 /* Logo component */
 .logo {
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  font-weight: normal; }
 
 .logo a {
   color: #333; }
@@ -473,6 +477,11 @@ pre > code {
 .logo a:hover {
   text-decoration: none;
   color: #444; }
+
+.avatar {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%; }
 
 /* Nav component */
 .nav {
@@ -518,15 +527,16 @@ pre > code {
 
   .logo {
     width: 170px;
-    float: left;
     margin-bottom: 10px; }
+
+  .avatar {
+    display: none; }
 
   .external {
     display: none; }
 
   .internal {
-    display: inline-block;
-    margin-top: 24px; }
+    display: inline-block; }
 
   .internal li {
     float: left; }
@@ -540,13 +550,19 @@ pre > code {
     display: none; }
 
   .post {
-    margin: 0 0 40px; } }
+    margin: 0 0 40px; }
+    .post .date {
+      float: none;
+      clear: both; } }
 @media (min-width: 768px) and (max-width: 980px) {
   .container {
     width: 744px; } }
 @media (max-width: 980px) {
-  .sidebar .logo {
-    font-size: 24px; } }
+  .logo {
+    font-size: 24px; }
+
+  .avatar {
+    width: 100px; } }
 /* LARGE DESKTOP SCREENS */
 @media (min-width: 1200px) {
   .container {
