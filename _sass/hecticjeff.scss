@@ -2,6 +2,7 @@ $grid-width: 940px;
 $grid-gutter-width: 20px;
 $column-count: 12;
 
+@import "normalize";
 @import "base";
 @import "layout";
 

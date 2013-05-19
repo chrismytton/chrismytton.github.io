@@ -1,14 +1,9 @@
-@import "normalize";
-/*
-
-Base styles
-
- */
-
 /**
- * @see http://paulirish.com/2012/box-sizing-border-box-ftw/
+ * Base styles
  */
+
 * {
+    // @see http://paulirish.com/2012/box-sizing-border-box-ftw/
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -139,4 +134,3 @@ pre > code {
     font-size: 14px;
     line-height: 175%;
 }
-

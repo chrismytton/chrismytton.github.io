@@ -330,13 +330,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*
-
-Base styles
-
- */
 /**
- * @see http://paulirish.com/2012/box-sizing-border-box-ftw/
+ * Base styles
  */
 * {
   box-sizing: border-box;
