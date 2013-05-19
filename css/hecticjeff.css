@@ -481,6 +481,9 @@ pre > code {
   margin-bottom: 18px;
   list-style: none; }
 
+.github, .twitter {
+  margin: 0 9px; }
+
 /* Post component */
 .post {
   margin: 20px 0 40px; }
