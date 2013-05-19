@@ -12,8 +12,8 @@ the components that were supplied with the kit. As well as the
 breadboard the kit includes the following components:
 
 * 12 &times; LEDs (4 each of Red, Yellow and Green)
-* 12 &times; 330Ω resistors (for the LEDs)
-* 2 &times; 10kΩ resistors
+* 12 &times; 330&Omega; resistors (for the LEDs)
+* 2 &times; 10k&Omega; resistors
 * 2 &times; mini push buttons
 * 10 &times; male to female jumper wires
 
