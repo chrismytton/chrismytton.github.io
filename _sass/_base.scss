@@ -82,56 +82,26 @@ li {
 }
 
 code, pre {
-    @include vendor-prefix(border-radius, 3px);
-    padding: 0 3px 2px;
+    @include vendor-prefix(border-radius, 4px);
     font-family: Menlo, Monaco, "Courier New", monospace;
-    font-size: 12px;
-    color: #333333;
-}
-
-code {
-    padding: 3px 4px;
-    color: #d14;
-    background-color: #f7f7f9;
-    border: 1px solid #e1e1e8;
+    font-size: 14px;
+    line-height: 175%;
+    border: 1px solid #ccc;
+    padding: 4px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
 }
 
 pre {
-    @include vendor-prefix(border-radius, 4px);
     display: block;
     padding: 8.5px;
-    margin: 0 0 9px;
-    font-size: 12px;
-    line-height: 18px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, 0.15);
     white-space: pre;
-    white-space: pre-wrap;
-    word-break: break-all;
+    overflow: auto;
+    margin-bottom: 20px;
     word-wrap: break-word;
 }
 
-pre code {
-    padding: 0;
-    color: inherit;
-    background-color: transparent;
-    border: 0;
-}
-
-pre {
-    white-space: pre;
-    overflow: auto;
-    word-wrap: normal;
-    margin-bottom: 20px;
-}
-
-code {
-    color: #333;
-}
-
 pre > code {
-    border: none;
-    font-size: 14px;
-    line-height: 175%;
+    padding: 0;
+    border: 0;
 }
