@@ -76,7 +76,7 @@ $column-count: 12;
         width: auto;
         padding: 0 20px;
     }
-    .row > [class*="span"] {
+    .column {
         float: none;
         display: block;
         width: auto;
@@ -133,7 +133,7 @@ $column-count: 12;
     .container {
         width: 1200px;
     }
-    [class*="span"] {
+    .column {
         padding: 0 15px;
     }
 }
