@@ -28,11 +28,12 @@ var port = flag.String("port", "8080", "Define what port TCP port to bind to")
 var root = flag.String("root", ".", "Define the root filesystem path")
 
 func main() {
+	flag.Parse()
 	panic(http.ListenAndServe(":"+*port, http.FileServer(http.Dir(*root))))
 }
 ```
 
-The actual meat of the program is the single line inside the main
+The actual meat of the program is the second line inside the main
 function. `http.ListenAndServe` accepts an address to listen on as the first argument,
 and an object which implements the `http.Handler` interface as the second,
 in this case `http.FileServer`. If
