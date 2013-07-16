@@ -56,7 +56,7 @@ The file server implementation that Go provides even handles serving `index.html
 from a directory if no file is specified, and provides a directory
 listing if there is no `index.html` present.
 
-For more details check out [Go's implementation of `http.FileServer`][1].  
+For more details check out [Go's implementation of `http.FileServer`][1].
 
 [0]: http://golang.org/
 [1]: http://golang.org/src/pkg/net/http/fs.go?s=12008:12048#L401
