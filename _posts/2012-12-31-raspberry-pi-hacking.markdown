@@ -3,7 +3,7 @@ layout: post
 title: Raspberry Pi GPIO Hacking
 ---
 
-![](http://img.hecticjeff.net/rpi-20121230-221554.jpg)
+![](https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/rpi-20121230-221554.jpg)
 
 I've been playing with my [Raspberry Pi starter kit][0] that I got for
 Christmas today. It comes with a clear plastic case for mounting the Pi
