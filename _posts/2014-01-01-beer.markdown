@@ -1,0 +1,8 @@
+---
+layout: post
+title: Beer
+---
+
+<iframe src="//player.vimeo.com/video/83182985" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+A couple of weeks ago we brewed our first ever batch of beer. Rather than start with something simple like an extract brew, I decided to create my own [all-grain American IPA recipe](http://www.brewtoad.com/recipes/bs5-ipa). The beer is ready to be bottled now, then it will need another 2 weeks in the bottles for conditioning. By mid-January we will finally be able to taste it, hopefully it will at least resemble drinkable beer.
