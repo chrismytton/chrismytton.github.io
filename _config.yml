@@ -1,4 +1,4 @@
-exclude: ["CNAME", "Makefile", "Gemfile", "Gemfile.lock"]
+exclude: ["Makefile"]
 permalink: pretty
 timezone: Europe/London
 gems:
