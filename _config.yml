@@ -1,7 +1,6 @@
 exclude: ["CNAME", "Makefile", "Gemfile", "Gemfile.lock"]
 markdown: redcarpet
 permalink: pretty
-pygments: true
 timezone: Europe/London
 gems:
   - jekyll-sitemap
