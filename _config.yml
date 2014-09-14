@@ -1,5 +1,4 @@
 exclude: ["CNAME", "Makefile", "Gemfile", "Gemfile.lock"]
-markdown: redcarpet
 permalink: pretty
 timezone: Europe/London
 gems:

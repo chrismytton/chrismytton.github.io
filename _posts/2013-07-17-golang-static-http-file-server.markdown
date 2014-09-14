@@ -15,7 +15,7 @@ It turned out to be remarkably simple. Go comes with a static file server
 as part of the `net/http` package, in this example I've added a couple of flags that
 allow specifying the port and the root filesystem path for the process.
 
-```go
+{% highlight go %}
 // httpserver.go
 package main
 
@@ -31,7 +31,7 @@ func main() {
 	flag.Parse()
 	panic(http.ListenAndServe(":"+*port, http.FileServer(http.Dir(*root))))
 }
-```
+{% endhighlight %}
 
 The actual meat of the program is the second line inside the main
 function. `http.ListenAndServe` accepts an address to listen on as the first argument,
@@ -42,16 +42,12 @@ is using the desired port) then the process will `panic` and exit.
 
 If you've got Go installed then this can be run directly.
 
-```
-$ go run httpserver.go
-```
+    $ go run httpserver.go
 
 Or you can compile it to a standalone binary.
 
-```
-$ go build httpserver.go
-$ ./httpserver
-```
+    $ go build httpserver.go
+    $ ./httpserver
 
 The file server implementation that Go provides even handles serving `index.html`
 from a directory if no file is specified, and provides a directory
