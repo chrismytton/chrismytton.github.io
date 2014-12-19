@@ -45,7 +45,7 @@ signal.signal(signal.SIGINT, cleanup_gpio)
 {% endhighlight %}
 
 The code I've been tinkering with is [on
-GitHub](https://github.com/hecticjeff/rpi-traffic_lights). This includes the example
+GitHub](https://github.com/chrismytton/rpi-traffic_lights). This includes the example
 C code, which is pretty much untouched other than adding a limit to the
 number of loops so that the GPIO cleanup code gets run. There's also the
 example python code which is what I've mainly been playing with.
@@ -63,6 +63,6 @@ system into a web service to create a status indicator.
 [0]: http://www.skpang.co.uk/catalog/starter-kita-for-raspberry-pi-pi-not-include-p-1070.html
 [1]: http://www.skpang.co.uk/blog/archives/656
 [2]: http://elinux.org/RPi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29
-[3]: https://github.com/hecticjeff/rpi-traffic_lights/blob/a6fba162d11679bd3daaeb9a8adca2b223092152/traffic_light_rev_2.py#L34-L42
+[3]: https://github.com/chrismytton/rpi-traffic_lights/blob/a6fba162d11679bd3daaeb9a8adca2b223092152/traffic_light_rev_2.py#L34-L42
 [4]: http://skpang.co.uk/dl/traffic_light_rev_2.py
-[5]: https://github.com/hecticjeff/rpi-traffic_lights/blob/a6fba162d11679bd3daaeb9a8adca2b223092152/disco.py
+[5]: https://github.com/chrismytton/rpi-traffic_lights/blob/a6fba162d11679bd3daaeb9a8adca2b223092152/disco.py

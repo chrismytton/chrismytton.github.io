@@ -48,7 +48,7 @@ couple of hours in total to identify and fix the problem.
 So don't be like me and ignore performance problems when you know
 they're there, take the time to fix them
 
-[dotfiles]: https://github.com/hecticjeff/dotfiles
+[dotfiles]: https://github.com/chrismytton/dotfiles
 [globbing]: http://en.wikipedia.org/wiki/Glob_(programming)
-[the commit]: https://github.com/hecticjeff/dotfiles/commit/5c497a86f3535bad6c31a93a617598879fc9cd58
-[dotvim]: https://github.com/hecticjeff/dotvim
+[the commit]: https://github.com/chrismytton/dotfiles/commit/5c497a86f3535bad6c31a93a617598879fc9cd58
+[dotvim]: https://github.com/chrismytton/dotvim

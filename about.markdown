@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About - hecticjeff
+title: About - Chris Mytton
 ---
 
 My name is **Chris Mytton**, I'm a **Web Geek** at
@@ -8,7 +8,7 @@ My name is **Chris Mytton**, I'm a **Web Geek** at
 residing in Bristol, UK.
 
 I can often be found
-[writing code](https://github.com/hecticjeff),
-[tweeting](https://twitter.com/hecticjeff),
-[taking pictures](http://instagram.com/hecticjeff) and
+[writing code](https://github.com/chrismytton),
+[tweeting](https://twitter.com/chrismytton),
+[taking pictures](http://instagram.com/chrismytton) and
 [listening to music](https://last.fm/user/mytton).
