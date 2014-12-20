@@ -22,5 +22,3 @@ ask your VCS.
 
 When you don't take the time to remove old code and features, it's often
 more confusing when you come to add new code and features.
-
-![](https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/Screen_Shot_2012-12-09_at_15.23.38-20121209-152357.jpg)
