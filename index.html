@@ -1,31 +1,23 @@
 ---
 layout: default
-title: Chris Mytton
 ---
 
-{% assign per_page = 20 %}
+<div class="home">
 
-<section id="articles">
-  {% for post in site.posts limit: per_page %}
-  <article class="post">
-    <header class="post-meta">
-      <p class="post-date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</p>
-      <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    </header>
+  <h1 class="page-heading">Posts</h1>
 
-    <section class="post-content">
-      {{ post.content }}
-    </section>
-  </article>
-  {% endfor %}
-</section>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<section id="archives">
-  <ul>
-    {% for post in site.posts offset: per_page %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
     {% endfor %}
   </ul>
-</section>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

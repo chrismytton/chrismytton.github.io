@@ -1,107 +1,204 @@
 /**
- * Base styles
+ * Reset some basic elements
  */
-
-* {
-    // @see http://paulirish.com/2012/box-sizing-border-box-ftw/
-    @include vendor-prefix(box-sizing, border-box);
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
-    background: #fff;
-    color: #333;
-    font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.13em;
-    line-height: 175%;
+
+
+/**
+ * Basic styling
+ */
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 300;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
 }
 
-h1 {
-    font-size: 2em;
-    margin: 20px 0;
-    line-height: 110%;
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
 }
 
-h2, h3, h4, h5, h6 {
-    margin: 15px 0;
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
 }
 
-p {
-    margin: 0 0 20px 0;
 
-    small {
-        font-size: 14px;
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
     }
 }
 
 
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+
+
+/**
+ * Links
+ */
 a {
+    color: $brand-color;
     text-decoration: none;
-    color: #0088cc;
+
+    &:visited {
+        color: darken($brand-color, 15%);
+    }
 
     &:hover {
+        color: $text-color;
         text-decoration: underline;
     }
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border: 0;
-}
 
-ul, ol {
-    padding: 0;
-    margin: 0 0 9px 25px;
-}
 
+/**
+ * Blockquotes
+ */
 blockquote {
-    padding: 0 0 0 15px;
-    margin: 0 0 18px;
-    border-left: 5px solid #eeeeee;
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
 
-    p {
+    > :last-child {
         margin-bottom: 0;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 22.5px;
-    }
-
-    small {
-        display: block;
-        line-height: 18px;
-        color: #999999;
-    }
-
-    small:before {
-        content: '\2014 \00A0';
     }
 }
 
-li {
-    line-height: 175%;
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eef;
 }
 
-code, pre {
-    @include vendor-prefix(border-radius, 4px);
-    font-family: Menlo, Monaco, "Courier New", monospace;
-    font-size: 14px;
-    line-height: 175%;
-    border: 1px solid #ccc;
-    padding: 4px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
+code {
+    padding: 1px 5px;
 }
 
 pre {
-    display: block;
-    padding: 8.5px;
-    white-space: pre;
-    overflow: auto;
-    margin-bottom: 20px;
-    word-wrap: break-word;
+    padding: 8px 12px;
+    overflow-x: scroll;
 
-    & > code {
-        padding: 0;
+    > code {
         border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
     }
 }
