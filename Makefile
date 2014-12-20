@@ -1,2 +1,2 @@
 deploy:
-	jekyll build && rsync --archive --verbose --compress --delete _site/ chrismytton.uk:/data/www.chrismytton.uk
+	jekyll build && rsync -avz --delete _site/ chrismytton.uk:/data/www.chrismytton.uk
