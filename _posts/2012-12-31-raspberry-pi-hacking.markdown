@@ -3,13 +3,7 @@ layout: post
 title: Raspberry Pi GPIO Hacking
 ---
 
-![](https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/rpi-20121230-221554.jpg)
-
-I've been playing with my [Raspberry Pi starter kit][0] that I got for
-Christmas today. It comes with a clear plastic case for mounting the Pi
-onto, but as I've already got a case I'm just using the breadboard and
-the components that were supplied with the kit. As well as the
-breadboard the kit includes the following components:
+I've been playing with my [Raspberry Pi starter kit][0] that I got for Christmas today. It comes with a clear plastic case for mounting the Pi onto, but as I've already got a case I'm just using the breadboard and the components that were supplied with the kit. As well as the breadboard the kit includes the following components:
 
 * 12 &times; LEDs (4 each of Red, Yellow and Green)
 * 12 &times; 330&Omega; resistors (for the LEDs)
@@ -43,6 +37,8 @@ def cleanup_gpio(signal, frame):
 # Install signal handler to cleanup GPIO when user sends SIGINT
 signal.signal(signal.SIGINT, cleanup_gpio)
 {% endhighlight %}
+
+![](https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/rpi-20121230-221554.jpg)
 
 The code I've been tinkering with is [on
 GitHub](https://github.com/chrismytton/rpi-traffic_lights). This includes the example
