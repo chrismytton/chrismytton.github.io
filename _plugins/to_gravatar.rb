@@ -1,8 +1,9 @@
 require 'digest/md5'
 
 module Jekyll
+  # Turn an email address into a gravatar url
   module GravatarFilter
-    def to_gravatar(input, size=400)
+    def to_gravatar(input, size = 400)
       "https://secure.gravatar.com/avatar/#{md5(input)}?s=#{size}"
     end
 
