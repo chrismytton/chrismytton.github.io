@@ -12,6 +12,7 @@ github_username: chrismytton
 # Build settings
 markdown: kramdown
 permalink: pretty
+timezone: Europe/London
 
 gems:
   - jemoji
