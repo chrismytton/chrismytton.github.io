@@ -12,3 +12,9 @@ github_username: chrismytton
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+gems:
+  - jemoji
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
