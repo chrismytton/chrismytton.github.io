@@ -38,7 +38,7 @@ def cleanup_gpio(signal, frame):
 signal.signal(signal.SIGINT, cleanup_gpio)
 {% endhighlight %}
 
-![](https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/rpi-20121230-221554.jpg)
+![Raspberry Pi plugged into breadboard](https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/rpi-20121230-221554.jpg)
 
 The code I've been tinkering with is [on
 GitHub](https://github.com/chrismytton/rpi-traffic_lights). This includes the example

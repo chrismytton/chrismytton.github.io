@@ -8,8 +8,8 @@ excerpt: I've only just got round to doing some coding with Ryan Dahl's great no
 [nodesrc]: http://github.com/ry/node
 [Homebrew]: http://github.com/mxcl/homebrew
 [ry]: http://tinyclouds.org/
-[CommonJS]: http://commonjs.org/
-[apidocs]: http://nodejs.org/api.html
+[CommonJS]: https://en.wikipedia.org/wiki/CommonJS
+[apidocs]: http://nodejs.org/api/
 [express]: http://github.com/visionmedia/express
 [node wiki]: http://wiki.github.com/ry/node/
 
