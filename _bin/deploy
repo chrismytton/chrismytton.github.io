@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
 
+export JEKYLL_ENV=production
 jekyll build
 rsync -avz --delete _site/ chrismytton.uk:/var/www/www.chrismytton.uk
