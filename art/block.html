@@ -1,0 +1,47 @@
+<title>Block</title>
+<style>
+  body {
+    margin: 0
+  }
+</style>
+<a href="" id="save">
+  <canvas id="viewport" width="640" height="480"></canvas>
+</a>
+<script>
+
+viewport.width = document.body.clientWidth;
+viewport.height = document.body.clientHeight;
+
+var ctx = viewport.getContext('2d');
+var width = viewport.width;
+var height = viewport.height;
+
+function random(max) {
+  return Math.floor(Math.random() * max);
+}
+
+var startX = random(width);
+var startY = random(height);
+
+function step(timestamp) {
+  startX += 3;
+  startY += 3;
+  if (startX >= width) {
+    startX = 0;
+  }
+  if (startY >= height) {
+    startY = 0;
+  }
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillRect(startX, startY, 50, 50);
+  requestAnimationFrame(step);
+}
+
+requestAnimationFrame(step);
+
+save.onclick = function() {
+  window.location = viewport.toDataURL('image/png');
+  return false;
+};
+
+</script>
