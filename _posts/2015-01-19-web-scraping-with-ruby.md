@@ -3,7 +3,7 @@ layout: post
 title: Web Scraping with Ruby
 ---
 
-Scraping the web with Ruby is easier than you might think. Let's start with a simple example, I want to get a nicely formatted JSON object representing all the listing for my [local independent cinema][cubecinema].
+Scraping the web with Ruby is easier than you might think. Let's start with a simple example, I want to get a nicely formatted JSON array of objects representing all the showings for my [local independent cinema][cubecinema].
 
 First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, `Net::HTTP`, and it also comes with a nice wrapper around it, `open-uri` [^open-uri]. So the first thing we do is grab the html from the remote server.
 
