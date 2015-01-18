@@ -200,9 +200,12 @@ If you save the above into a file called `scraper.rb` and run it with `ruby scra
 ]
 {% endhighlight %}
 
-And that's it! Scraping the web with ruby really is that simple. You just have to 
+And that's it! This is just a basic example of scraping. Things get a bit more complicated if the site you're scraping requires you to login first, for those instances I recommend looking into [mechanize][], which builds on top of Nokogiri.
+
+Hopefully this introduction to scraping has given you some ideas for data that you want to turn into a more structured format using the scraping techniques described above.
 
 [Nokogiri]: http://www.nokogiri.org/
 [cubecinema]: http://www.cubecinema.com/programme
+[mechanize]: http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html
 
 [^open-uri]: While good for basic tasks like this, open-uri has [some issues](https://bugs.ruby-lang.org/issues/3719) which mean you may want to look elsewhere for an http client to use in production.
