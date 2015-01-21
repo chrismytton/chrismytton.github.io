@@ -2,5 +2,4 @@
 set -e
 
 jekyll build
-htmlproof _site
 rsync -avz --delete _site/ chrismytton.uk:/var/www/html
