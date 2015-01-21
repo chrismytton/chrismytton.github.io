@@ -7,7 +7,8 @@ module Jekyll
       "https://secure.gravatar.com/avatar/#{md5(input)}?s=#{size}"
     end
 
-    private def md5(email)
+    private
+    def md5(email)
       email_address = email ? email.downcase.strip : ''
       Digest::MD5.hexdigest(email_address)
     end
