@@ -3,7 +3,7 @@ layout: post
 title: Raspberry Pi GPIO Hacking
 ---
 
-I've been playing with my [Raspberry Pi starter kit][0] that I got for Christmas today. It comes with a clear plastic case for mounting the Pi onto, but as I've already got a case I'm just using the breadboard and the components that were supplied with the kit. As well as the breadboard the kit includes the following components:
+I've been playing with my [Raspberry Pi starter kit][0] today. It comes with a clear plastic case for mounting the Pi onto, but as I've already got a case I'm just using the breadboard and the components that were supplied with the kit. As well as the breadboard the kit includes the following components:
 
 * 12 &times; LEDs (4 each of Red, Yellow and Green)
 * 12 &times; 330&Omega; resistors (for the LEDs)
