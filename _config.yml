@@ -14,7 +14,7 @@ google_analytics_code: UA-58688654-1
 markdown: kramdown
 permalink: pretty
 timezone: Europe/London
-exclude: ['Gemfile', 'Gemfile.lock']
+exclude: ['Gemfile', 'Gemfile.lock', 'deploy']
 
 gems:
   - jemoji
