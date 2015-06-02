@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
 
-jekyll build
+bundle exec jekyll build
 rsync -avz --delete _site/ chrismytton.uk:/var/www/www.chrismytton.uk
