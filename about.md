@@ -13,4 +13,4 @@ I can often be found [writing code](https://github.com/{{ site.github_username }
 My public key can be [downloaded here](/chrismytton.asc).
 
     pub 4096R/48A1CF7A 2015−06−14 Chris Mytton <chrismytton@gmail.com>
-    Key fingerprint = 033C 80B9 A603 7BA9 5127 B208 219D 8485 48A1 CF7A
+    Key fingerprint = 033C 80B9 A603 7BA9 5127  B208 219D 8485 48A1 CF7A
