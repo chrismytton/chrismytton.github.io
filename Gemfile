@@ -4,4 +4,3 @@ gem 'jekyll'
 gem 'jemoji'
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
-
