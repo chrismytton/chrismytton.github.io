@@ -11,9 +11,10 @@ cloudfront_distribution_config:
   default_cache_behavior:
     min_TTL: <%= 60 * 60 * 24 %>
   aliases:
-    quantity: 1
+    quantity: 2
     items:
-      CNAME: www.chrismytton.uk
+      CNAME0: www.chrismytton.uk
+      CNAME1: chrismytton.uk
 
 cloudfront_invalidate_root: true
 
