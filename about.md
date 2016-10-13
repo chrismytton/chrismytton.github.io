@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+published: false
 ---
 
 My name is **Chris Mytton**, I'm a **Developer** at [mySociety](https://www.mysociety.org/), currently residing in Bristol, UK.
