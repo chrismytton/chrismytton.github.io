@@ -6,12 +6,6 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-2">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -42,6 +36,9 @@
           </li>
           {% endif %}
         </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
         <img class="avatar" src="{{ site.email | to_gravatar }}" width="100" height="100" alt="{{ site.title }}" />
       </div>
 
