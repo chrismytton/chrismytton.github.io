@@ -11,69 +11,69 @@ fingerprint: true
 @import "code";
 
 body {
-    background-color: $grey;
-    color: $dark-grey;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: $grey;
+  color: $dark-grey;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 img {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .container {
-    background-color: $white;
-    max-width: 37.5em;
-    margin: 0 auto;
-    padding: 1em 3em;
-    line-height: 1.5;
+  background-color: $white;
+  max-width: 37.5em;
+  margin: 0 auto;
+  padding: 1em 3em;
+  line-height: 1.5;
 }
 
 .footnotes {
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 1em 0;
-    font-size: 0.8em;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 1em 0;
+  font-size: 0.8em;
 
-    & > ol {
-        padding-left: 1.5em;
-    }
+  & > ol {
+    padding-left: 1.5em;
+  }
 }
 
 .avatar {
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
 
 .logo {
-    font-weight: 200;
-    letter-spacing: 0.0625em;
-    & > a {
-        color: #333;
-        text-decoration: none;
-        margin-left: 0.5em;
-    }
+  font-weight: 200;
+  letter-spacing: 0.0625em;
+  & > a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 0.5em;
+  }
 }
 
 .site-footer {
-    border-top: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 
 .site-content {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .container {
-        padding: 1em 2em;
-    }
+  .container {
+    padding: 1em 2em;
+  }
 
-    .avatar {
-        display: none;
-    }
+  .avatar {
+    display: none;
+  }
 
-    .logo > a {
-        margin: 0;
-    }
+  .logo > a {
+    margin: 0;
+  }
 }
