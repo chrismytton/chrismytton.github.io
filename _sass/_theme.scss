@@ -1,0 +1,62 @@
+$grey: #fcfcfc;
+$dark-grey: #333;
+$light-grey: #ccc;
+$white: #fff;
+$font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$light-grey-border: 1px solid $light-grey;
+
+@mixin circle {
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+}
+
+body {
+  background-color: $grey;
+  color: $dark-grey;
+  font-family: $font-stack;
+}
+
+.container {
+  background-color: $white;
+}
+
+pre, code {
+  background-color: $grey;
+}
+
+.site-footer {
+  border-top: $light-grey-border;
+}
+
+.footnotes {
+  border-top: $light-grey-border;
+  font-size: 0.8em;
+}
+
+.avatar {
+  @include circle;
+  margin-right: 0.5em;
+}
+
+.logo {
+  font-weight: 300;
+  letter-spacing: 0.0625em;
+  color: $dark-grey;
+  text-decoration: none;
+}
+
+pre, code {
+  border: 1px solid #eee;
+}
+
+pre > code {
+  border: 0;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .avatar {
+    display: none;
+  }
+}
