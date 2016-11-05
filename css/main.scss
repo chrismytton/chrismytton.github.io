@@ -4,11 +4,8 @@ fingerprint: true
 ---
 @charset "utf-8";
 
-$grey: #fcfcfc;
-$dark-grey: #333;
-$white: #fff;
-
 // Import partials from `sass_dir` (defaults to `_sass`)
+@import "variables";
 @import "normalize";
 @import "syntax-highlighting";
 @import "code";
