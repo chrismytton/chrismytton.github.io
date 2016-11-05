@@ -8,13 +8,15 @@ fingerprint: true
 @import "normalize";
 @import "syntax-highlighting";
 
+$grey: #fcfcfc;
+
 figure {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #eee;
+    background-color: $grey;
     color: #333;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -27,10 +29,24 @@ body {
     line-height: 1.5;
 }
 
-pre {
-    background-color: #fafafa;
-    padding: 1em;
+pre, code {
+    background-color: $grey;
     overflow-x: scroll;
+    border: 1px solid #eee;
+}
+
+pre {
+    padding: 8px 12px;
+}
+
+code {
+    padding: 1px 3px;
+}
+
+pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 img {
@@ -53,9 +69,9 @@ img {
 }
 
 .site-title {
-    color: #333;
     font-weight: 200;
     & .site-title__link {
+        color: #333;
         text-decoration: none;
         margin-left: 1em;
     }
