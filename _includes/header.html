@@ -1,5 +1,6 @@
 <header class="site-header">
-
-  <h1><a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-
+  <h1 class="site-title">
+    <img class="site-title__avatar avatar" src="{{ site.email | to_gravatar }}" width="100" height="100" alt="{{ site.title }}" />
+    <a class="site-title__link" href="{{ site.baseurl }}/">{{ site.title }}</a>
+  </h1>
 </header>
