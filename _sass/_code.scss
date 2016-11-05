@@ -1,0 +1,23 @@
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+pre, code {
+    background-color: $grey;
+    overflow-x: scroll;
+    border: 1px solid #eee;
+}
+
+pre {
+    padding: 8px 12px;
+    & > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+code {
+    padding: 1px 3px;
+}

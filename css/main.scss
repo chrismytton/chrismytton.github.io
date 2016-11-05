@@ -4,49 +4,19 @@ fingerprint: true
 ---
 @charset "utf-8";
 
+$grey: #fcfcfc;
+$dark-grey: #333;
+$white: #fff;
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "normalize";
 @import "syntax-highlighting";
-
-$grey: #fcfcfc;
-
-figure {
-    margin: 0;
-    padding: 0;
-}
+@import "code";
 
 body {
     background-color: $grey;
-    color: #333;
+    color: $dark-grey;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.container {
-    background-color: #fff;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1em 3em;
-    line-height: 1.5;
-}
-
-pre, code {
-    background-color: $grey;
-    overflow-x: scroll;
-    border: 1px solid #eee;
-}
-
-pre {
-    padding: 8px 12px;
-}
-
-code {
-    padding: 1px 3px;
-}
-
-pre > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
 }
 
 img {
@@ -54,12 +24,23 @@ img {
     vertical-align: middle;
 }
 
+.container {
+    background-color: $white;
+    max-width: 37.5em;
+    margin: 0 auto;
+    padding: 1em 3em;
+    line-height: 1.5;
+}
+
 .footnotes {
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 1em 0;
-    font-size: 0.9em;
-    color: #444;
+    font-size: 0.8em;
+
+    & > ol {
+        padding-left: 1.5em;
+    }
 }
 
 .avatar {
@@ -68,13 +49,13 @@ img {
     -moz-border-radius: 100px;
 }
 
-.site-title {
+.logo {
     font-weight: 200;
-    & .site-title__link {
+    letter-spacing: 0.0625em;
+    & > a {
         color: #333;
         text-decoration: none;
         margin-left: 0.5em;
-        letter-spacing: 3px;
     }
 }
 
@@ -92,11 +73,10 @@ img {
     }
 
     .avatar {
-        width: 50px;
-        height: 50px;
+        display: none;
     }
 
-    .site-title .site-title__link {
-        font-size: 23px;
+    .logo > a {
+        margin: 0;
     }
 }
