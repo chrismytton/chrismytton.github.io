@@ -1,3 +1,5 @@
+$primary: #FFF8E1;
+$accent: #0091EA;
 $grey: #fcfcfc;
 $dark-grey: #333;
 $light-grey: #ccc;
@@ -6,9 +8,17 @@ $font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $light-grey-border: 1px solid $light-grey;
 
 body {
-  background-color: $grey;
+  background-color: $primary;
   color: $dark-grey;
   font-family: $font-stack;
+}
+
+a, a:visited {
+  color: $accent;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .container {
@@ -36,7 +46,7 @@ pre, code {
   }
 }
 
-.logo {
+.logo, .logo:visited, .logo:hover {
   color: $dark-grey;
   font-weight: 300;
   letter-spacing: 0.125rem;
