@@ -2,7 +2,7 @@
 title: Chris Mytton
 email: chrismytton@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a Developer at mySociety, currently working on EveryPolitician. This is my personal blog.
+  I'm a Developer at mySociety. This is my personal blog.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.chrismytton.uk" # the base hostname & protocol for your site
 # twitter_username: chrismytton
