@@ -12,6 +12,8 @@ This post explains how to do some more advanced web scraping using Mechanize, wh
 
 Mechanize provides an out-of-the-box scraping solution that can handle filling in forms, following links and respecting a site's robots.txt file. Here I'll show you how it can be used to scrape the latest reviews from [Pitchfork](http://pitchfork.com/) [^disclaimer].
 
+[^disclaimer]: You should always scrape responsibly. Check out the [Is scraping legal?](https://blog.scraperwiki.com/2012/04/is-scraping-legal/) blog post from ScraperWiki for more discussion on the subject.
+
 Reviews are spread across multiple pages, so we can't simply fetch a single page and parse it with Nokogiri. This is where Mechanize can help with its ability to click on links and follow them to other pages.
 
 ### Setup
@@ -197,5 +199,3 @@ However on reflection the fact that [Mechanize][] handles fetching the remote we
 
 [web-scraping]: {% post_url 2015-01-19-web-scraping-with-ruby %}
 [Mechanize]: http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html
-
-[^disclaimer]: You should always scrape responsibly. Check out the [Is scraping legal?](https://blog.scraperwiki.com/2012/04/is-scraping-legal/) blog post from ScraperWiki for more discussion on the subject.
