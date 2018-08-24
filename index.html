@@ -7,7 +7,7 @@ layout: default
   <header>
     <p>
     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <span class="post-date">{{ post.date | date: "%-d %B %Y" }}</span>
     </p>
   </header>
 </article>
