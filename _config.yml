@@ -15,6 +15,3 @@ timezone: Europe/London
 exclude:
   - Gemfile
   - Gemfile.lock
-  - deploy
-  - s3_website.yml
-  - .gitlab-ci.yml
