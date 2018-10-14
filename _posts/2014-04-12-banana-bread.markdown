@@ -3,7 +3,7 @@ layout: post
 title: Banana Bread
 ---
 
-This recipe is an adaptation of [How to cook perfect banana bread by Felicity Cloake](http://www.theguardian.com/lifeandstyle/wordofmouth/2012/aug/30/how-to-cook-perfect-banana-bread). The original recipe makes great banana bread, but some of the quantities and instructions irk me. This is my slightly edited version so I can refer back to it in the future.
+This recipe is an adaptation of [How to cook perfect banana bread by Felicity Cloake](https://www.theguardian.com/lifeandstyle/wordofmouth/2012/aug/30/how-to-cook-perfect-banana-bread). The original recipe makes great banana bread, but some of the quantities and instructions irk me. This is my slightly edited version so I can refer back to it in the future.
 
 I've changed the amount of butter to be a weight, rather than tablespoons, I've also given the number of bananas as well as the peeled weight. With the instructions I've shuffled the order around a bit and removed the sifting step as I find it doesn't make much difference. Enjoy!
 
