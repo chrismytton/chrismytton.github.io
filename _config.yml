@@ -18,5 +18,14 @@ exclude:
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
+
+# Plugin settings
 feed:
   path: index.xml
+twitter:
+  username: chrismytton
+author:
+  name: Chris Mytton
+  twitter: chrismytton
+lang: en_GB
