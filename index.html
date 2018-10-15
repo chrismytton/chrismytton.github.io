@@ -6,11 +6,11 @@ layout: default
 <article>
   <header>
     <p>
-    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
     <span class="post-date">{{ post.date | date: "%-d %B %Y" }}</span>
     </p>
   </header>
 </article>
 {% endfor %}
 
-<p class="rss-subscribe">subscribe <a href="{{ "/index.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<p class="rss-subscribe">subscribe <a href="{{ "/index.xml" | relative_url }}">via RSS</a></p>
