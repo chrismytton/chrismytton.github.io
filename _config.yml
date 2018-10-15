@@ -15,3 +15,5 @@ exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
+plugins:
+  - jekyll-sitemap
