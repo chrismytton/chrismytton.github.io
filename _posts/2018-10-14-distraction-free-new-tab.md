@@ -1,6 +1,7 @@
 ---
 title: Distraction-free new tab
 layout: post
+image: /img/distraction-free-new-tab.png
 ---
 
 The web is full of distractions: adverts, news, social media, email. It can sometimes be hard to remember why you opened the browser in the first place. Even opening a new tab is distracting. You see bookmarks, a search box and frequently visited sites before you've even begun the task you went on the web for.
