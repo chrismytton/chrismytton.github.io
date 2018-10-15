@@ -17,3 +17,6 @@ exclude:
   - Gemfile.lock
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
+feed:
+  path: index.xml
