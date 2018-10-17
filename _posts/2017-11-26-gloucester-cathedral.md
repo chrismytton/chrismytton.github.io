@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Gloucester Cathedral
+excerpt: Some photos from a recent visit to Gloucester Cathedral.
 ---
 
 [![Outside of Gloucester Cathedral](/photos/gloucester-cathedral-outside.jpg)](/photos/gloucester-cathedral-outside.jpg)
