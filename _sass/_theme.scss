@@ -25,10 +25,6 @@ a, a:visited {
   background-color: $white;
 }
 
-pre, code {
-  background-color: $grey;
-}
-
 .site-footer {
   border-top: $light-grey-border;
 }
@@ -55,6 +51,7 @@ pre, code {
 
 pre, code {
   border: 0.0625rem solid #eee;
+  background-color: $grey;
 }
 
 pre > code {
