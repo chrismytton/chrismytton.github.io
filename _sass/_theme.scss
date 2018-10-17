@@ -80,3 +80,12 @@ blockquote {
   padding-left: 15px;
   color: #555;
 }
+
+.post-preview {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  p {
+    color: #777;
+    font-size: 0.9rem;
+  }
+}

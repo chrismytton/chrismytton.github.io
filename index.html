@@ -3,14 +3,11 @@ layout: default
 ---
 
 {% for post in site.posts %}
-<article>
-  <header>
-    <p>
-    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <span class="post-date">{{ post.date | date: "%-d %B %Y" }}</span>
-    </p>
-  </header>
-</article>
+<div class="post-preview">
+  <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  <span class="post-date">{{ post.date | date: "%-d %B %Y" }}</span>
+  <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+</div>
 {% endfor %}
 
 <p class="rss-subscribe">subscribe <a href="{{ "/index.xml" | relative_url }}">via RSS</a></p>
