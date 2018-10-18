@@ -1,6 +1,6 @@
 $primary: #e8e8e8;
 $accent: #0091EA;
-$grey: #fcfcfc;
+$grey: #f5f9fb;
 $dark-grey: #333;
 $light-grey: #ccc;
 $white: #fff;
@@ -51,13 +51,21 @@ a, a:visited {
 }
 
 pre, code {
-  font-size: 0.9rem;
-  border: 0.0625rem solid #eee;
   background-color: $grey;
 }
 
+pre {
+  font-size: 0.9rem;
+}
+
+code {
+  padding: 0.2rem 0.4rem;
+  font-size: 85%;
+}
+
 pre > code {
-  border: 0;
+  padding: 0;
+  font-size: inherit;
 }
 
 .post-date {
