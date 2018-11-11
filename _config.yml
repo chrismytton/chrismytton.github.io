@@ -11,10 +11,6 @@ username: chrismytton
 markdown: kramdown
 permalink: pretty
 timezone: Europe/London
-exclude:
-  - CNAME
-  - Gemfile
-  - Gemfile.lock
 plugins:
   - jekyll-sitemap
   - jekyll-feed
