@@ -70,7 +70,8 @@ Now you've made the changes to your scraper you can run the code on [morph.io][]
 
 You can then run the scraper and the results should be added to the corresponding sqlite database on morph.io. It should look something like the following:
 
-<img src="{{ "/img/pitchfork_scraper.png" | relative_url }}" alt="Pitchfork scraper output" />
+{% assign image = "/assets/images/pitchfork_scraper.png" | relative_url %}
+[![Screenshot of morph.io output]({{ image }})]({{ image }})
 
 As you can see the data is now available to authorized users as either JSON, CSV or you can download the sqlite database and use that locally.
 

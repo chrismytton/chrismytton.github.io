@@ -1,7 +1,7 @@
 ---
 title: Distraction-free new tab
 layout: post
-image: /img/distraction-free-new-tab.png
+image: /assets/images/distraction-free-new-tab.png
 ---
 
 The web is full of distractions: adverts, news, social media, email. It can sometimes be hard to remember why you opened the browser in the first place. Even opening a new tab is distracting. You see bookmarks, a search box and frequently visited sites before you've even begun the task you went on the web for.
@@ -17,7 +17,7 @@ I tried some of the existing extensions, but they turned out to be _too_ blank. 
 
 There was no alternative, I was going to have to create my own blank new tab extension. As a bonus writing my own extension meant I didn't have to worry about scammers taking over one of the other "blank new tab" extensions and mining bitcoin in my browser. [^1]
 
-[![](/img/distraction-free-new-tab.png)](/img/distraction-free-new-tab.png)
+[![Screenshot of the Chrome Extension in action]({{ page.image | relative_url }})]({{ page.image | relative_url }})
 
 The extension is two lines of HTML and the required `manifest.json` file. The code is open source, so you can review it and check I'm not mining bitcoin in your browser.
 
