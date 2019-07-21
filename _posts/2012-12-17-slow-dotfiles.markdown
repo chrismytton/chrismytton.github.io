@@ -38,8 +38,8 @@ changing my vim configuration a lot more than anything else in the dotfiles.
 
 I made this change on my faster work laptop, which doesn't suffer as much with the
 slow startup. When I got round to pulling the
-changes down to my Air the difference was *very* noticable, new
-shells pop into existance in under a second, like they should.
+changes down to my Air the difference was *very* noticeable, new
+shells pop into existence in under a second, like they should.
 
 It's been 6 months since I made the commit which began the slowdown. I've been putting up with
 slow shell startups for all that time, when actually it only took a
