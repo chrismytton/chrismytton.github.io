@@ -3,12 +3,7 @@
 ---
 @charset "utf-8";
 
-@mixin narrow-screens {
-  @media only screen and (max-width: 480px) { @content; }
-}
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "normalize";
 @import "syntax-highlighting";
-@import "structure";
 @import "theme";
