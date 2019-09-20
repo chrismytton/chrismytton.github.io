@@ -2,12 +2,36 @@
 layout: default
 ---
 
-{% for post in site.posts %}
-<div class="post-preview">
-  <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  <span class="post-date">{{ post.date | date: "%-d %B %Y" }}</span>
-  <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-</div>
+{% for post in paginator.posts %}
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+      <p class="post-date">{{ post.date | date: "%A %-d %B %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
+    </header>
+
+    <div class="post-content">
+      {{ post.content }}
+    </div>
+
+    <hr>
+    <p class="permalink"><a href="{{ post.url | relative_url }}">Permalink</a></p>
+  </article>
 {% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      &larr; Newer posts
+    </a>
+  {% endif %}
+  <span class="page_number">
+    Page {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Older posts &rarr;</a>
+  {% endif %}
+</div>
 
 <p class="rss-subscribe">subscribe <a href="{{ "/index.xml" | relative_url }}">via RSS</a></p>

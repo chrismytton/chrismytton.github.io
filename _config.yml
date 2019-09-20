@@ -16,6 +16,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-avatar
+  - jekyll-paginate
 
 # Plugin settings
 feed:
@@ -26,3 +27,4 @@ author:
   name: Chris Mytton
   twitter: chrismytton
 lang: en_GB
+paginate: 5
