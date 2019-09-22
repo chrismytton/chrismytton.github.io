@@ -139,6 +139,10 @@ blockquote {
   color: lighten($dark-grey, 40%);
 }
 
+.post-content {
+  border-bottom: $light-grey-border;
+}
+
 .post {
   line-height: 1.7;
   margin-bottom: 3em;
