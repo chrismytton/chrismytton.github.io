@@ -13,7 +13,11 @@
     <link rel="icon" href="{{ "/favicon.png" | relative_url }}">
   </head>
 
+{% if page.body_class %}
+  <body class="{{ page.body_class }}">
+{% else %}
   <body>
+{% endif %}
 
     <div class="container">
       <header class="site-header">
