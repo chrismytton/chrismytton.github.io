@@ -1,7 +1,10 @@
 ---
 title: Do things for fun
 layout: post
+image: /assets/images/do-things-for-fun.jpg
 ---
+
+![Artwork by my daughter, 18 months old](/assets/images/do-things-for-fun.jpg)
 
 > A life well lived requires activities that serve no other purpose than the satisfaction that the activity itself generates.
 >
