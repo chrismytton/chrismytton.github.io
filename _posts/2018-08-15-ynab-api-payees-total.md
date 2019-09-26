@@ -1,6 +1,7 @@
 ---
 title: "YNAB API: Get total amount paid to each payee"
 layout: post
+tags: [programming]
 ---
 
 I created this little shell pipeline to help me see the total amount given to or received from people and companies using my data in [YNAB](https://www.youneedabudget.com/).

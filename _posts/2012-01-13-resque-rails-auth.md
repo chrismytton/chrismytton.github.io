@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: [programming]
 ---
 
 Recently I found myself wanting to access the resque-web ui on a live

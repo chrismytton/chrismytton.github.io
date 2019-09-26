@@ -1,6 +1,7 @@
 ---
 title: Test Driven Development Lifecycle
 layout: post
+tags: [programming]
 ---
 
 Start at the top level with a user requirement. This will ensure that you are trying to solve the right problem in the first place.

@@ -1,6 +1,7 @@
 ---
 title: In Ruby, &#35;find_all and &#35;select are different (for Hashes)
 layout: post
+tags: [programming]
 ---
 
 In Ruby, [`Hash#select` returns a `Hash`](http://ruby-doc.org/core-2.3.1/Hash.html#method-i-select) whereas [`Hash#find_all` returns an `Array`](http://ruby-doc.org/core-2.3.1/Enumerable.html#method-i-find_all).

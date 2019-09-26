@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Advanced web scraping with Mechanize
+tags: [programming, scraping]
 ---
 
 In my last post I gave a basic [introduction to web scraping with Ruby and Nokogiri][web-scraping]. At the end of that post I mentioned that for more "advanced" scraping Mechanize was worth looking into.

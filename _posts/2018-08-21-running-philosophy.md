@@ -2,6 +2,7 @@
 title: Running philosophy
 layout: post
 image: https://source.unsplash.com/V62UrdknDCA
+tags: [running]
 ---
 
 You’ve got to slow down if you want to go further.

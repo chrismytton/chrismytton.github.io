@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Slow dotfiles
+tags: [programming]
 ---
 
 For a while now my shell has been taking a *very* long time to start up. It

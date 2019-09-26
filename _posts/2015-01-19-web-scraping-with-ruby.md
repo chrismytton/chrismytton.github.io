@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Web Scraping with Ruby
+tags: [programming, scraping]
 ---
 
 **Update Jan 22**: Check out the next post in this series: [Advanced web scraping with Mechanize]({% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}).

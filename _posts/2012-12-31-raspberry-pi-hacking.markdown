@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Raspberry Pi GPIO Hacking
+tags: [hardware, programming]
 ---
 
 I've been playing with my [Raspberry Pi starter kit][0] today. It comes with a clear plastic case for mounting the Pi onto, but as I've already got a case I'm just using the breadboard and the components that were supplied with the kit. As well as the breadboard the kit includes the following components:

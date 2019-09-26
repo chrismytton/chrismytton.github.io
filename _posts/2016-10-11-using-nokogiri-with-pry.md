@@ -1,6 +1,7 @@
 ---
 title: Using nokogiri with pry
 layout: post
+tags: [programming]
 ---
 
 I wanted a quick way to run some XPath selectors against a web page today. [Nokogiri](http://www.nokogiri.org/) comes with a command line tool that you can pass a url and it will drop you into an IRB session. This allows you to play around with some Ruby code to explore a webpage before scraping it.

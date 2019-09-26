@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Banana Bread
+tags: [food]
 ---
 
 My minimal banana bread recipe. This is very much at the bread end of the bread/cake spectrum, it's not very sweet other than the sweetness from the banana. If you want more sweetness then you can add some sugar, soft brown if possible, up to 100g added after the butter. Recipe can be used as a base and then added to, for example after mixing in the flour you could add a handful of walnuts or raisins, some cinnamon, vanilla essence, honey, peanut butter etc, anything that might go with banana really!

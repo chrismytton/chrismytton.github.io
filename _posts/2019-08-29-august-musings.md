@@ -1,6 +1,7 @@
 ---
 layout: post
 title: August musings
+tags: [books, cricket]
 ---
 
 We had a bank holiday in the UK on Monday and the weather has been lovely, so I've been outdoors harvesting vegetables. Our courgettes have done really well this year. I think putting them in the ground and underplanting them with white clover has helped the nitrogen levels in the soil, which means the plants are big and have lush green leaves.

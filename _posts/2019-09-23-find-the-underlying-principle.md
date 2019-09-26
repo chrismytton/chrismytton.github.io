@@ -1,6 +1,7 @@
 ---
 title: Find the underlying principle
 layout: post
+tags: [life, creativity]
 ---
 
 Steve Jobs on problem solving[^1]:

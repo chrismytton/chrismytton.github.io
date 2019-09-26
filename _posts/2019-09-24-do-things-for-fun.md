@@ -2,6 +2,7 @@
 title: Do things for fun
 layout: post
 image: /assets/images/do-things-for-fun.jpg
+tags: [life]
 ---
 
 ![Artwork by my daughter, 18 months old](/assets/images/do-things-for-fun.jpg)

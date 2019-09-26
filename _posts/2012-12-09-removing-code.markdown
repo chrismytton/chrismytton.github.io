@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Removing code
+tags: [programming]
 ---
 
 > If we wish to count lines of code, we should

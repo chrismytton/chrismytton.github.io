@@ -2,6 +2,7 @@
 title: An introduction to node.js
 layout: post
 excerpt: I've only just got round to doing some coding with Ryan Dahl's great node.js project, although the project has been around for about a year now, so I've put together this short introduction to give you a taste of what node is about.
+tags: [programming]
 ---
 
 [node.js]: http://nodejs.org/

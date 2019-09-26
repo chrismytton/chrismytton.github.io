@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Just start
+tags: [life, productivity]
 ---
 
 Often when I'm stuck on a task I'll start procrastinating. I'll go and empty the dishwasher, do some gardening, or read a book to avoid working on it. Most often this is because I have a rough idea of what needs to be done, but I know there are parts that I'm uncertain about, or I know the task will be a bit painful or annoying to complete.

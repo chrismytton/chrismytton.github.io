@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Web scraping with morph.io
+tags: [programming, scraping]
 ---
 
 If you've followed along my previous two blog posts, [Web Scraping with Ruby]({% post_url 2015-01-19-web-scraping-with-ruby %}) and [Advanced web scraping with Mechanize]({% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}) then you'll now have the knowledge needed to write a basic web scraper for getting structured data from the web.

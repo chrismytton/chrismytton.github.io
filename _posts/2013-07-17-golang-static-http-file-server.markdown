@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Static http file server in Go
+tags: [programming]
 ---
 
 [Go][0] is a great language for building network based applications. It comes

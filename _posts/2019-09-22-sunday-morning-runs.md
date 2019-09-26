@@ -2,6 +2,7 @@
 title: Sunday morning runs
 layout: post
 image: /assets/dowdeswell-reservoir.jpg
+tags: [running]
 ---
 
 ![Dowdeswell Reservoir on a misty Sunday morning in September](/assets/dowdeswell-reservoir.jpg)
