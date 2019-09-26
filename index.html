@@ -1,6 +1,5 @@
 ---
 layout: default
-body_class: home
 ---
 
 {% for post in paginator.posts %}
@@ -14,6 +13,8 @@ body_class: home
     <div class="post-content">
       {{ post.content }}
     </div>
+
+    {% include post_tags.html tags=post.tags %}
 
     <p class="permalink"><a href="{{ post.url | relative_url }}">Permalink</a></p>
   </article>

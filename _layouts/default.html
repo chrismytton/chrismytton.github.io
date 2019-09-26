@@ -13,11 +13,7 @@
     <link rel="icon" href="{{ "/favicon.png" | relative_url }}">
   </head>
 
-{% if page.body_class %}
-  <body class="{{ page.body_class }}">
-{% else %}
   <body>
-{% endif %}
 
     <div class="container">
       <header class="site-header">
@@ -36,6 +32,7 @@
       <h3><a class="logo" href="{{ "/" | relative_url }}">{{ site.title }}</a></h3>
       <p>
         <a href="{{ "/archive/" | relative_url }}">Archive</a> &middot;
+        <a href="{{ "/tags/" | relative_url }}">Tags</a> &middot;
         <a href="mailto:{{ site.email }}">Email</a> &middot;
         <a href="https://github.com/{{ site.username }}">GitHub</a> &middot;
         <a href="https://twitter.com/{{ site.username }}">Twitter</a>

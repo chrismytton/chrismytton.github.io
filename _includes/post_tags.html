@@ -1,0 +1,11 @@
+{% if include.tags %}
+{% assign tags = include.tags | sort %}
+<div class="post-tags">
+  <p>
+    Tagged:
+    {% for tag in tags %}
+    <a href="{{ "/tags/" | relative_url }}#{{ tag }}">#{{ tag }}</a>
+    {% endfor %}
+  </p>
+</div>
+{% endif %}
