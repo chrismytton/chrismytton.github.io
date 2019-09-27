@@ -2,7 +2,7 @@
 title: Sunflowers
 layout: post
 image: /assets/images/sunflowers.jpg
-tags: [gardening]
+tags: [gardening, nature]
 ---
 
 I'm really pleased with how our sunflowers have turned out this year. They've grown about 2m tall and each plant has multiple flowers on it. This picture shows one of the three plants that we've got dotted around our garden.
