@@ -3,7 +3,6 @@ $accent: rgb(55, 110, 194);
 $grey: #f5f9fb;
 $dark-grey: #333;
 $light-grey: #ccc;
-$white: #fff;
 $sans-serif-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif-font: Georgia, Times, "Times New Roman", serif;
 $light-grey-border: 1px solid $light-grey;
@@ -42,10 +41,7 @@ code {
   line-height: 1.5;
   margin: 0 auto;
   max-width: 36rem;
-  padding: 1rem 3rem;
-  @include narrow-screens {
-    padding: 1rem;
-  }
+  padding: 0 1rem;
 }
 
 .footnotes {
@@ -56,7 +52,7 @@ code {
 }
 
 body {
-  background-color: $primary;
+  background-color: #fff;
   color: $dark-grey;
   font-family: $serif-font;
 }
@@ -67,10 +63,6 @@ a, a:visited {
   &:hover {
     text-decoration: underline;
   }
-}
-
-.container {
-  background-color: $white;
 }
 
 .site-footer {
