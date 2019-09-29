@@ -13,13 +13,13 @@ This is a summary of the books I've been reading, as well as a selection of arti
 
 This book is about taking a more purposeful approach to our use of digital devices and services.
 
-Turns out some of my existing habits, like not having social media on my phone and using Do Not Disturb mode by default, were already quite Digital Minimalist in their approach. This book helped me finesse some of the things I was already doing, but also added loads of other habits and practices to try, as well as wrapping up the whole concept into a philosophy that I can point others towards.
+Turns out some of my existing habits, like not having social media on my phone and using Do Not Disturb mode by default, were already quite Digital Minimalist in their approach. This book helped me finesse some of the things I was already doing, but also added many of other habits and practices to try, as well as wrapping up the whole concept into a philosophy that I can point others towards.
 
-There are loads of great ideas in this book and I'm already planning a second read in the near future to help me properly digest the books key points. I think this is essential reading for anyone who checks their smartphone more than they'd like to.
+There are loads of great ideas in this book and I'm already planning a second read in the near future to help me properly digest the book's key points. I think this is essential reading for anyone who checks their smartphone more than they'd like to.
 
 **[The Hidden Life of Trees](https://www.goodreads.com/book/show/28256439-the-hidden-life-of-trees) by Peter Wohlleben**
 
-I started reading this on the train to Edinburgh a couple of weeks ago. It's a facinating insight into how forests work, how trees communicate and many other wonderful tree facts. It's written in a very approachable way, and makes the whole subject seem infinitely interesting. Looking forward to finishing this one.
+I started reading this on the train to Edinburgh a couple of weeks ago. It's a fascinating insight into how forests work, how trees communicate and many other wonderful tree facts. It's written in a very approachable way, and makes the whole subject seem infinitely interesting. Looking forward to finishing this one.
 
 **[Steal Like an Artist](https://austinkleon.com/steal/) and [Show Your Work!](https://austinkleon.com/show-your-work/) by Austin Kleon**
 
@@ -45,13 +45,13 @@ Saw a beautiful print of this poem on the wall of a toilet last week and decided
 
 **[Chutneys For Relishing (1996)](https://www.independent.co.uk/arts-entertainment/chutneys-for-relishing-1310363.html)**
 
-Came across this while writing yesterdays post about [chutney]({% post_url 2019-09-28-chutney %}). I didn't realise that what I consider "traditional" chutney was actually a realtively recent invention trying to mimic the fresh chutneys in India.
+Came across this while writing yesterdays post about [chutney]({% post_url 2019-09-28-chutney %}). I didn't realise that what I consider "traditional" chutney was actually a relatively recent invention trying to mimic the fresh chutneys in India.
 
 > Those who ate [chutney] back in Britain soon became addicted. There being no mangoes, tamarind or limes, English cooks did their best with apples, onions and vinegar, adding dried fruit such as sultanas, raisins and dates, and even marrow (spiked with ginger powder) to mimic ginger preserves.
 
 **[Eight tips for burning wood](https://jotul.com/int/guides/eight-tips-for-burning-wood)**
 
-We've recently had a woodburner installed, so I've been re-kindling my interest in fires.
+We've recently had a wood-burner installed, so I've been re-kindling my interest in fires.
 
 ## Programming
 
