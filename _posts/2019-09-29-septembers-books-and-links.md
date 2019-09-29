@@ -2,7 +2,7 @@
 title: September's books and links
 layout: post
 image: /assets/images/stormy-day.jpg
-tags: [books, creativity, productivity]
+tags: [books, creativity, productivity, programming]
 ---
 
 This is a summary of the books I've been reading, as well as a selection of articles and web pages that I've found interesting or useful this month.
