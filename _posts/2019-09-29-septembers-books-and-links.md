@@ -23,7 +23,7 @@ I started reading this on the train to Edinburgh a couple of weeks ago. It's a f
 
 **[Steal Like an Artist](https://austinkleon.com/steal/) and [Show Your Work!](https://austinkleon.com/show-your-work/) by Austin Kleon**
 
-I re-read both of these this month. Both are excellent and inspiring books that I highly recommend any vaguely creative people reading. They're quite small, you can read them both in a few hours, but they're jam-packed with advice on finding inspiration, sharing the work you create, and sustaining creativity. These two books are actually part of a trilogy, the third book of which is called "Keep Going". I haven't got a copy of that yet but it's on my wishlist. Austin's [blog](https://austinkleon.com) is an fantastic source of inspiration on art and writing, he really practices what he preaches.
+I re-read both of these this month. Both are excellent and inspiring books that I highly recommend any vaguely creative people reading. They're quite small, you can read them both in a few hours, but they're jam-packed with advice on finding inspiration, sharing the work you create, and sustaining creativity. These two books are actually part of a trilogy, the third book of which is called "Keep Going". I haven't got a copy of that yet but it's on my wishlist. Austin's [blog](https://austinkleon.com) is a fantastic source of inspiring art and writing, he really practices what he preaches.
 
 ## Links
 
