@@ -5,7 +5,7 @@ image: /assets/images/stormy-day.jpg
 tags: [books, creativity, productivity]
 ---
 
-This is a summary of the books I've been reading, as well as a selection of article and web pages that I've found interesting or useful this month.
+This is a summary of the books I've been reading, as well as a selection of articles and web pages that I've found interesting or useful this month.
 
 ## Books
 
