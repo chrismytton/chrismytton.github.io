@@ -45,7 +45,7 @@ Saw a beautiful print of this poem on the wall of a toilet last week and decided
 
 **[Chutneys For Relishing (1996)](https://www.independent.co.uk/arts-entertainment/chutneys-for-relishing-1310363.html)**
 
-Came across this while writing yesterdays post about [chutney]({% post_url 2019-09-28-chutney %}). I didn't realise that what I consider "traditional" chutney was actually a relatively recent invention trying to mimic the fresh chutneys in India.
+Came across this while writing yesterday's post about [chutney]({% post_url 2019-09-28-chutney %}). I didn't realise that what I consider "traditional" chutney was actually a relatively recent invention trying to mimic the fresh chutneys in India.
 
 > Those who ate [chutney] back in Britain soon became addicted. There being no mangoes, tamarind or limes, English cooks did their best with apples, onions and vinegar, adding dried fruit such as sultanas, raisins and dates, and even marrow (spiked with ginger powder) to mimic ginger preserves.
 
