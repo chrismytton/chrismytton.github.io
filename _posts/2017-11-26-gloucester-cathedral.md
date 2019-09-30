@@ -2,7 +2,7 @@
 layout: post
 title: Gloucester Cathedral
 excerpt: Some photos from a recent visit to Gloucester Cathedral.
-tags: [travel]
+tags: [life]
 ---
 
 [![Outside of Gloucester Cathedral](/assets/images/gloucester-cathedral-outside.jpg)](/assets/images/gloucester-cathedral-outside.jpg)

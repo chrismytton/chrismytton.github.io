@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Restaurant review: The Looking Glass, Cheltenham"
-tags: [food, restaurants]
+tags: [food]
 ---
 
 It’s still surprisingly hard to find restaurants that serve organic food. So I was delighted to discover The Looking Glass in Cheltenham not only does organic food but they also make everything in-house and they're open for breakfast.
