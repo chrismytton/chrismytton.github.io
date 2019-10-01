@@ -9,6 +9,6 @@ tags: [life]
 
 From ["I Used to Fear Being a Nobody. Then I Left Social Media."](https://www.nytimes.com/2019/10/01/opinion/quit-social-media.html) by Bianca Vivion Brooks.
 
-In one sense we're more connected than ever. Social media allow us to connect instantly to other minds all over the world. But social media has been engineered to be addictive, so we end up spending increasing amounts of time using it.
+In one sense we're more connected than ever. Social media allows us to connect instantly to other minds all over the world. But social media has been engineered to be addictive, so we end up spending increasing amounts of time using it.
 
 But this extra time that we're spending on social media is time we're not spending socialising to people in real life. Humans are social animals, but socialising digitally doesn't compare to the real-world equivalent.
