@@ -17,6 +17,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-avatar
   - jekyll-paginate
+exclude: [README.md, CNAME, Gemfile, Gemfile.lock]
 
 # Plugin settings
 feed:
