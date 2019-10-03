@@ -11,7 +11,7 @@ tags: [life, nature]
 >
 > -- Henry David Thoreau
 
-I enjoy chopping wood, it gives me an excuse to get out in the fresh air, and depending on how much I chop it can also be a pretty good workout.
+I enjoy chopping wood, it gives me an excuse to get out in the fresh air, and depending on how much I chop it can be a pretty good workout.
 
 There's also something rather therapeutic about chopping wood. It requires a decent amount of concentration, so my mind doesn't have time to wander, yet it combines just the right amount of challenge and repetition to get into a state of flow.
 
