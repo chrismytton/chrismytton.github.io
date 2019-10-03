@@ -13,6 +13,6 @@ tags: [life, nature]
 
 I enjoy chopping wood, it gives me an excuse to get out in the fresh air, and depending on how much I chop it can be a pretty good workout.
 
-There's also something rather therapeutic about chopping wood. It requires a decent amount of concentration, so my mind doesn't have time to wander, yet it combines just the right amount of challenge and repetition to get into a state of flow.
+There's also something quite therapeutic about squaring up to the chopping block with an axe. It requires a decent amount of concentration, so my mind doesn't have time to wander, yet it combines just the right amount of challenge and repetition to get into a state of flow.
 
 I think 30 minutes spent chopping wood is as good for your brain as 30 minutes spent meditating.
