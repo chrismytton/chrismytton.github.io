@@ -5,7 +5,7 @@ image: /assets/images/allotment-sunflowers.jpg
 tags: [programming]
 ---
 
-When writing a program it's common to have two distinct types of method name, verbs and nouns. The verb methods have names like `generate` or `launch`, and the noun methods have names like `quarterly_sales_statistics` or `current_altitude`.
+When writing a program it's common to have two distinct types of method, verbs and nouns. The verb methods have names like `generate` or `launch`, and the noun methods have names like `quarterly_sales_statistics` or `current_altitude`.
 
 In verb methods we're giving a command to perform an action, which is probably changing the state of our program in some way. In the noun methods we're querying the state of our program, and we expect some return value from these methods.
 
