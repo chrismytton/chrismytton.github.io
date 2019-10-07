@@ -1,11 +1,11 @@
 ---
 title: Sunday morning runs
 layout: post
-image: /assets/dowdeswell-reservoir.jpg
+image: /assets/images/dowdeswell-reservoir.jpg
 tags: [running]
 ---
 
-![Dowdeswell Reservoir on a misty Sunday morning in September](/assets/dowdeswell-reservoir.jpg)
+![Dowdeswell Reservoir on a misty Sunday morning in September](/assets/images/dowdeswell-reservoir.jpg)
 
 I find it incredibly theraputic going for a run early on a Sunday morning. I like to go out just as the sun is rising, around 7am this time of year, but before the roads are filled with cars, noise and pollution.
 
