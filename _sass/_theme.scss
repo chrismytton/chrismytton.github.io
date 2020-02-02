@@ -170,3 +170,40 @@ h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  $whiteish: #e4e4e4;
+  $blackish: #444;
+
+  body {
+    background-color: $blackish;
+    color: $whiteish;
+  }
+
+  a, a:visited {
+    color: lighten($accent, 10%);
+  }
+
+  img {
+    filter: grayscale(30%);
+  }
+
+  .logo, .logo:visited, .logo:hover {
+    color: $whiteish;
+  }
+
+  .post-title a {
+    color: $whiteish;
+    &:hover {
+      color: darken($whiteish, 20%);
+    }
+  }
+
+  blockquote {
+    color: darken($whiteish, 10%);
+  }
+
+  pre, code {
+    background-color: #555;
+  }
+}
