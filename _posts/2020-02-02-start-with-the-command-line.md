@@ -3,6 +3,7 @@ title: Start with the command line
 layout: post
 tags: software
 image: /assets/images/command-line.png
+date: 2020-02-02 07:00:00
 ---
 
 ![Screenshot of the iTerm terminal emulator with zsh prompt](/assets/images/command-line.png)
