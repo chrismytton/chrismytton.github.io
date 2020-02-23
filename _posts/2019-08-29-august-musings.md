@@ -16,7 +16,7 @@ I'm reading [Digital Minimalism](http://www.calnewport.com/books/digital-minimal
 
 ## Gut facts
 
-I read [Gut: The Inside Story of Our Body’s Most Underrated Organ](https://www.goodreads.com/book/show/23013953-gut) by Giulia Enders earlier this month. It's a fascinating look at the internal workings of something we use every day but probably don't give much thought to, our gut. Here are some interesting facts I learned while reading it:
+I read [Gut: The Inside Story of Our Body's Most Underrated Organ](https://www.goodreads.com/book/show/23013953-gut) by Giulia Enders earlier this month. It's a fascinating look at the internal workings of something we use every day but probably don't give much thought to, our gut. Here are some interesting facts I learned while reading it:
 
 - Squatting results in better bowel movements than sitting. You can help your bowel movements by leaning forward slightly and putting your feet on a small footstool.
 - Alcohol can multiply the number of gas-producing bacteria by a factor of up to a thousand.

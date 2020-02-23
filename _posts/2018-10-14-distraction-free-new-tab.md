@@ -24,4 +24,4 @@ The extension is two lines of HTML and the required `manifest.json` file. The co
 
 Get the code [on GitHub](https://github.com/chrismytton/blanktab) and enjoy a less distracting web.
 
-[^1]: "Do you use a popular browser extension? How confident are you that the creator wouldn’t accept a $10k offer to hand it over only to have it then go rogue on you?" [@troyhunt on Twitter](https://twitter.com/troyhunt/status/1037457241840877568)
+[^1]: "Do you use a popular browser extension? How confident are you that the creator wouldn't accept a $10k offer to hand it over only to have it then go rogue on you?" [@troyhunt on Twitter](https://twitter.com/troyhunt/status/1037457241840877568)
