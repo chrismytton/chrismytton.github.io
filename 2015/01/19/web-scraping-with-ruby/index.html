@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Web Scraping with Ruby</h1>
+    <p class="post-date">Monday 19 January 2015</p>
+  </header>
+
+  <div class="post-content">
+    
+<p><strong>Update Jan 22</strong>: Check out the next post in this series: <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}">Advanced web scraping with Mechanize</a>.</p>
+
+<p>Scraping the web with Ruby is easier than you might think. Let’s start with a simple example, I want to get a nicely formatted JSON array of objects representing all the showings for my <a href="http://www.cubecinema.com/programme">local independent cinema</a>.</p>
+
+<p>First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, <code class="highlighter-rouge">Net::HTTP</code>, and it also comes with a nice wrapper around it, <code class="highlighter-rouge">open-uri</code> <sup id="fnref:open-uri"><a href="#fn:open-uri" class="footnote">1</a></sup>. So the first thing we do is grab the html from the remote server.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'open-uri'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://www.cubecinema.com/programme'</span>
+<span class="n">html</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Great, so we’ve got the page that we want to scrape, now we need to extract some information from it. The best tool for this job is <a href="http://www.nokogiri.org/">Nokogiri</a>. So we create a new Nokogiri instance using the html we just scraped.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'nokogiri'</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Nokogiri is great because it allows us to query the html using CSS selectors, which, in my opinion, is much simpler than using xpath.</p>
+
+<p>Ok, now we’ve got a document that we can query for the cinema listings. Each individual listing’s html structure is something like the following.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"showing"</span> <span class="na">id=</span><span class="s">"event_7557"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/programme/event/live-stand-up-monty-python-and-the-holy-grail,7557/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/media/diary/thumbnails/montypython2_1.png.500x300_q85_background-%23FFFFFF_crop-smart.jpg"</span> <span class="na">alt=</span><span class="s">"Picture for event Live stand up + Monty Python and the Holy Grail"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tags"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/programme/view/comedy/"</span> <span class="na">class=</span><span class="s">"tag_comedy"</span><span class="nt">&gt;</span>comedy<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/programme/view/dvd/"</span> <span class="na">class=</span><span class="s">"tag_dvd"</span><span class="nt">&gt;</span>dvd<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/programme/view/film/"</span> <span class="na">class=</span><span class="s">"tag_film"</span><span class="nt">&gt;</span>film<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/programme/event/live-stand-up-monty-python-and-the-holy-grail,7557/"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"pre_title"</span><span class="nt">&gt;</span>Comedy Combo presents<span class="nt">&lt;/span&gt;</span>
+      Live stand up + Monty Python and the Holy Grail
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"post_title"</span><span class="nt">&gt;</span>Rare screening from 35mm!<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"event_details"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"start_and_pricing"</span><span class="nt">&gt;</span>
+      Sat 20 December | 19:30
+      <span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"copy"</span><span class="nt">&gt;</span>Brave (and not so brave) Knights of the Round Table! Gain shelter from the vicious chicken of Bristol as we gather to bear witness to this 100% factually accurate retelling ... [<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"more"</span> <span class="na">href=</span><span class="s">"/programme/event/live-stand-up-monty-python-and-the-holy-grail,7557/"</span><span class="nt">&gt;</span>more...<span class="nt">&lt;/a&gt;</span>]<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="processing-the-html">Processing the html</h2>
+
+<p>Each showing has the class <code class="highlighter-rouge">.showing</code>, so we can select all the showings on the page and loop over them, processing each one in turn.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">showings</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.showing'</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">showing</span><span class="o">|</span>
+  <span class="n">showing_id</span> <span class="o">=</span> <span class="n">showing</span><span class="p">[</span><span class="s1">'id'</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">).</span><span class="nf">last</span><span class="p">.</span><span class="nf">to_i</span>
+  <span class="n">tags</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.tags a'</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">tag</span><span class="o">|</span> <span class="n">tag</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span> <span class="p">}</span>
+  <span class="n">title_el</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'h1 a'</span><span class="p">)</span>
+  <span class="n">title_el</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">c</span><span class="p">.</span><span class="nf">remove</span> <span class="k">if</span> <span class="n">c</span><span class="p">.</span><span class="nf">name</span> <span class="o">==</span> <span class="s1">'span'</span> <span class="p">}</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">title_el</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span>
+  <span class="n">dates</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.start_and_pricing'</span><span class="p">).</span><span class="nf">inner_html</span><span class="p">.</span><span class="nf">strip</span>
+  <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'&lt;br&gt;'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="no">DateTime</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.copy'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'[more...]'</span><span class="p">,</span> <span class="s1">''</span><span class="p">).</span><span class="nf">strip</span>
+  <span class="n">showings</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="n">showing_id</span><span class="p">,</span>
+    <span class="ss">title: </span><span class="n">title</span><span class="p">,</span>
+    <span class="ss">tags: </span><span class="n">tags</span><span class="p">,</span>
+    <span class="ss">dates: </span><span class="n">dates</span><span class="p">,</span>
+    <span class="ss">description: </span><span class="n">description</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Lets break down the code above and see what each part is doing.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">showing_id</span> <span class="o">=</span> <span class="n">showing</span><span class="p">[</span><span class="s1">'id'</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">).</span><span class="nf">last</span><span class="p">.</span><span class="nf">to_i</span>
+</code></pre></div></div>
+
+<p>First we get the showing’s unique id, which is helpfully exposed as part of the html id attribute in the markup. Using square brackets allows us to access attributes of the element, so using the html above as an example the return value of <code class="highlighter-rouge">showing['id']</code> would be <code class="highlighter-rouge">"event_7557"</code>. We’re only interested in the integer id, so we split the resulting string on the underscore, <code class="highlighter-rouge">.split('_')</code> and then take the last element from that array and convert it to an integer, <code class="highlighter-rouge">.last.to_i</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.tags a'</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">tag</span><span class="o">|</span> <span class="n">tag</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we find all the tags for a showing by using the <code class="highlighter-rouge">.css</code> method, which returns an array of matching elements. We then map these elements and take the text content and strip it of any excess whitespace. For the html above this would return <code class="highlighter-rouge">["comedy", "dvd", "film"]</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">title_el</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'h1 a'</span><span class="p">)</span>
+<span class="n">title_el</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">c</span><span class="p">.</span><span class="nf">remove</span> <span class="k">if</span> <span class="n">c</span><span class="p">.</span><span class="nf">name</span> <span class="o">==</span> <span class="s1">'span'</span> <span class="p">}</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">title_el</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span>
+</code></pre></div></div>
+
+<p>The code to get the title is a bit more involved because the title element in the html contains some extra spans with a prefix and a suffix. First we get the title element using <code class="highlighter-rouge">.at_css</code>, which returns a single matching element. Then we loop over the children of the title element and remove any spans. Finally with the spans gone we get the text of the title element and strip out any excess whitespace.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dates</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.start_and_pricing'</span><span class="p">).</span><span class="nf">inner_html</span><span class="p">.</span><span class="nf">strip</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'&lt;br&gt;'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="no">DateTime</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is the code for getting the date and time of a showing. It’s a bit involved because a showing can be on multiple days, and sometimes there is also pricing information in the same element. We’re mapping the dates that we find to <code class="highlighter-rouge">DateTime.parse</code> so that the result is an array of ruby <code class="highlighter-rouge">DateTime</code> objects.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">description</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.copy'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'[more...]'</span><span class="p">,</span> <span class="s1">''</span><span class="p">).</span><span class="nf">strip</span>
+</code></pre></div></div>
+
+<p>Getting the description is quite straightforward, the only real processing we have to do is remove the <code class="highlighter-rouge">[more...]</code> text using <code class="highlighter-rouge">.gsub</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">showings</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="n">showing_id</span><span class="p">,</span>
+    <span class="ss">title: </span><span class="n">title</span><span class="p">,</span>
+    <span class="ss">tags: </span><span class="n">tags</span><span class="p">,</span>
+    <span class="ss">dates: </span><span class="n">dates</span><span class="p">,</span>
+    <span class="ss">description: </span><span class="n">description</span>
+  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>With all the bits of the showing that we want in variables we can now push a hash representing the showing into our array of showings.</p>
+
+<h2 id="output-json">Output JSON</h2>
+
+<p>Now we’ve processed each showing and we’ve got an array of showings we can convert the result to JSON.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="nb">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span><span class="p">(</span><span class="n">showings</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This prints out the JSON encoded version of the showings, when running the script the output can be redirected to a file, or piped into another program for further processing.</p>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>With all the pieces in place we can now put the full version of the script together.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'open-uri'</span>
+<span class="nb">require</span> <span class="s1">'nokogiri'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://www.cubecinema.com/programme'</span>
+<span class="n">html</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">showings</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.showing'</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">showing</span><span class="o">|</span>
+  <span class="n">showing_id</span> <span class="o">=</span> <span class="n">showing</span><span class="p">[</span><span class="s1">'id'</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">).</span><span class="nf">last</span><span class="p">.</span><span class="nf">to_i</span>
+  <span class="n">tags</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.tags a'</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">tag</span><span class="o">|</span> <span class="n">tag</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span> <span class="p">}</span>
+  <span class="n">title_el</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'h1 a'</span><span class="p">)</span>
+  <span class="n">title_el</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">c</span><span class="p">.</span><span class="nf">remove</span> <span class="k">if</span> <span class="n">c</span><span class="p">.</span><span class="nf">name</span> <span class="o">==</span> <span class="s1">'span'</span> <span class="p">}</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">title_el</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span>
+  <span class="n">dates</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.start_and_pricing'</span><span class="p">).</span><span class="nf">inner_html</span><span class="p">.</span><span class="nf">strip</span>
+  <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'&lt;br&gt;'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="no">DateTime</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.copy'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'[more...]'</span><span class="p">,</span> <span class="s1">''</span><span class="p">).</span><span class="nf">strip</span>
+  <span class="n">showings</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span>
+    <span class="ss">id: </span><span class="n">showing_id</span><span class="p">,</span>
+    <span class="ss">title: </span><span class="n">title</span><span class="p">,</span>
+    <span class="ss">tags: </span><span class="n">tags</span><span class="p">,</span>
+    <span class="ss">dates: </span><span class="n">dates</span><span class="p">,</span>
+    <span class="ss">description: </span><span class="n">description</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span><span class="p">(</span><span class="n">showings</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If you save the above into a file called <code class="highlighter-rouge">scraper.rb</code> and run it with <code class="highlighter-rouge">ruby scraper.rb</code> then you should see the JSON representation of the events printed to stdout. It will look something like the following.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7686</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harry Dean Stanton - Partly Fiction"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"dcp"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"film"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ttt"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"2015-01-19T20:00:00+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2015-01-20T20:00:00+00:00"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A mesmerizing, impressionistic portrait of the iconic actor in his intimate moments, with film clips from some of his 250 films and his own heart-breaking renditions of American folk songs. ..."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7519</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bang the Bore Audiovisual Spectacle: VA AA LR + Stephen Cornford + Seth Cooke"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"music"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"2015-01-21T20:00:00+00:00"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An evening of hacked TVs, 4 screen cinematic drone and electroacoustics. VAAALR: Vasco Alves, Adam Asnan and Louie Rice create spectacles using distress flares, C02 and junk electronics. Stephen Cornford: ..."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>And that’s it! This is just a basic example of scraping. Things get a bit more complicated if the site you’re scraping requires you to login first, for those instances I recommend looking into <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">mechanize</a>, which builds on top of Nokogiri.</p>
+
+<p>Hopefully this introduction to scraping has given you some ideas for data that you want to turn into a more structured format using the scraping techniques described above.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:open-uri">
+      <p>While good for basic tasks like this, open-uri has <a href="https://bugs.ruby-lang.org/issues/3719">some issues</a> which mean you may want to look elsewhere for an http client to use in production. <a href="#fnref:open-uri" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+      <a href="/tags/#scraping">#scraping</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

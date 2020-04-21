@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Test Driven Development Lifecycle</h1>
+    <p class="post-date">Tuesday 22 March 2011</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>Start at the top level with a user requirement. This will ensure that you are trying to solve the right problem in the first place.</p>
+
+<h2 id="cucumber--steak">Cucumber / Steak</h2>
+
+<p>Write a simple high level requirement in cucumber or steak. For example
+if you were writing an api and you wanted to allow people to post
+activity.</p>
+
+<p>First you would write out the requirement in plain english.</p>
+
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Creating activity
+  As an activity producer
+  I want to post activity to the api
+  In order to share it with the world
+
+  <span class="kn">Scenario</span><span class="p">:</span> POST to /activity
+    <span class="nf">Given </span>I am an authorized activity producer
+    <span class="nf">When </span>I post some activity
+    <span class="nf">Then </span>I should receive a 200 success status
+</code></pre></div></div>
+
+<p>This defines the high level picture of what the application aims to
+achieve. From this point the next step is to write some steps to
+properly test that the features are working.</p>
+
+<p>Obviously the features won’t be working yet, because that’s not how
+test/behaviour/real-world driven development works. If you start writing
+code before you really know what you are building, then it is likely
+that you will at some point, perhaps without realising, implement the
+wrong feature. More likely though, being that smart martin that you
+are, you will implement the correct feature, but unwittingly leave a bug
+in it. No harm, you say, bugs happen in software and it’s probably only
+one line of code that needs changing. But if the bug doesn’t manifest
+itself for a few days, weeks, months, then it will take an ever
+increasing amount of time for you to track it down. Then once you have
+isolated it, you have to ensure it won’t happen again.</p>
+
+<p>This all comes down to testing. If you can easily run a bank of tests
+that confirm that your application is behaving at night you will,
+infact, sleep better at night. For some this is reason enough to write
+tests, but wait, there’s more. If you have a comprehensive collection of
+tests you can use to verify that your application is working correctly,
+then you are in a very good position to do some refactoring. No more
+worrying if you’ve broken some seemingly unrelated piece of
+functionality when you make a change to the application.</p>
+
+<h2 id="controller-tests">Controller tests</h2>
+
+<p>The next layer down the stack is the controller, this makes sense, since
+this is the layer that manages incoming requests. So after writing the
+initial acceptance test in a high level language, then implementing the
+steps necessary to test this logic in a slightly lower level language,
+you now drop down to a relativly granular level. This is where you start
+to stub out the main functionality of the application. So in the case of
+our activity example above, you would at this stage be stubbing out the
+functionality of the models, and just dealong with the way that
+controllers handle requests.</p>
+
+<p>This layer may be preceeded by another, slightly higher level one in
+which the routing for the application is set up, however this is quite a
+web application specific area.</p>
+
+<h2 id="model-tests">Model tests</h2>
+
+<p>The model tests are the core of the testing universe, they are very
+small, low level details about the various methods that a model
+provides.</p>
+
+<p>The model tests are the most important tests, as they contain the
+business logic for your application. But they are often also the easiest
+tests to write. This is because a lot of the time you will be dealing
+with primitive data types. No external services to worry about. This is
+a good reason to push as much logic into the model as possible, it is
+far easier to test this that it is to put it in your controller then try
+to stub it out.</p>
+
+<h2 id="other-tests">Other tests</h2>
+
+<p>All of this testing malarkey is great and everything, but sometimes you
+have got to just use the product to uncover random bugs, but don’t
+worry, that’s not to say we can’t still use testing to help us. Instead
+of jumping right in and fixing that bug like a good boy scout
+hacker, write a failing test that reproduces the bug. This test may
+exists as (m)any layer(s) of the test stack. Often you will need to
+write a test in the acceptance layer to perform the same interaction
+that caused the bug, then once that has caught the bug, go down the
+layers and write tests for the code paths that the bug touches, these
+failing tests will then (all going to plan) be green once you have fixed
+the bug, and as a billy bonus you’ve got yourself another test or two
+that will ensure many good nights sleep in the future.</p>
+
+<h2 id="final-thoughts">Final thoughts</h2>
+
+<p>The testing pattern of development is still not used as a default
+development technique. Many (most) tutorials you find out there will
+focus on the functionality that they are trying to tutor you on, but a
+vital part of implementing any functionality is to ensure a long
+lifespan by testing it thoroughly.</p>
+
+<p>Testing will seem like a chore at first, but once you get the hang of
+it, the whole process becomes a pattern, that if followed with a small
+bit of dicipline, will lead you to enlightenment, it will allow you to
+model your ideas with more structure with the tools available.</p>
+
+<p>In many ways it’s like learning a new language, with more languages, you
+see more ways of doing things. With testing, you’ll see new ways to
+express your applications logic using high level language.</p>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

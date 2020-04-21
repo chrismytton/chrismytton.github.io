@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Command-query separation principle</h1>
+    <p class="post-date">Monday 7 October 2019</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>When writing a program it’s common to have two distinct types of method, verbs and nouns. The verb methods have names like <code class="highlighter-rouge">generate</code> or <code class="highlighter-rouge">launch</code>, and the noun methods have names like <code class="highlighter-rouge">quarterly_sales_statistics</code> or <code class="highlighter-rouge">current_altitude</code>.</p>
+
+<p>In verb methods we’re giving a command to perform an action, which is probably changing the state of our program in some way. In the noun methods we’re querying the state of our program, and we expect some return value from these methods.</p>
+
+<p>The “Command-query separation” principle<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> says that all methods in a program should either be commands (verbs), which change state but don’t return data, or queries (nouns), which return data but don’t change state, but not both.</p>
+
+<p>So if you spot any methods in your programs with verb-like names, and those methods are returning data that’s used elsewhere in the program, then this is a potential red flag. These methods can be split up so that the part that returns data is moved into a method that has a noun-like name, which can then be called by the verb method.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://en.wikipedia.org/wiki/Command-query_separation">Command-query separation on Wikipedia</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

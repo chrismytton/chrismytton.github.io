@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">An introduction to node.js</h1>
+    <p class="post-date">Sunday 14 February 2010</p>
+  </header>
+
+  <div class="post-content">
+    
+<blockquote>
+  <p><strong>Update</strong>: The node.js api is in constant flux until it reaches a 1.0 release. The code in this post doesn’t work with the latest releases of node (it was written for the 0.1.3x series), however the concept is still the same. The best place to start is the <a href="http://nodejs.org/api/">node.js api docs</a>.</p>
+</blockquote>
+
+<p>I’ve only just got round to doing some coding with <a href="http://tinyclouds.org/">Ryan Dahl’s</a> great <a href="http://nodejs.org/">node.js</a> project, although the project has been
+around for about a year now, so I’ve put together this short introduction to give you a taste of what node is about.</p>
+
+<p>The project is under heavy development, and the api is still changing quite regularly, but don’t let that scare you off, node is stable and usable now.</p>
+
+<p>For those that don’t know, <a href="http://nodejs.org/">node.js</a> is a project that brings javascript to the server and into the realm of PHP and Ruby. However with node there is one big difference. It is based around the concept of events, just like in the browser, javascript waits for events to be fired, then invokes the function that has been attached to the event.</p>
+
+<p>Node uses this to it’s full advantage, most operations that you perform in node will have a callback associated with it, this means that node doesn’t have to wait while it’s completing some time-consuming task, it can go about serving other requests, then when the event is fired it can go back and execute the function attached to the event. This leads to very fast response times when using node as a web server, as it can handle thousands of requests per second.</p>
+
+<p>The program can be installed easily on OS X (using <a href="http://github.com/mxcl/homebrew">Homebrew</a> or compile from <a href="http://github.com/ry/node">source</a>) and Linux (compile from
+<a href="http://github.com/ry/node">source</a>), Windows support is planned in the future, but is currently non-existent. Once installed you have access to a
+command line utility, <code class="highlighter-rouge">node</code>, this runs .js files through the node interpreter.</p>
+
+<p>A basic node hello world program could look like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">sys</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">function</span> <span class="nx">sayHello</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">!</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="nx">sys</span><span class="p">.</span><span class="nx">puts</span><span class="p">(</span><span class="nx">sayHello</span><span class="p">(</span><span class="dl">'</span><span class="s1">World</span><span class="dl">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>save this into a file and then run it from the command line like so:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node hello.js
+Hello World!
+</code></pre></div></div>
+
+<p>As you can see it’s just javascript syntax, just like you would use in a browser, but the first difference the astute reader will
+have noticed is the require() statement. This is built into node and conforms to the <a href="https://en.wikipedia.org/wiki/CommonJS">CommonJS</a> Module specification. This
+version of require is slightly different from one you might see in Ruby or PHP, it actually returns an object which you can assign
+to a variable, or use directly:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">sys</span><span class="dl">'</span><span class="p">).</span><span class="nx">puts</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World!</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Each module is a self contained unit of code, it has its own private scope, so can define functions to use internally, then expose public functions to be used externally using the exports object. Here’s an example of a simple module:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">add</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+  <span class="p">},</span>
+  <span class="na">subtract</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span>
+  <span class="p">},</span>
+  <span class="na">multiply</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span>
+  <span class="p">},</span>
+  <span class="na">divide</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">process</span><span class="p">.</span><span class="nx">mixin</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="nx">calculator</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The last line may seem a little strange, but all it does is extend the exports object with the properties defined in the calculator object, if that line wasn’t there then the module wouldn’t return anything as it wouldn’t export anything. To use our new (rather basic) module we’d do something like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Assuming that calc.js is in the same dir as this file</span>
+<span class="kd">var</span> <span class="nx">calc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./calc</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="c1">// Now we can use the calc object to do calculations, joy!</span>
+<span class="kd">var</span> <span class="nx">ten</span> <span class="o">=</span> <span class="nx">calc</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">calc</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This overview barely scratches the surface of what is possible with node.js, the <a href="http://nodejs.org/api/">api documentation</a> contains all you need to know about node, and it is all on one (albeit rather long) page, so once you’ve read through it you should have a pretty good idea how you’d go about coding for it.</p>
+
+<p>There are already some very interesting projects using node available to try. A quick glance at the <a href="http://wiki.github.com/ry/node/">node wiki</a> will give you a glimpse of what is possible with this fantastic new technology, as well as some more background information on the project.</p>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

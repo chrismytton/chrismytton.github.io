@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Advanced web scraping with Mechanize</h1>
+    <p class="post-date">Thursday 22 January 2015</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>In my last post I gave a basic <a href="{% post_url 2015-01-19-web-scraping-with-ruby %}">introduction to web scraping with Ruby and Nokogiri</a>. At the end of that post I mentioned that for more “advanced” scraping Mechanize was worth looking into.</p>
+
+<p>This post explains how to do some more advanced web scraping using Mechanize, which builds on top of Nokogiri’s excellent HTML processing support.</p>
+
+<h2 id="scraping-pitchfork-reviews">Scraping Pitchfork reviews</h2>
+
+<p>Mechanize provides an out-of-the-box scraping solution that can handle filling in forms, following links and respecting a site’s robots.txt file. Here I’ll show you how it can be used to scrape the latest reviews from <a href="http://pitchfork.com/">Pitchfork</a> <sup id="fnref:disclaimer"><a href="#fn:disclaimer" class="footnote">1</a></sup>.</p>
+
+<p>Reviews are spread across multiple pages, so we can’t simply fetch a single page and parse it with Nokogiri. This is where Mechanize can help with its ability to click on links and follow them to other pages.</p>
+
+<h3 id="setup">Setup</h3>
+
+<p>First we’ll need to install <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">Mechanize</a> and its dependencies from Rubygems.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install mechanize
+</code></pre></div></div>
+
+<p>With Mechanize installed we can now start writing our scraper. Create a file called <code class="highlighter-rouge">scraper.rb</code> and add the following <code class="highlighter-rouge">require</code> statements. These specify the dependencies we need for this script. <code class="highlighter-rouge">date</code> and <code class="highlighter-rouge">json</code> are part of Ruby’s standard library, so there’s no need to install them separately.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mechanize'</span>
+<span class="nb">require</span> <span class="s1">'date'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+</code></pre></div></div>
+
+<p>Now we can start using Mechanize. First thing we need to do is create a new instance of Mechanize (<code class="highlighter-rouge">agent</code>) and then use it to fetch a remote webpage (<code class="highlighter-rouge">page</code>).</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="no">Mechanize</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://pitchfork.com/reviews/albums/"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="find-links-to-reviews">Find links to reviews</h3>
+
+<p>Now we can use the <code class="highlighter-rouge">page</code> object to find links to reviews. Mechanize provides a <code class="highlighter-rouge">.links_with</code> method which, as the name suggests, finds links with the given attributes. Here we look for links which match a regular expression.</p>
+
+<p>This returns an array of links, but we only want links to reviews, not pagination. To remove unwanted links we can call <code class="highlighter-rouge">.reject</code> on the array of links and reject any which look like pagination links.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="p">)</span>
+
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">reject</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+  <span class="n">parent_classes</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">node</span><span class="p">.</span><span class="nf">parent</span><span class="p">[</span><span class="s1">'class'</span><span class="p">].</span><span class="nf">split</span>
+  <span class="n">parent_classes</span><span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="sx">%w[next-container page-number]</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>For the purposes of demonstration—and so we don’t completely hammer Pitchfork’s server’s—we’ll just take the first four review links.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">review_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="process-each-review">Process each review</h3>
+
+<p>We now have a list of Mechanize links which we want to map to the reviews that they link to. Since they’re in an array we can call <code class="highlighter-rouge">.map</code> on it and return a hash from each iteration.</p>
+
+<p>The Mechanize <code class="highlighter-rouge">page</code> object has a <code class="highlighter-rouge">.search</code> method which delegates to Nokogiri’s <code class="highlighter-rouge">.search</code> method. This means that we can use a CSS selector as an argument to <code class="highlighter-rouge">.search</code> and it will return an array of matching elements.</p>
+
+<p>Here we first get the review metadata using the CSS selector <code class="highlighter-rouge">#main .review-meta .info</code> and then search inside the <code class="highlighter-rouge">review_meta</code> element for the various bits of information that we need.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reviews</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+  <span class="n">review</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">click</span>
+  <span class="n">review_meta</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'#main .review-meta .info'</span><span class="p">)</span>
+  <span class="n">artist</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
+  <span class="n">album</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h2'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
+  <span class="n">label</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h3'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">)</span>
+  <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h4 address'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
+  <span class="n">review_date</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.pub-date'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">)</span>
+  <span class="n">score</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.score'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">to_f</span>
+  <span class="p">{</span>
+    <span class="ss">artist: </span><span class="n">artist</span><span class="p">,</span>
+    <span class="ss">album: </span><span class="n">album</span><span class="p">,</span>
+    <span class="ss">label: </span><span class="n">label</span><span class="p">,</span>
+    <span class="ss">year: </span><span class="n">year</span><span class="p">,</span>
+    <span class="ss">reviewer: </span><span class="n">reviewer</span><span class="p">,</span>
+    <span class="ss">review_date: </span><span class="n">review_date</span><span class="p">,</span>
+    <span class="ss">score: </span><span class="n">score</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Now we’ve got an array of review hashes we can output the reviews in JSON format.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span><span class="p">(</span><span class="n">reviews</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="all-together-now">All together now</h3>
+
+<p>Here’s the whole script:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mechanize'</span>
+<span class="nb">require</span> <span class="s1">'date'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">agent</span> <span class="o">=</span> <span class="no">Mechanize</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://pitchfork.com/reviews/albums/"</span><span class="p">)</span>
+
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="p">)</span>
+
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">reject</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+  <span class="n">parent_classes</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">node</span><span class="p">.</span><span class="nf">parent</span><span class="p">[</span><span class="s1">'class'</span><span class="p">].</span><span class="nf">split</span>
+  <span class="n">parent_classes</span><span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="sx">%w[next-container page-number]</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">reviews</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+  <span class="n">review</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">click</span>
+  <span class="n">review_meta</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'#main .review-meta .info'</span><span class="p">)</span>
+  <span class="n">artist</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
+  <span class="n">album</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h2'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
+  <span class="n">label</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h3'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">)</span>
+  <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h4 address'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
+  <span class="n">review_date</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.pub-date'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">)</span>
+  <span class="n">score</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.score'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">to_f</span>
+  <span class="p">{</span>
+    <span class="ss">artist: </span><span class="n">artist</span><span class="p">,</span>
+    <span class="ss">album: </span><span class="n">album</span><span class="p">,</span>
+    <span class="ss">label: </span><span class="n">label</span><span class="p">,</span>
+    <span class="ss">year: </span><span class="n">year</span><span class="p">,</span>
+    <span class="ss">reviewer: </span><span class="n">reviewer</span><span class="p">,</span>
+    <span class="ss">review_date: </span><span class="n">review_date</span><span class="p">,</span>
+    <span class="ss">score: </span><span class="n">score</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span><span class="p">(</span><span class="n">reviews</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Put this code in a file called <code class="highlighter-rouge">scraper.rb</code> and run it with the following.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby scraper.rb
+</code></pre></div></div>
+
+<p>And it should output something like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Viet Cong"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Viet Cong"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jagjaguwar"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reviewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ian Cohen"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"review_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.5</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lupe Fiasco"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tetsuo &amp; Youth"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atlantic / 1st and 15th"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reviewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jayson Greene"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"review_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Go-Betweens"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G Stands for Go-Betweens: Volume 1, 1978-1984"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domino"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reviewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Douglas Wolk"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"review_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Sidekicks"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Runners in the Nerved World"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Epitaph"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reviewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ian Cohen"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"review_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.4</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If you want, you can save this JSON to a file by redirecting standard out to a file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby scraper.rb &gt; reviews.json
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This only scratches the surface of Mechanize. One thing I haven’t even touched on is it’s ability to fill in and submit forms. If you’re interested in learning more then I recommend you look at the <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">Mechanize guide</a> and <a href="http://docs.seattlerb.org/mechanize/EXAMPLES_rdoc.html">Mechanize examples</a>.</p>
+
+<p>A lot of people commented that my <a href="{% post_url 2015-01-19-web-scraping-with-ruby %}">previous post</a> should have just used Mechanize from the off. While I agree that Mechanize is a great tool, for simple tasks like the one I presented, at the time it seemed to me like a bit of an overkill.</p>
+
+<p>However on reflection the fact that <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">Mechanize</a> handles fetching the remote webpage and respects robots.txt files makes me think that, even for non-advanced scraping tasks, Mechanize will often be the best tool for the job.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:disclaimer">
+      <p>You should always scrape responsibly. Check out the <a href="https://blog.scraperwiki.com/2012/04/is-scraping-legal/">Is scraping legal?</a> blog post from ScraperWiki for more discussion on the subject. <a href="#fnref:disclaimer" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+      <a href="/tags/#scraping">#scraping</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

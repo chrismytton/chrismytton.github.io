@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">YNAB API: Get total amount paid to each payee</h1>
+    <p class="post-date">Wednesday 15 August 2018</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>I created this little shell pipeline to help me see the total amount given to or received from people and companies using my data in <a href="https://www.youneedabudget.com/">YNAB</a>.</p>
+
+<p>I used the new <a href="https://api.youneedabudget.com/">YNAB API</a>, <a href="https://stedolan.github.io/jq/">jq</a> and <a href="https://harelba.github.io/q/">q</a> to get a CSV out. It’s not perfect as it includes the “Transfer: Bank Account” payees, but it’s good enough for my purposes.</p>
+
+<p>First set an access token in the environment.  You can get an access token from <a href="https://app.youneedabudget.com/settings/developer">https://app.youneedabudget.com/settings/developer</a>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">YNAB_ACCESS_TOKEN</span><span class="o">=</span><span class="s1">'...'</span>
+</code></pre></div></div>
+
+<p>Then you can run the pipeline, which <em>should</em> default to your last-used budget. This outputs a CSV where the first column is the payee name and the second column is the total amount paid to that payee (if negative) or received from that payee (if positive).</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$YNAB_ACCESS_TOKEN</span><span class="s2">"</span> https://api.youneedabudget.com/v1/budgets/last-used/transactions <span class="se">\</span>
+  | jq <span class="nt">-r</span> <span class="s1">'.data.transactions | .[] | [.payee_name,.amount] | @csv'</span> <span class="se">\</span>
+  | q <span class="nt">-d</span>, <span class="s1">'select c1, sum(c2)/1000.0 as total from - group by c1 order by total'</span>
+</code></pre></div></div>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Using nokogiri with pry</h1>
+    <p class="post-date">Tuesday 11 October 2016</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>I wanted a quick way to run some XPath selectors against a web page today. <a href="http://www.nokogiri.org/">Nokogiri</a> comes with a command line tool that you can pass a url and it will drop you into an IRB session. This allows you to play around with some Ruby code to explore a webpage before scraping it.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nokogiri http://example.com
+</code></pre></div></div>
+
+<p>This is useful, but I wanted to use it with <a href="http://pryrepl.org/">Pry</a>. It turns out that adding support for Pry is relatively easy, but I couldn’t find any clear top to bottom instructions, so I’ve documented the process below.</p>
+
+<p>First install Nokogiri and Pry:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install nokogiri pry
+</code></pre></div></div>
+
+<p>Then add the following code to <code class="highlighter-rouge">~/.nokogirirc</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'pry'</span>
+<span class="no">Nokogiri</span><span class="o">::</span><span class="no">CLI</span><span class="p">.</span><span class="nf">console</span> <span class="o">=</span> <span class="no">Pry</span>
+</code></pre></div></div>
+
+<p>That’s it! Now when you use the <code class="highlighter-rouge">nokogiri</code> command line tool it will now drop you into a pry REPL. This is perfect for testing your CSS and XPath selectors when you’re <a href="https://www.chrismytton.uk/2015/01/19/web-scraping-with-ruby/">writing a scraper</a>.</p>
+
+<noscript>
+<a href="https://asciinema.org/a/88853" target="_blank"><img src="https://asciinema.org/a/88853.png" /></a>
+</noscript>
+<script type="text/javascript" src="https://asciinema.org/a/88853.js" id="asciicast-88853" async=""></script>
+
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

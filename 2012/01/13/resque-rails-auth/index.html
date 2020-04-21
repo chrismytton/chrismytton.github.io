@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Resque Rails Auth</h1>
+    <p class="post-date">Friday 13 January 2012</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>Recently I found myself wanting to access the resque-web ui on a live
+application. I had considered just running resque-web as a separate process,
+but after reading <a href="http://blog.kiskolabs.com/post/776939029/rails3-resque-devise">this article</a>
+I realised that I could mount resque directly in the router, awesome!</p>
+
+<p>However, the application doesn’t use devise for authentication, so I wanted an
+easy way to restrict resque-web to admins.</p>
+
+<p>Using rails 3 router’s <a href="http://guides.rubyonrails.org/routing.html#advanced-constraints">advanced constraints</a>
+you can pass a <code class="highlighter-rouge">:constraints</code> options with an object that responds to
+<code class="highlighter-rouge">matches?</code> and receives the current request as an argument.</p>
+
+<p>Since the current user’s id is stored in the session, we can simply
+retrieve the user and check if they’re an admin.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdminRestriction</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">matches?</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s1">'rack.session'</span><span class="p">][</span><span class="ss">:user_id</span><span class="p">]</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_id</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">user</span> <span class="o">&amp;&amp;</span> <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">MyApplication</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">mount</span> <span class="no">Resque</span><span class="o">::</span><span class="no">Server</span> <span class="o">=&gt;</span> <span class="s1">'/resque'</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="no">AdminRestriction</span>
+  <span class="c1"># Other application routes.</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">AdminRestriction</code> class performs the actual checks, in the router
+it is simply passed as a constraint.</p>
+
+<p>First we pull the <code class="highlighter-rouge">user_id</code> out of the session, then we attempt to get
+the user from the database. Finally we check that we’ve found a user and
+that they are an admin.</p>
+
+<p>If the user tries to access <code class="highlighter-rouge">/resque</code> and they are not an admin, they
+simply get a 404 error.</p>
+
+<p>This technique can be used with any rack application, or indeed with any
+regular route, just pass a <code class="highlighter-rouge">:constraints</code> option (see the
+<a href="http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Base.html#method-i-match">match method docs</a>),
+and the constraints that you apply can use any part of the request to decide if
+it matches. You can restrict access by ip address, or do routing based
+on the request’s geolocation.</p>
+
+<p>The possibilities are endless.</p>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>

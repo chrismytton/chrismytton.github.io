@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Mytton</title>
+    <!-- START SEO -->
+    <meta property="og:title" content="Chris Mytton" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Chris Mytton" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+    <!-- END SEO -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Web scraping with morph.io</h1>
+    <p class="post-date">Friday 6 February 2015</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>If you’ve followed along my previous two blog posts, <a href="{% post_url 2015-01-19-web-scraping-with-ruby %}">Web Scraping with Ruby</a> and <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}">Advanced web scraping with Mechanize</a> then you’ll now have the knowledge needed to write a basic web scraper for getting structured data from the web.</p>
+
+<p>The next logical step is to actually run these scrapers regularly so you can get information that’s constantly up-to-date. This is where the excellent <a href="https://morph.io/">morph.io</a> from the talented folks at <a href="https://www.openaustraliafoundation.org.au/">OpenAustralia</a> comes into play.</p>
+
+<p>Morph.io bills itself as “A Heroku for Scrapers”.  You can choose to either run your scrapers manually, or have them run automatically for you every day. Then you can use the morph.io API to extract the data for use in your application as JSON, CSV or you can download a sqlite database containing the scraped data.</p>
+
+<p>Morph.io fills the gap that <a href="https://classic.scraperwiki.com/">Scraperwiki Classic</a> left. Morph.io scrapers are hosted on GitHub, which means you can fork them and fix them if they break in the future.</p>
+
+<h2 id="creating-a-scraper">Creating a scraper</h2>
+
+<p>We’ll use the code from the <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}#all-together-now">Pitchfork Scraper</a> in my previous post to demonstrate how easy it is to get your scraper running on morph.io.</p>
+
+<p>You can sign into morph.io with a GitHub account. Once signed in you can then <a href="https://morph.io/scrapers/new">create a scraper</a>. Currently morph.io supports scrapers written in Ruby, PHP, Python or Perl, choose a language and give your scraper a name, I’m calling mine <code class="highlighter-rouge">pitchfork_scraper</code>. Then press the “Create Scraper” button to create a new GitHub repository containing skeleton code for a scraper in your chosen language.</p>
+
+<p>Clone the repository that was created in the previous step, in my case I can use the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/chrismytton/pitchfork_scraper
+</code></pre></div></div>
+
+<p>The repository will contain a <code class="highlighter-rouge">README.md</code> and a <code class="highlighter-rouge">scraper.rb</code> file.</p>
+
+<p>Morph.io expects two things from your scraper. First the scraper repository should contain a <code class="highlighter-rouge">scraper.rb</code> file for Ruby scrapers <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, second the scraper itself should write to a sqlite3 database file called <code class="highlighter-rouge">data.sqlite</code>. In order to change this in our scraper we need to make a small change so it writes to a database rather than to JSON on STDOUT.</p>
+
+<p>First add the <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}#all-together-now">code from the previous post</a> into <code class="highlighter-rouge">scraper.rb</code>, then you can change the code to use the <code class="highlighter-rouge">scraperwiki</code> gem to write to the sqlite database.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/scraper.rb b/scraper.rb
+index 2d2baaa..f8b14d6 100644
+</span><span class="gd">--- a/scraper.rb
+</span><span class="gi">+++ b/scraper.rb
+</span><span class="p">@@ -1,6 +1,8 @@</span>
+ require 'mechanize'
+ require 'date'
+<span class="gd">-require 'json'
+</span><span class="gi">+require 'scraperwiki'
++
++ScraperWiki.config = { db: 'data.sqlite', default_table_name: 'data' }
+</span>
+ agent = Mechanize.new
+ page = agent.get("http://pitchfork.com/reviews/albums/")
+<span class="p">@@ -34,4 +36,6 @@</span> reviews = review_links.map do |link|
+   }
+ end
+
+-puts JSON.pretty_generate(reviews)
+<span class="gi">+reviews.each do |review|
++  ScraperWiki.save_sqlite([:artist, :album], review)
++end
+</span></code></pre></div></div>
+
+<p>This uses the <code class="highlighter-rouge">ScraperWiki.save_sqlite</code> method to save the review in the database. The first argument is the list of fields that in combination should be considered unique. In this case we’re using the artist and album, since it’s unlikely that an artist would release two albums with the same name.</p>
+
+<p>You’ll need to install the Ruby <code class="highlighter-rouge">scraperwiki</code> gem in addition to the other dependencies to run this code locally.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install scraperwiki
+</code></pre></div></div>
+
+<p>Then you can run this code on your local machine with the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scraper.rb
+</code></pre></div></div>
+
+<p>This will create a new file in the current directory called <code class="highlighter-rouge">data.sqlite</code> which will contain the scraped data.</p>
+
+<h2 id="running-the-scraper-on-morphio">Running the scraper on morph.io</h2>
+
+<p>Now you’ve made the changes to your scraper you can run the code on <a href="https://morph.io/">morph.io</a>. First commit your changes using <code class="highlighter-rouge">git</code>. Then <code class="highlighter-rouge">git push</code> the changes to the scrapers GitHub repository.</p>
+
+<p>You can then run the scraper and the results should be added to the corresponding sqlite database on morph.io. It should look something like the following:</p>
+
+<p><img src="/assets/images/pitchfork_scraper.png" alt="Screenshot of morph.io output" /></p>
+
+<p>As you can see the data is now available to authorized users as either JSON, CSV or you can download the sqlite database and use that locally.</p>
+
+<p>The code for the scraper is <a href="https://github.com/chrismytton/pitchfork_scraper">available on GitHub</a>. You can see the output from the scraper on morph.io <a href="https://morph.io/chrismytton/pitchfork_scraper">morph.io/chrismytton/pitchfork_scraper</a>. Note that you’ll need to sign in with GitHub in order to access and manipulate the data over the API.</p>
+
+<p>This article should give you enough background to start hosting your scrapers on <a href="https://morph.io/">morph.io</a>. In my opinion it’s an awesome service that takes the hassle out of running and maintaining scrapers and leaves you to concentrate on the unique parts of your application.</p>
+
+<p>Go forth and get structured data out of the web!</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Alternatively <code class="highlighter-rouge">scraper.py</code> for Python, <code class="highlighter-rouge">scraper.php</code> for PHP or <code class="highlighter-rouge">scraper.pl</code> for Perl <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+      <a href="/tags/#scraping">#scraping</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a> &middot;
+        <a href="mailto:chrismytton@gmail.com">Email</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a> &middot;
+        <a href="https://twitter.com/chrismytton">Twitter</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>
