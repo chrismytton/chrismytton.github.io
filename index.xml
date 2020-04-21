@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en_GB" />
-  <updated>2020-04-21T20:44:20+00:00</updated>
+  <updated>2020-04-21T20:58:28+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Developer at mySociety. This is my personal website.</subtitle>
@@ -12,8 +12,8 @@
   </author>
   
   <entry>
-    <title type="html">{Potential social benefits of the coronavirus pandemic}</title>
-    <link href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/" rel="alternate" type="text/html" title="{Potential social benefits of the coronavirus pandemic}" />
+    <title type="html">Potential social benefits of the coronavirus pandemic</title>
+    <link href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/" rel="alternate" type="text/html" title="Potential social benefits of the coronavirus pandemic" />
     <published>2020-03-24 20:50:07 +0000</published>
     <updated>2020-03-24 20:50:07 +0000</updated>
     <id>/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/</id>
@@ -94,8 +94,8 @@
   </entry>
   
   <entry>
-    <title type="html">{Working from home tips}</title>
-    <link href="/2020/03/11/working-from-home/" rel="alternate" type="text/html" title="{Working from home tips}" />
+    <title type="html">Working from home tips</title>
+    <link href="/2020/03/11/working-from-home/" rel="alternate" type="text/html" title="Working from home tips" />
     <published>2020-03-11 20:24:41 +0000</published>
     <updated>2020-03-11 20:24:41 +0000</updated>
     <id>/2020/03/11/working-from-home/</id>
@@ -152,8 +152,8 @@
   </entry>
   
   <entry>
-    <title type="html">{FiraCode}</title>
-    <link href="/2020/03/01/fira-code/" rel="alternate" type="text/html" title="{FiraCode}" />
+    <title type="html">FiraCode</title>
+    <link href="/2020/03/01/fira-code/" rel="alternate" type="text/html" title="FiraCode" />
     <published>2020-03-01 20:20:19 +0000</published>
     <updated>2020-03-01 20:20:19 +0000</updated>
     <id>/2020/03/01/fira-code/</id>
@@ -177,8 +177,8 @@
   </entry>
   
   <entry>
-    <title type="html">{Ruby's Time vs DateTime classes}</title>
-    <link href="/2020/02/18/ruby-time-vs-datetime/" rel="alternate" type="text/html" title="{Ruby's Time vs DateTime classes}" />
+    <title type="html">Ruby's Time vs DateTime classes</title>
+    <link href="/2020/02/18/ruby-time-vs-datetime/" rel="alternate" type="text/html" title="Ruby's Time vs DateTime classes" />
     <published>2020-02-18 00:00:00 +0000</published>
     <updated>2020-02-18 00:00:00 +0000</updated>
     <id>/2020/02/18/ruby-time-vs-datetime/</id>
@@ -258,8 +258,8 @@ shakespeare + 366 + 365
   </entry>
   
   <entry>
-    <title type="html">{It gets easier}</title>
-    <link href="/2020/02/17/it-gets-easier/" rel="alternate" type="text/html" title="{It gets easier}" />
+    <title type="html">It gets easier</title>
+    <link href="/2020/02/17/it-gets-easier/" rel="alternate" type="text/html" title="It gets easier" />
     <published>2020-02-17 00:00:00 +0000</published>
     <updated>2020-02-17 00:00:00 +0000</updated>
     <id>/2020/02/17/it-gets-easier/</id>
@@ -291,8 +291,8 @@ shakespeare + 366 + 365
   </entry>
   
   <entry>
-    <title type="html">{Early wild garlic}</title>
-    <link href="/2020/02/02/early-wild-garlic/" rel="alternate" type="text/html" title="{Early wild garlic}" />
+    <title type="html">Early wild garlic</title>
+    <link href="/2020/02/02/early-wild-garlic/" rel="alternate" type="text/html" title="Early wild garlic" />
     <published>2020-02-02 07:30:00 +0000</published>
     <updated>2020-02-02 07:30:00 +0000</updated>
     <id>/2020/02/02/early-wild-garlic/</id>
@@ -321,8 +321,8 @@ shakespeare + 366 + 365
   </entry>
   
   <entry>
-    <title type="html">{Start with the command line}</title>
-    <link href="/2020/02/02/start-with-the-command-line/" rel="alternate" type="text/html" title="{Start with the command line}" />
+    <title type="html">Start with the command line</title>
+    <link href="/2020/02/02/start-with-the-command-line/" rel="alternate" type="text/html" title="Start with the command line" />
     <published>2020-02-02 07:00:00 +0000</published>
     <updated>2020-02-02 07:00:00 +0000</updated>
     <id>/2020/02/02/start-with-the-command-line/</id>
@@ -348,8 +348,8 @@ shakespeare + 366 + 365
   </entry>
   
   <entry>
-    <title type="html">{Foggy winter days}</title>
-    <link href="/2019/12/20/foggy-winter-days/" rel="alternate" type="text/html" title="{Foggy winter days}" />
+    <title type="html">Foggy winter days</title>
+    <link href="/2019/12/20/foggy-winter-days/" rel="alternate" type="text/html" title="Foggy winter days" />
     <published>2019-12-20 00:00:00 +0000</published>
     <updated>2019-12-20 00:00:00 +0000</updated>
     <id>/2019/12/20/foggy-winter-days/</id>
@@ -375,8 +375,8 @@ shakespeare + 366 + 365
   </entry>
   
   <entry>
-    <title type="html">{Being ill}</title>
-    <link href="/2019/10/09/being-ill/" rel="alternate" type="text/html" title="{Being ill}" />
+    <title type="html">Being ill</title>
+    <link href="/2019/10/09/being-ill/" rel="alternate" type="text/html" title="Being ill" />
     <published>2019-10-09 00:00:00 +0000</published>
     <updated>2019-10-09 00:00:00 +0000</updated>
     <id>/2019/10/09/being-ill/</id>
@@ -402,8 +402,8 @@ shakespeare + 366 + 365
   </entry>
   
   <entry>
-    <title type="html">{The costs of your habits}</title>
-    <link href="/2019/10/08/cost-of-habits/" rel="alternate" type="text/html" title="{The costs of your habits}" />
+    <title type="html">The costs of your habits</title>
+    <link href="/2019/10/08/cost-of-habits/" rel="alternate" type="text/html" title="The costs of your habits" />
     <published>2019-10-08 00:00:00 +0000</published>
     <updated>2019-10-08 00:00:00 +0000</updated>
     <id>/2019/10/08/cost-of-habits/</id>
