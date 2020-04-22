@@ -591,7 +591,8 @@ a, a:visited {
     text-decoration: underline; }
 
 .site-footer {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  margin-bottom: 6rem; }
 
 .footnotes {
   border-top: 1px solid #ccc;
