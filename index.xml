@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-04-22T06:10:02+00:00</updated>
+  <updated>2020-04-22T06:23:55+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Developer at mySociety. This is my personal website.</subtitle>
@@ -78,7 +78,7 @@
 
     </content>
     <author>
-      <name>Potential social benefits of the coronavirus pandemic</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="coronavirus" />
@@ -140,7 +140,7 @@
 
     </content>
     <author>
-      <name>Working from home tips</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="life" />
@@ -165,7 +165,7 @@
 
     </content>
     <author>
-      <name>FiraCode</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="programming" />
@@ -246,7 +246,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>Ruby's Time vs DateTime classes</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="programming" />
@@ -277,7 +277,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>It gets easier</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="life" />
@@ -307,7 +307,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>Early wild garlic</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="food" />
@@ -336,7 +336,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>Start with the command line</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="software" />
@@ -363,7 +363,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>Foggy winter days</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="nature" />
@@ -390,7 +390,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>Being ill</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="life" />
@@ -421,7 +421,7 @@ shakespeare + 366 + 365
 
     </content>
     <author>
-      <name>The costs of your habits</name>
+      <name>Chris Mytton</name>
     </author>
     
     <category term="life" />
