@@ -47,7 +47,7 @@
 
   <div class="post-content">
     
-<p>If you’ve followed along my previous two blog posts, <a href="{% post_url 2015-01-19-web-scraping-with-ruby %}">Web Scraping with Ruby</a> and <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}">Advanced web scraping with Mechanize</a> then you’ll now have the knowledge needed to write a basic web scraper for getting structured data from the web.</p>
+<p>If you’ve followed along my previous two blog posts, <a href="/2015/01/19/web-scraping-with-ruby/">Web Scraping with Ruby</a> and <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">Advanced web scraping with Mechanize</a> then you’ll now have the knowledge needed to write a basic web scraper for getting structured data from the web.</p>
 
 <p>The next logical step is to actually run these scrapers regularly so you can get information that’s constantly up-to-date. This is where the excellent <a href="https://morph.io/">morph.io</a> from the talented folks at <a href="https://www.openaustraliafoundation.org.au/">OpenAustralia</a> comes into play.</p>
 
@@ -57,7 +57,7 @@
 
 <h2 id="creating-a-scraper">Creating a scraper</h2>
 
-<p>We’ll use the code from the <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}#all-together-now">Pitchfork Scraper</a> in my previous post to demonstrate how easy it is to get your scraper running on morph.io.</p>
+<p>We’ll use the code from the <a href="/2015/01/22/advanced-web-scraping-with-mechanize/#all-together-now">Pitchfork Scraper</a> in my previous post to demonstrate how easy it is to get your scraper running on morph.io.</p>
 
 <p>You can sign into morph.io with a GitHub account. Once signed in you can then <a href="https://morph.io/scrapers/new">create a scraper</a>. Currently morph.io supports scrapers written in Ruby, PHP, Python or Perl, choose a language and give your scraper a name, I’m calling mine <code class="highlighter-rouge">pitchfork_scraper</code>. Then press the “Create Scraper” button to create a new GitHub repository containing skeleton code for a scraper in your chosen language.</p>
 
@@ -70,7 +70,7 @@
 
 <p>Morph.io expects two things from your scraper. First the scraper repository should contain a <code class="highlighter-rouge">scraper.rb</code> file for Ruby scrapers <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, second the scraper itself should write to a sqlite3 database file called <code class="highlighter-rouge">data.sqlite</code>. In order to change this in our scraper we need to make a small change so it writes to a database rather than to JSON on STDOUT.</p>
 
-<p>First add the <a href="{% post_url 2015-01-22-advanced-web-scraping-with-mechanize %}#all-together-now">code from the previous post</a> into <code class="highlighter-rouge">scraper.rb</code>, then you can change the code to use the <code class="highlighter-rouge">scraperwiki</code> gem to write to the sqlite database.</p>
+<p>First add the <a href="/2015/01/22/advanced-web-scraping-with-mechanize/#all-together-now">code from the previous post</a> into <code class="highlighter-rouge">scraper.rb</code>, then you can change the code to use the <code class="highlighter-rouge">scraperwiki</code> gem to write to the sqlite database.</p>
 
 <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/scraper.rb b/scraper.rb
 index 2d2baaa..f8b14d6 100644
