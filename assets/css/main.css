@@ -633,12 +633,15 @@ blockquote {
   padding-left: 15px;
   color: #555; }
 
-.post-title a {
-  color: #333;
-  transition: color 0.3s; }
-  .post-title a:hover {
-    color: #376ec2;
-    text-decoration: none; }
+.post-title {
+  font-size: 2em;
+  font-weight: 500; }
+  .post-title a {
+    color: #333;
+    transition: color 0.3s; }
+    .post-title a:hover {
+      color: #376ec2;
+      text-decoration: none; }
 
 .post-date {
   color: #999999; }
