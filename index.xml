@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-04-23T21:25:38+00:00</updated>
+  <updated>2020-04-24T05:39:53+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Developer at mySociety. This is my personal website.</subtitle>
@@ -38,7 +38,7 @@
 &lt;h2 id=&quot;nhs-will-get-the-funding-it-deserves&quot;&gt;NHS will get the funding it deserves&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;The single most important action we can all take, in fighting coronavirus, is to stay at home in order to protect the NHS and save lives.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  &lt;p&gt;The single most important action we can all take, in fighting coronavirus, is to stay at home in order to protect the NHS and save lives.&lt;sup id=&quot;fnref:government-guidance&quot;&gt;&lt;a href=&quot;#fn:government-guidance&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Stay at home. Protect the NHS. Save lives. It’s a classic Boris Johnson tagline. Its memorable, the order of the sentences doesn’t even matter!. Let’s hope it’s as effective as his previous ones.&lt;/p&gt;
@@ -47,7 +47,7 @@
 
 &lt;h2 id=&quot;climate-will-benefit-from-the-reduction-in-activity&quot;&gt;Climate will benefit from the reduction in activity&lt;/h2&gt;
 
-&lt;p&gt;There’s already evidence&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; that the coronavirus pandemic is having positive effects on the environment. Let’s hope scientists are able to get enough data to prove that the benefits of human (in)action during the pandemic helped to slow or even reverse climate change.&lt;/p&gt;
+&lt;p&gt;There’s already evidence&lt;sup id=&quot;fnref:air-polution-article&quot;&gt;&lt;a href=&quot;#fn:air-polution-article&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; that the coronavirus pandemic is having positive effects on the environment. Let’s hope scientists are able to get enough data to prove that the benefits of human (in)action during the pandemic helped to slow or even reverse climate change.&lt;/p&gt;
 
 &lt;h2 id=&quot;home-delivery-from-supermarkets-will-be-more-common&quot;&gt;Home delivery from supermarkets will be more common&lt;/h2&gt;
 
@@ -67,11 +67,11 @@
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.gov.uk/government/publications/full-guidance-on-staying-at-home-and-away-from-others/full-guidance-on-staying-at-home-and-away-from-others&quot;&gt;Full guidance on staying at home and away from others - GOV.UK&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:government-guidance&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.gov.uk/government/publications/full-guidance-on-staying-at-home-and-away-from-others/full-guidance-on-staying-at-home-and-away-from-others&quot;&gt;Full guidance on staying at home and away from others - GOV.UK&lt;/a&gt; &lt;a href=&quot;#fnref:government-guidance&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.theguardian.com/environment/2020/mar/23/coronavirus-pandemic-leading-to-huge-drop-in-air-pollution&quot;&gt;Coronavirus pandemic leading to huge drop in air pollution - The Guardian&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:air-polution-article&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.theguardian.com/environment/2020/mar/23/coronavirus-pandemic-leading-to-huge-drop-in-air-pollution&quot;&gt;Coronavirus pandemic leading to huge drop in air pollution - The Guardian&lt;/a&gt; &lt;a href=&quot;#fnref:air-polution-article&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -184,7 +184,7 @@
     <id>https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/</id>
     <content type="html" xml:base="https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/">
       
-&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/&quot;&gt;Ruby&lt;/a&gt; has two classes, &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTime&lt;/code&gt;, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/&quot;&gt;Ruby&lt;/a&gt; has two classes, &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; &lt;sup id=&quot;fnref:two-time-classes&quot;&gt;&lt;a href=&quot;#fn:two-time-classes&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTime&lt;/code&gt;, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby?&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;It’s a common misconception that William Shakespeare and Miguel de Cervantes died on the same day in history - so much so that UNESCO named April 23 as World Book Day because of this fact. However, because England hadn’t yet adopted the Gregorian Calendar Reform (and wouldn’t until 1752) their deaths are actually 10 days apart. Since Ruby’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; class implements a proleptic Gregorian calendar and has no concept of calendar reform there’s no way to express this with &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; objects. This is where &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTime&lt;/code&gt; steps in:&lt;/p&gt;
@@ -238,8 +238,8 @@ shakespeare + 366 + 365
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;There are actually &lt;em&gt;two&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; classes, one in core and one in the standard library which you get when you or one of your dependencies does a &lt;code class=&quot;highlighter-rouge&quot;&gt;require &#39;time&#39;&lt;/code&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:two-time-classes&quot;&gt;
+      &lt;p&gt;There are actually &lt;em&gt;two&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; classes, one in core and one in the standard library which you get when you or one of your dependencies does a &lt;code class=&quot;highlighter-rouge&quot;&gt;require &#39;time&#39;&lt;/code&gt;. &lt;a href=&quot;#fnref:two-time-classes&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;

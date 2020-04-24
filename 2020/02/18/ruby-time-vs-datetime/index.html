@@ -47,7 +47,7 @@
 
   <div class="post-content">
     
-<p><a href="https://www.ruby-lang.org/">Ruby</a> has two classes, <code class="highlighter-rouge">Time</code> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and <code class="highlighter-rouge">DateTime</code>, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby?</p>
+<p><a href="https://www.ruby-lang.org/">Ruby</a> has two classes, <code class="highlighter-rouge">Time</code> <sup id="fnref:two-time-classes"><a href="#fn:two-time-classes" class="footnote">1</a></sup> and <code class="highlighter-rouge">DateTime</code>, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby?</p>
 
 <blockquote>
   <p>It’s a common misconception that William Shakespeare and Miguel de Cervantes died on the same day in history - so much so that UNESCO named April 23 as World Book Day because of this fact. However, because England hadn’t yet adopted the Gregorian Calendar Reform (and wouldn’t until 1752) their deaths are actually 10 days apart. Since Ruby’s <code class="highlighter-rouge">Time</code> class implements a proleptic Gregorian calendar and has no concept of calendar reform there’s no way to express this with <code class="highlighter-rouge">Time</code> objects. This is where <code class="highlighter-rouge">DateTime</code> steps in:</p>
@@ -101,8 +101,8 @@ shakespeare + 366 + 365
 
 <div class="footnotes">
   <ol>
-    <li id="fn:1">
-      <p>There are actually <em>two</em> <code class="highlighter-rouge">Time</code> classes, one in core and one in the standard library which you get when you or one of your dependencies does a <code class="highlighter-rouge">require 'time'</code>. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:two-time-classes">
+      <p>There are actually <em>two</em> <code class="highlighter-rouge">Time</code> classes, one in core and one in the standard library which you get when you or one of your dependencies does a <code class="highlighter-rouge">require 'time'</code>. <a href="#fnref:two-time-classes" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
