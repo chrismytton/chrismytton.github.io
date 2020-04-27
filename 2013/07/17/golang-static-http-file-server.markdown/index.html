@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Static http file server in Go - Chris Mytton</title>
+
+    <meta property="og:title" content="Static http file server in Go" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="I'm a Developer at mySociety. This is my personal website." />
+    <meta property="og:description" content="I'm a Developer at mySociety. This is my personal website." />
+    <link rel="canonical" href="https://www.chrismytton.uk/2013/07/17/golang-static-http-file-server.markdown/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/2013/07/17/golang-static-http-file-server.markdown/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta property="twitter:title" content="Static http file server in Go" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Static http file server in Go</h1>
+    <p class="post-date">Wednesday 17 July 2013</p>
+  </header>
+
+  <div class="post-content">
+    
+<p><a href="http://golang.org/">Go</a> is a great language for building network based applications. It comes
+with some excellent tools for creating web-apps out of the box.</p>
+
+<p>I often want to create a “simple http server” to serve up the current
+directory, usually I reach for <code class="highlighter-rouge">python -m SimpleHTTPServer</code>, but in the
+spirit of re-inventing the wheel I decided to see how Go could handle
+this task.</p>
+
+<p>It turned out to be remarkably simple. Go comes with a static file server
+as part of the <code class="highlighter-rouge">net/http</code> package, in this example I’ve added a couple of flags that
+allow specifying the port and the root filesystem path for the process.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// httpserver.go</span>
+<span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"flag"</span>
+	<span class="s">"net/http"</span>
+<span class="p">)</span>
+
+<span class="k">var</span> <span class="n">port</span> <span class="o">=</span> <span class="n">flag</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="s">"port"</span><span class="p">,</span> <span class="s">"8080"</span><span class="p">,</span> <span class="s">"Define what TCP port to bind to"</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">root</span> <span class="o">=</span> <span class="n">flag</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="s">"root"</span><span class="p">,</span> <span class="s">"."</span><span class="p">,</span> <span class="s">"Define the root filesystem path"</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">flag</span><span class="o">.</span><span class="n">Parse</span><span class="p">()</span>
+	<span class="nb">panic</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">ListenAndServe</span><span class="p">(</span><span class="s">":"</span><span class="o">+*</span><span class="n">port</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">FileServer</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="o">*</span><span class="n">root</span><span class="p">))))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The actual meat of the program is the second line inside the main
+function. <code class="highlighter-rouge">http.ListenAndServe</code> accepts an address to listen on as the first argument,
+and an object which implements the <code class="highlighter-rouge">http.Handler</code> interface as the second,
+in this case <code class="highlighter-rouge">http.FileServer</code>. If
+<code class="highlighter-rouge">ListenAndServe</code> returns an error (most likely because another process
+is using the desired port) then the process will <code class="highlighter-rouge">panic</code> and exit.</p>
+
+<p>If you’ve got Go installed then this can be run directly.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ go run httpserver.go
+</code></pre></div></div>
+
+<p>Or you can compile it to a standalone binary.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ go build httpserver.go
+$ ./httpserver
+</code></pre></div></div>
+
+<p>The file server implementation that Go provides even handles serving <code class="highlighter-rouge">index.html</code>
+from a directory if no file is specified, and provides a directory
+listing if there is no <code class="highlighter-rouge">index.html</code> present.</p>
+
+<p>For more details check out <a href="http://golang.org/src/pkg/net/http/fs.go?s=12008:12048#L401">Go’s implementation of <code class="highlighter-rouge">http.FileServer</code></a>.</p>
+
+<p>The code shown in this article is available <a href="https://github.com/chrismytton/httpserver">on
+GitHub</a>.</p>
+
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        Explore:
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a>
+      </p>
+      <p class="footer-links">
+        Elsewhere:
+        <a href="https://twitter.com/chrismytton">Twitter</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a>
+      </p>
+      <p class="footer-links">
+        Contact:
+        <a href="mailto:chrismytton@gmail.com">Email</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>
