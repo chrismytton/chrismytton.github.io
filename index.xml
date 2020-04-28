@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-04-27T19:42:44+00:00</updated>
+  <updated>2020-04-28T18:19:38+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Developer at mySociety. This is my personal website.</subtitle>
@@ -184,7 +184,7 @@
     <id>https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/</id>
     <content type="html" xml:base="https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/">
       
-&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/&quot;&gt;Ruby&lt;/a&gt; has two classes, &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; &lt;sup id=&quot;fnref:two-time-classes&quot;&gt;&lt;a href=&quot;#fn:two-time-classes&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTime&lt;/code&gt;, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/&quot;&gt;Ruby&lt;/a&gt; has two classes, &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; &lt;sup id=&quot;fnref:two-time-classes&quot;&gt;&lt;a href=&quot;#fn:two-time-classes&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTime&lt;/code&gt;, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby? Ruby’s documentation contains the answer:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;It’s a common misconception that William Shakespeare and Miguel de Cervantes died on the same day in history - so much so that UNESCO named April 23 as World Book Day because of this fact. However, because England hadn’t yet adopted the Gregorian Calendar Reform (and wouldn’t until 1752) their deaths are actually 10 days apart. Since Ruby’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; class implements a proleptic Gregorian calendar and has no concept of calendar reform there’s no way to express this with &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; objects. This is where &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTime&lt;/code&gt; steps in:&lt;/p&gt;
