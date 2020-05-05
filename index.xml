@@ -3,13 +3,42 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-05-05T19:54:13+00:00</updated>
+  <updated>2020-05-05T20:02:47+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Developer at mySociety. This is my personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Fruit garden schematic</title>
+    <link href="https://www.chrismytton.uk/2020/05/05/fruit-garden-schematic/" rel="alternate" type="text/html" title="Fruit garden schematic" />
+    <published>2020-05-05T20:46:02+00:00</published>
+    <updated>2020-05-05T20:46:02+00:00</updated>
+    <id>https://www.chrismytton.uk/2020/05/05/fruit-garden-schematic/</id>
+    <content type="html" xml:base="https://www.chrismytton.uk/2020/05/05/fruit-garden-schematic/">
+      
+&lt;p&gt;Diagram of my fruit garden, so I remember what’s what.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/fruit-garden-schematic.png&quot;&gt;&lt;img src=&quot;/assets/images/fruit-garden-schematic.png&quot; alt=&quot;Fruit garden schematic&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="food" />
+    
+    <category term="gardening" />
+    
+    <category term="nature" />
+    
+    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/fruit-garden-schematic.png" />
+    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/fruit-garden-schematic.png"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Potential social benefits of the coronavirus pandemic</title>
@@ -398,37 +427,6 @@ shakespeare + 366 + 365
     <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/feverfew.jpg" />
     <media:content medium="image" url="https://www.chrismytton.uk/assets/images/feverfew.jpg"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">The costs of your habits</title>
-    <link href="https://www.chrismytton.uk/2019/10/08/cost-of-habits/" rel="alternate" type="text/html" title="The costs of your habits" />
-    <published>2019-10-08T00:00:00+00:00</published>
-    <updated>2019-10-08T00:00:00+00:00</updated>
-    <id>https://www.chrismytton.uk/2019/10/08/cost-of-habits/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2019/10/08/cost-of-habits/">
-      
-&lt;p&gt;&lt;img src=&quot;/assets/images/tree-in-field.jpg&quot; alt=&quot;Tree in a field&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The costs of your good habits are in the present.&lt;/p&gt;
-
-  &lt;p&gt;The costs of your bad habits are in the future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;From &lt;a href=&quot;https://jamesclear.com/3-2-1/october-3-2019&quot;&gt;James Clear’s 3-2-1 Newsletter, October 3 2019&lt;/a&gt;&lt;/p&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="life" />
-    
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/tree-in-field.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/tree-in-field.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
