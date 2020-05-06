@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Extracting a list of IDs from an XLSX file - Chris Mytton</title>
+
+    <meta property="og:title" content="Extracting a list of IDs from an XLSX file" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="Using csvkit and UNIX to extract a list of IDs from an XLSX file." />
+    <meta property="og:description" content="Using csvkit and UNIX to extract a list of IDs from an XLSX file." />
+    <link rel="canonical" href="https://www.chrismytton.uk/2020/05/06/extracting-ids-from-xlsx/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/2020/05/06/extracting-ids-from-xlsx/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    <!-- <link rel="next" href="https://www.chrismytton.uk/page2" /> -->
+    
+    <meta name="twitter:card" content="summary" />
+    
+    <meta property="twitter:title" content="Extracting a list of IDs from an XLSX file" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header">
+        <h1>
+          <a class="logo" href="/">Chris Mytton</a>
+        </h1>
+      </header>
+
+      <main class="site-content">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Extracting a list of IDs from an XLSX file</h1>
+    <p class="post-date">Wednesday 6 May 2020</p>
+  </header>
+
+  <div class="post-content">
+    
+<p>I needed to convert a Microsoft Excel XLSX file containing an ID column into a comma-separated list of those IDs for passing to a command line tool.</p>
+
+<p>In the end it was quite straightforward with the help of <a href="https://csvkit.readthedocs.io/en/latest/">csvkit</a> and a sprinkle of UNIX.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>in2csv reports.xlsx |
+  csvcut -c 1 |
+  sed '1d' |
+  paste -sd , -
+</code></pre></div></div>
+
+<h2 id="steps">Steps</h2>
+
+<p>To convert from XLSX to CSV format you can use the handy <a href="https://csvkit.readthedocs.io/en/latest/scripts/in2csv.html"><code class="highlighter-rouge">in2csv</code></a> utility from csvkit, which automatically detects the type of input file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>in2csv reports.xlsx
+</code></pre></div></div>
+
+<p>The ID column is in the first column of the CSV. The <a href="https://csvkit.readthedocs.io/en/latest/scripts/csvcut.html"><code class="highlighter-rouge">csvcut</code></a> utility from csvkit can be used to extract one or more columns from a CSV. You can also pass the column header name to the <code class="highlighter-rouge">-c</code> argument, instead of a number.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csvcut -c 1
+</code></pre></div></div>
+
+<p>The output now contains a single column of data from the CSV, but it still has the header. That can be removed with the help of <code class="highlighter-rouge">sed</code>’s delete function.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed '1d'
+</code></pre></div></div>
+
+<p>The IDs are now one-per-line, so the final step is to join them together onto a single line with <code class="highlighter-rouge">paste</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>paste -sd , -
+</code></pre></div></div>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a href="/" class="avatar-link"><img class="avatar" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" /></a>
+      <h3><a class="logo" href="/">Chris Mytton</a></h3>
+      <p class="footer-links">
+        Explore:
+        <a href="/archive/">Archive</a> &middot;
+        <a href="/tags/">Tags</a>
+      </p>
+      <p class="footer-links">
+        Elsewhere:
+        <a href="https://twitter.com/chrismytton">Twitter</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a>
+      </p>
+      <p class="footer-links">
+        Subscribe:
+        <a href="/index.xml">RSS</a>
+      </p>
+      <p class="footer-links">
+        Contact:
+        <a href="mailto:chrismytton@gmail.com">Email</a>
+      </p>
+      <p>
+      I'm a Developer at <a href="https://www.mysociety.org/">mySociety</a>.
+      This is my personal website.
+      </p>
+    </footer>
+
+  </body>
+
+</html>
