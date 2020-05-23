@@ -548,6 +548,9 @@ template {
   color: #009999; }
 
 /* Literal.Number.Integer.Long */
+* {
+  box-sizing: border-box; }
+
 img {
   max-width: 100%;
   vertical-align: middle; }
@@ -571,7 +574,7 @@ code {
 .container {
   line-height: 1.5;
   margin: 0 auto;
-  max-width: 36rem;
+  max-width: 38rem;
   padding: 0 1rem; }
 
 .footnotes {
@@ -605,13 +608,21 @@ a, a:visited {
   @media only screen and (max-width: 480px) {
     .avatar {
       display: none; } }
-.logo, .logo:visited, .logo:hover {
+.site-header {
+  margin: 1em 0; }
+
+.logo {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  font-size: 2em;
   font-weight: 300;
-  letter-spacing: 0.125rem;
-  text-decoration: none;
-  font-size: 1.4em; }
+  letter-spacing: 0.125rem; }
+
+.logo, .logo:visited, .logo:hover {
+  color: #333;
+  text-decoration: none; }
+
+.logo-large {
+  font-size: 3em; }
 
 pre, code {
   background-color: #f5f9fb; }
