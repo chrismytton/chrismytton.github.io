@@ -655,7 +655,8 @@ blockquote {
       text-decoration: none; }
 
 .post-date {
-  color: #999999; }
+  color: #666666;
+  font-size: smaller; }
 
 .post-content {
   border-bottom: 1px solid #ccc; }
@@ -680,7 +681,7 @@ h2, h3, h4, h5, h6 {
     content: " (" attr(href) ") "; }
   .site-footer .logo::after {
     content: " - www.chrismytton.uk"; }
-  .site-header .logo, .footer-links, .avatar-link, .post-tags {
+  .site-header .logo, .footer-links, .avatar, .post-tags {
     display: none; }
   .container {
     max-width: 100%; } }
