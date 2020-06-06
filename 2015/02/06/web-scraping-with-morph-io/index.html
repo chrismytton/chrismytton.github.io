@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -64,18 +64,18 @@
 
 <p>We’ll use the code from the <a href="/2015/01/22/advanced-web-scraping-with-mechanize/#all-together-now">Pitchfork Scraper</a> in my previous post to demonstrate how easy it is to get your scraper running on morph.io.</p>
 
-<p>You can sign into morph.io with a GitHub account. Once signed in you can then <a href="https://morph.io/scrapers/new">create a scraper</a>. Currently morph.io supports scrapers written in Ruby, PHP, Python or Perl, choose a language and give your scraper a name, I’m calling mine <code class="highlighter-rouge">pitchfork_scraper</code>. Then press the “Create Scraper” button to create a new GitHub repository containing skeleton code for a scraper in your chosen language.</p>
+<p>You can sign into morph.io with a GitHub account. Once signed in you can then <a href="https://morph.io/scrapers/new">create a scraper</a>. Currently morph.io supports scrapers written in Ruby, PHP, Python or Perl, choose a language and give your scraper a name, I’m calling mine <code>pitchfork_scraper</code>. Then press the “Create Scraper” button to create a new GitHub repository containing skeleton code for a scraper in your chosen language.</p>
 
 <p>Clone the repository that was created in the previous step, in my case I can use the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/chrismytton/pitchfork_scraper
-</code></pre></div></div>
+<pre><code>git clone https://github.com/chrismytton/pitchfork_scraper
+</code></pre>
 
-<p>The repository will contain a <code class="highlighter-rouge">README.md</code> and a <code class="highlighter-rouge">scraper.rb</code> file.</p>
+<p>The repository will contain a <code>README.md</code> and a <code>scraper.rb</code> file.</p>
 
-<p>Morph.io expects two things from your scraper. First the scraper repository should contain a <code class="highlighter-rouge">scraper.rb</code> file for Ruby scrapers <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, second the scraper itself should write to a sqlite3 database file called <code class="highlighter-rouge">data.sqlite</code>. In order to change this in our scraper we need to make a small change so it writes to a database rather than to JSON on STDOUT.</p>
+<p>Morph.io expects two things from your scraper. First the scraper repository should contain a <code>scraper.rb</code> file for Ruby scrapers <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>, second the scraper itself should write to a sqlite3 database file called <code>data.sqlite</code>. In order to change this in our scraper we need to make a small change so it writes to a database rather than to JSON on STDOUT.</p>
 
-<p>First add the <a href="/2015/01/22/advanced-web-scraping-with-mechanize/#all-together-now">code from the previous post</a> into <code class="highlighter-rouge">scraper.rb</code>, then you can change the code to use the <code class="highlighter-rouge">scraperwiki</code> gem to write to the sqlite database.</p>
+<p>First add the <a href="/2015/01/22/advanced-web-scraping-with-mechanize/#all-together-now">code from the previous post</a> into <code>scraper.rb</code>, then you can change the code to use the <code>scraperwiki</code> gem to write to the sqlite database.</p>
 
 <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/scraper.rb b/scraper.rb
 index 2d2baaa..f8b14d6 100644
@@ -101,23 +101,23 @@ index 2d2baaa..f8b14d6 100644
 +end
 </span></code></pre></div></div>
 
-<p>This uses the <code class="highlighter-rouge">ScraperWiki.save_sqlite</code> method to save the review in the database. The first argument is the list of fields that in combination should be considered unique. In this case we’re using the artist and album, since it’s unlikely that an artist would release two albums with the same name.</p>
+<p>This uses the <code>ScraperWiki.save_sqlite</code> method to save the review in the database. The first argument is the list of fields that in combination should be considered unique. In this case we’re using the artist and album, since it’s unlikely that an artist would release two albums with the same name.</p>
 
-<p>You’ll need to install the Ruby <code class="highlighter-rouge">scraperwiki</code> gem in addition to the other dependencies to run this code locally.</p>
+<p>You’ll need to install the Ruby <code>scraperwiki</code> gem in addition to the other dependencies to run this code locally.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install scraperwiki
-</code></pre></div></div>
+<pre><code>gem install scraperwiki
+</code></pre>
 
 <p>Then you can run this code on your local machine with the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scraper.rb
-</code></pre></div></div>
+<pre><code>ruby scraper.rb
+</code></pre>
 
-<p>This will create a new file in the current directory called <code class="highlighter-rouge">data.sqlite</code> which will contain the scraped data.</p>
+<p>This will create a new file in the current directory called <code>data.sqlite</code> which will contain the scraped data.</p>
 
 <h2 id="running-the-scraper-on-morphio">Running the scraper on morph.io</h2>
 
-<p>Now you’ve made the changes to your scraper you can run the code on <a href="https://morph.io/">morph.io</a>. First commit your changes using <code class="highlighter-rouge">git</code>. Then <code class="highlighter-rouge">git push</code> the changes to the scrapers GitHub repository.</p>
+<p>Now you’ve made the changes to your scraper you can run the code on <a href="https://morph.io/">morph.io</a>. First commit your changes using <code>git</code>. Then <code>git push</code> the changes to the scrapers GitHub repository.</p>
 
 <p>You can then run the scraper and the results should be added to the corresponding sqlite database on morph.io. It should look something like the following:</p>
 
@@ -131,10 +131,10 @@ index 2d2baaa..f8b14d6 100644
 
 <p>Go forth and get structured data out of the web!</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Alternatively <code class="highlighter-rouge">scraper.py</code> for Python, <code class="highlighter-rouge">scraper.php</code> for PHP or <code class="highlighter-rouge">scraper.pl</code> for Perl <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Alternatively <code>scraper.py</code> for Python, <code>scraper.php</code> for PHP or <code>scraper.pl</code> for Perl <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

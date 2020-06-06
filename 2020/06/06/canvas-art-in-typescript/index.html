@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas art in TypeScript - Chris Mytton</title>
+
+    <meta property="og:title" content="Canvas art in TypeScript" />
+    <meta name="author" content="Chris Mytton" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="Notes from porting a JavaScript random art generator to TypeScript." />
+    <meta property="og:description" content="Notes from porting a JavaScript random art generator to TypeScript." />
+    <link rel="canonical" href="https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/" />
+    <meta property="og:url" content="https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/" />
+    <meta property="og:site_name" content="Chris Mytton" />
+    
+    <meta property="og:image" content="https://www.chrismytton.uk/assets/images/random-art.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta property="twitter:title" content="Canvas art in TypeScript" />
+    <meta name="twitter:site" content="@chrismytton" />
+    <meta name="twitter:creator" content="@chrismytton" />
+
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
+    <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site-header clearfix">
+        <a class="logo" href="/">Chris Mytton</a>
+        <div class="menu">
+          <a href="/">Home</a>
+          <a href="/articles/">Articles</a>
+          <a href="/tags/">Tags</a>
+          <a href="https://twitter.com/chrismytton">Twitter</a>
+          <a href="https://github.com/chrismytton">GitHub</a>
+          <a href="mailto:chrismytton@gmail.com">Email me</a>
+        </div>
+      </header>
+
+      <main class="site-content">
+        <header class="post-header">
+  <h1 class="post-title">Canvas art in TypeScript</h1>
+  <p class="post-date">Saturday 6 June 2020</p>
+</header>
+
+<article class="post">
+
+  <div class="post-content">
+    
+<p>I ported a JavaScript “random art generator” I created a few years ago to TypeScript. This post contains some notes from the process.</p>
+
+<ul>
+  <li>See the project: <a href="https://www.chrismytton.uk/art/">www.chrismytton.uk/art</a></li>
+  <li>Check out the code: <a href="https://github.com/chrismytton/art">chrismytton/art on GitHub</a></li>
+</ul>
+
+<hr />
+
+<p>I’ve been learning TypeScript recently. As part of that I wanted to dig out some of my old JavaScript projects and port them to TypeScript. I find porting code to a new language is a good way to learn. In the case of TypeScript the porting process is fairly straightforward, because TypeScript is essentially JavaScript with Types. But there’s still lots to learn from the process.</p>
+
+<p>I found an old git repository that I create in 2014 which I called, rather vaguely, “art”. It uses JavaScript and Canvas to create random pieces of art on every page load. The code itself is fairly straightforward, so it seemed like a good candidate for porting to TypeScript.</p>
+
+<h2 id="explicit-types">Explicit types</h2>
+
+<p>TypeScript has optional static typing. This is the primary difference between JavaScript and TypeScript.</p>
+
+<p>There are four separate pages in this project, each with a different bit of random art. They all use the <code>random</code> function, which takes a <code>max</code> parameter and returns a random number less than <code>max</code>. In order to convert that function to idiomatic TypeScript we annotate the types of the arguments and the return value.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- function random(max) {
+</span><span class="gi">+ function random(max: number): number {
+</span>    return Math.floor(Math.random() * max);
+  }
+</code></pre></div></div>
+
+<p>The <code>max: number</code> bit tells the TypeScript compiler that the <code>max</code> parameter is a <code>number</code>. The <code>: number</code> bit after the parentheses denotes the return type.</p>
+
+<p>Because TypeScript already knows that <code>Math.floor</code> returns a <code>number</code> you don’t need to explicitly give the return type for <code>random</code>. In some cases, like callbacks, you don’t need to annotate the parameters. This is because TypeScript knows the signature of the callback function, so can infer the types of the callback arguments.</p>
+
+<h2 id="classes-in-typescript">Classes in TypeScript</h2>
+
+<p>TypeScript classes build on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">ES6 classes</a>. The major difference is that in TypeScript you need to explicitly declare the types of properties you’re expecting on the class.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
+  <span class="nl">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">;</span>
+  <span class="nl">ctx</span><span class="p">:</span> <span class="nx">CanvasRenderingContext2D</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Without these you’ll get a warning when trying to set <code>this.viewport</code> etc, something like <code>Property 'viewport' does not exist on type 'CanvasPainting'</code>.</p>
+
+<p>I find having these properties explicitly defined actually makes it easier to figure out what the class might be doing internally. The serve as a lightweight documentation on the classes internal state.</p>
+
+<h2 id="dealing-with-null-values">Dealing with null values</h2>
+
+<p>TypeScript knows which methods can return <code>null</code> and will make you deal with those cases. If you try to call a method on a value that might be null then TypeScript will give you a warning. You can avoid this by adding in a check before using the value.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
+  <span class="nl">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">;</span>
+  <span class="nl">ctx</span><span class="p">:</span> <span class="nx">CanvasRenderingContext2D</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">viewport</span> <span class="o">=</span> <span class="nx">viewport</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">viewport</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// getContext can return null, so check for that case.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">getContext('2d') failed</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">ctx</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is the kind of thing that often gets forgotten when writing JavaScript. You get a valid return value while testing it and forget to come back and add handling for the possibility of a <code>null</code> return value. TypeScript protects you from this kind of error at the compile stage. This also means you don’t need to write as many tests for this kind of edge case, since the compiler can catch lots of them.</p>
+
+<h2 id="index-signatures">Index signatures</h2>
+
+<p>This is something I struggled with for a while. I was trying to dynamically call methods on my <code>Shapes</code> class using <code>this[shape]</code>, but TypeScript was giving this warning:</p>
+
+<blockquote>
+  <p>Element implicitly has an ‘any’ type because expression of type ‘string’ can’t be used to index type ‘Shapes’.</p>
+
+  <p>No index signature with a parameter of type ‘string’ was found on type ‘Shapes’.</p>
+</blockquote>
+
+<p>After reading various bits of the TypeScript documentation and some Stack Overflow answers I eventually figured out that I needed to define an index signature on my shapes class. This tells TypeScript what can be used to index this class, and what the indexing might return.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Shapes</span> <span class="kd">extends</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">any</span><span class="p">;</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<p>I really like what I’ve seen so far with TypeScript. Working on little projects like this is a great way to get some experience with new tools. I’ve already creating a few other bits with TypeScript. I intend to write more about those projects in the near future.</p>
+
+  </div>
+
+  <div class="post-tags">
+    <p>
+      Tagged:
+      
+      <a href="/tags/#programming">#programming</a>
+      
+      <a href="/tags/#art">#art</a>
+      
+    </p>
+  </div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer class="container site-footer">
+      <a class="logo" href="/">Chris Mytton</a>
+      <p class="footer-links">
+        Explore:
+        <a href="/articles/">Articles</a> &middot;
+        <a href="/tags/">Tags</a>
+      </p>
+      <p class="footer-links">
+        Elsewhere:
+        <a href="https://twitter.com/chrismytton">Twitter</a> &middot;
+        <a href="https://github.com/chrismytton">GitHub</a>
+      </p>
+      <p class="footer-links">
+        Contact:
+        <a href="mailto:chrismytton@gmail.com">Email</a>
+      </p>
+      <p class="footer-links">
+        Subscribe:
+        <a href="/index.xml">RSS feed</a>
+      </p>
+      <img class="profile rounded" alt="chrismytton" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100" srcset="https://avatars0.githubusercontent.com/chrismytton?v=3&s=100 1x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=200 2x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=300 3x, https://avatars0.githubusercontent.com/chrismytton?v=3&s=400 4x" />
+
+<div class="mini-bio">
+  <p>
+    Hi! My name is Chris. I'm a Senior Developer at <a href="https://www.mysociety.org/">mySociety</a>. I'm currently working on <a href="https://fixmystreet.org">FixMyStreet</a>, a software platform for reporting local problems.
+  </p>
+  <p>
+    This is my personal website where I share projects I've been working on and what I learn along the way.
+  </p>
+  <p>
+    If you're interested in coding tips and tutorials then <a href="https://twitter.com/chrismytton">follow me on&nbsp;Twitter</a>!
+  </p>
+</div>
+
+    </footer>
+
+  </body>
+
+</html>

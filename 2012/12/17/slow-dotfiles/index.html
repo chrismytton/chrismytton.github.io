@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -59,19 +59,19 @@ MacBook Air with “only” 2GB of RAM, it was very noticeable.</p>
 <p>Last weekend I decided to finally sit down and figure out what was causing the
 slow startup times. I stepped through the startup process in my <a href="https://github.com/chrismytton/dotfiles">dotfiles</a>,
 commenting out lines until it was fast again, it didn’t take long to find
-the offending line in my <code class="highlighter-rouge">zshrc</code>.</p>
+the offending line in my <code>zshrc</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>module <span class="o">(</span><span class="nv">$DOTFILES</span>/<span class="k">**</span>/<span class="k">*</span>.zsh<span class="o">)</span> <span class="nb">source</span> <span class="s2">"</span><span class="nv">$module</span><span class="s2">"</span>
 </code></pre></div></div>
 
-<p>This line uses shell globbing to load up all the files that end in <code class="highlighter-rouge">.zsh</code> in
+<p>This line uses shell globbing to load up all the files that end in <code>.zsh</code> in
 the dotfiles repo, its pretty central to the way the dotfiles work, without
 it no custom zsh scripts are loaded. So how could this line be causing such
 a slow startup?</p>
 
 <p>The way <a href="http://en.wikipedia.org/wiki/Glob_(programming)">globbing</a> works is it expands the pattern into a list of
 files. In this case it checks all the files in the dotfiles directory to
-see if they end with <code class="highlighter-rouge">.zsh</code>.</p>
+see if they end with <code>.zsh</code>.</p>
 
 <p>This shouldn’t be a problem, but I had configured my vim plugins
 to be installed into a directory within the dotfiles repo, which had its

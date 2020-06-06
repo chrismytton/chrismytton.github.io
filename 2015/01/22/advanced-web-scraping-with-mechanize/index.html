@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -58,7 +58,7 @@
 
 <h2 id="scraping-pitchfork-reviews">Scraping Pitchfork reviews</h2>
 
-<p>Mechanize provides an out-of-the-box scraping solution that can handle filling in forms, following links and respecting a site’s robots.txt file. Here I’ll show you how it can be used to scrape the latest reviews from <a href="http://pitchfork.com/">Pitchfork</a> <sup id="fnref:disclaimer"><a href="#fn:disclaimer" class="footnote">1</a></sup>.</p>
+<p>Mechanize provides an out-of-the-box scraping solution that can handle filling in forms, following links and respecting a site’s robots.txt file. Here I’ll show you how it can be used to scrape the latest reviews from <a href="http://pitchfork.com/">Pitchfork</a> <sup id="fnref:disclaimer" role="doc-noteref"><a href="#fn:disclaimer" class="footnote">1</a></sup>.</p>
 
 <p>Reviews are spread across multiple pages, so we can’t simply fetch a single page and parse it with Nokogiri. This is where Mechanize can help with its ability to click on links and follow them to other pages.</p>
 
@@ -66,17 +66,17 @@
 
 <p>First we’ll need to install <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">Mechanize</a> and its dependencies from Rubygems.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install mechanize
-</code></pre></div></div>
+<pre><code>$ gem install mechanize
+</code></pre>
 
-<p>With Mechanize installed we can now start writing our scraper. Create a file called <code class="highlighter-rouge">scraper.rb</code> and add the following <code class="highlighter-rouge">require</code> statements. These specify the dependencies we need for this script. <code class="highlighter-rouge">date</code> and <code class="highlighter-rouge">json</code> are part of Ruby’s standard library, so there’s no need to install them separately.</p>
+<p>With Mechanize installed we can now start writing our scraper. Create a file called <code>scraper.rb</code> and add the following <code>require</code> statements. These specify the dependencies we need for this script. <code>date</code> and <code>json</code> are part of Ruby’s standard library, so there’s no need to install them separately.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mechanize'</span>
 <span class="nb">require</span> <span class="s1">'date'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
 </code></pre></div></div>
 
-<p>Now we can start using Mechanize. First thing we need to do is create a new instance of Mechanize (<code class="highlighter-rouge">agent</code>) and then use it to fetch a remote webpage (<code class="highlighter-rouge">page</code>).</p>
+<p>Now we can start using Mechanize. First thing we need to do is create a new instance of Mechanize (<code>agent</code>) and then use it to fetch a remote webpage (<code>page</code>).</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="no">Mechanize</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">page</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://pitchfork.com/reviews/albums/"</span><span class="p">)</span>
@@ -84,9 +84,9 @@
 
 <h3 id="find-links-to-reviews">Find links to reviews</h3>
 
-<p>Now we can use the <code class="highlighter-rouge">page</code> object to find links to reviews. Mechanize provides a <code class="highlighter-rouge">.links_with</code> method which, as the name suggests, finds links with the given attributes. Here we look for links which match a regular expression.</p>
+<p>Now we can use the <code>page</code> object to find links to reviews. Mechanize provides a <code>.links_with</code> method which, as the name suggests, finds links with the given attributes. Here we look for links which match a regular expression.</p>
 
-<p>This returns an array of links, but we only want links to reviews, not pagination. To remove unwanted links we can call <code class="highlighter-rouge">.reject</code> on the array of links and reject any which look like pagination links.</p>
+<p>This returns an array of links, but we only want links to reviews, not pagination. To remove unwanted links we can call <code>.reject</code> on the array of links and reject any which look like pagination links.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="p">)</span>
 
@@ -103,11 +103,11 @@
 
 <h3 id="process-each-review">Process each review</h3>
 
-<p>We now have a list of Mechanize links which we want to map to the reviews that they link to. Since they’re in an array we can call <code class="highlighter-rouge">.map</code> on it and return a hash from each iteration.</p>
+<p>We now have a list of Mechanize links which we want to map to the reviews that they link to. Since they’re in an array we can call <code>.map</code> on it and return a hash from each iteration.</p>
 
-<p>The Mechanize <code class="highlighter-rouge">page</code> object has a <code class="highlighter-rouge">.search</code> method which delegates to Nokogiri’s <code class="highlighter-rouge">.search</code> method. This means that we can use a CSS selector as an argument to <code class="highlighter-rouge">.search</code> and it will return an array of matching elements.</p>
+<p>The Mechanize <code>page</code> object has a <code>.search</code> method which delegates to Nokogiri’s <code>.search</code> method. This means that we can use a CSS selector as an argument to <code>.search</code> and it will return an array of matching elements.</p>
 
-<p>Here we first get the review metadata using the CSS selector <code class="highlighter-rouge">#main .review-meta .info</code> and then search inside the <code class="highlighter-rouge">review_meta</code> element for the various bits of information that we need.</p>
+<p>Here we first get the review metadata using the CSS selector <code>#main .review-meta .info</code> and then search inside the <code>review_meta</code> element for the various bits of information that we need.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reviews</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
   <span class="n">review</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">click</span>
@@ -178,10 +178,10 @@
 <span class="nb">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span><span class="p">(</span><span class="n">reviews</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Put this code in a file called <code class="highlighter-rouge">scraper.rb</code> and run it with the following.</p>
+<p>Put this code in a file called <code>scraper.rb</code> and run it with the following.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby scraper.rb
-</code></pre></div></div>
+<pre><code>$ ruby scraper.rb
+</code></pre>
 
 <p>And it should output something like this:</p>
 
@@ -227,8 +227,8 @@
 
 <p>If you want, you can save this JSON to a file by redirecting standard out to a file.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby scraper.rb &gt; reviews.json
-</code></pre></div></div>
+<pre><code>$ ruby scraper.rb &gt; reviews.json
+</code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -238,10 +238,10 @@
 
 <p>However on reflection the fact that <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">Mechanize</a> handles fetching the remote webpage and respects robots.txt files makes me think that, even for non-advanced scraping tasks, Mechanize will often be the best tool for the job.</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:disclaimer">
-      <p>You should always scrape responsibly. Check out the <a href="https://blog.scraperwiki.com/2012/04/is-scraping-legal/">Is scraping legal?</a> blog post from ScraperWiki for more discussion on the subject. <a href="#fnref:disclaimer" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:disclaimer" role="doc-endnote">
+      <p>You should always scrape responsibly. Check out the <a href="https://blog.scraperwiki.com/2012/04/is-scraping-legal/">Is scraping legal?</a> blog post from ScraperWiki for more discussion on the subject. <a href="#fnref:disclaimer" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

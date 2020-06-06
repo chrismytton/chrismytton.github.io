@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -52,28 +52,28 @@
 
   <div class="post-content">
     
-<p><a href="https://www.ruby-lang.org/">Ruby</a> has two classes, <code class="highlighter-rouge">Time</code> <sup id="fnref:two-time-classes"><a href="#fn:two-time-classes" class="footnote">1</a></sup> and <code class="highlighter-rouge">DateTime</code>, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby? Ruby’s documentation contains the answer:</p>
+<p><a href="https://www.ruby-lang.org/">Ruby</a> has two classes, <code>Time</code> <sup id="fnref:two-time-classes" role="doc-noteref"><a href="#fn:two-time-classes" class="footnote">1</a></sup> and <code>DateTime</code>, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby? Ruby’s documentation contains the answer:</p>
 
 <blockquote>
-  <p>It’s a common misconception that William Shakespeare and Miguel de Cervantes died on the same day in history - so much so that UNESCO named April 23 as World Book Day because of this fact. However, because England hadn’t yet adopted the Gregorian Calendar Reform (and wouldn’t until 1752) their deaths are actually 10 days apart. Since Ruby’s <code class="highlighter-rouge">Time</code> class implements a proleptic Gregorian calendar and has no concept of calendar reform there’s no way to express this with <code class="highlighter-rouge">Time</code> objects. This is where <code class="highlighter-rouge">DateTime</code> steps in:</p>
+  <p>It’s a common misconception that William Shakespeare and Miguel de Cervantes died on the same day in history - so much so that UNESCO named April 23 as World Book Day because of this fact. However, because England hadn’t yet adopted the Gregorian Calendar Reform (and wouldn’t until 1752) their deaths are actually 10 days apart. Since Ruby’s <code>Time</code> class implements a proleptic Gregorian calendar and has no concept of calendar reform there’s no way to express this with <code>Time</code> objects. This is where <code>DateTime</code> steps in:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shakespeare = DateTime.iso8601('1616-04-23', Date::ENGLAND)
+  <pre><code>shakespeare = DateTime.iso8601('1616-04-23', Date::ENGLAND)
  #=&gt; Tue, 23 Apr 1616 00:00:00 +0000
 cervantes = DateTime.iso8601('1616-04-23', Date::ITALY)
  #=&gt; Sat, 23 Apr 1616 00:00:00 +0000
-</code></pre></div>  </div>
+</code></pre>
 
   <p>Already you can see something is weird - the days of the week are different. Taking this further:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cervantes == shakespeare
+  <pre><code>cervantes == shakespeare
  #=&gt; false
 (shakespeare - cervantes).to_i
  #=&gt; 10
-</code></pre></div>  </div>
+</code></pre>
 
   <p>This shows that in fact they died 10 days apart (in reality 11 days since Cervantes died a day earlier but was buried on the 23rd). We can see the actual date of Shakespeare’s death by using the gregorian method to convert it:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shakespeare.gregorian
+  <pre><code>shakespeare.gregorian
  #=&gt; Tue, 03 May 1616 00:00:00 +0000 So there's an argument that all the celebrations that take place on the 23rd April in Stratford-upon-Avon are actually the wrong date since England is now using the Gregorian calendar. You can see why when we transition across the reform date boundary:
 
 # start off with the anniversary of Shakespeare's birth in 1751
@@ -87,27 +87,27 @@ shakespeare + 366
 # add another 365 days to take us to the anniversary in 1753
 shakespeare + 366 + 365
  #=&gt; Fri, 04 May 1753 00:00:00 +0000
-</code></pre></div>  </div>
+</code></pre>
 
   <p>As you can see, if we’re accurately tracking the number of solar years since Shakespeare’s birthday then the correct anniversary date would be the 4th May and not the 23rd April.</p>
 
   <p>So when should you use DateTime in Ruby and when should you use Time? Almost certainly you’ll want to use Time since your app is probably dealing with current dates and times. However, if you need to deal with dates and times in a historical context you’ll want to use DateTime to avoid making the same mistakes as UNESCO. If you also have to deal with timezones then best of luck - just bear in mind that you’ll probably be dealing with local solar times, since it wasn’t until the 19th century that the introduction of the railways necessitated the need for Standard Time and eventually timezones.</p>
 </blockquote>
 
-<p>From “<a href="https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/DateTime.html#class-DateTime-label-When+should+you+use+DateTime+and+when+should+you+use+Time-3F">When should you use <code class="highlighter-rouge">DateTime</code> and when should you use <code class="highlighter-rouge">Time</code>?</a>” in the Ruby stdlib <code class="highlighter-rouge">DateTime</code> documentation.</p>
+<p>From “<a href="https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/DateTime.html#class-DateTime-label-When+should+you+use+DateTime+and+when+should+you+use+Time-3F">When should you use <code>DateTime</code> and when should you use <code>Time</code>?</a>” in the Ruby stdlib <code>DateTime</code> documentation.</p>
 
 <h2 id="summary">Summary</h2>
 
 <ul>
-  <li>Use <code class="highlighter-rouge">Time</code> when dealing with near-past, present or future dates. It can technically represent dates from 1823-11-12 to 2116-02-20.</li>
-  <li>Use <code class="highlighter-rouge">DateTime</code> when you want to accurately model distant past dates, like Shakespeare’s birthday.</li>
-  <li>So for most applications use <code class="highlighter-rouge">Time</code>.</li>
+  <li>Use <code>Time</code> when dealing with near-past, present or future dates. It can technically represent dates from 1823-11-12 to 2116-02-20.</li>
+  <li>Use <code>DateTime</code> when you want to accurately model distant past dates, like Shakespeare’s birthday.</li>
+  <li>So for most applications use <code>Time</code>.</li>
 </ul>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:two-time-classes">
-      <p>There are actually <em>two</em> <code class="highlighter-rouge">Time</code> classes, one in core and one in the standard library which you get when you or one of your dependencies does a <code class="highlighter-rouge">require 'time'</code>. <a href="#fnref:two-time-classes" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:two-time-classes" role="doc-endnote">
+      <p>There are actually <em>two</em> <code>Time</code> classes, one in core and one in the standard library which you get when you or one of your dependencies does a <code>require 'time'</code>. <a href="#fnref:two-time-classes" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

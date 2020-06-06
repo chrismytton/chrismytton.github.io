@@ -22,7 +22,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -57,9 +57,9 @@
 
 <p>At least part of their popularity is due to their provenance. They’ve been created by some of the biggest tech companies today. Mozilla (Rust), Google (Go) and Apple (Swift) are all solving problems that benefit from the extra speed and safety that you get from statically typed compiled languages. The companies realised early on that by releasing these languages as open source they can benefit from the community that builds around them, so they successfully marketed them to programmers. Now there’s a network effect going on where the communities around these languages are growing, so there’s more useful open source code available, so more programmers can solve their problems using these languages.</p>
 
-<p>In the Stack Overflow Developer Survey 2019<sup id="fnref:survey-2019"><a href="#fn:survey-2019" class="footnote">1</a></sup> the most popular programming language was JavaScript, a dynamically typed interpreted language. But the most loved language was Rust. So why are people wanting to go back to compiled languages, aren’t they really <a href="https://xkcd.com/303/">slow to compile</a>? Well it turns out that advances in computer science mean we’ve now got significantly faster compilers, so there’s not as much time spent waiting while code compiles compared to older compiled languages. In fact for small to medium size programs it can often feel like you are running an interpreted language the compilation step is so fast.</p>
+<p>In the Stack Overflow Developer Survey 2019<sup id="fnref:survey-2019" role="doc-noteref"><a href="#fn:survey-2019" class="footnote">1</a></sup> the most popular programming language was JavaScript, a dynamically typed interpreted language. But the most loved language was Rust. So why are people wanting to go back to compiled languages, aren’t they really <a href="https://xkcd.com/303/">slow to compile</a>? Well it turns out that advances in computer science mean we’ve now got significantly faster compilers, so there’s not as much time spent waiting while code compiles compared to older compiled languages. In fact for small to medium size programs it can often feel like you are running an interpreted language the compilation step is so fast.</p>
 
-<p>The preference for static typing in these languages must be driven at least in part by a desire to reduce the number of bugs encountered in production. In one study the use of static typing was shown to reduce the rate of bugs by 15%<sup id="fnref:to-type-or-not-to-type"><a href="#fn:to-type-or-not-to-type" class="footnote">2</a></sup>, which is a big saving no matter what scale you operate on. The extra overhead of understanding and using a type system are outweighed by the benefits it provides. We all want fewer bugs in our code, after all.</p>
+<p>The preference for static typing in these languages must be driven at least in part by a desire to reduce the number of bugs encountered in production. In one study the use of static typing was shown to reduce the rate of bugs by 15%<sup id="fnref:to-type-or-not-to-type" role="doc-noteref"><a href="#fn:to-type-or-not-to-type" class="footnote">2</a></sup>, which is a big saving no matter what scale you operate on. The extra overhead of understanding and using a type system are outweighed by the benefits it provides. We all want fewer bugs in our code, after all.</p>
 
 <p>Another nice benefit that a lot of compiled languages provide is simplified deployment. For languages like Go and Rust that output a single binary you easily deploy that binary to production and store previous versions for rollback etc. Contrast this with interpreted languages like Node.js and Ruby, where you need to have a copy of the whole source tree and the source of all the dependencies arranged appropriately on disk.</p>
 
@@ -67,13 +67,13 @@
 
 <p>This new generation of languages provide lots of benefits for the big tech companies behind them. By making them open source these companies have benefitted from the network effect as communities have sprung up around these languages creating and sharing useful code libraries. These languages are fun to write, fast to run and have the potential to uncover bugs earlier in the development process.</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:survey-2019">
-      <p><a href="https://insights.stackoverflow.com/survey/2019">Stack Overflow Developer Survey Results 2019</a> <a href="#fnref:survey-2019" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:survey-2019" role="doc-endnote">
+      <p><a href="https://insights.stackoverflow.com/survey/2019">Stack Overflow Developer Survey Results 2019</a> <a href="#fnref:survey-2019" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:to-type-or-not-to-type">
-      <p>Gao, Zheng, Christian Bird, and Earl T. Barr. <a href="http://earlbarr.com/publications/typestudy.pdf">“To type or not to type: quantifying detectable bugs in JavaScript.”</a> Proceedings of the 39th International Conference on Software Engineering. IEEE Press, 2017. <a href="#fnref:to-type-or-not-to-type" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:to-type-or-not-to-type" role="doc-endnote">
+      <p>Gao, Zheng, Christian Bird, and Earl T. Barr. <a href="http://earlbarr.com/publications/typestudy.pdf">“To type or not to type: quantifying detectable bugs in JavaScript.”</a> Proceedings of the 39th International Conference on Software Engineering. IEEE Press, 2017. <a href="#fnref:to-type-or-not-to-type" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

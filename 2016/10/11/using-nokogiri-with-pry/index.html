@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -54,23 +54,23 @@
     
 <p>I wanted a quick way to run some XPath selectors against a web page today. <a href="http://www.nokogiri.org/">Nokogiri</a> comes with a command line tool that you can pass a url and it will drop you into an IRB session. This allows you to play around with some Ruby code to explore a webpage before scraping it.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nokogiri http://example.com
-</code></pre></div></div>
+<pre><code>nokogiri http://example.com
+</code></pre>
 
 <p>This is useful, but I wanted to use it with <a href="http://pryrepl.org/">Pry</a>. It turns out that adding support for Pry is relatively easy, but I couldn’t find any clear top to bottom instructions, so I’ve documented the process below.</p>
 
 <p>First install Nokogiri and Pry:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install nokogiri pry
-</code></pre></div></div>
+<pre><code>gem install nokogiri pry
+</code></pre>
 
-<p>Then add the following code to <code class="highlighter-rouge">~/.nokogirirc</code>:</p>
+<p>Then add the following code to <code>~/.nokogirirc</code>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'pry'</span>
 <span class="no">Nokogiri</span><span class="o">::</span><span class="no">CLI</span><span class="p">.</span><span class="nf">console</span> <span class="o">=</span> <span class="no">Pry</span>
 </code></pre></div></div>
 
-<p>That’s it! Now when you use the <code class="highlighter-rouge">nokogiri</code> command line tool it will now drop you into a pry REPL. This is perfect for testing your CSS and XPath selectors when you’re <a href="https://www.chrismytton.uk/2015/01/19/web-scraping-with-ruby/">writing a scraper</a>.</p>
+<p>That’s it! Now when you use the <code>nokogiri</code> command line tool it will now drop you into a pry REPL. This is perfect for testing your CSS and XPath selectors when you’re <a href="https://www.chrismytton.uk/2015/01/19/web-scraping-with-ruby/">writing a scraper</a>.</p>
 
 <noscript>
 <a href="https://asciinema.org/a/88853" target="_blank"><img src="https://asciinema.org/a/88853.png" /></a>

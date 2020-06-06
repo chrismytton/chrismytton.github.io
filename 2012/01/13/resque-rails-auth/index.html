@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -61,8 +61,8 @@ I realised that I could mount resque directly in the router, awesome!</p>
 easy way to restrict resque-web to admins.</p>
 
 <p>Using rails 3 router’s <a href="http://guides.rubyonrails.org/routing.html#advanced-constraints">advanced constraints</a>
-you can pass a <code class="highlighter-rouge">:constraints</code> options with an object that responds to
-<code class="highlighter-rouge">matches?</code> and receives the current request as an argument.</p>
+you can pass a <code>:constraints</code> options with an object that responds to
+<code>matches?</code> and receives the current request as an argument.</p>
 
 <p>Since the current user’s id is stored in the session, we can simply
 retrieve the user and check if they’re an admin.</p>
@@ -81,18 +81,18 @@ retrieve the user and check if they’re an admin.</p>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">AdminRestriction</code> class performs the actual checks, in the router
+<p>The <code>AdminRestriction</code> class performs the actual checks, in the router
 it is simply passed as a constraint.</p>
 
-<p>First we pull the <code class="highlighter-rouge">user_id</code> out of the session, then we attempt to get
+<p>First we pull the <code>user_id</code> out of the session, then we attempt to get
 the user from the database. Finally we check that we’ve found a user and
 that they are an admin.</p>
 
-<p>If the user tries to access <code class="highlighter-rouge">/resque</code> and they are not an admin, they
+<p>If the user tries to access <code>/resque</code> and they are not an admin, they
 simply get a 404 error.</p>
 
 <p>This technique can be used with any rack application, or indeed with any
-regular route, just pass a <code class="highlighter-rouge">:constraints</code> option (see the
+regular route, just pass a <code>:constraints</code> option (see the
 <a href="http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Base.html#method-i-match">match method docs</a>),
 and the constraints that you apply can use any part of the request to decide if
 it matches. You can restrict access by ip address, or do routing based

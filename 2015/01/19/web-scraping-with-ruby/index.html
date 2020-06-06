@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -56,7 +56,7 @@
 
 <p>Scraping the web with Ruby is easier than you might think. Let’s start with a simple example, I want to get a nicely formatted JSON array of objects representing all the showings for my <a href="http://www.cubecinema.com/programme">local independent cinema</a>.</p>
 
-<p>First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, <code class="highlighter-rouge">Net::HTTP</code>, and it also comes with a nice wrapper around it, <code class="highlighter-rouge">open-uri</code> <sup id="fnref:open-uri"><a href="#fn:open-uri" class="footnote">1</a></sup>. So the first thing we do is grab the html from the remote server.</p>
+<p>First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, <code>Net::HTTP</code>, and it also comes with a nice wrapper around it, <code>open-uri</code> <sup id="fnref:open-uri" role="doc-noteref"><a href="#fn:open-uri" class="footnote">1</a></sup>. So the first thing we do is grab the html from the remote server.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'open-uri'</span>
 
@@ -99,7 +99,7 @@
 
 <h2 id="processing-the-html">Processing the html</h2>
 
-<p>Each showing has the class <code class="highlighter-rouge">.showing</code>, so we can select all the showings on the page and loop over them, processing each one in turn.</p>
+<p>Each showing has the class <code>.showing</code>, so we can select all the showings on the page and loop over them, processing each one in turn.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">showings</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">doc</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.showing'</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">showing</span><span class="o">|</span>
@@ -126,30 +126,30 @@
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">showing_id</span> <span class="o">=</span> <span class="n">showing</span><span class="p">[</span><span class="s1">'id'</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">).</span><span class="nf">last</span><span class="p">.</span><span class="nf">to_i</span>
 </code></pre></div></div>
 
-<p>First we get the showing’s unique id, which is helpfully exposed as part of the html id attribute in the markup. Using square brackets allows us to access attributes of the element, so using the html above as an example the return value of <code class="highlighter-rouge">showing['id']</code> would be <code class="highlighter-rouge">"event_7557"</code>. We’re only interested in the integer id, so we split the resulting string on the underscore, <code class="highlighter-rouge">.split('_')</code> and then take the last element from that array and convert it to an integer, <code class="highlighter-rouge">.last.to_i</code>.</p>
+<p>First we get the showing’s unique id, which is helpfully exposed as part of the html id attribute in the markup. Using square brackets allows us to access attributes of the element, so using the html above as an example the return value of <code>showing['id']</code> would be <code>"event_7557"</code>. We’re only interested in the integer id, so we split the resulting string on the underscore, <code>.split('_')</code> and then take the last element from that array and convert it to an integer, <code>.last.to_i</code>.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tags</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s1">'.tags a'</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">tag</span><span class="o">|</span> <span class="n">tag</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Here we find all the tags for a showing by using the <code class="highlighter-rouge">.css</code> method, which returns an array of matching elements. We then map these elements and take the text content and strip it of any excess whitespace. For the html above this would return <code class="highlighter-rouge">["comedy", "dvd", "film"]</code>.</p>
+<p>Here we find all the tags for a showing by using the <code>.css</code> method, which returns an array of matching elements. We then map these elements and take the text content and strip it of any excess whitespace. For the html above this would return <code>["comedy", "dvd", "film"]</code>.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">title_el</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'h1 a'</span><span class="p">)</span>
 <span class="n">title_el</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">c</span><span class="p">.</span><span class="nf">remove</span> <span class="k">if</span> <span class="n">c</span><span class="p">.</span><span class="nf">name</span> <span class="o">==</span> <span class="s1">'span'</span> <span class="p">}</span>
 <span class="n">title</span> <span class="o">=</span> <span class="n">title_el</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">strip</span>
 </code></pre></div></div>
 
-<p>The code to get the title is a bit more involved because the title element in the html contains some extra spans with a prefix and a suffix. First we get the title element using <code class="highlighter-rouge">.at_css</code>, which returns a single matching element. Then we loop over the children of the title element and remove any spans. Finally with the spans gone we get the text of the title element and strip out any excess whitespace.</p>
+<p>The code to get the title is a bit more involved because the title element in the html contains some extra spans with a prefix and a suffix. First we get the title element using <code>.at_css</code>, which returns a single matching element. Then we loop over the children of the title element and remove any spans. Finally with the spans gone we get the text of the title element and strip out any excess whitespace.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dates</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.start_and_pricing'</span><span class="p">).</span><span class="nf">inner_html</span><span class="p">.</span><span class="nf">strip</span>
 <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'&lt;br&gt;'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="no">DateTime</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>This is the code for getting the date and time of a showing. It’s a bit involved because a showing can be on multiple days, and sometimes there is also pricing information in the same element. We’re mapping the dates that we find to <code class="highlighter-rouge">DateTime.parse</code> so that the result is an array of ruby <code class="highlighter-rouge">DateTime</code> objects.</p>
+<p>This is the code for getting the date and time of a showing. It’s a bit involved because a showing can be on multiple days, and sometimes there is also pricing information in the same element. We’re mapping the dates that we find to <code>DateTime.parse</code> so that the result is an array of ruby <code>DateTime</code> objects.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">description</span> <span class="o">=</span> <span class="n">showing</span><span class="p">.</span><span class="nf">at_css</span><span class="p">(</span><span class="s1">'.copy'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'[more...]'</span><span class="p">,</span> <span class="s1">''</span><span class="p">).</span><span class="nf">strip</span>
 </code></pre></div></div>
 
-<p>Getting the description is quite straightforward, the only real processing we have to do is remove the <code class="highlighter-rouge">[more...]</code> text using <code class="highlighter-rouge">.gsub</code>.</p>
+<p>Getting the description is quite straightforward, the only real processing we have to do is remove the <code>[more...]</code> text using <code>.gsub</code>.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">showings</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span>
     <span class="ss">id: </span><span class="n">showing_id</span><span class="p">,</span>
@@ -207,7 +207,7 @@
 <span class="nb">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span><span class="p">(</span><span class="n">showings</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>If you save the above into a file called <code class="highlighter-rouge">scraper.rb</code> and run it with <code class="highlighter-rouge">ruby scraper.rb</code> then you should see the JSON representation of the events printed to stdout. It will look something like the following.</p>
+<p>If you save the above into a file called <code>scraper.rb</code> and run it with <code>ruby scraper.rb</code> then you should see the JSON representation of the events printed to stdout. It will look something like the following.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -242,10 +242,10 @@
 
 <p>Hopefully this introduction to scraping has given you some ideas for data that you want to turn into a more structured format using the scraping techniques described above.</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:open-uri">
-      <p>While good for basic tasks like this, open-uri has <a href="https://bugs.ruby-lang.org/issues/3719">some issues</a> which mean you may want to look elsewhere for an http client to use in production. <a href="#fnref:open-uri" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:open-uri" role="doc-endnote">
+      <p>While good for basic tasks like this, open-uri has <a href="https://bugs.ruby-lang.org/issues/3719">some issues</a> which mean you may want to look elsewhere for an http client to use in production. <a href="#fnref:open-uri" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

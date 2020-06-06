@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -77,7 +77,7 @@ chips and subsystem modules.
 
 <p>Once I got the traffic lights wired up and working I started hacking
 on the software side of things. The <a href="http://skpang.co.uk/dl/traffic_light_rev_2.py">example python code</a> didn’t cleanup
-the GPIO when I pressed <code class="highlighter-rouge">ctrl-c</code>, so the lights remained in the position
+the GPIO when I pressed <code>ctrl-c</code>, so the lights remained in the position
 they were in when I interrupted the process. To fix this I <a href="https://github.com/chrismytton/rpi-traffic_lights/blob/a6fba162d11679bd3daaeb9a8adca2b223092152/traffic_light_rev_2.py#L34-L42">installed a
 signal handler</a> to run the GPIO cleanup code and exit cleanly.</p>
 

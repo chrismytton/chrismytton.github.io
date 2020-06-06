@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -56,33 +56,33 @@
 
 <p>In the end it was quite straightforward with the help of <a href="https://csvkit.readthedocs.io/en/latest/">csvkit</a> and a sprinkle of UNIX.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>in2csv reports.xlsx |
+<pre><code>in2csv reports.xlsx |
   csvcut -c 1 |
   sed '1d' |
   paste -sd , -
-</code></pre></div></div>
+</code></pre>
 
 <h2 id="steps">Steps</h2>
 
-<p>To convert from XLSX to CSV format you can use the handy <a href="https://csvkit.readthedocs.io/en/latest/scripts/in2csv.html"><code class="highlighter-rouge">in2csv</code></a> utility from csvkit, which automatically detects the type of input file.</p>
+<p>To convert from XLSX to CSV format you can use the handy <a href="https://csvkit.readthedocs.io/en/latest/scripts/in2csv.html"><code>in2csv</code></a> utility from csvkit, which automatically detects the type of input file.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>in2csv reports.xlsx
-</code></pre></div></div>
+<pre><code>in2csv reports.xlsx
+</code></pre>
 
-<p>The ID column is in the first column of the CSV. The <a href="https://csvkit.readthedocs.io/en/latest/scripts/csvcut.html"><code class="highlighter-rouge">csvcut</code></a> utility from csvkit can be used to extract one or more columns from a CSV. You can also pass the column header name to the <code class="highlighter-rouge">-c</code> argument, instead of a number.</p>
+<p>The ID column is in the first column of the CSV. The <a href="https://csvkit.readthedocs.io/en/latest/scripts/csvcut.html"><code>csvcut</code></a> utility from csvkit can be used to extract one or more columns from a CSV. You can also pass the column header name to the <code>-c</code> argument, instead of a number.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>csvcut -c 1
-</code></pre></div></div>
+<pre><code>csvcut -c 1
+</code></pre>
 
-<p>The output now contains a single column of data from the CSV, but it still has the header. That can be removed with the help of <code class="highlighter-rouge">sed</code>’s delete function.</p>
+<p>The output now contains a single column of data from the CSV, but it still has the header. That can be removed with the help of <code>sed</code>’s delete function.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed '1d'
-</code></pre></div></div>
+<pre><code>sed '1d'
+</code></pre>
 
-<p>The IDs are now one-per-line, so the final step is to join them together onto a single line with <code class="highlighter-rouge">paste</code>.</p>
+<p>The IDs are now one-per-line, so the final step is to join them together onto a single line with <code>paste</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>paste -sd , -
-</code></pre></div></div>
+<pre><code>paste -sd , -
+</code></pre>
 
   </div>
 

@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1591213269">
+    <link rel="stylesheet" href="/assets/css/main.css?1591468575">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -56,12 +56,12 @@
 with some excellent tools for creating web-apps out of the box.</p>
 
 <p>I often want to create a “simple http server” to serve up the current
-directory, usually I reach for <code class="highlighter-rouge">python -m SimpleHTTPServer</code>, but in the
+directory, usually I reach for <code>python -m SimpleHTTPServer</code>, but in the
 spirit of re-inventing the wheel I decided to see how Go could handle
 this task.</p>
 
 <p>It turned out to be remarkably simple. Go comes with a static file server
-as part of the <code class="highlighter-rouge">net/http</code> package, in this example I’ve added a couple of flags that
+as part of the <code>net/http</code> package, in this example I’ve added a couple of flags that
 allow specifying the port and the root filesystem path for the process.</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// httpserver.go</span>
@@ -82,28 +82,28 @@ allow specifying the port and the root filesystem path for the process.</p>
 </code></pre></div></div>
 
 <p>The actual meat of the program is the second line inside the main
-function. <code class="highlighter-rouge">http.ListenAndServe</code> accepts an address to listen on as the first argument,
-and an object which implements the <code class="highlighter-rouge">http.Handler</code> interface as the second,
-in this case <code class="highlighter-rouge">http.FileServer</code>. If
-<code class="highlighter-rouge">ListenAndServe</code> returns an error (most likely because another process
-is using the desired port) then the process will <code class="highlighter-rouge">panic</code> and exit.</p>
+function. <code>http.ListenAndServe</code> accepts an address to listen on as the first argument,
+and an object which implements the <code>http.Handler</code> interface as the second,
+in this case <code>http.FileServer</code>. If
+<code>ListenAndServe</code> returns an error (most likely because another process
+is using the desired port) then the process will <code>panic</code> and exit.</p>
 
 <p>If you’ve got Go installed then this can be run directly.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ go run httpserver.go
-</code></pre></div></div>
+<pre><code>$ go run httpserver.go
+</code></pre>
 
 <p>Or you can compile it to a standalone binary.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ go build httpserver.go
+<pre><code>$ go build httpserver.go
 $ ./httpserver
-</code></pre></div></div>
+</code></pre>
 
-<p>The file server implementation that Go provides even handles serving <code class="highlighter-rouge">index.html</code>
+<p>The file server implementation that Go provides even handles serving <code>index.html</code>
 from a directory if no file is specified, and provides a directory
-listing if there is no <code class="highlighter-rouge">index.html</code> present.</p>
+listing if there is no <code>index.html</code> present.</p>
 
-<p>For more details check out <a href="http://golang.org/src/pkg/net/http/fs.go?s=12008:12048#L401">Go’s implementation of <code class="highlighter-rouge">http.FileServer</code></a>.</p>
+<p>For more details check out <a href="http://golang.org/src/pkg/net/http/fs.go?s=12008:12048#L401">Go’s implementation of <code>http.FileServer</code></a>.</p>
 
 <p>The code shown in this article is available <a href="https://github.com/chrismytton/httpserver">on
 GitHub</a>.</p>
