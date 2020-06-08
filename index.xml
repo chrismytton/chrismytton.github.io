@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-06-06T18:36:15+00:00</updated>
+  <updated>2020-06-08T18:31:39+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Senior Developer at mySociety. This is my personal website.</subtitle>
@@ -19,34 +19,18 @@
     <id>https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/</id>
     <content type="html" xml:base="https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/">
       
-&lt;p&gt;I ported a JavaScript “random art generator” I created a few years ago to TypeScript. This post contains some notes from the process.&lt;/p&gt;
+&lt;p&gt;I ported a JavaScript “random art generator” I created a few years ago over to TypeScript. This post contains some notes from the process.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;See the project: &lt;a href=&quot;https://www.chrismytton.uk/art/&quot;&gt;www.chrismytton.uk/art&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art/blob/1f34e99d121f2c7dd698eb8c9d45da1e9b7f450c/src/random.ts&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;I’ve been learning TypeScript recently. As part of that I wanted to dig out some of my old JavaScript projects and port them to TypeScript. I find porting code to a new language is a good way to learn. In the case of TypeScript the porting process is fairly straightforward, because TypeScript is essentially JavaScript with Types. But there’s still lots to learn from the process.&lt;/p&gt;
+&lt;p&gt;I’ve been learning TypeScript recently. As part of that I wanted to dig out some of my old JavaScript projects and port them to TypeScript. I find porting code to a new language is a good way to learn.&lt;/p&gt;
 
-&lt;p&gt;I found an old git repository that I create in 2014 which I called, rather vaguely, “art”. It uses JavaScript and Canvas to create random pieces of art on every page load. The code itself is fairly straightforward, so it seemed like a good candidate for porting to TypeScript.&lt;/p&gt;
-
-&lt;h2 id=&quot;explicit-types&quot;&gt;Explicit types&lt;/h2&gt;
-
-&lt;p&gt;TypeScript has optional static typing. This is the primary difference between JavaScript and TypeScript.&lt;/p&gt;
-
-&lt;p&gt;There are four separate pages in this project, each with a different bit of random art. They all use the &lt;code&gt;random&lt;/code&gt; function, which takes a &lt;code&gt;max&lt;/code&gt; parameter and returns a random number less than &lt;code&gt;max&lt;/code&gt;. In order to convert that function to idiomatic TypeScript we annotate the types of the arguments and the return value.&lt;/p&gt;
-
-&lt;div class=&quot;language-diff highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gd&quot;&gt;- function random(max) {
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+ function random(max: number): number {
-&lt;/span&gt;    return Math.floor(Math.random() * max);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;code&gt;max: number&lt;/code&gt; bit tells the TypeScript compiler that the &lt;code&gt;max&lt;/code&gt; parameter is a &lt;code&gt;number&lt;/code&gt;. The &lt;code&gt;: number&lt;/code&gt; bit after the parentheses denotes the return type.&lt;/p&gt;
-
-&lt;p&gt;Because TypeScript already knows that &lt;code&gt;Math.floor&lt;/code&gt; returns a &lt;code&gt;number&lt;/code&gt; you don’t need to explicitly give the return type for &lt;code&gt;random&lt;/code&gt;. In some cases, like callbacks, you don’t need to annotate the parameters. This is because TypeScript knows the signature of the callback function, so can infer the types of the callback arguments.&lt;/p&gt;
+&lt;p&gt;I found an old project that I create in 2014 which uses JavaScript and the Canvas API to create random pieces of art which change on every page load. The code itself is fairly straightforward, so it seemed like a good candidate for porting to TypeScript.&lt;/p&gt;
 
 &lt;h2 id=&quot;classes-in-typescript&quot;&gt;Classes in TypeScript&lt;/h2&gt;
 
@@ -58,32 +42,13 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Without these you’ll get a warning when trying to set &lt;code&gt;this.viewport&lt;/code&gt; etc, something like &lt;code&gt;Property &#39;viewport&#39; does not exist on type &#39;CanvasPainting&#39;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you try to use &lt;code&gt;this.viewport&lt;/code&gt; without declaring the property TypeScript will tell you:&lt;/p&gt;
 
-&lt;p&gt;I find having these properties explicitly defined actually makes it easier to figure out what the class might be doing internally. The serve as a lightweight documentation on the classes internal state.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Property ‘viewport’ does not exist on type ‘CanvasPainting’.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2 id=&quot;dealing-with-null-values&quot;&gt;Dealing with null values&lt;/h2&gt;
-
-&lt;p&gt;TypeScript knows which methods can return &lt;code&gt;null&lt;/code&gt; and will make you deal with those cases. If you try to call a method on a value that might be null then TypeScript will give you a warning. You can avoid this by adding in a check before using the value.&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasPainting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasRenderingContext2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2d&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// getContext can return null, so check for that case.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;getContext(&#39;2d&#39;) failed&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This is the kind of thing that often gets forgotten when writing JavaScript. You get a valid return value while testing it and forget to come back and add handling for the possibility of a &lt;code&gt;null&lt;/code&gt; return value. TypeScript protects you from this kind of error at the compile stage. This also means you don’t need to write as many tests for this kind of edge case, since the compiler can catch lots of them.&lt;/p&gt;
+&lt;p&gt;I find having these properties explicitly defined actually makes it easier to figure out what the class might be doing internally. They provide useful documentation about what kind of data you can expect to find in each property.&lt;/p&gt;
 
 &lt;h2 id=&quot;index-signatures&quot;&gt;Index signatures&lt;/h2&gt;
 
@@ -104,9 +69,45 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;p&gt;This tells TypeScript that you can index this class with a string, and it will return &lt;em&gt;something&lt;/em&gt;. There might be a way to avoid using &lt;code&gt;any&lt;/code&gt; here, but I haven’t figured that out yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;dealing-with-null-values&quot;&gt;Dealing with null values&lt;/h2&gt;
+
+&lt;p&gt;TypeScript knows which methods can return &lt;code&gt;null&lt;/code&gt; and will make you deal with those cases. If you try to call a method on a value that might be null then TypeScript will give you a warning.&lt;/p&gt;
+
+&lt;p&gt;You can avoid this warning by explicitly checking for &lt;code&gt;null&lt;/code&gt; before using the value.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasPainting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasRenderingContext2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2d&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// getContext can return null, so check for that case.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;getContext(&#39;2d&#39;) failed&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Without this check for &lt;code&gt;null&lt;/code&gt; TypeScript warns you that &lt;code&gt;Type &#39;null&#39; is not assignable to type &#39;CanvasRenderingContext2D&#39;.&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It’s easy to forget to check for &lt;code&gt;null&lt;/code&gt; when writing JavaScript. TypeScript protects you from this class of error at the compile stage.&lt;/p&gt;
+
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;I really like what I’ve seen so far with TypeScript. Working on little projects like this is a great way to get some experience with new tools. I’ve already creating a few other bits with TypeScript. I intend to write more about those projects in the near future.&lt;/p&gt;
+&lt;p&gt;I really like what I’ve seen so far with TypeScript. Working on little projects like this is a great way to get some experience with new tools.&lt;/p&gt;
+
+&lt;p&gt;I’d forgotten all about this fun little art project. It’s nice to have given it a bit of polish and released it into the world, rather than it gathering dust on my hard drive.&lt;/p&gt;
+
+&lt;p&gt;See the project: &lt;a href=&quot;https://www.chrismytton.uk/art/&quot;&gt;www.chrismytton.uk/art&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art/blob/1f34e99d121f2c7dd698eb8c9d45da1e9b7f450c/src/random.ts&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;.&lt;/p&gt;
+
 
     </content>
     <author>
