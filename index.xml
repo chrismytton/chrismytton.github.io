@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-06-09T12:59:28+00:00</updated>
+  <updated>2020-06-09T17:16:26+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Senior Developer at mySociety. This is my personal website.</subtitle>
@@ -30,7 +30,7 @@
 
 &lt;p&gt;I’ve been learning TypeScript recently. As part of that I wanted to dig out some of my old JavaScript projects and port them to TypeScript. I find porting code to a new language is a good way to learn.&lt;/p&gt;
 
-&lt;p&gt;I found an old project that I create in 2014 which uses JavaScript and the Canvas API to create random pieces of art which change on every page load. The code itself is fairly straightforward, so it seemed like a good candidate for porting to TypeScript.&lt;/p&gt;
+&lt;p&gt;I found an old project that I created in 2014 which uses JavaScript and the Canvas API to create random pieces of art which change on every page load. The code itself is fairly straightforward, so it seemed like a good candidate for porting to TypeScript.&lt;/p&gt;
 
 &lt;h2 id=&quot;classes-in-typescript&quot;&gt;Classes in TypeScript&lt;/h2&gt;
 
