@@ -22,7 +22,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1592431969">
+    <link rel="stylesheet" href="/assets/css/main.css?1592432044">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -97,7 +97,7 @@
 <p>After reading various bits of the TypeScript documentation and some Stack Overflow answers I eventually figured out that I needed to define an index signature on my shapes class. This tells TypeScript what can be used to index this class, and what the indexing might return.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Shapes</span> <span class="kd">extends</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
-  <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">any</span><span class="p">;</span>
+  <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">any</span><span class="p">;</span>
 
   <span class="c1">// ...</span>
 <span class="p">}</span>
