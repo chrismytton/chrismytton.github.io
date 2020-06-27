@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-06-23T20:51:28+00:00</updated>
+  <updated>2020-06-27T21:14:45+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>I'm a Senior Developer at mySociety. This is my personal website.</subtitle>
@@ -118,7 +118,7 @@
     
     <category term="art" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">📝 Notes from porting a JavaScript random art generator to TypeScript.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/random-art.png" />
     <media:content medium="image" url="https://www.chrismytton.uk/assets/images/random-art.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -171,7 +171,7 @@
     
     <category term="programming" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">Using csvkit and UNIX to extract a list of IDs from an XLSX file.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
     <media:content medium="image" url="https://www.chrismytton.uk"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -200,7 +200,7 @@
     
     <category term="nature" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">Diagram of my fruit garden, so I remember what's what.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/fruit-garden-schematic.png" />
     <media:content medium="image" url="https://www.chrismytton.uk/assets/images/fruit-garden-schematic.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -282,7 +282,7 @@
     
     <category term="society" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">A look at some of the positive things I hope will come out of the coronavirus pandemic.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/no-eggs-left.jpg" />
     <media:content medium="image" url="https://www.chrismytton.uk/assets/images/no-eggs-left.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -340,7 +340,7 @@
     
     <category term="life" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">Some tips for working from home that have served me well over the years.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
     <media:content medium="image" url="https://www.chrismytton.uk"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -365,7 +365,7 @@
     
     <category term="programming" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">[FiraCode](https://github.com/tonsky/FiraCode) is a "monospaced font with programming ligatures", which means it makes things like `==` show up in your editor as a single token.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
     <media:content medium="image" url="https://www.chrismytton.uk"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -446,7 +446,7 @@ shakespeare + 366 + 365
     
     <category term="programming" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">In Ruby when should you use `Time` vs `DateTime`, and why?</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
     <media:content medium="image" url="https://www.chrismytton.uk"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -479,7 +479,7 @@ shakespeare + 366 + 365
     
     <category term="running" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">> It gets easier. Every day it gets a little easier. But you've got to do it every day. That's the hard part. But it does get easier.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
     <media:content medium="image" url="https://www.chrismytton.uk"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -509,7 +509,7 @@ shakespeare + 366 + 365
     
     <category term="nature" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">Found some young wild garlic shoots while out walking yesterday</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/february-wild-garlic.jpg" />
     <media:content medium="image" url="https://www.chrismytton.uk/assets/images/february-wild-garlic.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
@@ -536,7 +536,7 @@ shakespeare + 366 + 365
     
     <category term="software" />
     
-    <summary type="html">With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.</summary>
+    <summary type="html">Starting your project with a command line tool forces you to figure out what the minimal solution to your problem would look like.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/command-line.png" />
     <media:content medium="image" url="https://www.chrismytton.uk/assets/images/command-line.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
