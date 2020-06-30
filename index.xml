@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
   <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-06-30T15:26:39+00:00</updated>
+  <updated>2020-06-30T21:26:04+00:00</updated>
   <id>https://www.chrismytton.uk/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
@@ -482,8 +482,8 @@ shakespeare + 366 + 365
     <category term="running" />
     
     <summary type="html">It gets easier. Every day it gets a little easier. But you've got to do it every day. That's the hard part. But it does get easier.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
-    <media:content medium="image" url="https://www.chrismytton.uk"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/it-gets-easier.jpg" />
+    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/it-gets-easier.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
