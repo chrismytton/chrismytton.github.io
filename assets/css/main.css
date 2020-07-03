@@ -687,7 +687,7 @@ h2, h3, h4, h5, h6 {
     content: " (" attr(href) ") "; }
   .site-footer .logo::after {
     content: " - www.chrismytton.uk"; }
-  .site-header .logo, .footer-links, .avatar, .post-tags {
+  .site-header .menu, .footer-links, .post-tags {
     display: none; }
   .container {
     max-width: 100%; } }
