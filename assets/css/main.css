@@ -596,8 +596,7 @@ a, a:visited {
 .site-footer {
   margin-top: 1rem;
   margin-bottom: 6rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ccc; }
+  padding-top: 1rem; }
 
 .footnotes {
   border-top: 1px solid #ccc;
@@ -692,17 +691,34 @@ h2, h3, h4, h5, h6 {
   .container {
     max-width: 100%; } }
 
+/*
 @media (prefers-color-scheme: dark) {
+  $whiteish: #e4e4e4;
+  $blackish: #444;
+
   body {
-    background-color: #444;
-    color: #e4e4e4; }
+    background-color: $blackish;
+    color: $whiteish;
+  }
+
   a, a:visited {
-    color: #5b8ad1; }
+    color: lighten($accent, 10%);
+  }
+
   img {
-    filter: grayscale(30%); }
+    filter: grayscale(30%);
+  }
+
   .logo, .logo:visited, .logo:hover {
-    color: #e4e4e4; }
+    color: $whiteish;
+  }
+
   blockquote {
-    color: #cbcbcb; }
+    color: darken($whiteish, 10%);
+  }
+
   pre, code {
-    background-color: #555; } }
+    background-color: #555;
+  }
+}
+*/
