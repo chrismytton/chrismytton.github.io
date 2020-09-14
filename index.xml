@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
-  <generator uri="https://www.chrismytton.uk/">chrismytton.uk</generator>
-  <link href="https://www.chrismytton.uk/index.xml" rel="self" type="application/atom+xml" />
-  <link href="https://www.chrismytton.uk/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-09-09T07:11:29+00:00</updated>
-  <id>https://www.chrismytton.uk/index.xml</id>
+  <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
+  <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
+  <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
+  <updated>2020-09-14T17:58:39+00:00</updated>
+  <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
@@ -13,16 +13,16 @@
   
   <entry>
     <title type="html">Canvas art in TypeScript</title>
-    <link href="https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/" rel="alternate" type="text/html" title="Canvas art in TypeScript" />
+    <link href="https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/" rel="alternate" type="text/html" title="Canvas art in TypeScript" />
     <published>2020-06-06T15:30:00+00:00</published>
     <updated>2020-06-06T15:30:00+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/06/06/canvas-art-in-typescript/">
+    <id>https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/">
       
 &lt;p&gt;I ported a JavaScript “random art generator” I created a few years ago over to TypeScript. This post contains some notes from the process.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;See the project: &lt;a href=&quot;https://www.chrismytton.uk/art/&quot;&gt;www.chrismytton.uk/art&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;See the project: &lt;a href=&quot;https://www.chrismytton.com/art/&quot;&gt;www.chrismytton.com/art&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art/blob/1f34e99d121f2c7dd698eb8c9d45da1e9b7f450c/src/random.ts&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -104,7 +104,7 @@
 
 &lt;p&gt;I’d forgotten all about this fun little art project. It’s nice to have given it a bit of polish and released it into the world, rather than it gathering dust on my hard drive.&lt;/p&gt;
 
-&lt;p&gt;See the project: &lt;a href=&quot;https://www.chrismytton.uk/art/&quot;&gt;www.chrismytton.uk/art&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See the project: &lt;a href=&quot;https://www.chrismytton.com/art/&quot;&gt;www.chrismytton.com/art&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art/blob/1f34e99d121f2c7dd698eb8c9d45da1e9b7f450c/src/random.ts&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;.&lt;/p&gt;
 
@@ -119,18 +119,18 @@
     <category term="art" />
     
     <summary type="html">📝 Notes from porting a JavaScript random art generator to TypeScript.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/random-art.png" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/random-art.png"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/random-art.png" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/random-art.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Extracting a list of IDs from an XLSX file</title>
-    <link href="https://www.chrismytton.uk/2020/05/06/extracting-ids-from-xlsx/" rel="alternate" type="text/html" title="Extracting a list of IDs from an XLSX file" />
+    <link href="https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/" rel="alternate" type="text/html" title="Extracting a list of IDs from an XLSX file" />
     <published>2020-05-06T06:32:25+00:00</published>
     <updated>2020-05-06T06:32:25+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/05/06/extracting-ids-from-xlsx/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/05/06/extracting-ids-from-xlsx/">
+    <id>https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/">
       
 &lt;p&gt;I needed to convert a Microsoft Excel XLSX file containing an ID column into a comma-separated list of those IDs for passing to a command line tool.&lt;/p&gt;
 
@@ -172,18 +172,18 @@
     <category term="programming" />
     
     <summary type="html">Using csvkit and UNIX to extract a list of IDs from an XLSX file.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
-    <media:content medium="image" url="https://www.chrismytton.uk"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Fruit garden schematic</title>
-    <link href="https://www.chrismytton.uk/2020/05/05/fruit-garden-schematic/" rel="alternate" type="text/html" title="Fruit garden schematic" />
+    <link href="https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/" rel="alternate" type="text/html" title="Fruit garden schematic" />
     <published>2020-05-05T20:46:02+00:00</published>
     <updated>2020-05-05T20:46:02+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/05/05/fruit-garden-schematic/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/05/05/fruit-garden-schematic/">
+    <id>https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/">
       
 &lt;p&gt;Diagram of my fruit garden, so I remember what’s what.&lt;/p&gt;
 
@@ -201,18 +201,18 @@
     <category term="nature" />
     
     <summary type="html">Diagram of my fruit garden, so I remember what's what.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/fruit-garden-schematic.png" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/fruit-garden-schematic.png"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/fruit-garden-schematic.png" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/fruit-garden-schematic.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Potential social benefits of the coronavirus pandemic</title>
-    <link href="https://www.chrismytton.uk/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/" rel="alternate" type="text/html" title="Potential social benefits of the coronavirus pandemic" />
+    <link href="https://www.chrismytton.com/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/" rel="alternate" type="text/html" title="Potential social benefits of the coronavirus pandemic" />
     <published>2020-03-24T20:50:07+00:00</published>
     <updated>2020-03-24T20:50:07+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
+    <id>https://www.chrismytton.com/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
       
 &lt;p&gt;With the UK and many other countries around the world in lockdown to try and prevent the spread of the coronavirus pandemic, it can seem like a pretty bleak time to be alive. But I’ve been thinking about some of the potential positives that could emerge from this pandemic that would benefit society as a whole.&lt;/p&gt;
 
@@ -283,18 +283,18 @@
     <category term="society" />
     
     <summary type="html">A look at some of the positive things I hope will come out of the coronavirus pandemic.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/no-eggs-left.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/no-eggs-left.jpg"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/no-eggs-left.jpg" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/no-eggs-left.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Working from home tips</title>
-    <link href="https://www.chrismytton.uk/2020/03/11/working-from-home/" rel="alternate" type="text/html" title="Working from home tips" />
+    <link href="https://www.chrismytton.com/2020/03/11/working-from-home/" rel="alternate" type="text/html" title="Working from home tips" />
     <published>2020-03-11T20:24:41+00:00</published>
     <updated>2020-03-11T20:24:41+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/03/11/working-from-home/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/03/11/working-from-home/">
+    <id>https://www.chrismytton.com/2020/03/11/working-from-home/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/03/11/working-from-home/">
       
 &lt;p&gt;There are a lot of working from home posts doing the rounds at the moment. I’ve been working from home for nearly seven years, so I thought I’d write down my tips for working from home.&lt;/p&gt;
 
@@ -341,18 +341,18 @@
     <category term="life" />
     
     <summary type="html">Some tips for working from home that have served me well over the years.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
-    <media:content medium="image" url="https://www.chrismytton.uk"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">FiraCode</title>
-    <link href="https://www.chrismytton.uk/2020/03/01/fira-code/" rel="alternate" type="text/html" title="FiraCode" />
+    <link href="https://www.chrismytton.com/2020/03/01/fira-code/" rel="alternate" type="text/html" title="FiraCode" />
     <published>2020-03-01T20:20:19+00:00</published>
     <updated>2020-03-01T20:20:19+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/03/01/fira-code/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/03/01/fira-code/">
+    <id>https://www.chrismytton.com/2020/03/01/fira-code/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/03/01/fira-code/">
       
 &lt;p&gt;I came across &lt;a href=&quot;https://github.com/tonsky/FiraCode&quot;&gt;FiraCode&lt;/a&gt; today. It calls itself a “monospaced font with programming ligatures”. What that means is when you install this font and configure you text editor correctly, it will render things like &lt;code&gt;-&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;=&lt;/code&gt; or &lt;code&gt;:=&lt;/code&gt; as a single token. In theory this makes it easier to read code, because you don’t have to read two characters for a single token.&lt;/p&gt;
 
@@ -367,18 +367,18 @@
     <category term="programming" />
     
     <summary type="html">FiraCode is a "monospaced font with programming ligatures", which means it makes things like "==" show up in your editor as a single token.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
-    <media:content medium="image" url="https://www.chrismytton.uk"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Ruby's Time vs DateTime classes</title>
-    <link href="https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/" rel="alternate" type="text/html" title="Ruby's Time vs DateTime classes" />
+    <link href="https://www.chrismytton.com/2020/02/18/ruby-time-vs-datetime/" rel="alternate" type="text/html" title="Ruby's Time vs DateTime classes" />
     <published>2020-02-18T00:00:00+00:00</published>
     <updated>2020-02-18T00:00:00+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/02/18/ruby-time-vs-datetime/">
+    <id>https://www.chrismytton.com/2020/02/18/ruby-time-vs-datetime/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/02/18/ruby-time-vs-datetime/">
       
 &lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/&quot;&gt;Ruby&lt;/a&gt; has two classes, &lt;code&gt;Time&lt;/code&gt; &lt;sup id=&quot;fnref:two-time-classes&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:two-time-classes&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;code&gt;DateTime&lt;/code&gt;, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby? Ruby’s documentation contains the answer:&lt;/p&gt;
 
@@ -448,18 +448,18 @@ shakespeare + 366 + 365
     <category term="programming" />
     
     <summary type="html">In Ruby when should you use `Time` vs `DateTime`, and why?</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk" />
-    <media:content medium="image" url="https://www.chrismytton.uk"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">It gets easier</title>
-    <link href="https://www.chrismytton.uk/2020/02/17/it-gets-easier/" rel="alternate" type="text/html" title="It gets easier" />
+    <link href="https://www.chrismytton.com/2020/02/17/it-gets-easier/" rel="alternate" type="text/html" title="It gets easier" />
     <published>2020-02-17T00:00:00+00:00</published>
     <updated>2020-02-17T00:00:00+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/02/17/it-gets-easier/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/02/17/it-gets-easier/">
+    <id>https://www.chrismytton.com/2020/02/17/it-gets-easier/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/02/17/it-gets-easier/">
       
 &lt;blockquote&gt;
   &lt;p&gt;It gets easier. Every day it gets a little easier. But you’ve got to do it every day. That’s the hard part. But it does get easier.&lt;/p&gt;
@@ -482,18 +482,18 @@ shakespeare + 366 + 365
     <category term="running" />
     
     <summary type="html">It gets easier. Every day it gets a little easier. But you've got to do it every day. That's the hard part. But it does get easier.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/it-gets-easier.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/it-gets-easier.jpg"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/it-gets-easier.jpg" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/it-gets-easier.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Early wild garlic</title>
-    <link href="https://www.chrismytton.uk/2020/02/02/early-wild-garlic/" rel="alternate" type="text/html" title="Early wild garlic" />
+    <link href="https://www.chrismytton.com/2020/02/02/early-wild-garlic/" rel="alternate" type="text/html" title="Early wild garlic" />
     <published>2020-02-02T07:30:00+00:00</published>
     <updated>2020-02-02T07:30:00+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/02/02/early-wild-garlic/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/02/02/early-wild-garlic/">
+    <id>https://www.chrismytton.com/2020/02/02/early-wild-garlic/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/02/02/early-wild-garlic/">
       
 &lt;p&gt;&lt;img src=&quot;/assets/images/february-wild-garlic.jpg&quot; alt=&quot;Young wild garlic shoots&quot; /&gt;&lt;/p&gt;
 
@@ -512,18 +512,18 @@ shakespeare + 366 + 365
     <category term="nature" />
     
     <summary type="html">Found some young wild garlic shoots while out walking yesterday</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/february-wild-garlic.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/february-wild-garlic.jpg"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/february-wild-garlic.jpg" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/february-wild-garlic.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
   <entry>
     <title type="html">Start with the command line</title>
-    <link href="https://www.chrismytton.uk/2020/02/02/start-with-the-command-line/" rel="alternate" type="text/html" title="Start with the command line" />
+    <link href="https://www.chrismytton.com/2020/02/02/start-with-the-command-line/" rel="alternate" type="text/html" title="Start with the command line" />
     <published>2020-02-02T07:00:00+00:00</published>
     <updated>2020-02-02T07:00:00+00:00</updated>
-    <id>https://www.chrismytton.uk/2020/02/02/start-with-the-command-line/</id>
-    <content type="html" xml:base="https://www.chrismytton.uk/2020/02/02/start-with-the-command-line/">
+    <id>https://www.chrismytton.com/2020/02/02/start-with-the-command-line/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/02/02/start-with-the-command-line/">
       
 &lt;p&gt;&lt;img src=&quot;/assets/images/command-line.png&quot; alt=&quot;Screenshot of the iTerm terminal emulator with zsh prompt&quot; /&gt;&lt;/p&gt;
 
@@ -539,8 +539,8 @@ shakespeare + 366 + 365
     <category term="software" />
     
     <summary type="html">Starting your project with a command line tool forces you to figure out what the minimal solution to your problem would look like.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.uk/assets/images/command-line.png" />
-    <media:content medium="image" url="https://www.chrismytton.uk/assets/images/command-line.png"
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/command-line.png" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/command-line.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
