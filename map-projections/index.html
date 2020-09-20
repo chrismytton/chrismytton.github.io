@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Restaurant review: The Looking Glass, Cheltenham - Chris Mytton</title>
+    <title>Map projections - Chris Mytton</title>
 
-    <meta property="og:title" content="Restaurant review: The Looking Glass, Cheltenham" />
+    <meta property="og:title" content="Map projections" />
     <meta name="author" content="Chris Mytton" />
     <meta property="og:locale" content="en_GB" />
-    <meta name="description" content="" />
-    <meta property="og:description" content="" />
-    <link rel="canonical" href="https://www.chrismytton.com/2019/08/03/the-looking-glass/" />
-    <meta property="og:url" content="https://www.chrismytton.com/2019/08/03/the-looking-glass/" />
+    <meta name="description" content="Chris Mytton is a Senior Developer at mySociety. This is his personal website." />
+    <meta property="og:description" content="Chris Mytton is a Senior Developer at mySociety. This is his personal website." />
+    <link rel="canonical" href="https://www.chrismytton.com/map-projections/" />
+    <meta property="og:url" content="https://www.chrismytton.com/map-projections/" />
     <meta property="og:site_name" content="Chris Mytton" />
     
     <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
     <meta name="twitter:card" content="summary" />
     
-    <meta property="twitter:title" content="Restaurant review: The Looking Glass, Cheltenham" />
+    <meta property="twitter:title" content="Map projections" />
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
@@ -53,36 +53,55 @@
       </header>
 
       <main class="site-content">
-        <header class="post-header">
-  <h1 class="post-title">Restaurant review: The Looking Glass, Cheltenham</h1>
-  <p class="post-date">Saturday 3 August 2019</p>
+        <header class="page-header">
+  <h1 class="page-title">Map projections</h1>
 </header>
 
-<article class="post">
+<article class="page">
 
-  <div class="post-content">
+  <div class="page-content">
     
-<p>It’s still surprisingly hard to find restaurants that serve organic food. So I was delighted to discover The Looking Glass in Cheltenham not only does organic food but they also make everything in-house and they’re open for breakfast.</p>
+<p>Map projections are a method for representing the surface of Earth (or Earth-like objects) on a flat surface.</p>
 
-<p>The restaurant feels much more spacious on the inside than it looks through the window. There are lots of succulents dotted around the restaurant, along with a smattering of mirrors and flamingo statues. Just the right amount of whimsy for my tastes.</p>
+<p>Flattening a 3D sphere onto a 2D surface inevitably leads to some distortion. Different projections distort in different ways.</p>
 
-<p>Ordered my usual decaf flat white. It didn’t look like the best coffee when it arrived, but the flavour was good. I didn’t come for the coffee though, I came for the food.</p>
+<p>The ideal map projection is therefore the one with the most acceptable type of distortion for your use-case.</p>
 
-<p>I ordered the Full English so I could get a measure of the place. When it came out the plate looked amazing. The eggs had bright orange yolks, the sausage was plump, the bacon crispy and the beans rustic. Apparently the mushrooms are foraged locally. They certainly looked impressive, lots of different colours and shapes, a far cry from the usual sad looking pile of button mushrooms.</p>
+<h2 id="equal-area-projections">Equal-area projections</h2>
 
-<p>The flavour didn’t dissapoint either. Everything on the plate was cooked to perfection, and tasted incredible. I polished off every last morsel. The Looking Glass offers incredibly tasty food at a reasonable price. Well worth a visit if you like your food sustainable and delicious.</p>
+<p>When the area of a shape in real life matches the area of that shape on the projected map then the projection is called an equal-area projection.</p>
 
-<p>Read the menu and book a table at <a href="https://thelookingglasscheltenham.co.uk/">thelookingglasscheltenham.co.uk</a>.</p>
+<h2 id="conformal-projections">Conformal projections</h2>
 
-  </div>
+<p>When angles in real-life match the angles on the projected map then the projections is called a conformal projection.</p>
 
-  <div class="post-tags">
-    <p>
-      Tagged:
-      
-      <a href="/tags/#food">#food</a>
-      
-    </p>
+<blockquote>
+  <p>For example, if two roads cross each other at a 39° angle, then their images on a map with a conformal projection cross at a 39° angle.<sup id="fnref:Conformal_map_projection-wikipedia" role="doc-noteref"><a href="#fn:Conformal_map_projection-wikipedia" class="footnote">1</a></sup></p>
+</blockquote>
+
+<h2 id="the-equirectangular-projection">The equirectangular projection</h2>
+
+<p>This simple projection is almost 2000 years old.</p>
+
+<p>Each line of meridian (line of longitude) is mapped to vertical straight lines with constant spacing.</p>
+
+<p>This projection isn’t equal-area or conformal, so isn’t very useful for navigation, but can be used for thematic maps, e.g. showing population density or surface temperature.</p>
+
+<h2 id="mercator-projection">Mercator projection</h2>
+
+<p>Invented in 1569 by Flemish cartographer Gerardus Mercator.</p>
+
+<p>Became popular with sailors because it represents north as up and south as down on all parts of the map while preserving local directions and shapes.</p>
+
+<p>One major downside of this projections is it artificially inflates objects the further they are from the equator. On a mercator map Greenland looks about the same size as Africa, but Africa is actually 14x larger than Greenland.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:Conformal_map_projection-wikipedia" role="doc-endnote">
+      <p>From <a href="https://en.wikipedia.org/wiki/Conformal_map_projection">Conformal map projection</a> on Wikipedia. <a href="#fnref:Conformal_map_projection-wikipedia" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
   </div>
 
 </article>
