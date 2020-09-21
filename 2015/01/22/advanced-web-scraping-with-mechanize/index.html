@@ -22,7 +22,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1600704072">
+    <link rel="stylesheet" href="/assets/css/main.css?1600706247">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -82,14 +82,14 @@
 <p>With Mechanize installed we can now start writing our scraper. Create a file called <code>scraper.rb</code> and add the following <code>require</code> statements. These specify the dependencies we need for this script. <code>date</code> and <code>json</code> are part of Ruby’s standard library, so there’s no need to install them separately.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mechanize'</span>
-<span class="nb">require</span> <span class="s1">'date'</span>
+<span class="nb">require</span> <span class="s1">'time'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
 </code></pre></div></div>
 
 <p>Now we can start using Mechanize. First thing we need to do is create a new instance of Mechanize (<code>agent</code>) and then use it to fetch a remote webpage (<code>page</code>).</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="no">Mechanize</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">page</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://pitchfork.com/reviews/albums/"</span><span class="p">)</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"https://pitchfork.com/reviews/albums/"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="find-links-to-reviews">Find links to reviews</h3>
@@ -117,17 +117,14 @@
 
 <p>The Mechanize <code>page</code> object has a <code>.search</code> method which delegates to Nokogiri’s <code>.search</code> method. This means that we can use a CSS selector as an argument to <code>.search</code> and it will return an array of matching elements.</p>
 
-<p>Here we first get the review metadata using the CSS selector <code>#main .review-meta .info</code> and then search inside the <code>review_meta</code> element for the various bits of information that we need.</p>
-
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reviews</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
   <span class="n">review</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">click</span>
-  <span class="n">review_meta</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'#main .review-meta .info'</span><span class="p">)</span>
-  <span class="n">artist</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
-  <span class="n">album</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h2'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
-  <span class="n">label</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h3'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">)</span>
-  <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h4 address'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
-  <span class="n">review_date</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.pub-date'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">)</span>
-  <span class="n">score</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.score'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">to_f</span>
+  <span class="n">artist</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.artist-links'</span><span class="p">).</span><span class="nf">text</span>
+  <span class="n">album</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.single-album-tombstone__review-title'</span><span class="p">).</span><span class="nf">text</span>
+  <span class="n">label</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.single-album-tombstone__meta'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'•'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">)</span>
+  <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.authors-detail__display-name'</span><span class="p">).</span><span class="nf">text</span>
+  <span class="n">review_date</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.pub-date'</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'title'</span><span class="p">])</span>
+  <span class="n">score</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.score'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">to_f</span>
   <span class="p">{</span>
     <span class="ss">artist: </span><span class="n">artist</span><span class="p">,</span>
     <span class="ss">album: </span><span class="n">album</span><span class="p">,</span>
@@ -167,13 +164,12 @@
 
 <span class="n">reviews</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
   <span class="n">review</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">click</span>
-  <span class="n">review_meta</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'#main .review-meta .info'</span><span class="p">)</span>
-  <span class="n">artist</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
-  <span class="n">album</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h2'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
-  <span class="n">label</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h3'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">)</span>
-  <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'h4 address'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span>
-  <span class="n">review_date</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.pub-date'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">text</span><span class="p">)</span>
-  <span class="n">score</span> <span class="o">=</span> <span class="n">review_meta</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.score'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">to_f</span>
+  <span class="n">artist</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.artist-links'</span><span class="p">).</span><span class="nf">text</span>
+  <span class="n">album</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.single-album-tombstone__review-title'</span><span class="p">).</span><span class="nf">text</span>
+  <span class="n">label</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.single-album-tombstone__meta'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'•'</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:strip</span><span class="p">)</span>
+  <span class="n">reviewer</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.authors-detail__display-name'</span><span class="p">).</span><span class="nf">text</span>
+  <span class="n">review_date</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.pub-date'</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'title'</span><span class="p">])</span>
+  <span class="n">score</span> <span class="o">=</span> <span class="n">review</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'.score'</span><span class="p">).</span><span class="nf">text</span><span class="p">.</span><span class="nf">to_f</span>
   <span class="p">{</span>
     <span class="ss">artist: </span><span class="n">artist</span><span class="p">,</span>
     <span class="ss">album: </span><span class="n">album</span><span class="p">,</span>
