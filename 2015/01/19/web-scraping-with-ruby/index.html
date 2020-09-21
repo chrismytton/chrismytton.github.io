@@ -22,7 +22,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1600682635">
+    <link rel="stylesheet" href="/assets/css/main.css?1600704072">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -62,7 +62,9 @@
 
   <div class="post-content">
     
-<p><strong>Update Jan 22</strong>: Check out the next post in this series: <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">Advanced web scraping with Mechanize</a>.</p>
+<p>Next post in this series: <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">Advanced web scraping with Mechanize</a>.</p>
+
+<hr />
 
 <p>Scraping the web with Ruby is easier than you might think. Let’s start with a simple example, I want to get a nicely formatted JSON array of objects representing all the showings for my <a href="http://www.cubecinema.com/programme">local independent cinema</a>.</p>
 
@@ -74,7 +76,7 @@
 <span class="n">html</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Great, so we’ve got the page that we want to scrape, now we need to extract some information from it. The best tool for this job is <a href="http://www.nokogiri.org/">Nokogiri</a>. So we create a new Nokogiri instance using the html we just scraped.</p>
+<p>Great, so we’ve got the page that we want to scrape, now we need to extract some information from it. The best tool for this job is Nokogiri. So we create a new Nokogiri instance using the html we just scraped.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'nokogiri'</span>
 
@@ -248,7 +250,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<p>And that’s it! This is just a basic example of scraping. Things get a bit more complicated if the site you’re scraping requires you to login first, for those instances I recommend looking into <a href="http://docs.seattlerb.org/mechanize/GUIDE_rdoc.html">mechanize</a>, which builds on top of Nokogiri.</p>
+<p>And that’s it! This is just a basic example of scraping. Things get a bit more complicated if the site you’re scraping requires you to login first, for those instances I recommend looking into <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">mechanize</a>, which builds on top of Nokogiri.</p>
 
 <p>Hopefully this introduction to scraping has given you some ideas for data that you want to turn into a more structured format using the scraping techniques described above.</p>
 

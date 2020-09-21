@@ -571,6 +571,9 @@ pre {
 code {
   padding: 0.0625rem 0.1875rem; }
 
+hr {
+  border: 1px solid #efefef; }
+
 .container {
   line-height: 1.5;
   margin: 0 auto;
