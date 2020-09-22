@@ -672,6 +672,12 @@ blockquote {
   padding: 1em;
   margin: 1em 0; }
 
+.elsewhere {
+  float: right; }
+  .elsewhere a {
+    text-decoration: none;
+    color: #333; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   margin: 0.5em 0;
