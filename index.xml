@@ -3,13 +3,85 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-09-24T05:35:26+00:00</updated>
+  <updated>2020-09-24T06:18:10+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Consume less, produce more</title>
+    <link href="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/" rel="alternate" type="text/html" title="Consume less, produce more" />
+    <published>2020-09-24T06:50:00+00:00</published>
+    <updated>2020-09-24T06:50:00+00:00</updated>
+    <id>https://www.chrismytton.com/2020/09/24/consume-less-produce-more/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/">
+      
+&lt;p&gt;If you have too many inputs then your brain gets overwhelmed. Every piece of information you consume takes up some brain cycles.&lt;/p&gt;
+
+&lt;p&gt;If you’re not producing enough output to match your inputs then it can get clogged up in your brain. You end up with too many strands of thought. Too many lines of enquiry.&lt;/p&gt;
+
+&lt;h2 id=&quot;excess-consumption-causes-anxiety&quot;&gt;Excess consumption causes anxiety&lt;/h2&gt;
+
+&lt;p&gt;This can often be a cause of anxiety, stress and depression. Just increasing the amount you produce allows your brain to work through your anxieties.&lt;/p&gt;
+
+&lt;p&gt;Perhaps this is why mental health issues are on the rise. There are just so many inputs for our brain in the modern world that we don’t have time to process them all into coherent outputs, so that we can understand the information we’re being presented with.&lt;/p&gt;
+
+&lt;h2 id=&quot;reduce-consumption&quot;&gt;Reduce consumption&lt;/h2&gt;
+
+&lt;p&gt;Reduce the number of inputs in your daily life.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Stop reading the news&lt;/li&gt;
+  &lt;li&gt;Spend less time on social media&lt;/li&gt;
+  &lt;li&gt;Reduce the number of websites you visit daily&lt;/li&gt;
+  &lt;li&gt;Delete unused apps from your phone&lt;/li&gt;
+  &lt;li&gt;Eliminate unnecessary calendar appointments&lt;/li&gt;
+  &lt;li&gt;Spend less time watching TV series&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Generally stimulate your brain less.&lt;/p&gt;
+
+&lt;h2 id=&quot;increase-production&quot;&gt;Increase production&lt;/h2&gt;
+
+&lt;p&gt;Increase the number of productive outputs in your life.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create something with your hands&lt;/li&gt;
+  &lt;li&gt;Draw or paint pictures (doesn’t matter if you’re good or not)&lt;/li&gt;
+  &lt;li&gt;Write more, keep a journal or a blog&lt;/li&gt;
+  &lt;li&gt;Increase your daily step count&lt;/li&gt;
+  &lt;li&gt;Explore new places&lt;/li&gt;
+  &lt;li&gt;Exercise regularly&lt;/li&gt;
+  &lt;li&gt;Cook for yourself, rather than eating out&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are things that allow you to express yourself. Express the ideas in your brain. Work through the inputs in your life.&lt;/p&gt;
+
+&lt;p&gt;Not everything has to have a point, sometimes you just need to &lt;a href=&quot;/2019/09/24/do-things-for-fun/&quot;&gt;do things for fun&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;express-yourself&quot;&gt;Express yourself&lt;/h2&gt;
+
+&lt;p&gt;It’s by expressing the ideas in your brain that you can actually think clearly. Because the more you express them the more you can see them. Then you can visualise the ideas. Then you can better structure and organise them and compartmentalize them.&lt;/p&gt;
+
+&lt;p&gt;Now stop consuming these words and go and produce something. Express yourself.&lt;/p&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="life" />
+    
+    <category term="creativity" />
+    
+    <summary type="html">Expressing yourself through creative outputs helps balance out the anxiety caused by the modern information economy.</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Canvas art in TypeScript</title>
@@ -514,33 +586,6 @@ shakespeare + 366 + 365
     <summary type="html">Found some young wild garlic shoots while out walking yesterday</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/february-wild-garlic.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/february-wild-garlic.jpg"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Start with the command line</title>
-    <link href="https://www.chrismytton.com/2020/02/02/start-with-the-command-line/" rel="alternate" type="text/html" title="Start with the command line" />
-    <published>2020-02-02T07:00:00+00:00</published>
-    <updated>2020-02-02T07:00:00+00:00</updated>
-    <id>https://www.chrismytton.com/2020/02/02/start-with-the-command-line/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/02/02/start-with-the-command-line/">
-      
-&lt;p&gt;&lt;img src=&quot;/assets/images/command-line.png&quot; alt=&quot;Screenshot of the iTerm terminal emulator with zsh prompt&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When starting a new project it’s tempting to reach for a web framework straight away. But I think it’s good to resist that urge. Start with the simplest thing that could possibly work. Start with the command line.&lt;/p&gt;
-
-&lt;p&gt;If you start with the command line then you can cut straight to the heart of the problem and solve the interesting bits first. Then once you understand what’s needed it can be translated to a web app or smartphone app or whatever.&lt;/p&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="software" />
-    
-    <summary type="html">Starting your project with a command line tool forces you to figure out what the minimal solution to your problem would look like.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/command-line.png" />
-    <media:content medium="image" url="https://www.chrismytton.com/assets/images/command-line.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
