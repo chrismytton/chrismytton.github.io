@@ -654,7 +654,7 @@ blockquote {
   padding-left: 15px;
   color: #555; }
 
-.post-date {
+.post-date, .post-tags {
   color: #666666;
   font-size: smaller; }
 
