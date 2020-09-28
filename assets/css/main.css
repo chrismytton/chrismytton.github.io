@@ -683,10 +683,10 @@ blockquote {
     .elsewhere a:hover {
       color: #376ec2; }
 
-.articles-list {
-  padding-left: 1.2em; }
+ul {
+  padding-left: 1.4em; }
 
-.articles-list-item {
+li {
   margin-bottom: 0.5em; }
 
 h1, h2, h3, h4, h5, h6 {
