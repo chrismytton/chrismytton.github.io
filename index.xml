@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-09-29T19:44:59+00:00</updated>
+  <updated>2020-09-29T20:03:02+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
@@ -260,6 +260,8 @@
     <content type="html" xml:base="https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/">
       
 &lt;p&gt;Diagram of my fruit garden, so I remember what’s what.&lt;/p&gt;
+
+&lt;p&gt;I’m hoping I can incorporate some of the nectarines into a batch of &lt;a href=&quot;/2019/09/28/chutney/&quot;&gt;chutney&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/images/fruit-garden-schematic.png&quot;&gt;&lt;img src=&quot;/assets/images/fruit-garden-schematic.png&quot; alt=&quot;Fruit garden schematic&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
