@@ -22,7 +22,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1601409782">
+    <link rel="stylesheet" href="/assets/css/main.css?1601445503">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -72,10 +72,6 @@
 
   <div class="post-content">
     
-<p>Next post in this series: <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">Advanced web scraping with Mechanize</a>.</p>
-
-<hr />
-
 <p>Scraping the web with Ruby is easier than you might think. Let’s start with a simple example, I want to get a nicely formatted JSON array of objects representing all the showings for my <a href="http://www.cubecinema.com/programme">local independent cinema</a>.</p>
 
 <p>First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, <code>Net::HTTP</code>, and it also comes with a nice wrapper around it, <code>open-uri</code> <sup id="fnref:open-uri" role="doc-noteref"><a href="#fn:open-uri" class="footnote">1</a></sup>. So the first thing we do is grab the html from the remote server.</p>
@@ -263,6 +259,8 @@
 <p>And that’s it! This is just a basic example of scraping. Things get a bit more complicated if the site you’re scraping requires you to login first, for those instances I recommend looking into <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">mechanize</a>, which builds on top of Nokogiri.</p>
 
 <p>Hopefully this introduction to scraping has given you some ideas for data that you want to turn into a more structured format using the scraping techniques described above.</p>
+
+<p>Next post in this series: <a href="/2015/01/22/advanced-web-scraping-with-mechanize/">Advanced web scraping with Mechanize</a>.</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
