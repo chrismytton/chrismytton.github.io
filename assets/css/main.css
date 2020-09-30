@@ -676,7 +676,7 @@ blockquote {
   float: right; }
   .elsewhere a {
     text-decoration: none;
-    color: #333;
+    color: #404040;
     margin-right: 0.5em;
     transition-property: color;
     transition-duration: 0.5s; }
