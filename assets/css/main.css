@@ -664,6 +664,10 @@ blockquote {
 .post {
   margin: 1em 0 3em; }
 
+.post-title {
+  font-size: 3em;
+  margin: 1em 0; }
+
 .articles {
   margin-bottom: 4rem; }
 
