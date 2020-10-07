@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Map projections - Chris Mytton</title>
+    <title>git tips and tricks - Chris Mytton</title>
 
-    <meta property="og:title" content="Map projections" />
+    <meta property="og:title" content="git tips and tricks" />
     <meta name="author" content="Chris Mytton" />
     <meta property="og:locale" content="en_GB" />
     <meta name="description" content="Chris Mytton is a Senior Developer at mySociety. This is his personal website." />
     <meta property="og:description" content="Chris Mytton is a Senior Developer at mySociety. This is his personal website." />
-    <link rel="canonical" href="https://www.chrismytton.com/map-projections/" />
-    <meta property="og:url" content="https://www.chrismytton.com/map-projections/" />
+    <link rel="canonical" href="https://www.chrismytton.com/git-tips-and-tricks/" />
+    <meta property="og:url" content="https://www.chrismytton.com/git-tips-and-tricks/" />
     <meta property="og:site_name" content="Chris Mytton" />
     
     <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
     <meta name="twitter:card" content="summary" />
     
-    <meta property="twitter:title" content="Map projections" />
+    <meta property="twitter:title" content="git tips and tricks" />
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
@@ -65,53 +65,39 @@
 
       <main class="site-content">
         <header class="post-header">
-  <h1 class="post-title">Map projections</h1>
+  <h1 class="post-title">git tips and tricks</h1>
 </header>
 
 <article class="post">
 
   <div class="post-content">
     
-<p>Map projections are a method for representing the surface of the Earth (or Earth-like objects) on a flat surface.</p>
+<h2 id="show-logs-for-line-ranges-or-functions-within-a-file">Show logs for line ranges or functions within a file</h2>
 
-<p>Flattening a 3D sphere onto a 2D surface inevitably leads to some distortion. Different projections distort in different ways.</p>
+<p>You can use the <code>-L</code> option to <code>git log</code> to “trace the evolution” of a range of lines or a function.</p>
 
-<p>The ideal map projection is therefore the one with the most acceptable type of distortion for your use-case.</p>
+<pre><code># Logs for lines 10-20 of index.js
+git log -L 10,20 index.js
 
-<h2 id="equal-area-projections">Equal-area projections</h2>
+# Logs for helloWorld function in index.js
+git log -L :helloWorld:index.js
+</code></pre>
 
-<p>When the area of a shape in real life matches the area of that shape on the projected map then the projection is called an equal-area projection.</p>
+<p>The <code>-L</code> option has two formats:</p>
 
-<h2 id="conformal-projections">Conformal projections</h2>
+<pre><code>-L &lt;start&gt;,&lt;end&gt;:&lt;file&gt;
+-L :&lt;funcname&gt;:&lt;file&gt;
+</code></pre>
 
-<p>When angles in real-life match the angles on the projected map then the projection is called a conformal projection.</p>
+<p>The <code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> parameters can be a specific line number, a /regex/ or an offset, e.g. <code>+10</code> or <code>-3</code>.</p>
 
-<blockquote>
-  <p>For example, if two roads cross each other at a 39° angle, then their images on a map with a conformal projection cross at a 39° angle.<sup id="fnref:Conformal_map_projection-wikipedia" role="doc-noteref"><a href="#fn:Conformal_map_projection-wikipedia" class="footnote">1</a></sup></p>
-</blockquote>
+<p>The <code>&lt;funcname&gt;</code> parameter is a “function name regex”, you can usually provide the name of the function and it will Just Work.</p>
 
-<h2 id="the-equirectangular-projection">The equirectangular projection</h2>
+<p>You can provide the <code>-L</code> option more than once</p>
 
-<p>This simple projection is almost 2000 years old.</p>
+<p>See the <a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt--Lltstartgtltendgtltfilegt">git-log documentation</a> for the <code>-L</code> option for more details.</p>
 
-<p>Each line of meridian (line of longitude) is mapped to vertical straight lines with constant spacing.</p>
-
-<p>This projection isn’t equal-area or conformal, so isn’t very useful for navigation, but can be used for thematic maps, e.g. showing population density or surface temperature.</p>
-
-<h2 id="mercator-projection">Mercator projection</h2>
-
-<p>Invented in 1569 by Flemish cartographer Gerardus Mercator.</p>
-
-<p>Became popular with sailors because it represents north as up and south as down on all parts of the map while preserving local directions and shapes.</p>
-
-<p>One major downside of this projection is it artificially inflates objects the further they are from the equator. On a mercator map Greenland looks about the same size as Africa, but Africa is actually 14x larger than Greenland.</p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:Conformal_map_projection-wikipedia" role="doc-endnote">
-      <p>From <a href="https://en.wikipedia.org/wiki/Conformal_map_projection">Conformal map projection</a> on Wikipedia. <a href="#fnref:Conformal_map_projection-wikipedia" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p><a href="https://twitter.com/chrismytton/status/1313818326926331909">Original tweet</a>.</p>
 
   </div>
 
