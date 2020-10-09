@@ -598,8 +598,7 @@ a, a:visited {
 
 .site-footer {
   margin-top: 1rem;
-  margin-bottom: 6rem;
-  padding-top: 1rem; }
+  margin-bottom: 6rem; }
 
 .footnotes {
   border-top: 1px solid #ccc;
@@ -659,10 +658,11 @@ blockquote {
   font-size: smaller; }
 
 .post-content {
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1em; }
 
 .post {
-  margin: 1em 0 3em; }
+  margin-bottom: 3em; }
 
 .post-title {
   font-size: 3em;
@@ -670,6 +670,9 @@ blockquote {
 
 .articles {
   margin-bottom: 4rem; }
+
+.newsletter-form {
+  margin: 3em 0; }
 
 .project {
   border: 1px solid #888;
