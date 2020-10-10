@@ -3,13 +3,66 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-10T17:01:04+00:00</updated>
+  <updated>2020-10-10T19:47:10+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Why I'm starting a newsletter</title>
+    <link href="https://www.chrismytton.com/starting-a-newsletter/" rel="alternate" type="text/html" title="Why I'm starting a newsletter" />
+    <published>2020-10-10T20:43:00+00:00</published>
+    <updated>2020-10-10T20:43:00+00:00</updated>
+    <id>https://www.chrismytton.com/starting-a-newsletter/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/starting-a-newsletter/">
+      
+&lt;p&gt;I enjoy writing on my website but too often months go by when I don’t publish anything. I’ve decided to start &lt;a href=&quot;/newsletter/&quot;&gt;writing a newsletter&lt;/a&gt; to encourage me to publish on a more regular basis.&lt;/p&gt;
+
+&lt;h2 id=&quot;working-in-public&quot;&gt;Working in public&lt;/h2&gt;
+
+&lt;p&gt;A lot of my writing currently happens in my private notes, but not much of it makes it onto my website. Like many people I worry about whether my writing is “Good Enough” to publish, and that often prevents me from publishing.&lt;/p&gt;
+
+&lt;p&gt;Of course imposter syndrome is nothing new or surprising when it comes to publishing your writing. I’m increasingly realising that the fastest (only?) way to supress that feeling, to some extent at least, is to publish more frequently.&lt;/p&gt;
+
+&lt;p&gt;Why do I think a newsletter will help with this? There’s an expectation, even if it’s only in my head, that a newsletter should be sent on a semi-regular basis. It will encourage me to write something publicly at least once a month. That’s the plan anyway.&lt;/p&gt;
+
+&lt;h2 id=&quot;content-curation&quot;&gt;Content curation&lt;/h2&gt;
+
+&lt;p&gt;I published a couple of articles last year that had a bit of a newsletter vibe, &lt;a href=&quot;https://www.chrismytton.com/2019/08/29/august-musings/&quot;&gt;August musings&lt;/a&gt; and &lt;a href=&quot;https://www.chrismytton.com/2019/09/29/septembers-books-and-links/&quot;&gt;September’s books and links&lt;/a&gt;. Those articles were both fun to write because I was sharing what I was reading and thinking at the time. They’re also fun to look back on as they serve as a public diary.&lt;/p&gt;
+
+&lt;p&gt;As a starting point I’m going to follow a similar template to those articles. Curating other people’s content and adding my own commentary and context to it.&lt;/p&gt;
+
+&lt;p&gt;I’m sure the format will evolve over time as I find out what I enjoy and what I don’t. I think enjoyment is key. I want to do this because I come across plenty of interesting ideas as I trawl the internet, but I don’t often do much with them.&lt;/p&gt;
+
+&lt;h2 id=&quot;good-things-come-from-sharing&quot;&gt;Good things come from sharing&lt;/h2&gt;
+
+&lt;p&gt;If nothing else this newsletter will at least be useful for me to look back on the links I’ve been saving and figure out why I thought it was an interesting link.&lt;/p&gt;
+
+&lt;p&gt;Hopefully sharing my ideas and links publicly will benefit others as well.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ideas rot if you don’t do something with them. I used to try to hoard them, but they rotted. Now I just blog them or tell people about them. Sometimes they still rot, but sometimes someone finds them useful in one way or another.&lt;/p&gt;
+
+  &lt;p&gt;—Edd Dumbill&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I’m going to stop hoarding my ideas. &lt;a href=&quot;/newsletter/&quot;&gt;Join my newsletter&lt;/a&gt; so I can share them with you!&lt;/p&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="writing" />
+    
+    <summary type="html"></summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Consume less, produce more</title>
@@ -580,36 +633,6 @@ shakespeare + 366 + 365
     <summary type="html">It gets easier. Every day it gets a little easier. But you've got to do it every day. That's the hard part. But it does get easier.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/it-gets-easier.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/it-gets-easier.jpg"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Early wild garlic</title>
-    <link href="https://www.chrismytton.com/2020/02/02/early-wild-garlic/" rel="alternate" type="text/html" title="Early wild garlic" />
-    <published>2020-02-02T07:30:00+00:00</published>
-    <updated>2020-02-02T07:30:00+00:00</updated>
-    <id>https://www.chrismytton.com/2020/02/02/early-wild-garlic/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/02/02/early-wild-garlic/">
-      
-&lt;p&gt;&lt;img src=&quot;/assets/images/february-wild-garlic.jpg&quot; alt=&quot;Young wild garlic shoots&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Found some young wild garlic shoots while out walking yesterday.&lt;/p&gt;
-
-&lt;p&gt;Seems very early in the year for them to already be this big, but it has been a very mild winter so far.&lt;/p&gt;
-
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="food" />
-    
-    <category term="nature" />
-    
-    <summary type="html">Found some young wild garlic shoots while out walking yesterday</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/february-wild-garlic.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.com/assets/images/february-wild-garlic.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   

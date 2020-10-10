@@ -711,9 +711,9 @@ h2, h3, h4, h5, h6 {
 @media print {
   .post-content a::after {
     content: " (" attr(href) ") "; }
-  .site-footer .logo::after {
+  .logo::after {
     content: " - www.chrismytton.com"; }
-  .site-header .menu, .footer-links, .post-tags {
+  .site-header .menu, .site-footer .menu, .post-tags, .elsewhere {
     display: none; }
   .container {
     max-width: 100%; } }
