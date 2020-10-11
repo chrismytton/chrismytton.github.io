@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-11T19:44:58+00:00</updated>
+  <updated>2020-10-11T19:47:43+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
@@ -28,7 +28,7 @@
 
 &lt;p&gt;The thread had some thought provoking responses. I wanted to gather up some of the highlights for posterity and add my own commentary.&lt;/p&gt;
 
-&lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In summary:&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#class-variables-are-confusing&quot; id=&quot;markdown-toc-class-variables-are-confusing&quot;&gt;Class variables are confusing&lt;/a&gt;&lt;/li&gt;
