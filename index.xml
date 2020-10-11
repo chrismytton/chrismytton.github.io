@@ -3,13 +3,106 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-10T20:07:55+00:00</updated>
+  <updated>2020-10-11T19:32:37+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Ruby: The not so good parts</title>
+    <link href="https://www.chrismytton.com/ruby-the-not-so-good-parts/" rel="alternate" type="text/html" title="Ruby: The not so good parts" />
+    <published>2020-10-11T09:28:00+00:00</published>
+    <updated>2020-10-11T09:28:00+00:00</updated>
+    <id>https://www.chrismytton.com/ruby-the-not-so-good-parts/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/ruby-the-not-so-good-parts/">
+      
+&lt;!-- Twitter embed JavaScript --&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The other day Nate Berkopec asked this question on Twitter:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;What is your least favorite part about Ruby?&lt;/p&gt;&amp;mdash; Nate Berkopec (@nateberkopec) &lt;a href=&quot;https://twitter.com/nateberkopec/status/1314235606705340418?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The thread had some thought provoking responses, so I thought I’d gather up some of the highlights for posterity.&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#class-variables-are-confusing&quot; id=&quot;markdown-toc-class-variables-are-confusing&quot;&gt;Class variables are confusing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#standard-library-is-too-low-level&quot; id=&quot;markdown-toc-standard-library-is-too-low-level&quot;&gt;Standard library is too low-level&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#meta-programming-complexity&quot; id=&quot;markdown-toc-meta-programming-complexity&quot;&gt;Meta-programming complexity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#block-vs-proc-vs-lambda&quot; id=&quot;markdown-toc-block-vs-proc-vs-lambda&quot;&gt;Block vs proc vs lambda&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;class-variables-are-confusing&quot;&gt;Class variables are confusing&lt;/h2&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;class variables! I can never figure out how they work&lt;/p&gt;&amp;mdash; Aaron Patterson (@tenderlove) &lt;a href=&quot;https://twitter.com/tenderlove/status/1314237029878652928?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Class variables in Ruby look a bit like instance variables, but they begin with &lt;code&gt;@@&lt;/code&gt;, like &lt;code&gt;@@shared_between_child_classes&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To confuse matters further Ruby also has class instance variables, which makes searching for documentation confusing if you don’t know what you’re looking for.&lt;/p&gt;
+
+&lt;p&gt;Like Aaron I can never quite grasp them. They’re rare enough in production code that if I come across them then I have to re-learn how they work to understand how the code works, which is a definite red flag for me.&lt;/p&gt;
+
+&lt;p&gt;I think this is one of those Ruby features that’s best left alone unless you have a &lt;em&gt;very&lt;/em&gt; convincing use case that can’t &lt;em&gt;possibly&lt;/em&gt; be solved using anything else.&lt;/p&gt;
+
+&lt;h2 id=&quot;standard-library-is-too-low-level&quot;&gt;Standard library is too low-level&lt;/h2&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Much of the standard library is too low-level, like Net::HTTP, which leads to every Rails app bundling five different third-party HTTP clients.&lt;/p&gt;&amp;mdash; George Claghorn (@georgeclaghorn) &lt;a href=&quot;https://twitter.com/georgeclaghorn/status/1314237870782251008?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Ruby is definitely showing its age a bit with the standard library. With Ruby 3.0 the standard library is going to become default gems. Hopefully that will encourage some modernization in the interfaces provided so that more apps can rely on an out-of-the-box solution, rather than bundling their own.&lt;/p&gt;
+
+&lt;p&gt;Personally I think choice is a good thing. The fact that there are multiple alternatives to most parts of the standard library is a sign of a healthy ecosystem. But at the same time it would be nice if the libraries Ruby shipped with were good enough for simple scripts without having to pull in external libraries.&lt;/p&gt;
+
+&lt;p&gt;For simple HTTP requests when you don’t care about anything other than the body you can always use &lt;code&gt;open-uri&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;open-uri&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;URI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For anything more complex, you’ll probably want to turn to a third-party library.&lt;/p&gt;
+
+&lt;h2 id=&quot;meta-programming-complexity&quot;&gt;Meta-programming complexity&lt;/h2&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Meta-programming magic.&lt;br /&gt;&lt;br /&gt;Makes it awkward to discover where a called method is actually defined. Particularly frustrating for people just learning Ruby.&lt;br /&gt;&lt;br /&gt;Hopefully tools like sorbet and rbs will help solve the discovery problem to some extent.&lt;/p&gt;&amp;mdash; Chris Mytton (@chrismytton) &lt;a href=&quot;https://twitter.com/chrismytton/status/1314236518790311936?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;My own contribution to the thread.&lt;/p&gt;
+
+&lt;p&gt;Ruby has some incredibly powerful and pleasantly ergonomic metaprogramming features for creating DSLs. However this power and ease-of-use leads people to overuse and abuse metaprogramming, leading to hard-to-follow and hard-to-debug programs.&lt;/p&gt;
+
+&lt;p&gt;It seems enticing writing a DSL that perfectly captures the essence of the problem you’re solving. In reality code that isn’t written in a standard way (i.e. with classes and methods) is harder to understand because you have to understand the DSL before you can properly understand what the code in the DSL is doing.&lt;/p&gt;
+
+&lt;h2 id=&quot;block-vs-proc-vs-lambda&quot;&gt;Block vs proc vs lambda&lt;/h2&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Block vs proc vs lambda is one of the least elegant bits with the most complexity compared to expressiveness.&lt;/p&gt;&amp;mdash; Noah Gibbs (@codefolio) &lt;a href=&quot;https://twitter.com/codefolio/status/1314237138393858050?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Ruby has too many ways of creating and calling code closures. There are some subtle differences between the various forms. When faced with a situation where I want to use them I can never remember what the trade-offs between them are.&lt;/p&gt;
+
+&lt;p&gt;I don’t think this problem is easy to solve, since there’s code out there using all of the different forms. It’s just one of those things that you get used to, but is a definite sharp edge for people that are new to the language.&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Overall Ruby fared pretty well in this thread, considering it’s a 25 year old language. There are definitely some rough edges, but I still find it to be one of the quickest and most fun ways to go from idea to working code.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;im-starting-a-newsletter&quot;&gt;I’m starting a newsletter!&lt;/h2&gt;
+
+&lt;p&gt;If you’ve enjoyed reading this post then you might also enjoy &lt;a href=&quot;/newsletter/&quot;&gt;my newsletter&lt;/a&gt;, where I’ll be writing about Ruby, software, tech and life.&lt;/p&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <summary type="html">Shining a light on the dark corners of Ruby</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Why I'm starting a newsletter</title>
@@ -599,40 +692,6 @@ shakespeare + 366 + 365
     <summary type="html">In Ruby when should you use `Time` vs `DateTime`, and why?</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
     <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">It gets easier</title>
-    <link href="https://www.chrismytton.com/2020/02/17/it-gets-easier/" rel="alternate" type="text/html" title="It gets easier" />
-    <published>2020-02-17T00:00:00+00:00</published>
-    <updated>2020-02-17T00:00:00+00:00</updated>
-    <id>https://www.chrismytton.com/2020/02/17/it-gets-easier/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/02/17/it-gets-easier/">
-      
-&lt;blockquote&gt;
-  &lt;p&gt;It gets easier. Every day it gets a little easier. But you’ve got to do it every day. That’s the hard part. But it does get easier.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;– &lt;a href=&quot;https://youtu.be/R2_Mn-qRKjA&quot;&gt;Jogging Baboon from Bojack Horseman&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The Jogging Baboon says this to Bojack after Bojack has collapsed while running in “Out to Sea” (S02E12), right at the end of the episode, which is also the end of season 2.&lt;/p&gt;
-
-&lt;p&gt;I think this quote applies to learning all kinds of new skill. Persistence pays off.&lt;/p&gt;
-
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="life" />
-    
-    <category term="running" />
-    
-    <summary type="html">It gets easier. Every day it gets a little easier. But you've got to do it every day. That's the hard part. But it does get easier.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/it-gets-easier.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.com/assets/images/it-gets-easier.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   

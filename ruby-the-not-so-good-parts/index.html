@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eat food, not too much, mostly plants - Chris Mytton</title>
+    <title>Ruby: The not so good parts - Chris Mytton</title>
 
-    <meta property="og:title" content="Eat food, not too much, mostly plants" />
+    <meta property="og:title" content="Ruby: The not so good parts" />
     <meta name="author" content="Chris Mytton" />
     <meta property="og:locale" content="en_GB" />
-    <meta name="description" content="" />
-    <meta property="og:description" content="" />
-    <link rel="canonical" href="https://www.chrismytton.com/2018/09/02/eat-food/" />
-    <meta property="og:url" content="https://www.chrismytton.com/2018/09/02/eat-food/" />
+    <meta name="description" content="Shining a light on the dark corners of Ruby" />
+    <meta property="og:description" content="Shining a light on the dark corners of Ruby" />
+    <link rel="canonical" href="https://www.chrismytton.com/ruby-the-not-so-good-parts/" />
+    <meta property="og:url" content="https://www.chrismytton.com/ruby-the-not-so-good-parts/" />
     <meta property="og:site_name" content="Chris Mytton" />
     
-    <meta property="og:image" content="https://source.unsplash.com/4yNeDDMcJJM">
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
+    <meta name="twitter:card" content="summary" />
     
-    <meta property="twitter:title" content="Eat food, not too much, mostly plants" />
+    <meta property="twitter:title" content="Ruby: The not so good parts" />
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
@@ -66,47 +66,92 @@
       <main class="site-content">
         <div class="post">
   <header class="post-header">
-    <h1 class="post-title">Eat food, not too much, mostly plants</h1>
+    <h1 class="post-title">Ruby: The not so good parts</h1>
   </header>
 
   <article>
 
     <div class="post-content">
       
-<p>This is my summary of the recommendations at the end of <a href="https://michaelpollan.com/articles-archive/unhappy-meals/">Unhappy Meals by Michael Pollan</a>.</p>
+<!-- Twitter embed JavaScript -->
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<ul>
-  <li>Eat real food that people 2000 years ago would have recognised as food</li>
-  <li>Avoid foods that have health claims</li>
-  <li>Don’t buy things with unfamiliar or unpronounceable ingredients</li>
-  <li>Ideally don’t buy anything with an ingredients list</li>
-  <li>Shop organically, sustainably and locally rather than going to the supermarket</li>
-  <li>Pay more, eat less</li>
-  <li>Eat until you are 80% full</li>
-  <li>Eat mostly plants, especially leaves</li>
-  <li>Flexitarians are as healthy as vegetarians</li>
-  <li>Eat in more traditional ways, as cultures historically have</li>
-  <li>Cook your own food</li>
-  <li>Grow your own food</li>
-  <li>Eat a wide variety of foods</li>
+<p>The other day Nate Berkopec asked this question on Twitter:</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">What is your least favorite part about Ruby?</p>&mdash; Nate Berkopec (@nateberkopec) <a href="https://twitter.com/nateberkopec/status/1314235606705340418?ref_src=twsrc%5Etfw">October 8, 2020</a></blockquote>
+
+<p>The thread had some thought provoking responses, so I thought I’d gather up some of the highlights for posterity.</p>
+
+<h2 class="no_toc" id="summary">Summary</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#class-variables-are-confusing" id="markdown-toc-class-variables-are-confusing">Class variables are confusing</a></li>
+  <li><a href="#standard-library-is-too-low-level" id="markdown-toc-standard-library-is-too-low-level">Standard library is too low-level</a></li>
+  <li><a href="#meta-programming-complexity" id="markdown-toc-meta-programming-complexity">Meta-programming complexity</a></li>
+  <li><a href="#block-vs-proc-vs-lambda" id="markdown-toc-block-vs-proc-vs-lambda">Block vs proc vs lambda</a></li>
 </ul>
+
+<h2 id="class-variables-are-confusing">Class variables are confusing</h2>
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">class variables! I can never figure out how they work</p>&mdash; Aaron Patterson (@tenderlove) <a href="https://twitter.com/tenderlove/status/1314237029878652928?ref_src=twsrc%5Etfw">October 8, 2020</a></blockquote>
+
+<p>Class variables in Ruby look a bit like instance variables, but they begin with <code>@@</code>, like <code>@@shared_between_child_classes</code>.</p>
+
+<p>To confuse matters further Ruby also has class instance variables, which makes searching for documentation confusing if you don’t know what you’re looking for.</p>
+
+<p>Like Aaron I can never quite grasp them. They’re rare enough in production code that if I come across them then I have to re-learn how they work to understand how the code works, which is a definite red flag for me.</p>
+
+<p>I think this is one of those Ruby features that’s best left alone unless you have a <em>very</em> convincing use case that can’t <em>possibly</em> be solved using anything else.</p>
+
+<h2 id="standard-library-is-too-low-level">Standard library is too low-level</h2>
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Much of the standard library is too low-level, like Net::HTTP, which leads to every Rails app bundling five different third-party HTTP clients.</p>&mdash; George Claghorn (@georgeclaghorn) <a href="https://twitter.com/georgeclaghorn/status/1314237870782251008?ref_src=twsrc%5Etfw">October 8, 2020</a></blockquote>
+
+<p>Ruby is definitely showing its age a bit with the standard library. With Ruby 3.0 the standard library is going to become default gems. Hopefully that will encourage some modernization in the interfaces provided so that more apps can rely on an out-of-the-box solution, rather than bundling their own.</p>
+
+<p>Personally I think choice is a good thing. The fact that there are multiple alternatives to most parts of the standard library is a sign of a healthy ecosystem. But at the same time it would be nice if the libraries Ruby shipped with were good enough for simple scripts without having to pull in external libraries.</p>
+
+<p>For simple HTTP requests when you don’t care about anything other than the body you can always use <code>open-uri</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'open-uri'</span>
+<span class="n">body</span> <span class="o">=</span> <span class="no">URI</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">url</span><span class="p">).</span><span class="nf">read</span>
+</code></pre></div></div>
+
+<p>For anything more complex, you’ll probably want to turn to a third-party library.</p>
+
+<h2 id="meta-programming-complexity">Meta-programming complexity</h2>
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Meta-programming magic.<br /><br />Makes it awkward to discover where a called method is actually defined. Particularly frustrating for people just learning Ruby.<br /><br />Hopefully tools like sorbet and rbs will help solve the discovery problem to some extent.</p>&mdash; Chris Mytton (@chrismytton) <a href="https://twitter.com/chrismytton/status/1314236518790311936?ref_src=twsrc%5Etfw">October 8, 2020</a></blockquote>
+
+<p>My own contribution to the thread.</p>
+
+<p>Ruby has some incredibly powerful and pleasantly ergonomic metaprogramming features for creating DSLs. However this power and ease-of-use leads people to overuse and abuse metaprogramming, leading to hard-to-follow and hard-to-debug programs.</p>
+
+<p>It seems enticing writing a DSL that perfectly captures the essence of the problem you’re solving. In reality code that isn’t written in a standard way (i.e. with classes and methods) is harder to understand because you have to understand the DSL before you can properly understand what the code in the DSL is doing.</p>
+
+<h2 id="block-vs-proc-vs-lambda">Block vs proc vs lambda</h2>
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Block vs proc vs lambda is one of the least elegant bits with the most complexity compared to expressiveness.</p>&mdash; Noah Gibbs (@codefolio) <a href="https://twitter.com/codefolio/status/1314237138393858050?ref_src=twsrc%5Etfw">October 8, 2020</a></blockquote>
+
+<p>Ruby has too many ways of creating and calling code closures. There are some subtle differences between the various forms. When faced with a situation where I want to use them I can never remember what the trade-offs between them are.</p>
+
+<p>I don’t think this problem is easy to solve, since there’s code out there using all of the different forms. It’s just one of those things that you get used to, but is a definite sharp edge for people that are new to the language.</p>
+
+<h2 class="no_toc" id="conclusion">Conclusion</h2>
+
+<p>Overall Ruby fared pretty well in this thread, considering it’s a 25 year old language. There are definitely some rough edges, but I still find it to be one of the quickest and most fun ways to go from idea to working code.</p>
+
+<hr />
+
+<h2 class="no_toc" id="im-starting-a-newsletter">I’m starting a newsletter!</h2>
+
+<p>If you’ve enjoyed reading this post then you might also enjoy <a href="/newsletter/">my newsletter</a>, where I’ll be writing about Ruby, software, tech and life.</p>
 
     </div>
 
     <footer>
       
-        <div class="post-tags">
-          <p>
-            Tagged:
-            
-            <a href="/tags/#food">#food</a>
-            
-            <a href="/tags/#life">#life</a>
-            
-          </p>
-        </div>
-      
-      <p class="post-date">Published  2 September 2018</p>
+      <p class="post-date">Published 11 October 2020</p>
     </footer>
 
 
