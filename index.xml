@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-11T19:32:37+00:00</updated>
+  <updated>2020-10-11T19:44:58+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
@@ -26,7 +26,7 @@
 
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;What is your least favorite part about Ruby?&lt;/p&gt;&amp;mdash; Nate Berkopec (@nateberkopec) &lt;a href=&quot;https://twitter.com/nateberkopec/status/1314235606705340418?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;The thread had some thought provoking responses, so I thought I’d gather up some of the highlights for posterity.&lt;/p&gt;
+&lt;p&gt;The thread had some thought provoking responses. I wanted to gather up some of the highlights for posterity and add my own commentary.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
@@ -41,21 +41,19 @@
 
 &lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;class variables! I can never figure out how they work&lt;/p&gt;&amp;mdash; Aaron Patterson (@tenderlove) &lt;a href=&quot;https://twitter.com/tenderlove/status/1314237029878652928?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;Class variables in Ruby look a bit like instance variables, but they begin with &lt;code&gt;@@&lt;/code&gt;, like &lt;code&gt;@@shared_between_child_classes&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Class variables in Ruby look a bit like instance variables, but they begin with &lt;code&gt;@@&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;To confuse matters further Ruby also has class instance variables, which makes searching for documentation confusing if you don’t know what you’re looking for.&lt;/p&gt;
 
-&lt;p&gt;Like Aaron I can never quite grasp them. They’re rare enough in production code that if I come across them then I have to re-learn how they work to understand how the code works, which is a definite red flag for me.&lt;/p&gt;
-
-&lt;p&gt;I think this is one of those Ruby features that’s best left alone unless you have a &lt;em&gt;very&lt;/em&gt; convincing use case that can’t &lt;em&gt;possibly&lt;/em&gt; be solved using anything else.&lt;/p&gt;
+&lt;p&gt;This is one of those Ruby features that’s best left alone unless you have a &lt;em&gt;very&lt;/em&gt; convincing use case that you can’t &lt;em&gt;possibly&lt;/em&gt; solve using anything else.&lt;/p&gt;
 
 &lt;h2 id=&quot;standard-library-is-too-low-level&quot;&gt;Standard library is too low-level&lt;/h2&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Much of the standard library is too low-level, like Net::HTTP, which leads to every Rails app bundling five different third-party HTTP clients.&lt;/p&gt;&amp;mdash; George Claghorn (@georgeclaghorn) &lt;a href=&quot;https://twitter.com/georgeclaghorn/status/1314237870782251008?ref_src=twsrc%5Etfw&quot;&gt;October 8, 2020&lt;/a&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;Ruby is definitely showing its age a bit with the standard library. With Ruby 3.0 the standard library is going to become default gems. Hopefully that will encourage some modernization in the interfaces provided so that more apps can rely on an out-of-the-box solution, rather than bundling their own.&lt;/p&gt;
+&lt;p&gt;Ruby is definitely showing its age a bit with the standard library. With Ruby 3.0 the standard library is going to become default gems. That might encourage some modernization in the interfaces provided so that more apps can rely on an out-of-the-box solution, rather than bundling their own.&lt;/p&gt;
 
-&lt;p&gt;Personally I think choice is a good thing. The fact that there are multiple alternatives to most parts of the standard library is a sign of a healthy ecosystem. But at the same time it would be nice if the libraries Ruby shipped with were good enough for simple scripts without having to pull in external libraries.&lt;/p&gt;
+&lt;p&gt;Choice is a good thing. The fact that there are many alternatives to most parts of the standard library is a sign of a healthy ecosystem. But at the same time it would be nice if the libraries Ruby shipped with were good enough for simple scripts without having to pull in external libraries.&lt;/p&gt;
 
 &lt;p&gt;For simple HTTP requests when you don’t care about anything other than the body you can always use &lt;code&gt;open-uri&lt;/code&gt;.&lt;/p&gt;
 
@@ -63,7 +61,7 @@
 &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;URI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;For anything more complex, you’ll probably want to turn to a third-party library.&lt;/p&gt;
+&lt;p&gt;For anything more complex, you’ll want to turn to a third-party library.&lt;/p&gt;
 
 &lt;h2 id=&quot;meta-programming-complexity&quot;&gt;Meta-programming complexity&lt;/h2&gt;
 
@@ -71,9 +69,9 @@
 
 &lt;p&gt;My own contribution to the thread.&lt;/p&gt;
 
-&lt;p&gt;Ruby has some incredibly powerful and pleasantly ergonomic metaprogramming features for creating DSLs. However this power and ease-of-use leads people to overuse and abuse metaprogramming, leading to hard-to-follow and hard-to-debug programs.&lt;/p&gt;
+&lt;p&gt;Ruby has some incredibly powerful and ergonomic metaprogramming features for creating DSLs. Yet this power and ease-of-use leads people to overuse and abuse metaprogramming, leading to hard-to-follow and hard-to-debug programs.&lt;/p&gt;
 
-&lt;p&gt;It seems enticing writing a DSL that perfectly captures the essence of the problem you’re solving. In reality code that isn’t written in a standard way (i.e. with classes and methods) is harder to understand because you have to understand the DSL before you can properly understand what the code in the DSL is doing.&lt;/p&gt;
+&lt;p&gt;It seems enticing writing a DSL that captures the essence of the problem you’re solving. In reality code that isn’t written in a standard way (i.e. with classes and methods) is harder to understand because you have to understand the DSL before you can understand what the code in the DSL is doing.&lt;/p&gt;
 
 &lt;h2 id=&quot;block-vs-proc-vs-lambda&quot;&gt;Block vs proc vs lambda&lt;/h2&gt;
 
@@ -81,11 +79,11 @@
 
 &lt;p&gt;Ruby has too many ways of creating and calling code closures. There are some subtle differences between the various forms. When faced with a situation where I want to use them I can never remember what the trade-offs between them are.&lt;/p&gt;
 
-&lt;p&gt;I don’t think this problem is easy to solve, since there’s code out there using all of the different forms. It’s just one of those things that you get used to, but is a definite sharp edge for people that are new to the language.&lt;/p&gt;
+&lt;p&gt;This isn’t an easy problem to solve, since there’s code out there using all the different forms. It’s one of those things that you get used to, but is a definite sharp edge for people that are new to the language.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Overall Ruby fared pretty well in this thread, considering it’s a 25 year old language. There are definitely some rough edges, but I still find it to be one of the quickest and most fun ways to go from idea to working code.&lt;/p&gt;
+&lt;p&gt;Ruby fared pretty well in this thread, considering it’s a 25 year old language. There are definitely some rough edges, but I still find it to be one of the quickest and most fun ways to go from idea to working code.&lt;/p&gt;
 
 &lt;hr /&gt;
 
