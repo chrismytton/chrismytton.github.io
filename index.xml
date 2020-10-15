@@ -3,13 +3,42 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-14T11:21:15+00:00</updated>
+  <updated>2020-10-15T21:13:33+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Playing tennis after a 4 year hiatus</title>
+    <link href="https://www.chrismytton.com/playing-tennis/" rel="alternate" type="text/html" title="Playing tennis after a 4 year hiatus" />
+    <published>2020-10-15T22:04:00+00:00</published>
+    <updated>2020-10-15T22:04:00+00:00</updated>
+    <id>https://www.chrismytton.com/playing-tennis/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/playing-tennis/">
+      
+&lt;p&gt;We decided to try out the local tennis courts after not playing since 2016-ish.&lt;/p&gt;
+
+&lt;p&gt;Have completely forgotten how to play, but was really good fun. Forgot what an intense workout tennis can be!&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Il6SLWAPNKw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="video" />
+    
+    <category term="sports" />
+    
+    <summary type="html">Have completely forgotten how to play, but was really good fun. Forgot what an intense workout tennis can be!</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Ruby: The not so good parts</title>
@@ -607,87 +636,6 @@
     <category term="programming" />
     
     <summary type="html">FiraCode is a "monospaced font with programming ligatures", which means it makes things like "==" show up in your editor as a single token.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Ruby's Time vs DateTime classes</title>
-    <link href="https://www.chrismytton.com/2020/02/18/ruby-time-vs-datetime/" rel="alternate" type="text/html" title="Ruby's Time vs DateTime classes" />
-    <published>2020-02-18T00:00:00+00:00</published>
-    <updated>2020-02-18T00:00:00+00:00</updated>
-    <id>https://www.chrismytton.com/2020/02/18/ruby-time-vs-datetime/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/02/18/ruby-time-vs-datetime/">
-      
-&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/&quot;&gt;Ruby&lt;/a&gt; has two classes, &lt;code&gt;Time&lt;/code&gt; &lt;sup id=&quot;fnref:two-time-classes&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:two-time-classes&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;code&gt;DateTime&lt;/code&gt;, that look quite similar at a glance. They both have methods for dealing with dates and times. Which should you choose when you need to work with dates and times in Ruby? Ruby’s documentation contains the answer:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It’s a common misconception that William Shakespeare and Miguel de Cervantes died on the same day in history - so much so that UNESCO named April 23 as World Book Day because of this fact. However, because England hadn’t yet adopted the Gregorian Calendar Reform (and wouldn’t until 1752) their deaths are actually 10 days apart. Since Ruby’s &lt;code&gt;Time&lt;/code&gt; class implements a proleptic Gregorian calendar and has no concept of calendar reform there’s no way to express this with &lt;code&gt;Time&lt;/code&gt; objects. This is where &lt;code&gt;DateTime&lt;/code&gt; steps in:&lt;/p&gt;
-
-  &lt;pre&gt;&lt;code&gt;shakespeare = DateTime.iso8601(&#39;1616-04-23&#39;, Date::ENGLAND)
- #=&amp;gt; Tue, 23 Apr 1616 00:00:00 +0000
-cervantes = DateTime.iso8601(&#39;1616-04-23&#39;, Date::ITALY)
- #=&amp;gt; Sat, 23 Apr 1616 00:00:00 +0000
-&lt;/code&gt;&lt;/pre&gt;
-
-  &lt;p&gt;Already you can see something is weird - the days of the week are different. Taking this further:&lt;/p&gt;
-
-  &lt;pre&gt;&lt;code&gt;cervantes == shakespeare
- #=&amp;gt; false
-(shakespeare - cervantes).to_i
- #=&amp;gt; 10
-&lt;/code&gt;&lt;/pre&gt;
-
-  &lt;p&gt;This shows that in fact they died 10 days apart (in reality 11 days since Cervantes died a day earlier but was buried on the 23rd). We can see the actual date of Shakespeare’s death by using the gregorian method to convert it:&lt;/p&gt;
-
-  &lt;pre&gt;&lt;code&gt;shakespeare.gregorian
- #=&amp;gt; Tue, 03 May 1616 00:00:00 +0000 So there&#39;s an argument that all the celebrations that take place on the 23rd April in Stratford-upon-Avon are actually the wrong date since England is now using the Gregorian calendar. You can see why when we transition across the reform date boundary:
-
-# start off with the anniversary of Shakespeare&#39;s birth in 1751
-shakespeare = DateTime.iso8601(&#39;1751-04-23&#39;, Date::ENGLAND)
- #=&amp;gt; Tue, 23 Apr 1751 00:00:00 +0000
-
-# add 366 days since 1752 is a leap year and April 23 is after February 29
-shakespeare + 366
- #=&amp;gt; Thu, 23 Apr 1752 00:00:00 +0000
-
-# add another 365 days to take us to the anniversary in 1753
-shakespeare + 366 + 365
- #=&amp;gt; Fri, 04 May 1753 00:00:00 +0000
-&lt;/code&gt;&lt;/pre&gt;
-
-  &lt;p&gt;As you can see, if we’re accurately tracking the number of solar years since Shakespeare’s birthday then the correct anniversary date would be the 4th May and not the 23rd April.&lt;/p&gt;
-
-  &lt;p&gt;So when should you use DateTime in Ruby and when should you use Time? Almost certainly you’ll want to use Time since your app is probably dealing with current dates and times. However, if you need to deal with dates and times in a historical context you’ll want to use DateTime to avoid making the same mistakes as UNESCO. If you also have to deal with timezones then best of luck - just bear in mind that you’ll probably be dealing with local solar times, since it wasn’t until the 19th century that the introduction of the railways necessitated the need for Standard Time and eventually timezones.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;From “&lt;a href=&quot;https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/DateTime.html#class-DateTime-label-When+should+you+use+DateTime+and+when+should+you+use+Time-3F&quot;&gt;When should you use &lt;code&gt;DateTime&lt;/code&gt; and when should you use &lt;code&gt;Time&lt;/code&gt;?&lt;/a&gt;” in the Ruby stdlib &lt;code&gt;DateTime&lt;/code&gt; documentation.&lt;/p&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Use &lt;code&gt;Time&lt;/code&gt; when dealing with near-past, present or future dates. It can technically represent dates from 1823-11-12 to 2116-02-20.&lt;/li&gt;
-  &lt;li&gt;Use &lt;code&gt;DateTime&lt;/code&gt; when you want to accurately model distant past dates, like Shakespeare’s birthday.&lt;/li&gt;
-  &lt;li&gt;So for most applications use &lt;code&gt;Time&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:two-time-classes&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;There are actually &lt;em&gt;two&lt;/em&gt; &lt;code&gt;Time&lt;/code&gt; classes, one in core and one in the standard library which you get when you or one of your dependencies does a &lt;code&gt;require &#39;time&#39;&lt;/code&gt;. &lt;a href=&quot;#fnref:two-time-classes&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="programming" />
-    
-    <summary type="html">In Ruby when should you use `Time` vs `DateTime`, and why?</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
     <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
