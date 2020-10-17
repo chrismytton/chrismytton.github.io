@@ -3,13 +3,44 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-16T09:28:06+00:00</updated>
+  <updated>2020-10-17T06:13:17+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Hiring an electric scooter</title>
+    <link href="https://www.chrismytton.com/around-town-on-an-e-scooter/" rel="alternate" type="text/html" title="Hiring an electric scooter" />
+    <published>2020-10-17T07:06:00+00:00</published>
+    <updated>2020-10-17T07:06:00+00:00</updated>
+    <id>https://www.chrismytton.com/around-town-on-an-e-scooter/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/around-town-on-an-e-scooter/">
+      
+&lt;p&gt;A couple of weeks ago e-scooters started appearing around town. After a bit of research I discovered the local council is running a 12 month e-scooter trial, which they’ve partnered with Zwings for.&lt;/p&gt;
+
+&lt;p&gt;So yesterday lunchtime I decided it was time to take one for a spin.&lt;/p&gt;
+
+&lt;p&gt;They’re limited to 12mph (20kph), not terribly fast, but still a super fun way to get around.&lt;/p&gt;
+
+&lt;div class=&quot;youtube-embed&quot;&gt;
+  &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/S-Q7-BUBw-Q&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="video" />
+    
+    <summary type="html">Testing out the new e-scooters that have appeared around town.</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/e-scooter.jpg" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/e-scooter.jpg"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Playing tennis after a 4 year hiatus</title>
@@ -612,32 +643,6 @@
     <category term="life" />
     
     <summary type="html">Some tips for working from home that have served me well over the years.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">FiraCode</title>
-    <link href="https://www.chrismytton.com/2020/03/01/fira-code/" rel="alternate" type="text/html" title="FiraCode" />
-    <published>2020-03-01T20:20:19+00:00</published>
-    <updated>2020-03-01T20:20:19+00:00</updated>
-    <id>https://www.chrismytton.com/2020/03/01/fira-code/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/03/01/fira-code/">
-      
-&lt;p&gt;I came across &lt;a href=&quot;https://github.com/tonsky/FiraCode&quot;&gt;FiraCode&lt;/a&gt; today. It calls itself a “monospaced font with programming ligatures”. What that means is when you install this font and configure you text editor correctly, it will render things like &lt;code&gt;-&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;=&lt;/code&gt; or &lt;code&gt;:=&lt;/code&gt; as a single token. In theory this makes it easier to read code, because you don’t have to read two characters for a single token.&lt;/p&gt;
-
-&lt;p&gt;Whether or not it actually makes it easier to read code remains to be seen. I’ve installed the font on my machine and configured iTerm and VS Code to use the font, so I’ll give it a try for a few weeks and see if I notice any difference.&lt;/p&gt;
-
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="programming" />
-    
-    <summary type="html">FiraCode is a "monospaced font with programming ligatures", which means it makes things like "==" show up in your editor as a single token.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
     <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
