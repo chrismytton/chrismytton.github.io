@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Map projections - Chris Mytton</title>
+    <title>The First Edition - Chris Mytton</title>
 
-    <meta property="og:title" content="Map projections" />
+    <meta property="og:title" content="The First Edition" />
     <meta name="author" content="Chris Mytton" />
     <meta property="og:locale" content="en_GB" />
-    <meta name="description" content="Chris Mytton is a Senior Developer at mySociety. This is his personal website." />
-    <meta property="og:description" content="Chris Mytton is a Senior Developer at mySociety. This is his personal website." />
-    <link rel="canonical" href="https://www.chrismytton.com/map-projections/" />
-    <meta property="og:url" content="https://www.chrismytton.com/map-projections/" />
+    <meta name="description" content="First newsletter!" />
+    <meta property="og:description" content="First newsletter!" />
+    <link rel="canonical" href="https://www.chrismytton.com/newsletter/the-first-edition/" />
+    <meta property="og:url" content="https://www.chrismytton.com/newsletter/the-first-edition/" />
     <meta property="og:site_name" content="Chris Mytton" />
     
     <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
     <meta name="twitter:card" content="summary" />
     
-    <meta property="twitter:title" content="Map projections" />
+    <meta property="twitter:title" content="The First Edition" />
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
@@ -65,53 +65,72 @@
 
       <main class="site-content">
         <header class="post-header">
-  <h1 class="post-title">Map projections</h1>
+  <h1 class="post-title">The First Edition</h1>
 </header>
 
 <article class="post">
 
+  <p class="post-date">18 October 2020</p>
+
   <div class="post-content">
     
-<p>Map projections are a method for representing the surface of the Earth (or Earth-like objects) on a flat surface.</p>
+<p>Hi there! I’m <a href="https://twitter.com/chrismytton">Chris Mytton</a>, a software developer and aspiring writer. You’re receiving this email because you signed up to my newsletter about software, tech and life on <a href="https://www.chrismytton.com/">chrismytton.com</a>. Thank you.</p>
 
-<p>Flattening a 3D sphere onto a 2D surface inevitably leads to some distortion. Different projections distort in different ways.</p>
+<hr />
 
-<p>The ideal map projection is therefore the one with the most acceptable type of distortion for your use-case.</p>
+<p>Welcome to my first newsletter! I’m still working out exactly what format this newsletter will have. I’m going to approach it with a hacker mindset. Try things that seem fun and see if they work. Then get rid of things that aren’t working, and do more of the things that are. I expect it will evolve over the next few editions while I find a balance between original writing and content curation.</p>
 
-<h2 id="equal-area-projections">Equal-area projections</h2>
+<p>I’ve been meaning to start a newsletter for a few months but every time I try to sit down and start it I get that creeping feeling of imposter syndrome. Who am I to be starting a newsletter? Why would anyone care? Maybe no-one will care, in which case I can stop worrying about what people will think about it!</p>
 
-<p>When the area of a shape in real life matches the area of that shape on the projected map then the projection is called an equal-area projection.</p>
+<p>Starting a newsletter seems to have encouraged some productive procrastination. I’ve written several articles and even started a <a href="https://www.youtube.com/chrismytton">YouTube channel</a> while procrastinating around writing the first edition of this newsletter.</p>
 
-<h2 id="conformal-projections">Conformal projections</h2>
+<h2 id="things-ive-written">Things I’ve written</h2>
 
-<p>When angles in real-life match the angles on the projected map then the projection is called a conformal projection.</p>
+<p><strong><a href="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/">Consume less, produce more</a></strong> — I found a voice memo on my phone from last year about having too many inputs and not enough outputs in my life. Listening to it again I was struck by how relevant it still was. I turned it into an article to remind myself to balance my consumption with creation.</p>
 
-<blockquote>
-  <p>For example, if two roads cross each other at a 39° angle, then their images on a map with a conformal projection cross at a 39° angle.<sup id="fnref:Conformal_map_projection-wikipedia" role="doc-noteref"><a href="#fn:Conformal_map_projection-wikipedia" class="footnote">1</a></sup></p>
-</blockquote>
+<p><strong><a href="https://www.chrismytton.com/ruby-the-not-so-good-parts/">Ruby: The not so good parts</a></strong> — Nate Berkopec tweeted asking people what their least favorite part of Ruby was. I wrote this article summarising some of the responses. This was featured in the excellent Ruby Weekly newsletter and was even <a href="https://twitter.com/yukihiro_matz/status/1315452273686765568" target="_blank">tweeted by Matz</a>, Ruby’s creator.</p>
 
-<h2 id="the-equirectangular-projection">The equirectangular projection</h2>
+<p><strong><a href="https://www.chrismytton.com/starting-a-newsletter/">Why I’m starting a newsletter</a></strong> — A meta-article about what motivated me to start this newsletter. In short it’s a push for me to write more regularly and do more work in public.</p>
 
-<p>This simple projection is almost 2000 years old.</p>
+<p><strong><a href="https://www.chrismytton.com/git-tips-and-tricks/">git tips and tricks</a></strong> — I’ve started compiling git tips and tricks into this page on my website. I’m going to continue adding to this as I come across new git concepts that I don’t want to forget.</p>
 
-<p>Each line of meridian (line of longitude) is mapped to vertical straight lines with constant spacing.</p>
+<h2 id="books-im-reading">Books I’m reading</h2>
 
-<p>This projection isn’t equal-area or conformal, so isn’t very useful for navigation, but can be used for thematic maps, e.g. showing population density or surface temperature.</p>
+<p><strong><a href="https://www.navalmanack.com/">Almanack of Naval Ravikant</a> by Eric Jorgenson</strong> — If you haven’t heard of <a href="https://twitter.com/naval">Naval</a> then this book is an excellent introduction to his way of thinking. Packed full of thought-provoking ideas. Free to read online and there are PDF and e-reader versions available for free download.</p>
 
-<h2 id="mercator-projection">Mercator projection</h2>
+<p><strong><a href="https://breakingsmart.com/en/season-1/">Breaking Smart</a> by Venkatesh Rao</strong> — Silicon Valley tends to push a utopian vision of software eating the world, while luddites think that software and technology is destroying community, democracy and society. This book makes the case for the middle ground of pragmatic optimism for our technological future. Free to read online, or you can get the Kindle version for a few dollars.</p>
 
-<p>Invented in 1569 by Flemish cartographer Gerardus Mercator.</p>
+<p><strong>Eat and Run - My Unlikely Journey to Ultramarathon Greatness by Scott Jurek</strong> — Jurek came in second place in his first ever 50 mile ultramarathon, having never even run a marathon before. This autobiography is a fascinating look at the world of ultramarathons and Scott’s ascent to the pinnacle of the sport. As a bonus is packed full of running tips and vegan recipes.</p>
 
-<p>Became popular with sailors because it represents north as up and south as down on all parts of the map while preserving local directions and shapes.</p>
+<p><strong>The Passion Economy by Adam Davidson</strong> — If the 19th century was characterised by artisanship and tinkering and the 20th century was about scale then the 21st century is about artisanship and tinkering at scale. Really well written book packed with real-life stories of people that have made the transition to the so-called passion economy.</p>
 
-<p>One major downside of this projection is it artificially inflates objects the further they are from the equator. On a mercator map Greenland looks about the same size as Africa, but Africa is actually 14x larger than Greenland.</p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:Conformal_map_projection-wikipedia" role="doc-endnote">
-      <p>From <a href="https://en.wikipedia.org/wiki/Conformal_map_projection">Conformal map projection</a> on Wikipedia. <a href="#fnref:Conformal_map_projection-wikipedia" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p><strong>Antifragile by Nassim Nicholas Taleb</strong> — This book has been sat on my shelf for over a year and I’ve finally started reading it. I’m only a couple of chapters in but it’s already changing how I view the world.</p>
+
+<h2 id="videos-ive-made">Videos I’ve made</h2>
+
+<p>I’ve been learning how to use iMovie and Adobe Premiere Rush to edit videos. It’s really fun! I made a couple of short videos that I’ve put on my fledgling <a href="https://www.youtube.com/chrismytton">YouTube channel</a>.</p>
+
+<p><strong><a href="https://youtu.be/-dkNxfi1qGM" target="_blank">Lighting a fire</a></strong> — I made this back in May when I was learning iMovie but only uploaded it last week. I already dislike it but I think it’s good to document your evolution publicly.</p>
+
+<p><strong><a href="https://youtu.be/Il6SLWAPNKw" target="_blank">Playing tennis after a 4 year hiatus</a></strong> — Editing this taught me that the order things happen in the video doesn’t necessarily have to match the order they happened in real life. I’ve made it look like we’re having a rally, but actually I just filmed my wife for a bit and then filmed myself for a bit and stitched it together afterwards.</p>
+
+<p><strong><a href="https://youtu.be/S-Q7-BUBw-Q" target="_blank">Whizzing around town on an e-scooter</a></strong> — These scooters are limited to 12mph (20kph) but they’re still super fun to ride!</p>
+
+<h2 id="tech-im-excited-about">Tech I’m excited about</h2>
+
+<p><strong><a href="https://docs.stimulusreflex.com/">StimulusReflex</a></strong> — I’ve seen this mentioned a few times now. It’s a Ruby on Rails plugin that provides React-like abilities to your Rails app, but with most of the heavy lifting happening on the server-side. It uses websockets to send user interactions to the backend where pages are re-rendered and then sent back to the client.</p>
+
+<p><strong><a href="https://simonwillison.net/2020/Oct/9/git-scraping/">Git scraping</a></strong> — Excellent article from Simon Willison about tracking how data that you’ve scraped changes over time by storing it in a git repository. We did something similar a few years ago on the EveryPolitician project, but that was before GitHub Actions came along and made everything much easier to stitch together.</p>
+
+<p><strong><a href="https://www.ruby-lang.org/en/news/2020/09/25/ruby-3-0-0-preview1-released/">Ruby 3.0.0 Preview 1</a></strong> — I’m expecting this to drop on Christmas Day, as new Ruby versions generally do. The headline feature is that it will ship with the rbs gem and .rbs type definitions for the standard library. I’m hoping this will mean better Ruby support in editors like VS Code.</p>
+
+<hr />
+
+<p>That’s all folks! I was worried that I wouldn’t have anything to write about, but this has ended up being quite a lengthy first edition.</p>
+
+<p>As I said at the start the format of this newsletter will likely evolve over time. If you have any feedback I’d love to hear it! You can either reply to this email directly, or send me a DM on Twitter.</p>
+
+<p><a href="https://twitter.com/chrismytton">Chris Mytton</a></p>
 
   </div>
 
