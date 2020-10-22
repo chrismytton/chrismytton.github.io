@@ -3,13 +3,58 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-19T11:56:36+00:00</updated>
+  <updated>2020-10-22T19:46:38+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Be prolific</title>
+    <link href="https://www.chrismytton.com/be-prolific/" rel="alternate" type="text/html" title="Be prolific" />
+    <published>2020-10-22T18:17:00+00:00</published>
+    <updated>2020-10-22T18:17:00+00:00</updated>
+    <id>https://www.chrismytton.com/be-prolific/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/be-prolific/">
+      
+&lt;p&gt;There’s a story about an art teacher that split their class in half. They told one half of the students that they’d be graded based on a single piece of work, and the other half that they would be graded on the quantity of work produced.&lt;/p&gt;
+
+&lt;p&gt;The half that was being graded on quantity ended up producing higher quality pieces.&lt;/p&gt;
+
+&lt;p&gt;By iterating and learning from their mistakes they actually ended up producing better work than the students that only had to produce one piece.&lt;/p&gt;
+
+&lt;p&gt;Quantity leads to quality.&lt;/p&gt;
+
+&lt;h2 id=&quot;share-your-work&quot;&gt;Share your work&lt;/h2&gt;
+
+&lt;p&gt;Sharing work helps you to think and develop. The feedback you get feeds into the next iteration.&lt;/p&gt;
+
+&lt;p&gt;If you’ve enjoyed creating something then there’s a good chance that at least a handful of people in the world will enjoy seeing it or hearing about it.&lt;/p&gt;
+
+&lt;p&gt;Promoting yourself and your work can be a good way to clarify your thinking and future direction.&lt;/p&gt;
+
+&lt;h2 id=&quot;get-better-by-creating-more&quot;&gt;Get better by creating more&lt;/h2&gt;
+
+&lt;p&gt;Produce lots of stuff and share it.&lt;/p&gt;
+
+&lt;p&gt;Being prolific doesn’t mean that everything you produce has to be absolute gold. But the process of producing large quantities of work ultimately leads to a higher quality of work.&lt;/p&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="creativity" />
+    
+    <category term="life" />
+    
+    <summary type="html">Produce lots of stuff and share it.</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Hiring an electric scooter</title>
@@ -567,84 +612,6 @@
     <summary type="html">A look at some of the positive things I hope will come out of the coronavirus pandemic.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/no-eggs-left.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/no-eggs-left.jpg"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Working from home tips</title>
-    <link href="https://www.chrismytton.com/2020/03/11/working-from-home/" rel="alternate" type="text/html" title="Working from home tips" />
-    <published>2020-03-11T20:24:41+00:00</published>
-    <updated>2020-03-11T20:24:41+00:00</updated>
-    <id>https://www.chrismytton.com/2020/03/11/working-from-home/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/03/11/working-from-home/">
-      
-&lt;p&gt;There are a lot of working from home posts doing the rounds at the moment. I’ve been working from home for nearly seven years, so I thought I’d write down my tips for working from home.&lt;/p&gt;
-
-&lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#go-outside&quot; id=&quot;markdown-toc-go-outside&quot;&gt;Go outside&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#over-communicate&quot; id=&quot;markdown-toc-over-communicate&quot;&gt;Over-communicate&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#stay-hydrated&quot; id=&quot;markdown-toc-stay-hydrated&quot;&gt;Stay hydrated&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#hide-the-snacks&quot; id=&quot;markdown-toc-hide-the-snacks&quot;&gt;Hide the snacks&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#meditate&quot; id=&quot;markdown-toc-meditate&quot;&gt;Meditate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;go-outside&quot;&gt;Go outside&lt;/h2&gt;
-
-&lt;p&gt;My top tip for working from home is make sure you don’t stay at home all day. That way lies madness. You need to get some daylight, it will help you feel fresher and more focussed. Studies&lt;sup id=&quot;fnref:daylight-exposure-study&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:daylight-exposure-study&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; show that exposure to daylight can help you sleep better at night as well.&lt;/p&gt;
-
-&lt;p&gt;Leave the house and go for a walk. Once mid-morning, and again mid-afternoon, bonus if you go lunchtime as well.&lt;/p&gt;
-
-&lt;p&gt;Get up and walk around the house regularly. If you have a garden or outdoor space and the weather is nice then sit out there with a notebook and do a brain dump.&lt;/p&gt;
-
-&lt;p&gt;Do some form of physical exercise that makes you sweat most days. Sitting at a desk doesn’t get the heart rate going anywhere near enough.&lt;/p&gt;
-
-&lt;h2 id=&quot;over-communicate&quot;&gt;Over-communicate&lt;/h2&gt;
-
-&lt;p&gt;People don’t know what you’re doing, so make sure you’re extra visible.&lt;/p&gt;
-
-&lt;p&gt;Don’t be afraid to ask people questions if you’re stuck. Ideally your communication channels should be asynchronous, so you don’t have to worry about interrupting people, they’ll get back to you when they reach a convenient stopping point.&lt;/p&gt;
-
-&lt;h2 id=&quot;stay-hydrated&quot;&gt;Stay hydrated&lt;/h2&gt;
-
-&lt;p&gt;When there’s no-one offering you regular tea and coffee it’s easy to forget to drink anything. Always have a glass or bottle of water near your working area.&lt;/p&gt;
-
-&lt;h2 id=&quot;hide-the-snacks&quot;&gt;Hide the snacks&lt;/h2&gt;
-
-&lt;p&gt;Ideally don’t have snacks in the house in the first place. They’re far too tempting.&lt;/p&gt;
-
-&lt;h2 id=&quot;meditate&quot;&gt;Meditate&lt;/h2&gt;
-
-&lt;p&gt;I try to meditate every morning, it helps me to feel less stressed and anxious.&lt;/p&gt;
-
-&lt;p&gt;If you’re not into meditation then other mindful activities like journaling, yoga or whatever gets you into a relaxed state of mind.&lt;/p&gt;
-
-&lt;h2 class=&quot;no_toc&quot; id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Working from home is not the same as working from the office.&lt;/p&gt;
-
-&lt;p&gt;It can require more effort on your part to look after yourself and integrate with your team. But the reward is more autonomy, flexible work schedules, and an increased reliance on results produced over hours worked.&lt;/p&gt;
-
-&lt;p&gt;The extra effort required is well worth the freedom working from home provides.&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:daylight-exposure-study&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4031400/&quot;&gt;Boubekri, Mohamed et al. “Impact of windows and daylight exposure on overall health and sleep quality of office workers: a case-control pilot study.” Journal of clinical sleep medicine : JCSM : official publication of the American Academy of Sleep Medicine vol. 10,6 603-11. 15 Jun. 2014, doi:10.5664/jcsm.3780&lt;/a&gt; &lt;a href=&quot;#fnref:daylight-exposure-study&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="life" />
-    
-    <summary type="html">Some tips for working from home that have served me well over the years.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
