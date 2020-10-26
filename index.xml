@@ -3,7 +3,7 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-10-25T09:03:03+00:00</updated>
+  <updated>2020-10-26T19:50:25+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
@@ -40,6 +40,12 @@
 &lt;p&gt;Produce lots of stuff and share it.&lt;/p&gt;
 
 &lt;p&gt;Being prolific doesn’t mean that everything you produce has to be absolute gold. But the process of producing large quantities of work ultimately leads to a higher quality of work.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=24866706&quot;&gt;Discussion on Hacker News&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eduardoorige.com.br/posts/seja-prolifico/index.html&quot;&gt;Portuguese translation&lt;/a&gt; by Eduardo Orige.&lt;/p&gt;
 
     </content>
     <author>
