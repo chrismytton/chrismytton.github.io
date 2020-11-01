@@ -596,6 +596,9 @@ a, a:visited {
   a:hover, a:visited:hover {
     text-decoration: underline; }
 
+.articles-list a:visited {
+  color: #83a6dc; }
+
 .site-footer {
   margin-top: 1rem;
   margin-bottom: 6rem; }
