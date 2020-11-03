@@ -3,10 +3,10 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2020-11-03T17:40:50+00:00</updated>
+  <updated>2020-11-03T18:27:54+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
-  <subtitle>Chris Mytton is a Senior Developer at mySociety. This is his personal website.</subtitle>
+  <subtitle>This is my personal website where I share projects I've been working on and what I learn along the way. Find me on Twitter: @chrismytton</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
