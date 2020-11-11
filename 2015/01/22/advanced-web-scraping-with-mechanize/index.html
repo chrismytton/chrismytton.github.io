@@ -22,7 +22,7 @@
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
-    <link rel="stylesheet" href="/assets/css/main.css?1604820193">
+    <link rel="stylesheet" href="/assets/css/main.css?1605077508">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -109,9 +109,9 @@
 
 <p>This returns an array of links, but we only want links to reviews, not pagination. To remove unwanted links we can call <code>.reject</code> on the array of links and reject any which look like pagination links.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="err">)
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="p">)</span>
 
-r</span><span class="sr">e</span><span class="n">view_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">reject</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">reject</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
   <span class="n">parent_classes</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">node</span><span class="p">.</span><span class="nf">parent</span><span class="p">[</span><span class="s1">'class'</span><span class="p">].</span><span class="nf">split</span>
   <span class="n">parent_classes</span><span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="sx">%w[next-container page-number]</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span> <span class="p">}</span>
 <span class="k">end</span>
@@ -164,9 +164,9 @@ r</span><span class="sr">e</span><span class="n">view_links</span> <span class="
 <span class="n">agent</span> <span class="o">=</span> <span class="no">Mechanize</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">page</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://pitchfork.com/reviews/albums/"</span><span class="p">)</span>
 
-<span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="err">)
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">page</span><span class="p">.</span><span class="nf">links_with</span><span class="p">(</span><span class="ss">href: </span><span class="sr">%r{^/reviews/albums/</span><span class="se">\w</span><span class="sr">+}</span><span class="p">)</span>
 
-r</span><span class="sr">e</span><span class="n">view_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">reject</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+<span class="n">review_links</span> <span class="o">=</span> <span class="n">review_links</span><span class="p">.</span><span class="nf">reject</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
   <span class="n">parent_classes</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="nf">node</span><span class="p">.</span><span class="nf">parent</span><span class="p">[</span><span class="s1">'class'</span><span class="p">].</span><span class="nf">split</span>
   <span class="n">parent_classes</span><span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="sx">%w[next-container page-number]</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span> <span class="p">}</span>
 <span class="k">end</span>
