@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Using nokogiri with pry - Chris Mytton</title>
+    <title>The Second Edition - Chris Mytton</title>
 
-    <meta property="og:title" content="Using nokogiri with pry" />
+    <meta property="og:title" content="The Second Edition" />
     <meta name="author" content="Chris Mytton" />
     <meta property="og:locale" content="en_GB" />
-    <meta name="description" content="" />
-    <meta property="og:description" content="" />
-    <link rel="canonical" href="https://www.chrismytton.com/2016/10/11/using-nokogiri-with-pry/" />
-    <meta property="og:url" content="https://www.chrismytton.com/2016/10/11/using-nokogiri-with-pry/" />
+    <meta name="description" content="Second newsletter!" />
+    <meta property="og:description" content="Second newsletter!" />
+    <link rel="canonical" href="https://www.chrismytton.com/newsletter/the-second-edition/" />
+    <meta property="og:url" content="https://www.chrismytton.com/newsletter/the-second-edition/" />
     <meta property="og:site_name" content="Chris Mytton" />
     
     <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
     <meta name="twitter:card" content="summary" />
     
-    <meta property="twitter:title" content="Using nokogiri with pry" />
+    <meta property="twitter:title" content="The Second Edition" />
     <meta name="twitter:site" content="@chrismytton" />
     <meta name="twitter:creator" content="@chrismytton" />
 
@@ -64,61 +64,69 @@
       </header>
 
       <main class="site-content">
-        <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">Using nokogiri with pry</h1>
-  </header>
+        <header class="post-header">
+  <h1 class="post-title">The Second Edition</h1>
+</header>
 
-  <article>
+<article class="post">
 
-    <div class="post-content">
-      
-<p>I wanted a quick way to run some XPath selectors against a web page today. <a href="http://www.nokogiri.org/">Nokogiri</a> comes with a command line tool that you can pass a url and it will drop you into an IRB session. This allows you to play around with some Ruby code to explore a webpage before scraping it.</p>
+  <p class="post-date">15 November 2020</p>
 
-<pre><code>nokogiri http://example.com
-</code></pre>
+  <div class="post-content">
+    
+<p>Hi there! I’m <a href="https://twitter.com/chrismytton" target="_blank">Chris Mytton</a>, a tech enthusiast and fledgling YouTuber. You’re receiving this email because you signed up to my newsletter about software, tech and life on <a href="https://www.chrismytton.com/">chrismytton.com</a>. Thank you.</p>
 
-<p>This is useful, but I wanted to use it with <a href="https://pry.github.io/">Pry</a>. It turns out that adding support for Pry is relatively easy, but I couldn’t find any clear top to bottom instructions, so I’ve documented the process below.</p>
+<hr />
 
-<p>First install Nokogiri and Pry:</p>
+<p>Welcome to the second edition! My article about being prolific, which is linked below, went a bit viral when I shared it a few weeks ago. Hello to all the new subscribers that found me via that article!</p>
 
-<pre><code>gem install nokogiri pry
-</code></pre>
+<p>I shared the article on Hacker News and it hit the number one spot. That led to over 15,000+ website visitors, about 50 newsletter subscribers and a similar number of new Twitter followers.</p>
 
-<p>Then add the following code to <code>~/.nokogirirc</code>:</p>
+<p>I also received several emails and Twitter DMs from people reaching out to let me know that the article had resonated with them.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'pry'</span>
-<span class="no">Nokogiri</span><span class="o">::</span><span class="no">CLI</span><span class="p">.</span><span class="nf">console</span> <span class="o">=</span> <span class="no">Pry</span>
-</code></pre></div></div>
+<p>Most surprising to me was the two emails asking for permission to translate the article. There is now a Portuguese <em>and</em> an Arabic translation, which I’ve linked to from the original.</p>
 
-<p>That’s it! Now when you use the <code>nokogiri</code> command line tool it will now drop you into a pry REPL. This is perfect for testing your CSS and XPath selectors when you’re <a href="/2015/01/19/web-scraping-with-ruby/">writing a scraper</a>.</p>
+<p>The same day that the article was doing well I also got some sad family news. So ironically I haven’t been anywhere near as prolific as I’d have liked this past month. Despite authoring an article imploring others to be prolific.</p>
 
-<noscript>
-<a href="https://asciinema.org/a/88853" target="_blank"><img src="https://asciinema.org/a/88853.png" alt="Static screenshot of asciicinema recording" /></a>
-</noscript>
-<script type="text/javascript" src="https://asciinema.org/a/88853.js" id="asciicast-88853" async=""></script>
+<h2 id="things-ive-written">Things I’ve written</h2>
 
+<p><strong><a href="https://www.chrismytton.com/be-prolific/">Be prolific</a></strong> — Short article about the benefits of putting quantity ahead of quality.</p>
 
-    </div>
+<p><strong><a href="https://www.chrismytton.com/a-guide-to-the-good-life/">Book notes: A Guide to the Good Life</a></strong> — The Ancient Art of Stoic Joy.</p>
 
-    <footer>
-      
-        <div class="post-tags">
-          <p>
-            Tagged:
-            
-            <a href="/tags/#programming">#programming</a>
-            
-          </p>
-        </div>
-      
-      <p class="post-date">Published 11 October 2016</p>
-    </footer>
+<h2 id="books-im-reading">Books I’m reading</h2>
 
+<p><strong>Einstein: His Life and Universe by Walter Isaacson</strong> — Detailed yet approachable biography of Albert Einstein. Gives some context to his life as well as the theories that made him famous.</p>
 
-  </article>
+<p><strong>Money by Rob Moore</strong> — Lots of background about what money is, and what it isn’t. Also digs into some of the money beliefs that we might have inherited from society or our parents and how they might be harming us.</p>
 
-</div>
+<p><strong>Other Minds by Peter Godfrey-Smith</strong> — I’ve had this book for about a year but haven’t got around to reading it. But this past week I’ve heard two separate recommendations for it, so I’ve moved it to the top of my read-next pile.</p>
+
+<h2 id="videos-ive-made">Videos I’ve made</h2>
+
+<p><strong><a href="https://youtu.be/UUDQoNnzgfg" target="_blank">Lockdown 2.0 thoughts</a></strong> — A short vlog about shooting vlogs on the iPhone selfie camera and how the latest UK lockdown isn’t the same as the first one.</p>
+
+<p><strong><a href="https://youtu.be/ZaUE30t0G3k" target="_blank">My running philosophy</a></strong> — Went for a long run and decided halfway through to make a video about my running philosophy. It’s based on my <a href="https://www.chrismytton.com/2018/08/21/running-philosophy/">article of the same name</a> that I wrote a couple of years ago.</p>
+
+<h2 id="tech-im-excited-about">Tech I’m excited about</h2>
+
+<p><strong><a href="https://www.raspberrypi.org/blog/raspberry-pi-400-the-70-desktop-pc/" target="_blank">Raspberry Pi 400</a></strong> — Back in the early 90s my family had a Commodore 64. It had already been around for about 10 years at that point, so wasn’t exactly cutting edge. I was always amazed that the whole computer fitted in the keyboard. Now this idea is back. The Raspberry Pi foundation have put a computer in a keyboard once again. There’s also an <a href="https://www.raspberrypi.org/blog/designing-raspberry-pi-400/" target="_blank">in-depth article about how it was designed</a>.</p>
+
+<p><strong><a href="https://www.apple.com/uk/newsroom/2020/11/apple-unleashes-m1/" target="_blank">Apple’s new M1 chip</a></strong> — This is the first chip that Apple have made that’s specifically designed for the Mac. It promises to bring better performance <em>and</em> better battery life to future Macs using this chip. The <a href="https://browser.geekbench.com/v5/cpu/compare/4656084?baseline=4648107" target="_blank">benchmarks</a> are starting to appear and they’re impressive.</p>
+
+<p><strong><a href="https://github.com/mame/quine-relay" target="_blank">Quine Relay</a></strong> — “a Ruby program that generates Rust program that generates Scala program that generates …(through 128 languages in total)… REXX program that generates the original Ruby code again.” The <a href="https://github.com/mame/quine-relay/blob/master/QR.rb" target="_blank">source code</a> for this is equal parts impressive and intimidating.</p>
+
+<hr />
+
+<p>That’s all folks!</p>
+
+<p>If you have any feedback I’d love to hear it! You can either reply to this email directly, or send me a DM on Twitter.</p>
+
+<p><a href="https://twitter.com/chrismytton" target="_blank">Chris Mytton</a></p>
+
+  </div>
+
+</article>
 
       </main>
 
