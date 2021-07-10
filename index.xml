@@ -3,10 +3,10 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2021-03-15T08:53:07+00:00</updated>
+  <updated>2021-07-10T09:59:55+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
-  <subtitle>This is my personal website where I share projects I've been working on and what I learn along the way. Find me on Twitter: @chrismytton</subtitle>
+  <subtitle>This is my personal website where I share anything I find interesting. Follow me on Twitter: @chrismytton</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
@@ -227,9 +227,13 @@
 
 &lt;p&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=24866706&quot; target=&quot;_blank&quot;&gt;Discussion on Hacker News&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://eduardoorige.com.br/posts/seja-prolifico/index.html&quot; target=&quot;_blank&quot;&gt;Portuguese translation&lt;/a&gt;.&lt;/p&gt;
+&lt;!--
 
-&lt;!-- [Arabic translation](https://farzat.online/2020/10/28/be-prolific/){:target=&quot;_blank&quot;}. --&gt;
+[Portuguese translation](https://eduardoorige.com.br/posts/seja-prolifico/index.html){:target=&quot;_blank&quot;}
+
+[Arabic translation](https://farzat.online/2020/10/28/be-prolific/){:target=&quot;_blank&quot;}
+
+--&gt;
 
     </content>
     <author>
