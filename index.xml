@@ -3,13 +3,44 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2021-09-13T14:14:47+00:00</updated>
+  <updated>2021-09-13T14:18:19+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>This is my personal website where I share anything I find interesting. Follow me on Twitter: @chrismytton</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Walk from Pittville Pump Room to Prestbury Church</title>
+    <link href="https://www.chrismytton.com/video-walk-from-pittville-pump-room-to-prestbury-church/" rel="alternate" type="text/html" title="Walk from Pittville Pump Room to Prestbury Church" />
+    <published>2021-09-13T15:14:00+00:00</published>
+    <updated>2021-09-13T15:14:00+00:00</updated>
+    <id>https://www.chrismytton.com/video-walk-from-pittville-pump-room-to-prestbury-church/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/video-walk-from-pittville-pump-room-to-prestbury-church/">
+      
+&lt;p&gt;Using my 1996 Cheltenham Circular Footpath guidebook as my primary means of navigation I walked a couple of miles along said footpath, from Pittville Pump Room to Prestbury Church.&lt;/p&gt;
+
+&lt;p&gt;This part of the route goes around Cheltenham Racecourse and past the Gloucestershire Warwickshire Steam Railway. Along the way I explain a bit about the history of the racecourse and the railway station adjacent to it.&lt;/p&gt;
+
+&lt;p&gt;Join me as I get lost, eat blackberries, and read directions from a guidebook.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/HZtq3IrvIVE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="walking" />
+    
+    <category term="video" />
+    
+    <summary type="html">I walked a couple of miles along Cheltenham Circular Footpath, from Pittville Pump Room to Prestbury Church. This is the video of that walk.</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Book notes: A Guide to the Good Life</title>
@@ -691,37 +722,6 @@
     <summary type="html">Using csvkit and UNIX to extract a list of IDs from an XLSX file.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
     <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Fruit garden schematic</title>
-    <link href="https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/" rel="alternate" type="text/html" title="Fruit garden schematic" />
-    <published>2020-05-05T20:46:02+00:00</published>
-    <updated>2020-05-05T20:46:02+00:00</updated>
-    <id>https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/05/05/fruit-garden-schematic/">
-      
-&lt;p&gt;Diagram of my fruit garden, so I remember what’s what.&lt;/p&gt;
-
-&lt;p&gt;I’m hoping I can incorporate some of the nectarines into a batch of &lt;a href=&quot;/2019/09/28/chutney/&quot;&gt;chutney&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/images/fruit-garden-schematic.png&quot;&gt;&lt;img src=&quot;/assets/images/fruit-garden-schematic.png&quot; alt=&quot;Fruit garden schematic&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="food" />
-    
-    <category term="gardening" />
-    
-    <category term="nature" />
-    
-    <summary type="html">Diagram of my fruit garden, so I remember what's what.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/fruit-garden-schematic.png" />
-    <media:content medium="image" url="https://www.chrismytton.com/assets/images/fruit-garden-schematic.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
