@@ -26,15 +26,6 @@
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58688654-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-58688654-2');
-    </script>
   </head>
 
   <body>
@@ -140,7 +131,6 @@
 <p><strong><a href="https://dave.cheney.net/2019/09/24/be-wary-of-functions-which-take-several-parameters-of-the-same-type">Be wary of functions which take several parameters of the same type</a></strong></p>
 
 <p>Argues that functions which take two arguments can be confusing, because it’s easy to get the values backwards. The example the author gives is a <code>CopyFile(to, from string)</code> function, which could accidentally be called with the arguments reversed. This is also an issue with command line utilities, I’m always getting the arguments to <code>ln</code> the wrong way round.</p>
-
 
     </div>
 

@@ -26,15 +26,6 @@
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58688654-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-58688654-2');
-    </script>
   </head>
 
   <body>
@@ -113,15 +104,15 @@ index 2d2baaa..f8b14d6 100644
 </span><span class="gi">+require 'scraperwiki'
 +
 +ScraperWiki.config = { db: 'data.sqlite', default_table_name: 'data' }
-</span>
- agent = Mechanize.new
+</span><span class="err">
+</span> agent = Mechanize.new
  page = agent.get("http://pitchfork.com/reviews/albums/")
 <span class="p">@@ -34,4 +36,6 @@</span> reviews = review_links.map do |link|
    }
  end
-
--puts JSON.pretty_generate(reviews)
-<span class="gi">+reviews.each do |review|
+<span class="err">
+</span><span class="gd">-puts JSON.pretty_generate(reviews)
+</span><span class="gi">+reviews.each do |review|
 +  ScraperWiki.save_sqlite([:artist, :album], review)
 +end
 </span></code></pre></div></div>
