@@ -3,13 +3,148 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2021-09-13T15:14:00+00:00</updated>
+  <updated>2023-01-18T22:00:00+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>This is my personal website where I share anything I find interesting. Follow me on Twitter: @chrismytton</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">What land and assets does Cheltenham Council own?</title>
+    <link href="https://www.chrismytton.com/what-land-and-assets-does-cheltenham-council-own/" rel="alternate" type="text/html" title="What land and assets does Cheltenham Council own?" />
+    <published>2023-01-18T22:00:00+00:00</published>
+    <updated>2023-01-18T22:00:00+00:00</updated>
+    <id>https://www.chrismytton.com/what-land-and-assets-does-cheltenham-council-own/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/what-land-and-assets-does-cheltenham-council-own/">
+      
+&lt;h2 id=&quot;summary-i-made-a-map-of-the-councils-assets&quot;&gt;Summary: I made a map of the council’s assets&lt;/h2&gt;
+
+&lt;p&gt;I made a map showing all land and assets owned by Cheltenham Borough Council&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. You can view it at &lt;a href=&quot;https://www.chrismytton.com/cheltenham-council-land-and-assets/&quot;&gt;chrismytton.com/cheltenham-council-land-and-assets&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-but-not-very-visual&quot;&gt;Data! But not very visual&lt;/h2&gt;
+
+&lt;p&gt;I was browsing through &lt;a href=&quot;https://www.cheltenham.gov.uk/opendata&quot;&gt;Cheltenham Council’s Open data pages&lt;/a&gt; the other day and came across their &lt;a href=&quot;https://www.cheltenham.gov.uk/info/16/open_data/1190/local_authority_land_and_assets&quot;&gt;“Local authority land and assets open data”&lt;/a&gt; dataset. From what I understand reading that webpage, the council are required to maintain this list of assets, “in accordance with the mandatory requirements of the local government transparency code”.&lt;/p&gt;
+
+&lt;p&gt;The list of assets is provided in XLSX and CSV format. These spreadsheet-like formats are fine to quickly go through if you know what you’re looking for. Not so great for browsing the data in a more visual format.&lt;/p&gt;
+
+&lt;p&gt;I’ve been wanting to sharpen my GIS skills for a while, so I got to work processing the data into something that I could plot on a map.&lt;/p&gt;
+
+&lt;h2 id=&quot;loading-the-data-into-postgis-with-ruby&quot;&gt;Loading the data into Postgis with Ruby&lt;/h2&gt;
+
+&lt;p&gt;For my first iteration I wanted to use Postgis so I could get more familiar with the various features it offers. I wrote a Ruby script that would take the CSV data, do some mild cleaning on it, then write the result to GeoJSON.&lt;/p&gt;
+
+&lt;p&gt;You can see that script &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990e0bbfd9e90d42a0797b6b770e2c63665b/load_csv_and_output_geojson.rb&quot;&gt;over on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;re-projecting-british-national-grid-coordinates-to-gps-coordinates&quot;&gt;Re-projecting British National Grid coordinates to “GPS” coordinates&lt;/h2&gt;
+
+&lt;p&gt;The coordinates from the CSV’s &lt;code&gt;GeoX&lt;/code&gt; and &lt;code&gt;GeoY&lt;/code&gt; columns are re-projected in Postgis from EPSG:27700 (British National Grid, which is used on Ordnance Survey maps) to EPSG:4326 (World Geodetic System, which is what GPS uses), which is then stored in the &lt;code&gt;coordinates&lt;/code&gt; column. Re-projection isn’t a required step. GeoJSON can handle data with a 27700 projection, and Leaflet can handle 27700 projections, but it requires a 27700 basemap as well. I could get from Ordnance Survey, but it costs money, and I wanted this project to run without an ongoing cost, if possible.&lt;/p&gt;
+
+&lt;p&gt;In my experience, working with 4326 data gives you a wider range of options.&lt;/p&gt;
+
+&lt;p&gt;This is the SQL I used to re-project the &lt;code&gt;GeoX&lt;/code&gt; and &lt;code&gt;GeoY&lt;/code&gt; columns and store the result in the &lt;code&gt;coordinates&lt;/code&gt; column.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;land_and_assets&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coordinates&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST_Transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ST_SetSRID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;ST_MakePoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GeoX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GeoY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;mi&quot;&gt;27700&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;4326&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;sql-query-to-get-geojson-out-of-postgis&quot;&gt;SQL query to get GeoJSON out of Postgis&lt;/h2&gt;
+
+&lt;p&gt;The other thing of note is that I used a fancy Postgis query to get the GeoJSON directly from the database, rather than having to generate it with Ruby.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_build_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;type&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;     &lt;span class=&quot;s1&quot;&gt;&#39;FeatureCollection&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;features&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_agg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;geojson&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_build_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;type&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;s1&quot;&gt;&#39;Feature&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;id&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;AssetCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;geometry&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;ST_AsGeoJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coordinates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;properties&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_build_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;organisation&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;organisation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;organisationlabel&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;organisationlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;uprn&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uprn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;assetcode&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;assetcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;propertyname&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;propertyname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;streetname&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;streetname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;posttown&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;posttown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;postcode&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;tenuretype&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tenuretype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;tenuredetail&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tenuredetail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;holdingtype&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holdingtype&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;land_and_assets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pretty cool that you can conjure up a GeoJSON object using SQL without any further processing.&lt;/p&gt;
+
+&lt;p&gt;So this Ruby script worked fine and produced some usable GeoJSON output. You can actually &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990e0bbfd9e90d42a0797b6b770e2c63665b/land_and_assets_2021.geojson&quot;&gt;view the output directly on GitHub&lt;/a&gt; (because GitHub has support for rendering GeoJSON files).&lt;/p&gt;
+
+&lt;h2 id=&quot;second-attempt-with-gdalogr&quot;&gt;Second attempt with GDAL/OGR&lt;/h2&gt;
+
+&lt;p&gt;A few weeks later I was working on another project and started to get a deeper understanding and appreciation for the power of &lt;code&gt;ogr2ogr&lt;/code&gt; from the GDAL/OGR package. From what I understand GDAL handles raster data, which is essentially geographically-labelled image-type data. OGR handles vector data, which is essentially some kind of coordinates representing points, lines, polygons (and potentially more) in a 2d or 3d space.&lt;/p&gt;
+
+&lt;p&gt;This tool allows you to convert between a wide range of vector GIS formats. Among those formats, to my surprise, was CSV! So you can use &lt;code&gt;ogr2ogr&lt;/code&gt; to convert a CSV file to GeoJSON directly, without to load things into Postgres as an intermediate step.&lt;/p&gt;
+
+&lt;p&gt;Because &lt;code&gt;ogr2ogr&lt;/code&gt; lets you write SQL, we can use this for processing the rows in the input dataset into a format appropriate for the output dataset. In this case replacing some line breaks in a couple of fields, and remapping the names from the CSV to different output names.&lt;/p&gt;
+
+&lt;p&gt;You can see the new build script &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/71d9529327807af23cd750f65e88dc496867c155/bin/build&quot;&gt;over on GitHub&lt;/a&gt; along with the &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/main/extract_csv_to_ogr.sql&quot;&gt;SQL that’s used for processing&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Moving from the Ruby script to &lt;code&gt;ogr2ogr&lt;/code&gt; has dramatically reduced the amount of code needed for this process. Now it’s just one (admittedly quite complex) SQL query and a couple of lines of bash to glue things together.&lt;/p&gt;
+
+&lt;h2 id=&quot;putting-it-on-a-map&quot;&gt;Putting it on a map&lt;/h2&gt;
+
+&lt;p&gt;As mentioned GitHub has built in support for viewing GeoJSON files. This used to be powered by Mapbox and was quite slick, but it’s now powered by Azure Maps and is quite frankly inferior to the Mapbox version and a bit clunky.&lt;/p&gt;
+
+&lt;p&gt;So I wanted to put the markers on a map that I controlled.&lt;/p&gt;
+
+&lt;p&gt;The GeoJSON file was acceptably small once gzipped, so I was happy to just pull in the whole file on page load, rather than having to do any dynamic bounding box queries.&lt;/p&gt;
+
+&lt;p&gt;I used Leaflet to display the map, and OpenStreetMap’s tile server for the base map.&lt;/p&gt;
+
+&lt;p&gt;You can browse the map by visiting &lt;a href=&quot;https://www.chrismytton.com/cheltenham-council-land-and-assets/&quot;&gt;chrismytton.com/cheltenham-council-land-and-assets&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-enhancements&quot;&gt;Future enhancements&lt;/h2&gt;
+
+&lt;p&gt;This has definitely been a learning experience! This process follows the classic ETL (Extract, Transform, Load) pattern, but using tools that are specifically designed for geodata. While I’m pleased with how things are working there are definitely some things I’d like to improve.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Have a simpler base map than the OpenStreetMap one, which can look a bit cluttered at times&lt;/li&gt;
+  &lt;li&gt;Switch to using Maplibre. It’s fast, it’s fun, and having using Mapbox for a while it’s familiar. It also offers smoother zooming, built-in hash-tracking on location change, as well as changing bearing and angle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Well, all the land and assets they are legally required to declare, at least. Some things like operational railways, canals and highways, as well as “assets of national security” are excluded from this list. For more details see the &lt;a href=&quot;https://www.gov.uk/government/publications/local-government-transparency-code-2015/local-government-transparency-code-2015#local-authority-land&quot;&gt;“Local authority land” section of the Local government transparency code 2015&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="programming" />
+    
+    <category term="society" />
+    
+    <category term="opendata" />
+    
+    <summary type="html">How I turned a CSV into a map</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/cheltenham-data-screenshot.png" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/cheltenham-data-screenshot.png"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">Walk from Pittville Pump Room to Prestbury Church</title>
@@ -671,59 +806,6 @@
     <summary type="html">📝 Notes from porting a JavaScript random art generator to TypeScript.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/random-art.png" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/random-art.png"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Extracting a list of IDs from an XLSX file</title>
-    <link href="https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/" rel="alternate" type="text/html" title="Extracting a list of IDs from an XLSX file" />
-    <published>2020-05-06T06:32:25+00:00</published>
-    <updated>2020-05-06T06:32:25+00:00</updated>
-    <id>https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/">
-      
-&lt;p&gt;I needed to convert a Microsoft Excel XLSX file containing an ID column into a comma-separated list of those IDs for passing to a command line tool.&lt;/p&gt;
-
-&lt;p&gt;In the end it was quite straightforward with the help of &lt;a href=&quot;https://csvkit.readthedocs.io/en/latest/&quot;&gt;csvkit&lt;/a&gt; and a sprinkle of UNIX.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;in2csv reports.xlsx |
-  csvcut -c 1 |
-  sed &#39;1d&#39; |
-  paste -sd , -
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;steps&quot;&gt;Steps&lt;/h2&gt;
-
-&lt;p&gt;To convert from XLSX to CSV format you can use the handy &lt;a href=&quot;https://csvkit.readthedocs.io/en/latest/scripts/in2csv.html&quot;&gt;&lt;code&gt;in2csv&lt;/code&gt;&lt;/a&gt; utility from csvkit, which automatically detects the type of input file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;in2csv reports.xlsx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The ID column is in the first column of the CSV. The &lt;a href=&quot;https://csvkit.readthedocs.io/en/latest/scripts/csvcut.html&quot;&gt;&lt;code&gt;csvcut&lt;/code&gt;&lt;/a&gt; utility from csvkit can be used to extract one or more columns from a CSV. You can also pass the column header name to the &lt;code&gt;-c&lt;/code&gt; argument, instead of a number.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;csvcut -c 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The output now contains a single column of data from the CSV, but it still has the header. That can be removed with the help of &lt;code&gt;sed&lt;/code&gt;’s delete function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sed &#39;1d&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The IDs are now one-per-line, so the final step is to join them together onto a single line with &lt;code&gt;paste&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;paste -sd , -
-&lt;/code&gt;&lt;/pre&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="programming" />
-    
-    <summary type="html">Using csvkit and UNIX to extract a list of IDs from an XLSX file.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
