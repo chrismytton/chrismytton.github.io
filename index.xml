@@ -39,7 +39,7 @@
 
 &lt;p&gt;For my first iteration I wanted to use Postgis so I could get more familiar with the various features it offers. I wrote a Ruby script that would take the CSV data, do some mild cleaning on it, load it into Postgis, and then get the data back out of Postgis as GeoJSON.&lt;/p&gt;
 
-&lt;p&gt;You can see that script &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990e0bbfd9e90d42a0797b6b770e2c63665b/load_csv_and_output_geojson.rb&quot;&gt;over on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can see that script &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990/load_csv_and_output_geojson.rb&quot;&gt;over on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;re-projecting-british-national-grid-coordinates-to-gps-coordinates&quot;&gt;Re-projecting British National Grid coordinates to “GPS” coordinates&lt;/h2&gt;
 
@@ -117,6 +117,26 @@
 
 &lt;p&gt;You can browse the map by visiting &lt;a href=&quot;https://www.chrismytton.com/cheltenham-council-land-and-assets/&quot;&gt;chrismytton.com/cheltenham-council-land-and-assets&lt;/a&gt;.&lt;/p&gt;
 
+&lt;h2 id=&quot;exploring-the-data-with-datasette&quot;&gt;Exploring the data with Datasette&lt;/h2&gt;
+
+&lt;p&gt;Browsing the data visually on the map was the main goal for me, but I still found myself wanting to run some SQL queries on this data.
+I wanted to know what the distinct values were in the “Tenure” column.
+I wanted to know what kind of holdings there were.
+These are things that would be trivial to answer using SQL.&lt;/p&gt;
+
+&lt;p&gt;I could have just used &lt;code&gt;ogr2ogr&lt;/code&gt;’s built-in SQL to query the data, but this is a bit clunky because it’s designed specifically for looking at geodata.&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&quot;https://datasette.io/&quot;&gt;Datasette&lt;/a&gt;. Specifically &lt;a href=&quot;https://lite.datasette.io/&quot;&gt;Datasette Lite&lt;/a&gt;, which allows you to load in a CSV file from a URL and run SQL against it.&lt;/p&gt;
+
+&lt;p&gt;In this case there was some kind of encoding issue with the CSV file which meant it couldn’t be loaded by Datasette Lite directly.
+One way to work around this was to convert the CSV to a SQLite database and fix the encodings along the way.&lt;/p&gt;
+
+&lt;p&gt;Because I was now using &lt;code&gt;org2ogr&lt;/code&gt;, I had everything I needed to convert the CSV data into a multitude of other vector data formats.
+A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets/compare/2031fb3...066e170&quot;&gt;one line addition&lt;/a&gt; to the &lt;code&gt;bin/build&lt;/code&gt; script was all it took to output a SQLite database alongside the GeoJSON.&lt;/p&gt;
+
+&lt;p&gt;With that change in place it’s now possible to &lt;a href=&quot;https://lite.datasette.io/?url=https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/bdf8976e4ba25a6a35174e0597ab3723c47682eb/cheltenham_council_land_and_assets_2021.sqlite&quot;&gt;query the data using Datasette Lite&lt;/a&gt;.
+This means it’s now possible to query the data using SQL without having to download anything to your computer.&lt;/p&gt;
+
 &lt;h2 id=&quot;future-enhancements&quot;&gt;Future enhancements&lt;/h2&gt;
 
 &lt;p&gt;This has definitely been a learning experience! This process follows the classic ETL (Extract, Transform, Load) pattern, but using tools that are specifically designed for geodata. While I’m pleased with how things are working there are definitely some things I’d like to improve.&lt;/p&gt;
@@ -124,6 +144,15 @@
 &lt;ul&gt;
   &lt;li&gt;Have a simpler base map than the OpenStreetMap one, which can look a bit cluttered at times&lt;/li&gt;
   &lt;li&gt;Switch to using Maplibre. It’s fast, it’s fun, and having used Mapbox for a while it’s familiar. It also offers smoother zooming, built-in hash-tracking on location change, as well as changing bearing and angle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.chrismytton.com/cheltenham-council-land-and-assets/&quot;&gt;Full-screen version of the map&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land-and-assets&quot;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cheltenham.gov.uk/info/16/open_data/1190/local_authority_land_and_assets&quot;&gt;Original data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://lite.datasette.io/?url=https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/bdf8976/cheltenham_council_land_and_assets_2021.sqlite&quot;&gt;Datasette Lite interface for querying data&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;

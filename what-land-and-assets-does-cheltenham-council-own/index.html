@@ -88,7 +88,7 @@
 
 <p>For my first iteration I wanted to use Postgis so I could get more familiar with the various features it offers. I wrote a Ruby script that would take the CSV data, do some mild cleaning on it, load it into Postgis, and then get the data back out of Postgis as GeoJSON.</p>
 
-<p>You can see that script <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990e0bbfd9e90d42a0797b6b770e2c63665b/load_csv_and_output_geojson.rb">over on GitHub</a>.</p>
+<p>You can see that script <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990/load_csv_and_output_geojson.rb">over on GitHub</a>.</p>
 
 <h2 id="re-projecting-british-national-grid-coordinates-to-gps-coordinates">Re-projecting British National Grid coordinates to “GPS” coordinates</h2>
 
@@ -166,6 +166,26 @@
 
 <p>You can browse the map by visiting <a href="https://www.chrismytton.com/cheltenham-council-land-and-assets/">chrismytton.com/cheltenham-council-land-and-assets</a>.</p>
 
+<h2 id="exploring-the-data-with-datasette">Exploring the data with Datasette</h2>
+
+<p>Browsing the data visually on the map was the main goal for me, but I still found myself wanting to run some SQL queries on this data.
+I wanted to know what the distinct values were in the “Tenure” column.
+I wanted to know what kind of holdings there were.
+These are things that would be trivial to answer using SQL.</p>
+
+<p>I could have just used <code>ogr2ogr</code>’s built-in SQL to query the data, but this is a bit clunky because it’s designed specifically for looking at geodata.</p>
+
+<p>Enter <a href="https://datasette.io/">Datasette</a>. Specifically <a href="https://lite.datasette.io/">Datasette Lite</a>, which allows you to load in a CSV file from a URL and run SQL against it.</p>
+
+<p>In this case there was some kind of encoding issue with the CSV file which meant it couldn’t be loaded by Datasette Lite directly.
+One way to work around this was to convert the CSV to a SQLite database and fix the encodings along the way.</p>
+
+<p>Because I was now using <code>org2ogr</code>, I had everything I needed to convert the CSV data into a multitude of other vector data formats.
+A simple <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/compare/2031fb3...066e170">one line addition</a> to the <code>bin/build</code> script was all it took to output a SQLite database alongside the GeoJSON.</p>
+
+<p>With that change in place it’s now possible to <a href="https://lite.datasette.io/?url=https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/bdf8976e4ba25a6a35174e0597ab3723c47682eb/cheltenham_council_land_and_assets_2021.sqlite">query the data using Datasette Lite</a>.
+This means it’s now possible to query the data using SQL without having to download anything to your computer.</p>
+
 <h2 id="future-enhancements">Future enhancements</h2>
 
 <p>This has definitely been a learning experience! This process follows the classic ETL (Extract, Transform, Load) pattern, but using tools that are specifically designed for geodata. While I’m pleased with how things are working there are definitely some things I’d like to improve.</p>
@@ -173,6 +193,15 @@
 <ul>
   <li>Have a simpler base map than the OpenStreetMap one, which can look a bit cluttered at times</li>
   <li>Switch to using Maplibre. It’s fast, it’s fun, and having used Mapbox for a while it’s familiar. It also offers smoother zooming, built-in hash-tracking on location change, as well as changing bearing and angle.</li>
+</ul>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://www.chrismytton.com/cheltenham-council-land-and-assets/">Full-screen version of the map</a></li>
+  <li><a href="https://github.com/chrismytton/cheltenham-council-land-and-assets">GitHub repository</a></li>
+  <li><a href="https://www.cheltenham.gov.uk/info/16/open_data/1190/local_authority_land_and_assets">Original data</a></li>
+  <li><a href="https://lite.datasette.io/?url=https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/bdf8976/cheltenham_council_land_and_assets_2021.sqlite">Datasette Lite interface for querying data</a></li>
 </ul>
 <div class="footnotes" role="doc-endnotes">
   <ol>
