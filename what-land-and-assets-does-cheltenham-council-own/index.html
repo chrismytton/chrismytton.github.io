@@ -86,7 +86,7 @@
 
 <h2 id="loading-the-data-into-postgis-with-ruby">Loading the data into Postgis with Ruby</h2>
 
-<p>For my first iteration I wanted to use Postgis so I could get more familiar with the various features it offers. I wrote a Ruby script that would take the CSV data, do some mild cleaning on it, then write the result to GeoJSON.</p>
+<p>For my first iteration I wanted to use Postgis so I could get more familiar with the various features it offers. I wrote a Ruby script that would take the CSV data, do some mild cleaning on it, load it into Postgis, and then get the data back out of Postgis as GeoJSON.</p>
 
 <p>You can see that script <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/fd24990e0bbfd9e90d42a0797b6b770e2c63665b/load_csv_and_output_geojson.rb">over on GitHub</a>.</p>
 
@@ -146,7 +146,7 @@
 
 <p>A few weeks later I was working on another project and started to get a deeper understanding and appreciation for the power of <code>ogr2ogr</code> from the GDAL/OGR package. From what I understand GDAL handles raster data, which is essentially geographically-labelled image-type data. OGR handles vector data, which is essentially some kind of coordinates representing points, lines, polygons (and potentially more) in a 2d or 3d space.</p>
 
-<p>This tool allows you to convert between a wide range of vector GIS formats. Among those formats, to my surprise, was CSV! So you can use <code>ogr2ogr</code> to convert a CSV file to GeoJSON directly, without to load things into Postgres as an intermediate step.</p>
+<p>This tool allows you to convert between a wide range of vector GIS formats. Among those formats, to my surprise, was CSV! So you can use <code>ogr2ogr</code> to convert a CSV file to GeoJSON directly, without having to load things into Postgres as an intermediate step.</p>
 
 <p>Because <code>ogr2ogr</code> lets you write SQL, we can use this for processing the rows in the input dataset into a format appropriate for the output dataset. In this case replacing some line breaks in a couple of fields, and remapping the names from the CSV to different output names.</p>
 
@@ -172,7 +172,7 @@
 
 <ul>
   <li>Have a simpler base map than the OpenStreetMap one, which can look a bit cluttered at times</li>
-  <li>Switch to using Maplibre. It’s fast, it’s fun, and having using Mapbox for a while it’s familiar. It also offers smoother zooming, built-in hash-tracking on location change, as well as changing bearing and angle.</li>
+  <li>Switch to using Maplibre. It’s fast, it’s fun, and having used Mapbox for a while it’s familiar. It also offers smoother zooming, built-in hash-tracking on location change, as well as changing bearing and angle.</li>
 </ul>
 <div class="footnotes" role="doc-endnotes">
   <ol>
