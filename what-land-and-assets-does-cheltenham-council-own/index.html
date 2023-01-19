@@ -9,8 +9,8 @@
     <meta property="og:title" content="What land and assets does Cheltenham Council own?" />
     <meta name="author" content="Chris Mytton" />
     <meta property="og:locale" content="en_GB" />
-    <meta name="description" content="How I turned a CSV into a map" />
-    <meta property="og:description" content="How I turned a CSV into a map" />
+    <meta name="description" content="Or how I turned a CSV into a map and a database." />
+    <meta property="og:description" content="Or how I turned a CSV into a map and a database." />
     <link rel="canonical" href="https://www.chrismytton.com/what-land-and-assets-does-cheltenham-council-own/" />
     <meta property="og:url" content="https://www.chrismytton.com/what-land-and-assets-does-cheltenham-council-own/" />
     <meta property="og:site_name" content="Chris Mytton" />
@@ -75,6 +75,9 @@
 <iframe src="https://www.chrismytton.com/cheltenham-council-land-and-assets/" style="width: 100%; height: 600px; border: none;"></iframe>
 
 <p>You can view it in fullscreen at <a href="https://www.chrismytton.com/cheltenham-council-land-and-assets/">chrismytton.com/cheltenham-council-land-and-assets</a>.</p>
+
+<p>Getting to that point was a fun learning process, and as a bonus I ended up with a free web interface where you can query the data as well!
+More details on that below.</p>
 
 <h2 id="data-but-not-very-visual">Data! But not very visual</h2>
 
@@ -183,8 +186,7 @@ One way to work around this was to convert the CSV to a SQLite database and fix 
 <p>Because I was now using <code>org2ogr</code>, I had everything I needed to convert the CSV data into a multitude of other vector data formats.
 A simple <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/compare/2031fb3...066e170">one line addition</a> to the <code>bin/build</code> script was all it took to output a SQLite database alongside the GeoJSON.</p>
 
-<p>With that change in place it’s now possible to <a href="https://lite.datasette.io/?url=https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/bdf8976e4ba25a6a35174e0597ab3723c47682eb/cheltenham_council_land_and_assets_2021.sqlite">query the data using Datasette Lite</a>.
-This means it’s now possible to query the data using SQL without having to download anything to your computer.</p>
+<p>With that change in place it’s now possible to <a href="https://lite.datasette.io/?url=https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/bdf8976e4ba25a6a35174e0597ab3723c47682eb/cheltenham_council_land_and_assets_2021.sqlite">query the data using SQL via Datasette Lite’s web interface</a>, without having to download anything to your computer.</p>
 
 <h2 id="future-enhancements">Future enhancements</h2>
 
