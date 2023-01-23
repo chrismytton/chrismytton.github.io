@@ -60,7 +60,7 @@
     
     <category term="shell" />
     
-    <summary type="html"></summary>
+    <summary type="html">A simple shell function to query CSV files using SQLite</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
     <media:content medium="image" url="https://www.chrismytton.com"
       xmlns:media="http://search.yahoo.com/mrss/" />
