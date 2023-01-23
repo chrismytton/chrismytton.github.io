@@ -3,13 +3,68 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2023-01-18T22:00:00+00:00</updated>
+  <updated>2023-01-23T19:00:00+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>This is my personal website where I share anything I find interesting. Follow me on Twitter: @chrismytton</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">How to query CSVs with SQLite</title>
+    <link href="https://www.chrismytton.com/how-to-query-csvs-with-sqlite/" rel="alternate" type="text/html" title="How to query CSVs with SQLite" />
+    <published>2023-01-23T19:00:00+00:00</published>
+    <updated>2023-01-23T19:00:00+00:00</updated>
+    <id>https://www.chrismytton.com/how-to-query-csvs-with-sqlite/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/how-to-query-csvs-with-sqlite/">
+      
+&lt;p&gt;I’ve got the following shell function in my shell startup file that allows me to quickly query a CSV file with SQL:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cq&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;csv_file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;:?Usage:&lt;span class=&quot;p&quot;&gt; cq &amp;lt;csv_file&amp;gt; [&amp;lt;table&amp;gt; [&amp;lt;sql&amp;gt;]]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-interactive&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  sqlite3 :memory: &lt;span class=&quot;nt&quot;&gt;-header&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-csv&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-cmd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.import &#39;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$csv_file&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&#39; &#39;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$table&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&#39;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sql&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I can’t claim to have written this function. I found it on &lt;a href=&quot;https://github.com/multiprocessio/dsq/issues/70#issuecomment-1162584448&quot;&gt;this GitHub issue thread&lt;/a&gt;. I’ve just tweaked it a little to add an optional SQL query argument, and used some more standard SQLite parameters.&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;First argument is the CSV file to query. Second argument is the name of the table to create in the SQLite database. Third argument is the SQL query to run. If you don’t specify a query then you’ll be dropped into an interactive SQLite shell.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cq &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  vax &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;SELECT location, date, total_vaccinations FROM vax WHERE location = &#39;United Kingdom&#39; ORDER BY date DESC LIMIT 10;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;alternatives&quot;&gt;Alternatives&lt;/h2&gt;
+
+&lt;p&gt;If you’re looking for something a bit more powerful then there are dozens of tools out there that allow you to query CSV files. Here are a few of the popular ones:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/multiprocessio/dsq&quot;&gt;dsq&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://harelba.github.io/q/&quot;&gt;q&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dinedal/textql&quot;&gt;textql&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/simonw/sqlite-utils&quot;&gt;sqlite-utils&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="sqlite" />
+    
+    <category term="csv" />
+    
+    <category term="shell" />
+    
+    <summary type="html"></summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
+    <media:content medium="image" url="https://www.chrismytton.com"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">What land and assets does Cheltenham Council own?</title>
@@ -730,117 +785,6 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     <summary type="html">Expressing yourself through creative outputs helps balance out the anxiety caused by the modern information economy.</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/chelt-paint-fest-2020.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/chelt-paint-fest-2020.jpg"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Canvas art in TypeScript</title>
-    <link href="https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/" rel="alternate" type="text/html" title="Canvas art in TypeScript" />
-    <published>2020-06-06T15:30:00+00:00</published>
-    <updated>2020-06-06T15:30:00+00:00</updated>
-    <id>https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/">
-      
-&lt;p&gt;I ported a JavaScript “random art generator” I created a few years ago over to TypeScript. This post contains some notes from the process.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;See the project: &lt;a href=&quot;https://www.chrismytton.com/art/&quot;&gt;www.chrismytton.com/art&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art/blob/1f34e99d121f2c7dd698eb8c9d45da1e9b7f450c/src/random.ts&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;I’ve been learning TypeScript recently. As part of that I wanted to dig out some of my old JavaScript projects and port them to TypeScript. I find porting code to a new language is a good way to learn.&lt;/p&gt;
-
-&lt;p&gt;I found an old project that I created in 2014 which uses JavaScript and the Canvas API to create random pieces of art which change on every page load. The code itself is fairly straightforward, so it seemed like a good candidate for porting to TypeScript.&lt;/p&gt;
-
-&lt;h2 id=&quot;classes-in-typescript&quot;&gt;Classes in TypeScript&lt;/h2&gt;
-
-&lt;p&gt;TypeScript classes build on &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes&quot;&gt;ES6 classes&lt;/a&gt;. The major difference is that in TypeScript you need to explicitly declare the types of properties you’re expecting on the class.&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasPainting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasRenderingContext2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you try to use &lt;code&gt;this.viewport&lt;/code&gt; without declaring the property TypeScript will tell you:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Property ‘viewport’ does not exist on type ‘CanvasPainting’.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I find having these properties explicitly defined actually makes it easier to figure out what the class might be doing internally. They provide useful documentation about what kind of data you can expect to find in each property.&lt;/p&gt;
-
-&lt;h2 id=&quot;index-signatures&quot;&gt;Index signatures&lt;/h2&gt;
-
-&lt;p&gt;This is something I struggled with for a while. I was trying to dynamically call methods on my &lt;code&gt;Shapes&lt;/code&gt; class using &lt;code&gt;this[shape]&lt;/code&gt;, but TypeScript was giving this warning:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Element implicitly has an ‘any’ type because expression of type ‘string’ can’t be used to index type ‘Shapes’.&lt;/p&gt;
-
-  &lt;p&gt;No index signature with a parameter of type ‘string’ was found on type ‘Shapes’.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;After reading various bits of the TypeScript documentation and some Stack Overflow answers I eventually figured out that I needed to define an index signature on my shapes class. This tells TypeScript what can be used to index this class, and what the indexing might return.&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Shapes&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasPainting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This tells TypeScript that you can index this class with a string, and it will return &lt;em&gt;something&lt;/em&gt;. There might be a way to avoid using &lt;code&gt;any&lt;/code&gt; here, but I haven’t figured that out yet.&lt;/p&gt;
-
-&lt;h2 id=&quot;dealing-with-null-values&quot;&gt;Dealing with null values&lt;/h2&gt;
-
-&lt;p&gt;TypeScript knows which methods can return &lt;code&gt;null&lt;/code&gt; and will make you deal with those cases. If you try to call a method on a value that might be null then TypeScript will give you a warning.&lt;/p&gt;
-
-&lt;p&gt;You can avoid this warning by explicitly checking for &lt;code&gt;null&lt;/code&gt; before using the value.&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasPainting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CanvasRenderingContext2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLCanvasElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;2d&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// getContext can return null, so check for that case.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;getContext(&#39;2d&#39;) failed&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Without this check for &lt;code&gt;null&lt;/code&gt; TypeScript warns you that &lt;code&gt;Type &#39;null&#39; is not assignable to type &#39;CanvasRenderingContext2D&#39;.&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It’s easy to forget to check for &lt;code&gt;null&lt;/code&gt; when writing JavaScript. TypeScript protects you from this class of error at the compile stage.&lt;/p&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;I really like what I’ve seen so far with TypeScript. Working on little projects like this is a great way to get some experience with new tools.&lt;/p&gt;
-
-&lt;p&gt;I’d forgotten all about this fun little art project. It’s nice to have given it a bit of polish and released it into the world, rather than it gathering dust on my hard drive.&lt;/p&gt;
-
-&lt;p&gt;See the project: &lt;a href=&quot;https://www.chrismytton.com/art/&quot;&gt;www.chrismytton.com/art&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Check out the code: &lt;a href=&quot;https://github.com/chrismytton/art/blob/1f34e99d121f2c7dd698eb8c9d45da1e9b7f450c/src/random.ts&quot;&gt;chrismytton/art on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="programming" />
-    
-    <summary type="html">📝 Notes from porting a JavaScript random art generator to TypeScript.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/random-art.png" />
-    <media:content medium="image" url="https://www.chrismytton.com/assets/images/random-art.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
