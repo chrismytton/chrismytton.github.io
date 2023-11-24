@@ -95,13 +95,13 @@ command line utility, <code>node</code>, this runs .js files through the node in
 
 <p>A basic node hello world program could look like this:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">sys</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">sys</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="kd">function</span> <span class="nx">sayHello</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">sayHello</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">!</span><span class="dl">'</span>
 <span class="p">}</span>
 
-<span class="nx">sys</span><span class="p">.</span><span class="nx">puts</span><span class="p">(</span><span class="nx">sayHello</span><span class="p">(</span><span class="dl">'</span><span class="s1">World</span><span class="dl">'</span><span class="p">))</span>
+<span class="nx">sys</span><span class="p">.</span><span class="nf">puts</span><span class="p">(</span><span class="nf">sayHello</span><span class="p">(</span><span class="dl">'</span><span class="s1">World</span><span class="dl">'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>save this into a file and then run it from the command line like so:</p>
@@ -115,37 +115,37 @@ have noticed is the require() statement. This is built into node and conforms to
 version of require is slightly different from one you might see in Ruby or PHP, it actually returns an object which you can assign
 to a variable, or use directly:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">sys</span><span class="dl">'</span><span class="p">).</span><span class="nx">puts</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World!</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">sys</span><span class="dl">'</span><span class="p">).</span><span class="nf">puts</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World!</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Each module is a self contained unit of code, it has its own private scope, so can define functions to use internally, then expose public functions to be used externally using the exports object. Here’s an example of a simple module:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">add</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">add</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
   <span class="p">},</span>
-  <span class="na">subtract</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">subtract</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span>
   <span class="p">},</span>
-  <span class="na">multiply</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">multiply</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span>
   <span class="p">},</span>
-  <span class="na">divide</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">divide</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">process</span><span class="p">.</span><span class="nx">mixin</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="nx">calculator</span><span class="p">)</span>
+<span class="nx">process</span><span class="p">.</span><span class="nf">mixin</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="nx">calculator</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The last line may seem a little strange, but all it does is extend the exports object with the properties defined in the calculator object, if that line wasn’t there then the module wouldn’t return anything as it wouldn’t export anything. To use our new (rather basic) module we’d do something like this:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Assuming that calc.js is in the same dir as this file</span>
-<span class="kd">var</span> <span class="nx">calc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./calc</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">calc</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./calc</span><span class="dl">'</span><span class="p">)</span>
 
 <span class="c1">// Now we can use the calc object to do calculations, joy!</span>
-<span class="kd">var</span> <span class="nx">ten</span> <span class="o">=</span> <span class="nx">calc</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="kd">var</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">calc</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">ten</span> <span class="o">=</span> <span class="nx">calc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">calc</span><span class="p">.</span><span class="nf">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This overview barely scratches the surface of what is possible with node.js, the <a href="http://nodejs.org/api/">api documentation</a> contains all you need to know about node, and it is all on one (albeit rather long) page, so once you’ve read through it you should have a pretty good idea how you’d go about coding for it.</p>

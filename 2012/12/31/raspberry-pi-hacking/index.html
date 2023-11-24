@@ -101,11 +101,11 @@ signal handler</a> to run the GPIO cleanup code and exit cleanly.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cleanup_gpio</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
     <span class="k">print</span>
-    <span class="n">GPIO</span><span class="p">.</span><span class="n">cleanup</span><span class="p">()</span>
-    <span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="p">.</span><span class="nf">cleanup</span><span class="p">()</span>
+    <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Install signal handler to cleanup GPIO when user sends SIGINT
-</span><span class="n">signal</span><span class="p">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="p">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">cleanup_gpio</span><span class="p">)</span>
+</span><span class="n">signal</span><span class="p">.</span><span class="nf">signal</span><span class="p">(</span><span class="n">signal</span><span class="p">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">cleanup_gpio</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="https://s3-eu-west-1.amazonaws.com/img.hecticjeff.net/rpi-20121230-221554.jpg" alt="Raspberry Pi plugged into breadboard" /></p>

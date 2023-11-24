@@ -87,7 +87,7 @@
 
 <p>TypeScript classes build on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">ES6 classes</a>. The major difference is that in TypeScript you need to explicitly declare the types of properties you’re expecting on the class.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CanvasPainting</span> <span class="p">{</span>
   <span class="nl">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">;</span>
   <span class="nl">ctx</span><span class="p">:</span> <span class="nx">CanvasRenderingContext2D</span><span class="p">;</span>
 <span class="p">}</span>
@@ -113,7 +113,7 @@
 
 <p>After reading various bits of the TypeScript documentation and some Stack Overflow answers I eventually figured out that I needed to define an index signature on my shapes class. This tells TypeScript what can be used to index this class, and what the indexing might return.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Shapes</span> <span class="kd">extends</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Shapes</span> <span class="kd">extends</span> <span class="nc">CanvasPainting</span> <span class="p">{</span>
   <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">any</span><span class="p">;</span>
 
   <span class="c1">// ...</span>
@@ -128,17 +128,17 @@
 
 <p>You can avoid this warning by explicitly checking for <code>null</code> before using the value.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CanvasPainting</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CanvasPainting</span> <span class="p">{</span>
   <span class="nl">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">;</span>
   <span class="nl">ctx</span><span class="p">:</span> <span class="nx">CanvasRenderingContext2D</span><span class="p">;</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">viewport</span><span class="p">:</span> <span class="nx">HTMLCanvasElement</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">viewport</span> <span class="o">=</span> <span class="nx">viewport</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">viewport</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">viewport</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
 
     <span class="c1">// getContext can return null, so check for that case.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">getContext('2d') failed</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">getContext('2d') failed</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">ctx</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">;</span>
   <span class="p">}</span>
