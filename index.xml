@@ -3,13 +3,76 @@
   <generator uri="https://www.chrismytton.com/">www.chrismytton.com</generator>
   <link href="https://www.chrismytton.com/index.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.chrismytton.com/" rel="alternate" type="text/html" hreflang="en-gb" />
-  <updated>2023-01-23T19:00:00+00:00</updated>
+  <updated>2024-01-04T17:43:57+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
   <subtitle>This is my personal website where I share anything I find interesting. Follow me on Twitter: @chrismytton</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
+  
+  <entry>
+    <title type="html">Amazing space facts you might not know</title>
+    <link href="https://www.chrismytton.com/space-facts/" rel="alternate" type="text/html" title="Amazing space facts you might not know" />
+    <published>2024-01-04T17:43:57+00:00</published>
+    <updated>2024-01-04T17:43:57+00:00</updated>
+    <id>https://www.chrismytton.com/space-facts/</id>
+    <content type="html" xml:base="https://www.chrismytton.com/space-facts/">
+      
+&lt;h2 id=&quot;the-surprising-effect-of-altitude-on-sunset-times&quot;&gt;The surprising effect of altitude on sunset times&lt;/h2&gt;
+
+&lt;p&gt;If you have one observer at sea level, and another observer at 1000m above sea level, who will see the sun set first?&lt;/p&gt;
+
+&lt;p&gt;Counterintuitively the observer at 1000m above sea level will see it set first, despite being higher up and therefore seeing further over the horizon. This is due to &lt;a href=&quot;https://en.wikipedia.org/wiki/Atmospheric_refraction&quot;&gt;atmospheric refraction&lt;/a&gt; being reduced at higher altitudes compared to sea level.&lt;/p&gt;
+
+&lt;p&gt;Atmospheric refraction is like a cosmic optical illusion. As light from the sun travels through the Earth’s atmosphere, it bends, much like a straw appears to bend in a glass of water. This bending causes the sun to appear slightly higher in the sky than it actually is, delaying the moment of sunset for those at sea level.&lt;/p&gt;
+
+&lt;p&gt;This also means that when the Sun’s disc touches the horizon it has actually already set, but you can still see it due to atmospheric diffraction. If the atmosphere disappeared at that point then the sun would also disappear!&lt;/p&gt;
+
+&lt;h2 id=&quot;earth-spins-more-than-360-in-a-day&quot;&gt;Earth spins more than 360º in a day&lt;/h2&gt;
+
+&lt;p&gt;How many degrees does earth spin in 24 hours?&lt;/p&gt;
+
+&lt;p&gt;Without thinking too hard about it I probably would have said 360º, but that’s wrong!&lt;/p&gt;
+
+&lt;p&gt;Relative to the stars, Earth actually spins 361º in 24 hours. This is because we’re orbiting the sun, so after spinning 360º we’ve travelled a bit further around the sun, so have to spin an extra 1º to get the sun back to the same point in the sky.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Sidereal_Day_poster.png#/media/File:Sidereal_Day_poster.png&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/8b/Sidereal_Day_poster.png&quot; alt=&quot;A sidereal day is 1 Earth rotation relative to the stars; a solar day is 1 Earth rotation relative to the Sun. The Earth rotates 366 times per &#39;normal&#39; 365-day year relative to the stars, so Earth&#39;s sidereal day is 4 minutes shorter than Earth&#39;s solar day.&quot; height=&quot;1200&quot; width=&quot;1920&quot; class=&quot;not-prose&quot; /&gt;&lt;/a&gt;&lt;small&gt;Image by James O&#39;Donoghue, &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0&quot; title=&quot;Creative Commons Attribution 3.0&quot;&gt;CC BY 3.0&lt;/a&gt;, &lt;a href=&quot;https://commons.wikimedia.org/w/index.php?curid=132008436&quot;&gt;Link&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Related to that, in a “normal” 365 day year, how many full turns do you think the earth makes?&lt;/p&gt;
+
+&lt;p&gt;The earth actually makes 366 full turns (relative to the stars) in a 365 day year.&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sidereal_time&quot;&gt;Sidereal time Wikipedia entry&lt;/a&gt; for a more in-depth explanation of this.&lt;/p&gt;
+
+&lt;h2 id=&quot;venus-spins-differently-from-other-planets&quot;&gt;Venus spins differently from other planets&lt;/h2&gt;
+
+&lt;p&gt;Most planets rotate on their axes in an anticlockwise direction as viewed from Earth’s north pole, but Venus rotates clockwise.&lt;/p&gt;
+
+&lt;p&gt;Venus actually spins “backwards” compared with most&lt;sup id=&quot;fnref:other-backwards-spinning-planets&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:other-backwards-spinning-planets&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; other planets in the solar system.&lt;/p&gt;
+
+&lt;p&gt;Venus also spins very slowly, which means a sidereal day on Venus (sidereal meaning the time it takes to rotate 360º relative to the stars, 243 Earth days) is longer than a year on Venus (225 Earth days).&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:other-backwards-spinning-planets&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Uranus is the other planet that spins backwards. For added fun it also spins on its side, with an axial tilt of approximately 90º. &lt;a href=&quot;#fnref:other-backwards-spinning-planets&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+    </content>
+    <author>
+      <name>Chris Mytton</name>
+    </author>
+    
+    <category term="space" />
+    
+    <summary type="html">Discover astonishing space facts that challenge common perceptions! Learn why sunsets happen earlier at high altitudes, the surprising truth about Earth's daily rotation, and Venus's unique, backward spin. Dive into these celestial secrets and see the cosmos in a new light.</summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/space-facts.jpg" />
+    <media:content medium="image" url="https://www.chrismytton.com/assets/images/space-facts.jpg"
+      xmlns:media="http://search.yahoo.com/mrss/" />
+  </entry>
   
   <entry>
     <title type="html">How to query CSVs with SQLite</title>
@@ -711,80 +774,6 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     <summary type="html">Working in public is good and content curation is fun!</summary>
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
     <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
-  </entry>
-  
-  <entry>
-    <title type="html">Consume less, produce more</title>
-    <link href="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/" rel="alternate" type="text/html" title="Consume less, produce more" />
-    <published>2020-09-24T06:50:00+00:00</published>
-    <updated>2020-09-24T06:50:00+00:00</updated>
-    <id>https://www.chrismytton.com/2020/09/24/consume-less-produce-more/</id>
-    <content type="html" xml:base="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/">
-      
-&lt;p&gt;If you have too many inputs then your brain gets overwhelmed. Every piece of information you consume takes up some brain cycles.&lt;/p&gt;
-
-&lt;p&gt;If you’re not producing enough output to match your inputs then it can get clogged up in your brain. You end up with too many strands of thought. Too many lines of enquiry.&lt;/p&gt;
-
-&lt;h2 id=&quot;excess-consumption-causes-anxiety&quot;&gt;Excess consumption causes anxiety&lt;/h2&gt;
-
-&lt;p&gt;This can often be a cause of anxiety, stress and depression. Just increasing the amount you produce allows your brain to work through your anxieties.&lt;/p&gt;
-
-&lt;p&gt;Perhaps this is why mental health issues are on the rise. There are just so many inputs for our brain in the modern world that we don’t have time to process them all into coherent outputs, so that we can understand the information we’re being presented with.&lt;/p&gt;
-
-&lt;h2 id=&quot;reduce-consumption&quot;&gt;Reduce consumption&lt;/h2&gt;
-
-&lt;p&gt;Reduce the number of inputs in your daily life.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stop reading the news&lt;/li&gt;
-  &lt;li&gt;Spend less time on social media&lt;/li&gt;
-  &lt;li&gt;Reduce the number of websites you visit daily&lt;/li&gt;
-  &lt;li&gt;Delete unused apps from your phone&lt;/li&gt;
-  &lt;li&gt;Eliminate unnecessary calendar appointments&lt;/li&gt;
-  &lt;li&gt;Spend less time watching TV series&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Generally stimulate your brain less.&lt;/p&gt;
-
-&lt;h2 id=&quot;increase-production&quot;&gt;Increase production&lt;/h2&gt;
-
-&lt;p&gt;Increase the number of productive outputs in your life.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create something with your hands&lt;/li&gt;
-  &lt;li&gt;Draw or paint pictures (doesn’t matter if you’re good or not)&lt;/li&gt;
-  &lt;li&gt;Write more, keep a journal or a blog&lt;/li&gt;
-  &lt;li&gt;Increase your daily step count&lt;/li&gt;
-  &lt;li&gt;Explore new places&lt;/li&gt;
-  &lt;li&gt;Exercise regularly&lt;/li&gt;
-  &lt;li&gt;Cook for yourself, rather than eating out&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These are things that allow you to express yourself. Express the ideas in your brain. Work through the inputs in your life.&lt;/p&gt;
-
-&lt;p&gt;Not everything has to have a point, sometimes you just need to &lt;a href=&quot;/2019/09/24/do-things-for-fun/&quot;&gt;do things for fun&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/chelt-paint-fest-2020.jpg&quot; alt=&quot;Cheltenham Paint Festival 2020 at Cheltenham Spa station&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;express-yourself&quot;&gt;Express yourself&lt;/h2&gt;
-
-&lt;p&gt;It’s by expressing the ideas in your brain that you can actually think clearly. Because the more you express them the more you can see them. Then you can visualise the ideas. Then you can better structure and organise them and compartmentalize them.&lt;/p&gt;
-
-&lt;p&gt;Now stop consuming these words and go and produce something. Express yourself.&lt;/p&gt;
-
-    </content>
-    <author>
-      <name>Chris Mytton</name>
-    </author>
-    
-    <category term="life" />
-    
-    <category term="creativity" />
-    
-    <summary type="html">Expressing yourself through creative outputs helps balance out the anxiety caused by the modern information economy.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/chelt-paint-fest-2020.jpg" />
-    <media:content medium="image" url="https://www.chrismytton.com/assets/images/chelt-paint-fest-2020.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
   </entry>
   
