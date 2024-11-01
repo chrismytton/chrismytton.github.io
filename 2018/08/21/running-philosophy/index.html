@@ -28,6 +28,16 @@
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
+    <script type="speculationrules">
+    {
+      "prerender": [{
+        "where": {
+          "href_matches": "/*"
+        },
+        "eagerness": "moderate"
+      }]
+    }
+    </script>
   </head>
 
   <body class="container mx-auto p-6 mb-10">
