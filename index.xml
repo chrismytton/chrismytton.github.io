@@ -80,13 +80,13 @@
 
 &lt;p&gt;Most planets rotate on their axes in an anticlockwise direction as viewed from Earth’s north pole, but Venus rotates clockwise.&lt;/p&gt;
 
-&lt;p&gt;This means that Venus is actually spinning “backwards” compared with most&lt;sup id=&quot;fnref:other-backwards-spinning-planets&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:other-backwards-spinning-planets&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; other planets in the solar system.&lt;/p&gt;
+&lt;p&gt;This means that Venus is actually spinning “backwards” compared with most&lt;sup id=&quot;fnref:other-backwards-spinning-planets&quot;&gt;&lt;a href=&quot;#fn:other-backwards-spinning-planets&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; other planets in the solar system.&lt;/p&gt;
 
 &lt;p&gt;Venus also spins very slowly, which means a sidereal day on Venus (sidereal meaning the time it takes to rotate 360º relative to the stars, 243 Earth days) is longer than a year on Venus (225 Earth days).&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:other-backwards-spinning-planets&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:other-backwards-spinning-planets&quot;&gt;
       &lt;p&gt;Uranus is the other planet that spins backwards. For added fun it also spins on its side, with an axial tilt of approximately 90º. &lt;a href=&quot;#fnref:other-backwards-spinning-planets&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
@@ -170,7 +170,7 @@
       
 &lt;h2 id=&quot;summary-i-made-a-map-of-the-councils-assets&quot;&gt;Summary: I made a map of the council’s assets&lt;/h2&gt;
 
-&lt;p&gt;I made a map showing all land and assets owned by Cheltenham Borough Council&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;I made a map showing all land and assets owned by Cheltenham Borough Council&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;iframe src=&quot;https://www.chrismytton.com/cheltenham-council-land-and-assets/&quot; style=&quot;width: 100%; height: 600px; border: none;&quot;&gt;&lt;/iframe&gt;
 
@@ -307,7 +307,7 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
 &lt;/ul&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
       &lt;p&gt;Well, all the land and assets they are legally required to declare, at least. Some things like operational railways, canals and highways, as well as “assets of national security” are excluded from this list. For more details see the &lt;a href=&quot;https://www.gov.uk/government/publications/local-government-transparency-code-2015/local-government-transparency-code-2015#local-authority-land&quot;&gt;“Local authority land” section of the Local government transparency code 2015&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;

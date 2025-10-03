@@ -87,7 +87,7 @@
 
 <h2 id="scraping-pitchfork-reviews">Scraping Pitchfork reviews</h2>
 
-<p>Mechanize provides an out-of-the-box scraping solution that can handle filling in forms, following links and respecting a site’s robots.txt file. Here I’ll show you how it can be used to scrape the latest reviews from <a href="http://pitchfork.com/">Pitchfork</a> <sup id="fnref:disclaimer" role="doc-noteref"><a href="#fn:disclaimer" class="footnote" rel="footnote">1</a></sup>.</p>
+<p>Mechanize provides an out-of-the-box scraping solution that can handle filling in forms, following links and respecting a site’s robots.txt file. Here I’ll show you how it can be used to scrape the latest reviews from <a href="http://pitchfork.com/">Pitchfork</a> <sup id="fnref:disclaimer"><a href="#fn:disclaimer" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.</p>
 
 <p>Reviews are spread across multiple pages, so we can’t simply fetch a single page and parse it with Nokogiri. This is where Mechanize can help with its ability to click on links and follow them to other pages.</p>
 
@@ -265,7 +265,7 @@
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:disclaimer" role="doc-endnote">
+    <li id="fn:disclaimer">
       <p>You should always scrape responsibly. Check out the <a href="https://scraperwiki.com/2012/04/is-scraping-legal/">Is scraping legal?</a> blog post from ScraperWiki for more discussion on the subject. <a href="#fnref:disclaimer" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>

@@ -83,7 +83,7 @@
       
 <p>Scraping the web with Ruby is easier than you might think. Let’s start with a simple example, I want to get a nicely formatted JSON array of objects representing all the showings for my <a href="http://www.cubecinema.com/programme">local independent cinema</a>.</p>
 
-<p>First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, <code>Net::HTTP</code>, and it also comes with a nice wrapper around it, <code>open-uri</code> <sup id="fnref:open-uri" role="doc-noteref"><a href="#fn:open-uri" class="footnote" rel="footnote">1</a></sup>. So the first thing we do is grab the html from the remote server.</p>
+<p>First we need a way to download the html page that has all the listings on it. Ruby comes with an http client, <code>Net::HTTP</code>, and it also comes with a nice wrapper around it, <code>open-uri</code> <sup id="fnref:open-uri"><a href="#fn:open-uri" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. So the first thing we do is grab the html from the remote server.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'open-uri'</span>
 
@@ -273,7 +273,7 @@
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:open-uri" role="doc-endnote">
+    <li id="fn:open-uri">
       <p>While good for basic tasks like this, open-uri has <a href="https://bugs.ruby-lang.org/issues/3719">some issues</a> which mean you may want to look elsewhere for an http client to use in production. <a href="#fnref:open-uri" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>

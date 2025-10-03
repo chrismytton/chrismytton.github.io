@@ -102,7 +102,7 @@
 
 <p>The repository will contain a <code>README.md</code> and a <code>scraper.rb</code> file.</p>
 
-<p>Morph.io expects two things from your scraper. First the scraper repository should contain a <code>scraper.rb</code> file for Ruby scrapers <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, second the scraper itself should write to a sqlite3 database file called <code>data.sqlite</code>. In order to change this in our scraper we need to make a small change so it writes to a database rather than to JSON on STDOUT.</p>
+<p>Morph.io expects two things from your scraper. First the scraper repository should contain a <code>scraper.rb</code> file for Ruby scrapers <sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>, second the scraper itself should write to a sqlite3 database file called <code>data.sqlite</code>. In order to change this in our scraper we need to make a small change so it writes to a database rather than to JSON on STDOUT.</p>
 
 <p>First add the <a href="/2015/01/22/advanced-web-scraping-with-mechanize/#all-together-now">code from the previous post</a> into <code>scraper.rb</code>, then you can change the code to use the <code>scraperwiki</code> gem to write to the sqlite database.</p>
 
@@ -162,7 +162,7 @@ index 2d2baaa..f8b14d6 100644
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1" role="doc-endnote">
+    <li id="fn:1">
       <p>Alternatively <code>scraper.py</code> for Python, <code>scraper.php</code> for PHP or <code>scraper.pl</code> for Perl <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
