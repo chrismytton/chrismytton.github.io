@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-zinc-50 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50">
+<html lang="en" class="bg-zinc-50 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50 font-serif">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,276 +42,272 @@
     <script src="/lite-yt-embed.js"></script>
   </head>
 
-  <body class="container mx-auto p-6 mb-10">
+  <body class="container mx-auto px-6 py-10 mb-10">
     <div class="mx-auto max-w-prose">
+      <header class="pb-8 mb-6 border-b border-zinc-200 dark:border-zinc-700">
+        <div class="flex flex-wrap gap-4 items-center mb-6">
+          <a class="mr-auto font-display font-semibold text-4xl text-accent hover:text-accent-hover transition-colors" href="/">Chris Mytton</a>
 
-      <header class="flex flex-wrap gap-4 items-center mb-3">
-        <a class="mr-auto font-thin text-4xl" href="/">Chris Mytton</a>
-
-        <div class="flex flex-wrap gap-3">
-  <a class="hover:text-[#ff0000]" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
+          <div class="flex flex-wrap gap-3">
+  <a class="hover:text-[#ff0000] transition-colors duration-200" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"/></svg>
   </a>
-  <a class="hover:text-[#d62976]" target="_blank" rel="noopener noreferrer me" href="https://www.instagram.com/chrismytton/" title="Follow me on Instagram" aria-label="Follow me on Instagram">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://x.com/chrismytton" title="Follow me on Twitter" aria-label="Follow me on Twitter">
-    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 29"><path fill="currentColor" d="M 17.257812 12.273438 L 28.054688 0 L 25.496094 0 L 16.121094 10.65625 L 8.636719 0 L 0 0 L 11.320312 16.113281 L 0 28.984375 L 2.558594 28.984375 L 12.457031 17.730469 L 20.363281 28.984375 L 29 28.984375 Z M 13.753906 16.257812 L 12.609375 14.652344 L 3.480469 1.882812 L 7.410156 1.882812 L 14.777344 12.1875 L 15.921875 13.792969 L 25.496094 27.1875 L 21.566406 27.1875 Z M 13.753906 16.257812 "/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://github.com/chrismytton" title="Visit my GitHub" aria-label="Visit my GitHub">
+  
+  <a class="hover:opacity-70 transition-opacity duration-200" target="_blank" rel="noopener noreferrer me" href="https://github.com/chrismytton" title="Visit my GitHub" aria-label="Visit my GitHub">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
   </a>
-  <a class="hover:text-[#ee802f]" target="_blank" rel="noopener noreferrer" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
+  <a class="hover:text-[#ee802f] transition-colors duration-200" target="_blank" rel="noopener noreferrer" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
   </a>
 </div>
 
-      </header>
-      <div class="flex flex-wrap gap-5 text-2xl font-normal mb-10">
-  <a class="hover:underline" href="/">Home</a>
-  <a class="hover:underline" href="/articles/">Articles</a>
-  <a class="hover:underline" href="/videos/">Videos</a>
+        </div>
+        <div class="flex flex-wrap gap-5 text-xl font-sans">
+  <a class="link-subtle" href="/">Home</a>
+  <a class="link-subtle" href="/articles/">Articles</a>
+  <a class="link-subtle" href="/videos/">Videos</a>
 </div>
 
+      </header>
 
-      <main>
-        <h1 class="text-3xl font-medium my-3">Videos</h1>
+      <main class="mb-20">
+        <h1 class="text-3xl font-display font-semibold mb-6">Videos</h1>
 
 <div class="container mx-auto">
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/history-walk-around-gloucesters-alney-island/">
-          <img src="https://i.ytimg.com/vi/BxZrxti7AJg/hqdefault.jpg" alt="History Walk Around Gloucester’s Alney Island" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/BxZrxti7AJg/hqdefault.jpg" alt="History Walk Around Gloucester’s Alney Island" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>History Walk Around Gloucester’s Alney Island</p>
+      <p class="mt-3 text-sm font-sans font-medium">History Walk Around Gloucester’s Alney Island</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/awake-at-5-30am-to-get-the-train-to-plymouth/">
-          <img src="https://i.ytimg.com/vi/yarkGLjwYoM/hqdefault.jpg" alt="Awake at 5:30am to get the train to Plymouth" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/yarkGLjwYoM/hqdefault.jpg" alt="Awake at 5:30am to get the train to Plymouth" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Awake at 5:30am to get the train to Plymouth</p>
+      <p class="mt-3 text-sm font-sans font-medium">Awake at 5:30am to get the train to Plymouth</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/exploring-forgotten-railways-in-the-cotswolds-shipton-to-withington/">
-          <img src="https://i.ytimg.com/vi/QBWNWZEGj2k/hqdefault.jpg" alt="Exploring forgotten railways in the Cotswolds - Shipton to Withington" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/QBWNWZEGj2k/hqdefault.jpg" alt="Exploring forgotten railways in the Cotswolds - Shipton to Withington" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Exploring forgotten railways in the Cotswolds - Shipton to Withington</p>
+      <p class="mt-3 text-sm font-sans font-medium">Exploring forgotten railways in the Cotswolds - Shipton to Withington</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/walk-around-foxcote-hill-in-the-cotswolds/">
-          <img src="https://i.ytimg.com/vi/D8NEsrpL-5Y/hqdefault.jpg" alt="Walk around Foxcote Hill in The Cotswolds" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/D8NEsrpL-5Y/hqdefault.jpg" alt="Walk around Foxcote Hill in The Cotswolds" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Walk around Foxcote Hill in The Cotswolds</p>
+      <p class="mt-3 text-sm font-sans font-medium">Walk around Foxcote Hill in The Cotswolds</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/why-do-people-do-this-to-leckhampton-hill/">
-          <img src="https://i.ytimg.com/vi/KmyHwVqzsvY/hqdefault.jpg" alt="Why do people do this to Leckhampton Hill?" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/KmyHwVqzsvY/hqdefault.jpg" alt="Why do people do this to Leckhampton Hill?" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Why do people do this to Leckhampton Hill?</p>
+      <p class="mt-3 text-sm font-sans font-medium">Why do people do this to Leckhampton Hill?</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/roman-ruins-and-deer-encounters-a-cotswold-walk-from-northleach-to-colesbourne/">
-          <img src="https://i.ytimg.com/vi/rMRCN_X7JK8/hqdefault.jpg" alt="Roman Ruins & Deer Encounters: A Cotswold Walk from Northleach to Colesbourne" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/rMRCN_X7JK8/hqdefault.jpg" alt="Roman Ruins & Deer Encounters: A Cotswold Walk from Northleach to Colesbourne" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Roman Ruins & Deer Encounters: A Cotswold Walk from Northleach to Colesbourne</p>
+      <p class="mt-3 text-sm font-sans font-medium">Roman Ruins & Deer Encounters: A Cotswold Walk from Northleach to Colesbourne</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/snowy-adventure-nearly-ends-in-disaster/">
-          <img src="https://i.ytimg.com/vi/eg_fjCN4k9I/hqdefault.jpg" alt="Snowy adventure nearly ends in disaster!" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/eg_fjCN4k9I/hqdefault.jpg" alt="Snowy adventure nearly ends in disaster!" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Snowy adventure nearly ends in disaster!</p>
+      <p class="mt-3 text-sm font-sans font-medium">Snowy adventure nearly ends in disaster!</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/discovering-my-first-geocache-number-shorts/">
-          <img src="https://i.ytimg.com/vi/FV4EcEHea2k/hqdefault.jpg" alt="Discovering my first GEOCACHE! #shorts" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/FV4EcEHea2k/hqdefault.jpg" alt="Discovering my first GEOCACHE! #shorts" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Discovering my first GEOCACHE! #shorts</p>
+      <p class="mt-3 text-sm font-sans font-medium">Discovering my first GEOCACHE! #shorts</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/walking-along-the-gwsr-line-near-gotherington/">
-          <img src="https://i.ytimg.com/vi/h9xQ9Hgnojg/hqdefault.jpg" alt="Walking along the GWSR line near Gotherington" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/h9xQ9Hgnojg/hqdefault.jpg" alt="Walking along the GWSR line near Gotherington" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Walking along the GWSR line near Gotherington</p>
+      <p class="mt-3 text-sm font-sans font-medium">Walking along the GWSR line near Gotherington</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/exploring-bredon-hill/">
-          <img src="https://i.ytimg.com/vi/t5R6iyOkjwc/hqdefault.jpg" alt="Exploring Bredon Hill" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/t5R6iyOkjwc/hqdefault.jpg" alt="Exploring Bredon Hill" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Exploring Bredon Hill</p>
+      <p class="mt-3 text-sm font-sans font-medium">Exploring Bredon Hill</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/5-miles-in-under-a-minute/">
-          <img src="https://i.ytimg.com/vi/obr_IfzeXM8/hqdefault.jpg" alt="5 miles in under a minute" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/obr_IfzeXM8/hqdefault.jpg" alt="5 miles in under a minute" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>5 miles in under a minute</p>
+      <p class="mt-3 text-sm font-sans font-medium">5 miles in under a minute</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/what-lies-beyond-the-fog/">
-          <img src="https://i.ytimg.com/vi/egWNaw1enho/hqdefault.jpg" alt="What Lies Beyond the Fog?" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/egWNaw1enho/hqdefault.jpg" alt="What Lies Beyond the Fog?" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>What Lies Beyond the Fog?</p>
+      <p class="mt-3 text-sm font-sans font-medium">What Lies Beyond the Fog?</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/searching-for-the-lost-citroen-of-cleeve-hill/">
-          <img src="https://i.ytimg.com/vi/UlMfde2tSQA/hqdefault.jpg" alt="Searching for The Lost Citroen of Cleeve Hill" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/UlMfde2tSQA/hqdefault.jpg" alt="Searching for The Lost Citroen of Cleeve Hill" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Searching for The Lost Citroen of Cleeve Hill</p>
+      <p class="mt-3 text-sm font-sans font-medium">Searching for The Lost Citroen of Cleeve Hill</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/leckhampton-hill/">
-          <img src="https://i.ytimg.com/vi/9KIXlA-kqT8/hqdefault.jpg" alt="Leckhampton Hill" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/9KIXlA-kqT8/hqdefault.jpg" alt="Leckhampton Hill" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Leckhampton Hill</p>
+      <p class="mt-3 text-sm font-sans font-medium">Leckhampton Hill</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/exploring-the-ruins-of-elmley-castle/">
-          <img src="https://i.ytimg.com/vi/WhCZAXq7V0M/hqdefault.jpg" alt="Exploring the ruins of Elmley Castle" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/WhCZAXq7V0M/hqdefault.jpg" alt="Exploring the ruins of Elmley Castle" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Exploring the ruins of Elmley Castle</p>
+      <p class="mt-3 text-sm font-sans font-medium">Exploring the ruins of Elmley Castle</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/walking-up-leckhampton-hill-at-sunset/">
-          <img src="https://i.ytimg.com/vi/12Pu8goJ6Wk/hqdefault.jpg" alt="Walking up Leckhampton Hill at sunset" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/12Pu8goJ6Wk/hqdefault.jpg" alt="Walking up Leckhampton Hill at sunset" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Walking up Leckhampton Hill at sunset</p>
+      <p class="mt-3 text-sm font-sans font-medium">Walking up Leckhampton Hill at sunset</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/walking-from-cheltenham-to-winchcombe-via-cleeve-hill-7-miles/">
-          <img src="https://i.ytimg.com/vi/KCu5w06ikhA/hqdefault.jpg" alt="Walking from Cheltenham to Winchcombe via Cleeve Hill (7 miles)" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/KCu5w06ikhA/hqdefault.jpg" alt="Walking from Cheltenham to Winchcombe via Cleeve Hill (7 miles)" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Walking from Cheltenham to Winchcombe via Cleeve Hill (7 miles)</p>
+      <p class="mt-3 text-sm font-sans font-medium">Walking from Cheltenham to Winchcombe via Cleeve Hill (7 miles)</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/country-walk-in-stratton-near-cirencester/">
-          <img src="https://i.ytimg.com/vi/jPAe4pJsV9Y/hqdefault.jpg" alt="Country walk in Stratton, near Cirencester" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/jPAe4pJsV9Y/hqdefault.jpg" alt="Country walk in Stratton, near Cirencester" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Country walk in Stratton, near Cirencester</p>
+      <p class="mt-3 text-sm font-sans font-medium">Country walk in Stratton, near Cirencester</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/chasing-sunset-number-shorts/">
-          <img src="https://i.ytimg.com/vi/CCj6_P1yGg0/hqdefault.jpg" alt="Chasing Sunset ☀️ #Shorts" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/CCj6_P1yGg0/hqdefault.jpg" alt="Chasing Sunset ☀️ #Shorts" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Chasing Sunset ☀️ #Shorts</p>
+      <p class="mt-3 text-sm font-sans font-medium">Chasing Sunset ☀️ #Shorts</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/macbook-pro-2021-vs-2015-after-3-weeks/">
-          <img src="https://i.ytimg.com/vi/-sBdrLViPoU/hqdefault.jpg" alt="MacBook Pro 2021 vs 2015 (after 3 weeks)" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/-sBdrLViPoU/hqdefault.jpg" alt="MacBook Pro 2021 vs 2015 (after 3 weeks)" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>MacBook Pro 2021 vs 2015 (after 3 weeks)</p>
+      <p class="mt-3 text-sm font-sans font-medium">MacBook Pro 2021 vs 2015 (after 3 weeks)</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/exploring-the-history-of-cleeve-hill/">
-          <img src="https://i.ytimg.com/vi/-brpNFIZ-wk/hqdefault.jpg" alt="Exploring the History of Cleeve Hill" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/-brpNFIZ-wk/hqdefault.jpg" alt="Exploring the History of Cleeve Hill" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Exploring the History of Cleeve Hill</p>
+      <p class="mt-3 text-sm font-sans font-medium">Exploring the History of Cleeve Hill</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/2015-macbook-pro-vs-2021-macbook-pro/">
-          <img src="https://i.ytimg.com/vi/rnSsOL7qjIg/hqdefault.jpg" alt="2015 MacBook Pro vs 2021 MacBook Pro" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/rnSsOL7qjIg/hqdefault.jpg" alt="2015 MacBook Pro vs 2021 MacBook Pro" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>2015 MacBook Pro vs 2021 MacBook Pro</p>
+      <p class="mt-3 text-sm font-sans font-medium">2015 MacBook Pro vs 2021 MacBook Pro</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/spoonley-wood-roman-villa/">
-          <img src="https://i.ytimg.com/vi/to8COzYuuEc/hqdefault.jpg" alt="Spoonley Wood Roman Villa 🏛" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/to8COzYuuEc/hqdefault.jpg" alt="Spoonley Wood Roman Villa 🏛" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Spoonley Wood Roman Villa 🏛</p>
+      <p class="mt-3 text-sm font-sans font-medium">Spoonley Wood Roman Villa 🏛</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/solo-walk-around-coombe-hill-in-gloucestershire/">
-          <img src="https://i.ytimg.com/vi/e8oknwVTXjo/hqdefault.jpg" alt="Solo walk around Coombe Hill in Gloucestershire" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/e8oknwVTXjo/hqdefault.jpg" alt="Solo walk around Coombe Hill in Gloucestershire" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Solo walk around Coombe Hill in Gloucestershire</p>
+      <p class="mt-3 text-sm font-sans font-medium">Solo walk around Coombe Hill in Gloucestershire</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/best-walk-around-cheltenham-racecourse/">
-          <img src="https://i.ytimg.com/vi/HZtq3IrvIVE/hqdefault.jpg" alt="Best walk around Cheltenham Racecourse 🐎" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/HZtq3IrvIVE/hqdefault.jpg" alt="Best walk around Cheltenham Racecourse 🐎" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>Best walk around Cheltenham Racecourse 🐎</p>
+      <p class="mt-3 text-sm font-sans font-medium">Best walk around Cheltenham Racecourse 🐎</p>
     </div>
     
-    <div>
-      <div class="aspect-video bg-gray-200 overflow-hidden rounded-lg">
+    <div class="group">
+      <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden rounded-lg ring-1 ring-zinc-200 dark:ring-zinc-700 transition-all duration-200 group-hover:ring-accent">
         <a href="/videos/a-chilly-walk-up-leckhampton-hill-in-freezing-temperatures/">
-          <img src="https://i.ytimg.com/vi/zhzP12K0NAA/hqdefault.jpg" alt="A chilly walk up Leckhampton Hill in freezing temperatures" class="w-full h-full object-cover">
+          <img src="https://i.ytimg.com/vi/zhzP12K0NAA/hqdefault.jpg" alt="A chilly walk up Leckhampton Hill in freezing temperatures" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
         </a>
       </div>
-      <p>A chilly walk up Leckhampton Hill in freezing temperatures</p>
+      <p class="mt-3 text-sm font-sans font-medium">A chilly walk up Leckhampton Hill in freezing temperatures</p>
     </div>
     
   </div>
@@ -319,46 +315,15 @@
 
       </main>
 
-      <footer>
-        <div class="flex flex-wrap gap-4 mt-10 mb-3">
-          <a class="mr-auto font-thin text-4xl" href="/">Chris Mytton</a>
-
-          <div class="flex flex-wrap gap-3">
-  <a class="hover:text-[#ff0000]" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"/></svg>
-  </a>
-  <a class="hover:text-[#d62976]" target="_blank" rel="noopener noreferrer me" href="https://www.instagram.com/chrismytton/" title="Follow me on Instagram" aria-label="Follow me on Instagram">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://x.com/chrismytton" title="Follow me on Twitter" aria-label="Follow me on Twitter">
-    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 29"><path fill="currentColor" d="M 17.257812 12.273438 L 28.054688 0 L 25.496094 0 L 16.121094 10.65625 L 8.636719 0 L 0 0 L 11.320312 16.113281 L 0 28.984375 L 2.558594 28.984375 L 12.457031 17.730469 L 20.363281 28.984375 L 29 28.984375 Z M 13.753906 16.257812 L 12.609375 14.652344 L 3.480469 1.882812 L 7.410156 1.882812 L 14.777344 12.1875 L 15.921875 13.792969 L 25.496094 27.1875 L 21.566406 27.1875 Z M 13.753906 16.257812 "/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://github.com/chrismytton" title="Visit my GitHub" aria-label="Visit my GitHub">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-  </a>
-  <a class="hover:text-[#ee802f]" target="_blank" rel="noopener noreferrer" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
-  </a>
-</div>
+      <footer class="mt-20 pt-10 border-t border-zinc-200 dark:border-zinc-700">
+        <div class="flex items-center mb-6">
+          <a class="mr-auto font-display font-semibold text-4xl text-accent hover:text-accent-hover transition-colors" href="/">Chris Mytton</a>
 
         </div>
-        <div class="flex flex-wrap gap-5 text-2xl font-normal mb-10">
-  <a class="hover:underline" href="/">Home</a>
-  <a class="hover:underline" href="/articles/">Articles</a>
-  <a class="hover:underline" href="/videos/">Videos</a>
-</div>
-
-        <div>
-  <img class="float-right ml-4 rounded-full" alt="Selfie of Chris Mytton standing in a field with a slightly blurred background" width="100" height="100" src="/assets/images/profile-October-2019-square.jpg">
-
-  <div class="mb-11 prose dark:prose-invert">
-    <p>
-      This is my personal website where I share projects I've been working on and what I learn along the way.
-    </p>
-    <p>
-      Get in touch:&nbsp;<a target="_blank" rel="noopener noreferrer" href="mailto:mail@chrismytton.com">mail@chrismytton.com</a>
-    </p>
-  </div>
+        <div class="flex flex-wrap gap-5 text-xl font-sans">
+  <a class="link-subtle" href="/">Home</a>
+  <a class="link-subtle" href="/articles/">Articles</a>
+  <a class="link-subtle" href="/videos/">Videos</a>
 </div>
 
       </footer>

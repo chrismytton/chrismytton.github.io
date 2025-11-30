@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-zinc-50 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50">
+<html lang="en" class="bg-zinc-50 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50 font-serif">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,43 +42,40 @@
     <script src="/lite-yt-embed.js"></script>
   </head>
 
-  <body class="container mx-auto p-6 mb-10">
+  <body class="container mx-auto px-6 py-10 mb-10">
     <div class="mx-auto max-w-prose">
+      <header class="pb-8 mb-6 border-b border-zinc-200 dark:border-zinc-700">
+        <div class="flex flex-wrap gap-4 items-center mb-6">
+          <a class="mr-auto font-display font-semibold text-4xl text-accent hover:text-accent-hover transition-colors" href="/">Chris Mytton</a>
 
-      <header class="flex flex-wrap gap-4 items-center mb-3">
-        <a class="mr-auto font-thin text-4xl" href="/">Chris Mytton</a>
-
-        <div class="flex flex-wrap gap-3">
-  <a class="hover:text-[#ff0000]" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
+          <div class="flex flex-wrap gap-3">
+  <a class="hover:text-[#ff0000] transition-colors duration-200" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"/></svg>
   </a>
-  <a class="hover:text-[#d62976]" target="_blank" rel="noopener noreferrer me" href="https://www.instagram.com/chrismytton/" title="Follow me on Instagram" aria-label="Follow me on Instagram">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://x.com/chrismytton" title="Follow me on Twitter" aria-label="Follow me on Twitter">
-    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 29"><path fill="currentColor" d="M 17.257812 12.273438 L 28.054688 0 L 25.496094 0 L 16.121094 10.65625 L 8.636719 0 L 0 0 L 11.320312 16.113281 L 0 28.984375 L 2.558594 28.984375 L 12.457031 17.730469 L 20.363281 28.984375 L 29 28.984375 Z M 13.753906 16.257812 L 12.609375 14.652344 L 3.480469 1.882812 L 7.410156 1.882812 L 14.777344 12.1875 L 15.921875 13.792969 L 25.496094 27.1875 L 21.566406 27.1875 Z M 13.753906 16.257812 "/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://github.com/chrismytton" title="Visit my GitHub" aria-label="Visit my GitHub">
+  
+  <a class="hover:opacity-70 transition-opacity duration-200" target="_blank" rel="noopener noreferrer me" href="https://github.com/chrismytton" title="Visit my GitHub" aria-label="Visit my GitHub">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
   </a>
-  <a class="hover:text-[#ee802f]" target="_blank" rel="noopener noreferrer" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
+  <a class="hover:text-[#ee802f] transition-colors duration-200" target="_blank" rel="noopener noreferrer" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
   </a>
 </div>
 
-      </header>
-      <div class="flex flex-wrap gap-5 text-2xl font-normal mb-10">
-  <a class="hover:underline" href="/">Home</a>
-  <a class="hover:underline" href="/articles/">Articles</a>
-  <a class="hover:underline" href="/videos/">Videos</a>
+        </div>
+        <div class="flex flex-wrap gap-5 text-xl font-sans">
+  <a class="link-subtle" href="/">Home</a>
+  <a class="link-subtle" href="/articles/">Articles</a>
+  <a class="link-subtle" href="/videos/">Videos</a>
 </div>
 
+      </header>
 
-      <main>
+      <main class="mb-20">
         <div class="post">
-  <article class="mx-auto prose prose-stone dark:prose-invert prose-h1:font-normal prose-h2:font-normal">
-    <header class="post-header">
-      <h1 class="post-title">Eat food, not too much, mostly plants</h1>
+  <article class="mx-auto prose prose-zinc dark:prose-invert prose-h1:font-display prose-h1:font-semibold prose-h2:font-display prose-h2:font-semibold prose-h3:font-display prose-h3:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:text-accent-hover prose-a:transition-colors">
+    <header class="post-header mb-8 mt-8">
+      <h1 class="post-title mb-2 text-pretty">Eat food, not too much, mostly plants</h1>
+      <p class="text-zinc-600 dark:text-zinc-400 text-sm font-sans not-prose">Published  2 September 2018</p>
     </header>
 
     <div class="post-content">
@@ -103,22 +100,19 @@
 
     </div>
 
-    <footer>
+    <footer class="mt-12 pt-6 not-prose">
       
         <div class="post-tags">
-          <p>
-            Tagged:
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 font-sans">
             
-            <a href="/tags/#food">#food</a>
+            <a class="text-accent hover:text-accent-hover transition-colors" href="/tags/#food">#food</a>
             
-            <a href="/tags/#life">#life</a>
+            <a class="text-accent hover:text-accent-hover transition-colors" href="/tags/#life">#life</a>
             
           </p>
         </div>
       
-      <p class="post-date">Published  2 September 2018</p>
     </footer>
-
 
   </article>
 
@@ -126,46 +120,15 @@
 
       </main>
 
-      <footer>
-        <div class="flex flex-wrap gap-4 mt-10 mb-3">
-          <a class="mr-auto font-thin text-4xl" href="/">Chris Mytton</a>
-
-          <div class="flex flex-wrap gap-3">
-  <a class="hover:text-[#ff0000]" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"/></svg>
-  </a>
-  <a class="hover:text-[#d62976]" target="_blank" rel="noopener noreferrer me" href="https://www.instagram.com/chrismytton/" title="Follow me on Instagram" aria-label="Follow me on Instagram">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://x.com/chrismytton" title="Follow me on Twitter" aria-label="Follow me on Twitter">
-    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 29"><path fill="currentColor" d="M 17.257812 12.273438 L 28.054688 0 L 25.496094 0 L 16.121094 10.65625 L 8.636719 0 L 0 0 L 11.320312 16.113281 L 0 28.984375 L 2.558594 28.984375 L 12.457031 17.730469 L 20.363281 28.984375 L 29 28.984375 Z M 13.753906 16.257812 L 12.609375 14.652344 L 3.480469 1.882812 L 7.410156 1.882812 L 14.777344 12.1875 L 15.921875 13.792969 L 25.496094 27.1875 L 21.566406 27.1875 Z M 13.753906 16.257812 "/></svg>
-  </a>
-  <a class="hover:opacity-70" target="_blank" rel="noopener noreferrer me" href="https://github.com/chrismytton" title="Visit my GitHub" aria-label="Visit my GitHub">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-  </a>
-  <a class="hover:text-[#ee802f]" target="_blank" rel="noopener noreferrer" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
-  </a>
-</div>
+      <footer class="mt-20 pt-10 border-t border-zinc-200 dark:border-zinc-700">
+        <div class="flex items-center mb-6">
+          <a class="mr-auto font-display font-semibold text-4xl text-accent hover:text-accent-hover transition-colors" href="/">Chris Mytton</a>
 
         </div>
-        <div class="flex flex-wrap gap-5 text-2xl font-normal mb-10">
-  <a class="hover:underline" href="/">Home</a>
-  <a class="hover:underline" href="/articles/">Articles</a>
-  <a class="hover:underline" href="/videos/">Videos</a>
-</div>
-
-        <div>
-  <img class="float-right ml-4 rounded-full" alt="Selfie of Chris Mytton standing in a field with a slightly blurred background" width="100" height="100" src="/assets/images/profile-October-2019-square.jpg">
-
-  <div class="mb-11 prose dark:prose-invert">
-    <p>
-      This is my personal website where I share projects I've been working on and what I learn along the way.
-    </p>
-    <p>
-      Get in touch:&nbsp;<a target="_blank" rel="noopener noreferrer" href="mailto:mail@chrismytton.com">mail@chrismytton.com</a>
-    </p>
-  </div>
+        <div class="flex flex-wrap gap-5 text-xl font-sans">
+  <a class="link-subtle" href="/">Home</a>
+  <a class="link-subtle" href="/articles/">Articles</a>
+  <a class="link-subtle" href="/videos/">Videos</a>
 </div>
 
       </footer>
