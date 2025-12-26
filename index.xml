@@ -711,7 +711,11 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
 
 &lt;p&gt;Not everything has to have a point, sometimes you just need to &lt;a href=&quot;/2019/09/24/do-things-for-fun/&quot;&gt;do things for fun&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/chelt-paint-fest-2020.jpg&quot; alt=&quot;Cheltenham Paint Festival 2020 at Cheltenham Spa station&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;
+  &lt;source srcset=&quot;/assets/images/chelt-paint-fest-2020.avif&quot; type=&quot;image/avif&quot;&gt;
+  &lt;source srcset=&quot;/assets/images/chelt-paint-fest-2020.webp&quot; type=&quot;image/webp&quot;&gt;
+  &lt;img src=&quot;/assets/images/chelt-paint-fest-2020.jpg&quot; alt=&quot;Cheltenham Paint Festival 2020 at Cheltenham Spa station&quot; loading=&quot;lazy&quot;&gt;
+&lt;/picture&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;express-yourself&quot;&gt;Express yourself&lt;/h2&gt;
 
