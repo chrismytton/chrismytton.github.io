@@ -164,7 +164,7 @@ More details on that below.</p>
 
 <p>Because <code>ogr2ogr</code> lets you write SQL, we can use this for processing the rows in the input dataset into a format appropriate for the output dataset. In this case replacing some line breaks in a couple of fields, and remapping the names from the CSV to different output names.</p>
 
-<p>You can see the new build script <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/71d9529327807af23cd750f65e88dc496867c155/bin/build">over on GitHub</a> along with the <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/main/extract_csv_to_ogr.sql">SQL that’s used for processing</a>.</p>
+<p>You can see the new build script <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/71d9529327807af23cd750f65e88dc496867c155/bin/build">over on GitHub</a> along with the <a href="https://github.com/chrismytton/cheltenham-council-land-and-assets/blob/71d9529327807af23cd750f65e88dc496867c155/extract_csv_to_ogr.sql">SQL that’s used for processing</a>.</p>
 
 <p>Moving from the Ruby script to <code>ogr2ogr</code> has dramatically reduced the amount of code needed for this process. Now it’s just one (admittedly quite complex) SQL query and a couple of lines of bash to glue things together.</p>
 
