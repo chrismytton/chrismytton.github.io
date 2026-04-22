@@ -6,7 +6,7 @@
   <updated>2024-01-14T06:48:27+00:00</updated>
   <id>https://www.chrismytton.com/index.xml</id>
   <title type="html">Chris Mytton</title>
-  <subtitle>This is my personal website where I share anything I find interesting. Follow me on Twitter: @chrismytton</subtitle>
+  <subtitle>This is my personal website where I share anything I find interesting.</subtitle>
   <author>
     <name>Chris Mytton</name>
   </author>
@@ -36,10 +36,14 @@
     
     <category term="minimalism" />
     
-    <summary type="html">In a world of web apps, videos, social media and multi-media distraction it's nice to know there are still some websites out there which use simple plain text</summary>
+    
+    <summary type="html">In a world of web apps, videos, social media and multi-media distraction it&#39;s nice to know there are still some websites out there which use simple plain text</summary>
+    
+    
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/plain-text-websites.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/plain-text-websites.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
+    
   </entry>
   
   <entry>
@@ -99,10 +103,14 @@
     
     <category term="space" />
     
-    <summary type="html">Learn why sunsets happen earlier at high altitudes, the surprising truth about Earth's daily rotation, and Venus's unique, backward spin.</summary>
+    
+    <summary type="html">Learn why sunsets happen earlier at high altitudes, the surprising truth about Earth&#39;s daily rotation, and Venus&#39;s unique, backward spin.</summary>
+    
+    
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/space-facts.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/space-facts.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
+    
   </entry>
   
   <entry>
@@ -154,10 +162,10 @@
     
     <category term="shell" />
     
+    
     <summary type="html">A simple shell function to query CSV files using SQLite</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
+    
+    
   </entry>
   
   <entry>
@@ -324,10 +332,14 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     
     <category term="opendata" />
     
+    
     <summary type="html">Or how I turned a CSV into a map and a database.</summary>
+    
+    
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/cheltenham-data-screenshot.png" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/cheltenham-data-screenshot.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
+    
   </entry>
   
   <entry>
@@ -506,10 +518,10 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     
     <category term="life" />
     
+    
     <summary type="html">The Ancient Art of Stoic Joy.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
+    
+    
   </entry>
   
   <entry>
@@ -563,10 +575,10 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     
     <category term="life" />
     
+    
     <summary type="html">Produce lots of stuff and share it.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
+    
+    
   </entry>
   
   <entry>
@@ -654,10 +666,10 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
       <name>Chris Mytton</name>
     </author>
     
+    
     <summary type="html">Shining a light on the dark corners of Ruby.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
+    
+    
   </entry>
   
   <entry>
@@ -732,10 +744,14 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     
     <category term="creativity" />
     
+    
     <summary type="html">Expressing yourself through creative outputs helps balance out the anxiety caused by the modern information economy.</summary>
+    
+    
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/chelt-paint-fest-2020.jpg" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/chelt-paint-fest-2020.jpg"
       xmlns:media="http://search.yahoo.com/mrss/" />
+    
   </entry>
   
   <entry>
@@ -843,10 +859,14 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     
     <category term="programming" />
     
+    
     <summary type="html">📝 Notes from porting a JavaScript random art generator to TypeScript.</summary>
+    
+    
     <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com/assets/images/random-art.png" />
     <media:content medium="image" url="https://www.chrismytton.com/assets/images/random-art.png"
       xmlns:media="http://search.yahoo.com/mrss/" />
+    
   </entry>
   
   <entry>
@@ -896,10 +916,10 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
     
     <category term="programming" />
     
+    
     <summary type="html">Using csvkit and UNIX to extract a list of IDs from an XLSX file.</summary>
-    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.chrismytton.com" />
-    <media:content medium="image" url="https://www.chrismytton.com"
-      xmlns:media="http://search.yahoo.com/mrss/" />
+    
+    
   </entry>
   
 </feed>
