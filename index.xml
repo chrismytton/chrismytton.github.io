@@ -483,8 +483,8 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
   <entry>
     <title type="html">Be prolific</title>
     <link href="https://www.chrismytton.com/be-prolific/" rel="alternate" type="text/html" title="Be prolific" />
-    <published>2020-10-22T18:17:00+00:00</published>
-    <updated>2020-10-22T18:17:00+00:00</updated>
+    <published>2020-10-22T18:17:00+01:00</published>
+    <updated>2020-10-22T18:17:00+01:00</updated>
     <id>https://www.chrismytton.com/be-prolific/</id>
     <content type="html" xml:base="https://www.chrismytton.com/be-prolific/">
       
@@ -533,8 +533,8 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
   <entry>
     <title type="html">Ruby: The not so good parts</title>
     <link href="https://www.chrismytton.com/ruby-the-not-so-good-parts/" rel="alternate" type="text/html" title="Ruby: The not so good parts" />
-    <published>2020-10-11T09:28:00+00:00</published>
-    <updated>2020-10-11T09:28:00+00:00</updated>
+    <published>2020-10-11T09:28:00+01:00</published>
+    <updated>2020-10-11T09:28:00+01:00</updated>
     <id>https://www.chrismytton.com/ruby-the-not-so-good-parts/</id>
     <content type="html" xml:base="https://www.chrismytton.com/ruby-the-not-so-good-parts/">
       
@@ -619,8 +619,8 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
   <entry>
     <title type="html">Consume less, produce more</title>
     <link href="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/" rel="alternate" type="text/html" title="Consume less, produce more" />
-    <published>2020-09-24T06:50:00+00:00</published>
-    <updated>2020-09-24T06:50:00+00:00</updated>
+    <published>2020-09-24T06:50:00+01:00</published>
+    <updated>2020-09-24T06:50:00+01:00</updated>
     <id>https://www.chrismytton.com/2020/09/24/consume-less-produce-more/</id>
     <content type="html" xml:base="https://www.chrismytton.com/2020/09/24/consume-less-produce-more/">
       
@@ -667,7 +667,7 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
 
 &lt;p&gt;Not everything has to have a point, sometimes you just need to &lt;a href=&quot;/2019/09/24/do-things-for-fun/&quot;&gt;do things for fun&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;picture&gt;&lt;source srcset=&quot;/assets/images/chelt-paint-fest-2020.avif&quot; type=&quot;image/avif&quot;&gt;&lt;source srcset=&quot;/assets/images/chelt-paint-fest-2020.webp&quot; type=&quot;image/webp&quot;&gt;&lt;img src=&quot;/assets/images/chelt-paint-fest-2020.jpg&quot; alt=&quot;Cheltenham Paint Festival 2020 at Cheltenham Spa station&quot; loading=&quot;lazy&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source srcset=&quot;/assets/images/chelt-paint-fest-2020.avif&quot; type=&quot;image/avif&quot;&gt;&lt;source srcset=&quot;/assets/images/chelt-paint-fest-2020.webp&quot; type=&quot;image/webp&quot;&gt;&lt;img src=&quot;/assets/images/chelt-paint-fest-2020.jpg&quot; alt=&quot;Cheltenham Paint Festival 2020 at Cheltenham Spa station&quot; width=&quot;1276&quot; height=&quot;681&quot; loading=&quot;lazy&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;express-yourself&quot;&gt;Express yourself&lt;/h2&gt;
 
@@ -688,8 +688,8 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
   <entry>
     <title type="html">Canvas art in TypeScript</title>
     <link href="https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/" rel="alternate" type="text/html" title="Canvas art in TypeScript" />
-    <published>2020-06-06T15:30:00+00:00</published>
-    <updated>2020-06-06T15:30:00+00:00</updated>
+    <published>2020-06-06T15:30:00+01:00</published>
+    <updated>2020-06-06T15:30:00+01:00</updated>
     <id>https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/</id>
     <content type="html" xml:base="https://www.chrismytton.com/2020/06/06/canvas-art-in-typescript/">
       
@@ -795,8 +795,8 @@ A simple &lt;a href=&quot;https://github.com/chrismytton/cheltenham-council-land
   <entry>
     <title type="html">Extracting a list of IDs from an XLSX file</title>
     <link href="https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/" rel="alternate" type="text/html" title="Extracting a list of IDs from an XLSX file" />
-    <published>2020-05-06T06:32:25+00:00</published>
-    <updated>2020-05-06T06:32:25+00:00</updated>
+    <published>2020-05-06T06:32:25+01:00</published>
+    <updated>2020-05-06T06:32:25+01:00</updated>
     <id>https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/</id>
     <content type="html" xml:base="https://www.chrismytton.com/2020/05/06/extracting-ids-from-xlsx/">
       
