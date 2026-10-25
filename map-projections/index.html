@@ -77,31 +77,33 @@
 
 <h2 id="equal-area-projections">Equal-area projections</h2>
 
-<p>When the area of a shape in real life matches the area of that shape on the projected map then the projection is called an equal-area projection.</p>
+<p>When every region on the map has the same area relative to every other region as it does in real life, the projection is called an equal-area projection.</p>
 
 <h2 id="conformal-projections">Conformal projections</h2>
 
-<p>When angles in real-life match the angles on the projected map then the projection is called a conformal projection.</p>
+<p>When angles in real life match the angles on the projected map at every point, the projection is called a conformal projection. This preserves the shapes of small areas, but large areas are still distorted.</p>
 
 <blockquote>
-  <p>For example, if two roads cross each other at a 39° angle, then their images on a map with a conformal projection cross at a 39° angle.<sup id="fnref:Conformal_map_projection-wikipedia"><a href="#fn:Conformal_map_projection-wikipedia" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+  <p>For example, if two roads cross each other at a 39° angle, their images on a map with a conformal projection cross at a 39° angle.<sup id="fnref:Conformal_map_projection-wikipedia"><a href="#fn:Conformal_map_projection-wikipedia" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
 </blockquote>
+
+<p>A projection can’t be both equal-area and conformal.</p>
 
 <h2 id="the-equirectangular-projection">The equirectangular projection</h2>
 
 <p>This simple projection is almost 2000 years old.</p>
 
-<p>Each line of meridian (line of longitude) is mapped to vertical straight lines with constant spacing.</p>
+<p>Meridians (lines of longitude) are mapped to evenly spaced vertical straight lines, and parallels (lines of latitude) to evenly spaced horizontal straight lines.</p>
 
-<p>This projection isn’t equal-area or conformal, so isn’t very useful for navigation, but can be used for thematic maps, e.g. showing population density or surface temperature.</p>
+<p>This projection is neither equal-area nor conformal, so it has little use in navigation, but it’s used for thematic maps, e.g. showing surface temperature. It’s also the standard format for global raster datasets, because each pixel’s position maps directly to a latitude and longitude.</p>
 
 <h2 id="mercator-projection">Mercator projection</h2>
 
-<p>Invented in 1569 by Flemish cartographer Gerardus Mercator.</p>
+<p>Presented in 1569 by Flemish geographer and cartographer Gerardus Mercator.</p>
 
-<p>Became popular with sailors because it represents north as up and south as down on all parts of the map while preserving local directions and shapes.</p>
+<p>In the 18th century it became the standard projection for navigation, because a course of constant compass bearing (a rhumb line) appears as a straight line on the map.</p>
 
-<p>One major downside of this projection is it artificially inflates objects the further they are from the equator. On a mercator map Greenland looks about the same size as Africa, but Africa is actually 14x larger than Greenland.</p>
+<p>One major downside of this projection is it inflates the size of objects the further they are from the equator. On a Mercator map Greenland looks about the same size as Africa, but Africa is actually 14x larger than Greenland.</p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:Conformal_map_projection-wikipedia">
