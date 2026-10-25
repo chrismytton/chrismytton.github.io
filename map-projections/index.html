@@ -75,6 +75,8 @@
 
 <p>The ideal map projection is therefore the one with the most acceptable type of distortion for your use-case.</p>
 
+<p>Strictly speaking, the Earth isn’t a perfect sphere. It’s slightly flattened at the poles, so precise maps model it as an ellipsoid instead.</p>
+
 <h2 id="equal-area-projections">Equal-area projections</h2>
 
 <p>When every region on the map has the same area relative to every other region as it does in real life, the projection is called an equal-area projection.</p>
@@ -87,23 +89,135 @@
   <p>For example, if two roads cross each other at a 39° angle, their images on a map with a conformal projection cross at a 39° angle.<sup id="fnref:Conformal_map_projection-wikipedia"><a href="#fn:Conformal_map_projection-wikipedia" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
 </blockquote>
 
-<p>A projection can’t be both equal-area and conformal.</p>
+<p>No projection can be both equal-area and conformal, so every map gives up at least one of the two.</p>
 
-<h2 id="the-equirectangular-projection">The equirectangular projection</h2>
+<h2 id="seeing-the-distortion">Seeing the distortion</h2>
 
-<p>This simple projection is almost 2000 years old.</p>
+<p>Tissot’s indicatrix, described by the French mathematician Nicolas Auguste Tissot in 1859 and 1871, is a way to see a projection’s distortion. Draw identical small circles all over the globe, then project them. Each one comes out as an ellipse that shows how the map stretches at that point.</p>
+
+<ul>
+  <li>On a conformal projection the circles stay circles, but change size.</li>
+  <li>On an equal-area projection the circles all keep the same area, but get stretched or squashed.</li>
+  <li>On a projection that’s neither, the circles change in both size and shape.</li>
+</ul>
+
+<p>In theory the circles are infinitely small. The maps below draw them a few degrees across so you can see them.</p>
+
+<h2 id="equirectangular">Equirectangular</h2>
+
+<p>This simple projection is almost 2000 years old. It’s credited to Marinus of Tyre, around AD 100.</p>
 
 <p>Meridians (lines of longitude) are mapped to evenly spaced vertical straight lines, and parallels (lines of latitude) to evenly spaced horizontal straight lines.</p>
 
-<p>This projection is neither equal-area nor conformal, so it has little use in navigation, but it’s used for thematic maps, e.g. showing surface temperature. It’s also the standard format for global raster datasets, because each pixel’s position maps directly to a latitude and longitude.</p>
+<p><img src="/assets/images/map-projections-equirectangular.svg" alt="The equirectangular projection with Tissot's indicatrix" width="960" height="481" loading="lazy" /></p>
 
-<h2 id="mercator-projection">Mercator projection</h2>
+<p>The circles all keep the same height, but are stretched east–west more and more towards the poles. So this projection is neither equal-area nor conformal, and it has little use in navigation.</p>
+
+<p>It’s used for thematic maps, e.g. showing surface temperature. In its simplest form, the plate carrée, it’s also the standard format for global raster datasets, because each pixel’s position maps directly to a latitude and longitude.</p>
+
+<h2 id="mercator">Mercator</h2>
 
 <p>Presented in 1569 by Flemish geographer and cartographer Gerardus Mercator.</p>
 
-<p>In the 18th century it became the standard projection for navigation, because a course of constant compass bearing (a rhumb line) appears as a straight line on the map.</p>
+<p>The Mercator projection is conformal, and its meridians are parallel vertical lines, so north is straight up everywhere on the map. Together, these mean that a course of constant compass bearing (a rhumb line) appears as a straight line. That’s why, in the 18th century, it became the standard projection for navigation.</p>
 
-<p>One major downside of this projection is it inflates the size of objects the further they are from the equator. On a Mercator map Greenland looks about the same size as Africa, but Africa is actually 14x larger than Greenland.</p>
+<p><img src="/assets/images/map-projections-mercator.svg" alt="The Mercator projection with Tissot's indicatrix" width="960" height="960" loading="lazy" /></p>
+
+<p>Because it’s conformal, the circles stay round. But they grow towards the poles.</p>
+
+<p>One major downside of this projection is it inflates the size of objects the further they are from the equator. At 60° north or south, things are drawn twice as wide and twice as tall as at the equator, so four times the area. On a Mercator map Greenland looks about the same size as Africa, but Africa is actually 14 times larger than Greenland.</p>
+
+<p>The poles would be infinitely far away, so a Mercator map always has to be cut off somewhere short of them. This one stops at about 85° north and south.</p>
+
+<h2 id="web-mercator">Web Mercator</h2>
+
+<p>Web Mercator (EPSG:3857) is the projection behind almost every slippy map on the web, including Google Maps, OpenStreetMap, Mapbox and Esri. It became the standard after Google Maps adopted it in 2005.</p>
+
+<p>It’s a version of the Mercator projection. Two things make it suit online maps:</p>
+
+<ul>
+  <li>North is up everywhere and small shapes look right, so streets and buildings look the same at every zoom level.</li>
+  <li>Cut off at 85.051129° north and south, the whole world becomes a square, which splits neatly into square tiles at each zoom level.</li>
+</ul>
+
+<p>It applies the formulas for a sphere to coordinates measured on an ellipsoid (WGS 84, the one GPS uses), so strictly speaking it isn’t quite conformal.</p>
+
+<h2 id="transverse-mercator">Transverse Mercator</h2>
+
+<p>The Mercator projection is based on a cylinder that touches the globe along the equator. The transverse Mercator projection turns the cylinder on its side so that it touches the globe along a meridian instead. Distortion then grows with distance east or west of that meridian, rather than with distance from the equator.</p>
+
+<p><img src="/assets/images/map-projections-transverse-mercator.svg" alt="A transverse Mercator projection centred on 2° W with Tissot's indicatrix" width="960" height="720" loading="lazy" /></p>
+
+<p>This map is centred on 2° W, shown as a dashed line. The circles along the line are all the same size, and they grow to the east and west of it.</p>
+
+<p>That makes it a good fit for a country that’s much longer north to south than it is wide, like Great Britain. Ordnance Survey’s National Grid (EPSG:27700) is a transverse Mercator projection centred on 2° W:</p>
+
+<ul>
+  <li>It models the Earth with the Airy 1830 ellipsoid, a shape that fits Britain closely, and the OSGB36 datum, which fixes where that ellipsoid sits.</li>
+  <li>Distances along 2° W are drawn 0.9996012717 times their true length, slightly too short. This spreads the distortion out so that distances are exactly right along two lines about 180 km east and west of 2° W.</li>
+  <li>Grid north (straight up the grid lines) and true north (towards the North Pole) only line up along 2° W. Everywhere else on an Ordnance Survey map they differ slightly.</li>
+</ul>
+
+<p>The Universal Transverse Mercator (UTM) system uses the same idea for the whole world. It splits the Earth into 60 zones, each 6° of longitude wide, and draws distances along each zone’s central meridian at 0.9996 times their true length. It covers from 80° S to 84° N.</p>
+
+<h2 id="equal-earth">Equal Earth</h2>
+
+<p>Equal Earth is an equal-area projection created by Bojan Šavrič, Bernhard Jenny and Tom Patterson in 2018. Its designers offered it as an alternative to the Gall–Peters projection, a better-known equal-area projection.</p>
+
+<p><img src="/assets/images/map-projections-equal-earth.svg" alt="The Equal Earth projection with Tissot's indicatrix" width="960" height="469" loading="lazy" /></p>
+
+<p>The circles all have the same area, but are squashed into different shapes.</p>
+
+<p>Use an equal-area projection like this when the sizes of places matter, such as maps comparing countries or showing how something is spread across the world. On Equal Earth, Africa is drawn 14 times the size of Greenland, as it really is.</p>
+
+<h2 id="winkel-tripel">Winkel tripel</h2>
+
+<p>Some projections are neither equal-area nor conformal by design. These compromise projections try to keep every kind of distortion fairly small, so that the world looks about right overall.</p>
+
+<p>The Winkel tripel projection, proposed by the German cartographer Oswald Winkel in 1921, is one of these. <em>Tripel</em> is German for “triple”: it aims to minimise three kinds of distortion, of area, direction and distance. In 1998 it replaced the Robinson projection as the standard projection for the National Geographic Society’s world maps.</p>
+
+<p><img src="/assets/images/map-projections-winkel-tripel.svg" alt="The Winkel tripel projection with Tissot's indicatrix" width="960" height="588" loading="lazy" /></p>
+
+<p>The circles change in both size and shape, but neither change is extreme.</p>
+
+<h2 id="which-projection-to-use">Which projection to use</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use</th>
+      <th>Projection</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Navigating at sea</td>
+      <td>Mercator</td>
+    </tr>
+    <tr>
+      <td>Web maps with tiles</td>
+      <td>Web Mercator</td>
+    </tr>
+    <tr>
+      <td>A country or zone much taller than it is wide</td>
+      <td>Transverse Mercator, e.g. the National Grid or UTM</td>
+    </tr>
+    <tr>
+      <td>World maps where sizes matter</td>
+      <td>An equal-area projection, e.g. Equal Earth</td>
+    </tr>
+    <tr>
+      <td>A general world map</td>
+      <td>A compromise projection, e.g. Winkel tripel</td>
+    </tr>
+    <tr>
+      <td>Storing global raster data</td>
+      <td>Equirectangular (plate carrée)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The maps on this page were drawn with <a href="https://d3js.org/d3-geo">d3-geo</a> using <a href="https://www.naturalearthdata.com/">Natural Earth</a> data.</p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:Conformal_map_projection-wikipedia">
