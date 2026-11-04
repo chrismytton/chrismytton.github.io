@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-serif">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,8 @@
     <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
     <meta name="twitter:card" content="summary">
 
-    <link href="/tailwind.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <link href="/syntax-highlighting.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -32,28 +33,28 @@
     </script>
   </head>
 
-  <body class="mx-auto max-w-4xl px-6 py-6 sm:px-8 sm:py-8 lg:px-10">
-    <header class="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-      <a class="inline-flex items-center font-display text-2xl font-semibold leading-none text-accent transition-colors hover:text-accent-hover sm:text-3xl" href="/">Chris Mytton</a>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="/">Chris Mytton</a>
 
-      <div class="flex flex-wrap items-center gap-4 text-zinc-500 dark:text-zinc-400">
-  <a class="transition-colors duration-200 hover:text-[#ff0000]" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
+      <div class="elsewhere">
+  <a class="youtube" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"/></svg>
   </a>
-  <a class="transition-colors duration-200 hover:text-[#ee802f]" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
+  <a class="feed" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
   </a>
 </div>
 
     </header>
 
-    <main class="mb-24">
+    <main>
       <article>
-  <header class="mb-8">
+  <header class="article-header">
     <h1 class="page-title">Newsletter</h1>
   </header>
 
-  <div class="prose-site">
+  <div class="prose">
     
 <p><strong>Update September 2022</strong>: Well I didn’t get very far with this idea! I’ve put the newsletter on hiatus until further notice. I’ll keep the archive (can I call it that with two editions?) here for anyone who wants to read it.</p>
 
@@ -61,24 +62,24 @@
 </article>
 
 
-<section class="mt-12">
-  <h2 class="mb-3 list-heading">Previous editions</h2>
+<section class="list-section">
+  <h2 class="list-heading">Previous editions</h2>
   <ul class="entry-list">
       <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/newsletter/the-second-edition/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+  <a class="entry" href="/newsletter/the-second-edition/">
+    <p class="entry-date">
       <time datetime="2020-11-15">15 Nov 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">The Second Edition</h3>
+    <h3 class="entry-title">The Second Edition</h3>
   </a>
 </li>
 
       <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/newsletter/the-first-edition/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+  <a class="entry" href="/newsletter/the-first-edition/">
+    <p class="entry-date">
       <time datetime="2020-10-18">18 Oct 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">The First Edition</h3>
+    <h3 class="entry-title">The First Edition</h3>
   </a>
 </li>
 

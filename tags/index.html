@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-serif">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,8 @@
     <meta property="og:image" content="https://www.chrismytton.com/assets/images/profile-October-2019-square.jpg">
     <meta name="twitter:card" content="summary">
 
-    <link href="/tailwind.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <link href="/syntax-highlighting.css" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="/index.xml" title="Chris Mytton">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
@@ -32,999 +33,997 @@
     </script>
   </head>
 
-  <body class="mx-auto max-w-4xl px-6 py-6 sm:px-8 sm:py-8 lg:px-10">
-    <header class="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-      <a class="inline-flex items-center font-display text-2xl font-semibold leading-none text-accent transition-colors hover:text-accent-hover sm:text-3xl" href="/">Chris Mytton</a>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="/">Chris Mytton</a>
 
-      <div class="flex flex-wrap items-center gap-4 text-zinc-500 dark:text-zinc-400">
-  <a class="transition-colors duration-200 hover:text-[#ff0000]" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
+      <div class="elsewhere">
+  <a class="youtube" target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/chrismytton" title="Subscribe to my YouTube channel" aria-label="Subscribe to my YouTube channel">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"/></svg>
   </a>
-  <a class="transition-colors duration-200 hover:text-[#ee802f]" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
+  <a class="feed" href="/index.xml" title="Subscribe to my feed" aria-label="Subscribe to my feed">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
   </a>
 </div>
 
     </header>
 
-    <main class="mb-24">
-      <header class="mb-12">
+    <main>
+      <header class="page-header">
   <h1 class="page-title">Tags</h1>
-  <p class="mt-3 max-w-prose font-sans text-base text-zinc-600 dark:text-zinc-400">Every article, grouped by what it&rsquo;s about.</p>
+  <p class="page-intro">Every article, grouped by what it&rsquo;s about.</p>
 </header>
 
-<div class="space-y-12">
-    <section>
-      <h2 class="mb-3 list-heading" id="books">
-        <a class="transition-colors hover:text-accent" href="#books">#books</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/a-guide-to-the-good-life/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+  <section class="list-section">
+    <h2 class="list-heading" id="books">
+      <a class="link-title" href="#books">#books</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/a-guide-to-the-good-life/">
+    <p class="entry-date">
       <time datetime="2020-11-02"> 2 Nov 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Book notes: A Guide to the Good Life</h3>
+    <h3 class="entry-title">Book notes: A Guide to the Good Life</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/29/septembers-books-and-links/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/29/septembers-books-and-links/">
+    <p class="entry-date">
       <time datetime="2019-09-29">29 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">September&#39;s books and links</h3>
+    <h3 class="entry-title">September&#39;s books and links</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/08/29/august-musings/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/08/29/august-musings/">
+    <p class="entry-date">
       <time datetime="2019-08-29">29 Aug 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">August musings</h3>
+    <h3 class="entry-title">August musings</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="coronavirus">
-        <a class="transition-colors hover:text-accent" href="#coronavirus">#coronavirus</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="coronavirus">
+      <a class="link-title" href="#coronavirus">#coronavirus</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
+    <p class="entry-date">
       <time datetime="2020-03-24">24 Mar 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Potential social benefits of the coronavirus pandemic</h3>
+    <h3 class="entry-title">Potential social benefits of the coronavirus pandemic</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="creativity">
-        <a class="transition-colors hover:text-accent" href="#creativity">#creativity</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/be-prolific/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="creativity">
+      <a class="link-title" href="#creativity">#creativity</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/be-prolific/">
+    <p class="entry-date">
       <time datetime="2020-10-22">22 Oct 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Be prolific</h3>
+    <h3 class="entry-title">Be prolific</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/09/24/consume-less-produce-more/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/09/24/consume-less-produce-more/">
+    <p class="entry-date">
       <time datetime="2020-09-24">24 Sep 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Consume less, produce more</h3>
+    <h3 class="entry-title">Consume less, produce more</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/29/septembers-books-and-links/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/29/septembers-books-and-links/">
+    <p class="entry-date">
       <time datetime="2019-09-29">29 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">September&#39;s books and links</h3>
+    <h3 class="entry-title">September&#39;s books and links</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/23/find-the-underlying-principle/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/23/find-the-underlying-principle/">
+    <p class="entry-date">
       <time datetime="2019-09-23">23 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Find the underlying principle</h3>
+    <h3 class="entry-title">Find the underlying principle</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/06/just-start/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/06/just-start/">
+    <p class="entry-date">
       <time datetime="2019-09-06"> 6 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Just start</h3>
+    <h3 class="entry-title">Just start</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="csv">
-        <a class="transition-colors hover:text-accent" href="#csv">#csv</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/how-to-query-csvs-with-sqlite/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="csv">
+      <a class="link-title" href="#csv">#csv</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/how-to-query-csvs-with-sqlite/">
+    <p class="entry-date">
       <time datetime="2023-01-23">23 Jan 2023</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">How to query CSVs with SQLite</h3>
+    <h3 class="entry-title">How to query CSVs with SQLite</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="food">
-        <a class="transition-colors hover:text-accent" href="#food">#food</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/05/05/fruit-garden-schematic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="food">
+      <a class="link-title" href="#food">#food</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2020/05/05/fruit-garden-schematic/">
+    <p class="entry-date">
       <time datetime="2020-05-05"> 5 May 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Fruit garden schematic</h3>
+    <h3 class="entry-title">Fruit garden schematic</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/02/02/early-wild-garlic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/02/02/early-wild-garlic/">
+    <p class="entry-date">
       <time datetime="2020-02-02"> 2 Feb 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Early wild garlic</h3>
+    <h3 class="entry-title">Early wild garlic</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/28/chutney/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/28/chutney/">
+    <p class="entry-date">
       <time datetime="2019-09-28">28 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Chutney</h3>
+    <h3 class="entry-title">Chutney</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/08/03/the-looking-glass/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/08/03/the-looking-glass/">
+    <p class="entry-date">
       <time datetime="2019-08-03"> 3 Aug 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Restaurant review: The Looking Glass, Cheltenham</h3>
+    <h3 class="entry-title">Restaurant review: The Looking Glass, Cheltenham</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/09/02/eat-food/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/09/02/eat-food/">
+    <p class="entry-date">
       <time datetime="2018-09-02"> 2 Sep 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Eat food, not too much, mostly plants</h3>
+    <h3 class="entry-title">Eat food, not too much, mostly plants</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2014/04/12/banana-bread/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2014/04/12/banana-bread/">
+    <p class="entry-date">
       <time datetime="2014-04-12">12 Apr 2014</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Banana Bread</h3>
+    <h3 class="entry-title">Banana Bread</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2014/01/01/beer/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2014/01/01/beer/">
+    <p class="entry-date">
       <time datetime="2014-01-01"> 1 Jan 2014</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Beer</h3>
+    <h3 class="entry-title">Beer</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="gardening">
-        <a class="transition-colors hover:text-accent" href="#gardening">#gardening</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/05/05/fruit-garden-schematic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="gardening">
+      <a class="link-title" href="#gardening">#gardening</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2020/05/05/fruit-garden-schematic/">
+    <p class="entry-date">
       <time datetime="2020-05-05"> 5 May 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Fruit garden schematic</h3>
+    <h3 class="entry-title">Fruit garden schematic</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/28/chutney/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/28/chutney/">
+    <p class="entry-date">
       <time datetime="2019-09-28">28 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Chutney</h3>
+    <h3 class="entry-title">Chutney</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/21/sunflowers/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/21/sunflowers/">
+    <p class="entry-date">
       <time datetime="2019-09-21">21 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Sunflowers</h3>
+    <h3 class="entry-title">Sunflowers</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="life">
-        <a class="transition-colors hover:text-accent" href="#life">#life</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/a-guide-to-the-good-life/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="life">
+      <a class="link-title" href="#life">#life</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/a-guide-to-the-good-life/">
+    <p class="entry-date">
       <time datetime="2020-11-02"> 2 Nov 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Book notes: A Guide to the Good Life</h3>
+    <h3 class="entry-title">Book notes: A Guide to the Good Life</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/be-prolific/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/be-prolific/">
+    <p class="entry-date">
       <time datetime="2020-10-22">22 Oct 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Be prolific</h3>
+    <h3 class="entry-title">Be prolific</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/09/24/consume-less-produce-more/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/09/24/consume-less-produce-more/">
+    <p class="entry-date">
       <time datetime="2020-09-24">24 Sep 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Consume less, produce more</h3>
+    <h3 class="entry-title">Consume less, produce more</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
+    <p class="entry-date">
       <time datetime="2020-03-24">24 Mar 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Potential social benefits of the coronavirus pandemic</h3>
+    <h3 class="entry-title">Potential social benefits of the coronavirus pandemic</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/03/11/working-from-home/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/03/11/working-from-home/">
+    <p class="entry-date">
       <time datetime="2020-03-11">11 Mar 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Working from home tips</h3>
+    <h3 class="entry-title">Working from home tips</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/02/17/it-gets-easier/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/02/17/it-gets-easier/">
+    <p class="entry-date">
       <time datetime="2020-02-17">17 Feb 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">It gets easier</h3>
+    <h3 class="entry-title">It gets easier</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/09/being-ill/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/09/being-ill/">
+    <p class="entry-date">
       <time datetime="2019-10-09"> 9 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Being ill</h3>
+    <h3 class="entry-title">Being ill</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/08/cost-of-habits/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/08/cost-of-habits/">
+    <p class="entry-date">
       <time datetime="2019-10-08"> 8 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">The costs of your habits</h3>
+    <h3 class="entry-title">The costs of your habits</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/06/life-lessons-from-bergson/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/06/life-lessons-from-bergson/">
+    <p class="entry-date">
       <time datetime="2019-10-06"> 6 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Life Lessons from Bergson</h3>
+    <h3 class="entry-title">Life Lessons from Bergson</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/05/sunset/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/05/sunset/">
+    <p class="entry-date">
       <time datetime="2019-10-05"> 5 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Sunset</h3>
+    <h3 class="entry-title">Sunset</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/04/beauty-in-decay/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/04/beauty-in-decay/">
+    <p class="entry-date">
       <time datetime="2019-10-04"> 4 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Beauty in decay</h3>
+    <h3 class="entry-title">Beauty in decay</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/03/chopping-wood/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/03/chopping-wood/">
+    <p class="entry-date">
       <time datetime="2019-10-03"> 3 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Chopping wood</h3>
+    <h3 class="entry-title">Chopping wood</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/02/enjoy-life/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/02/enjoy-life/">
+    <p class="entry-date">
       <time datetime="2019-10-02"> 2 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Enjoy life</h3>
+    <h3 class="entry-title">Enjoy life</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/01/secret-of-a-full-life/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/01/secret-of-a-full-life/">
+    <p class="entry-date">
       <time datetime="2019-10-01"> 1 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">The secret of a full life</h3>
+    <h3 class="entry-title">The secret of a full life</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/30/trees-will-save-the-world/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/30/trees-will-save-the-world/">
+    <p class="entry-date">
       <time datetime="2019-09-30">30 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Trees will save the world</h3>
+    <h3 class="entry-title">Trees will save the world</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/27/early-autumn/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/27/early-autumn/">
+    <p class="entry-date">
       <time datetime="2019-09-27">27 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Early autumn</h3>
+    <h3 class="entry-title">Early autumn</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/24/do-things-for-fun/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/24/do-things-for-fun/">
+    <p class="entry-date">
       <time datetime="2019-09-24">24 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Do things for fun</h3>
+    <h3 class="entry-title">Do things for fun</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/23/find-the-underlying-principle/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/23/find-the-underlying-principle/">
+    <p class="entry-date">
       <time datetime="2019-09-23">23 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Find the underlying principle</h3>
+    <h3 class="entry-title">Find the underlying principle</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/06/just-start/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/06/just-start/">
+    <p class="entry-date">
       <time datetime="2019-09-06"> 6 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Just start</h3>
+    <h3 class="entry-title">Just start</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/08/29/august-musings/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/08/29/august-musings/">
+    <p class="entry-date">
       <time datetime="2019-08-29">29 Aug 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">August musings</h3>
+    <h3 class="entry-title">August musings</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/10/03/the-power-of-a-system/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/10/03/the-power-of-a-system/">
+    <p class="entry-date">
       <time datetime="2018-10-03"> 3 Oct 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">The power of a system</h3>
+    <h3 class="entry-title">The power of a system</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/09/02/eat-food/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/09/02/eat-food/">
+    <p class="entry-date">
       <time datetime="2018-09-02"> 2 Sep 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Eat food, not too much, mostly plants</h3>
+    <h3 class="entry-title">Eat food, not too much, mostly plants</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2017/11/26/gloucester-cathedral/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2017/11/26/gloucester-cathedral/">
+    <p class="entry-date">
       <time datetime="2017-11-26">26 Nov 2017</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Gloucester Cathedral</h3>
+    <h3 class="entry-title">Gloucester Cathedral</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="minimalism">
-        <a class="transition-colors hover:text-accent" href="#minimalism">#minimalism</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/plain-text-websites/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="minimalism">
+      <a class="link-title" href="#minimalism">#minimalism</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/plain-text-websites/">
+    <p class="entry-date">
       <time datetime="2024-01-14">14 Jan 2024</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Plain text websites</h3>
+    <h3 class="entry-title">Plain text websites</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="nature">
-        <a class="transition-colors hover:text-accent" href="#nature">#nature</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/05/05/fruit-garden-schematic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="nature">
+      <a class="link-title" href="#nature">#nature</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2020/05/05/fruit-garden-schematic/">
+    <p class="entry-date">
       <time datetime="2020-05-05"> 5 May 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Fruit garden schematic</h3>
+    <h3 class="entry-title">Fruit garden schematic</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/02/02/early-wild-garlic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/02/02/early-wild-garlic/">
+    <p class="entry-date">
       <time datetime="2020-02-02"> 2 Feb 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Early wild garlic</h3>
+    <h3 class="entry-title">Early wild garlic</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/12/20/foggy-winter-days/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/12/20/foggy-winter-days/">
+    <p class="entry-date">
       <time datetime="2019-12-20">20 Dec 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Foggy winter days</h3>
+    <h3 class="entry-title">Foggy winter days</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/05/sunset/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/05/sunset/">
+    <p class="entry-date">
       <time datetime="2019-10-05"> 5 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Sunset</h3>
+    <h3 class="entry-title">Sunset</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/04/beauty-in-decay/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/04/beauty-in-decay/">
+    <p class="entry-date">
       <time datetime="2019-10-04"> 4 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Beauty in decay</h3>
+    <h3 class="entry-title">Beauty in decay</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/03/chopping-wood/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/03/chopping-wood/">
+    <p class="entry-date">
       <time datetime="2019-10-03"> 3 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Chopping wood</h3>
+    <h3 class="entry-title">Chopping wood</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/30/trees-will-save-the-world/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/30/trees-will-save-the-world/">
+    <p class="entry-date">
       <time datetime="2019-09-30">30 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Trees will save the world</h3>
+    <h3 class="entry-title">Trees will save the world</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/27/early-autumn/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/27/early-autumn/">
+    <p class="entry-date">
       <time datetime="2019-09-27">27 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Early autumn</h3>
+    <h3 class="entry-title">Early autumn</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/21/sunflowers/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/21/sunflowers/">
+    <p class="entry-date">
       <time datetime="2019-09-21">21 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Sunflowers</h3>
+    <h3 class="entry-title">Sunflowers</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="opendata">
-        <a class="transition-colors hover:text-accent" href="#opendata">#opendata</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/what-land-and-assets-does-cheltenham-council-own/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="opendata">
+      <a class="link-title" href="#opendata">#opendata</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/what-land-and-assets-does-cheltenham-council-own/">
+    <p class="entry-date">
       <time datetime="2023-01-18">18 Jan 2023</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">What land and assets does Cheltenham Council own?</h3>
+    <h3 class="entry-title">What land and assets does Cheltenham Council own?</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="programming">
-        <a class="transition-colors hover:text-accent" href="#programming">#programming</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/plain-text-websites/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="programming">
+      <a class="link-title" href="#programming">#programming</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/plain-text-websites/">
+    <p class="entry-date">
       <time datetime="2024-01-14">14 Jan 2024</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Plain text websites</h3>
+    <h3 class="entry-title">Plain text websites</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/what-land-and-assets-does-cheltenham-council-own/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/what-land-and-assets-does-cheltenham-council-own/">
+    <p class="entry-date">
       <time datetime="2023-01-18">18 Jan 2023</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">What land and assets does Cheltenham Council own?</h3>
+    <h3 class="entry-title">What land and assets does Cheltenham Council own?</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/06/06/canvas-art-in-typescript/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/06/06/canvas-art-in-typescript/">
+    <p class="entry-date">
       <time datetime="2020-06-06"> 6 Jun 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Canvas art in TypeScript</h3>
+    <h3 class="entry-title">Canvas art in TypeScript</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/05/06/extracting-ids-from-xlsx/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/05/06/extracting-ids-from-xlsx/">
+    <p class="entry-date">
       <time datetime="2020-05-06"> 6 May 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Extracting a list of IDs from an XLSX file</h3>
+    <h3 class="entry-title">Extracting a list of IDs from an XLSX file</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/03/01/fira-code/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/03/01/fira-code/">
+    <p class="entry-date">
       <time datetime="2020-03-01"> 1 Mar 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">FiraCode</h3>
+    <h3 class="entry-title">FiraCode</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/02/18/ruby-time-vs-datetime/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/02/18/ruby-time-vs-datetime/">
+    <p class="entry-date">
       <time datetime="2020-02-18">18 Feb 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Ruby&#39;s Time vs DateTime classes</h3>
+    <h3 class="entry-title">Ruby&#39;s Time vs DateTime classes</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/02/02/start-with-the-command-line/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/02/02/start-with-the-command-line/">
+    <p class="entry-date">
       <time datetime="2020-02-02"> 2 Feb 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Start with the command line</h3>
+    <h3 class="entry-title">Start with the command line</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/10/07/command-query-separation/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/10/07/command-query-separation/">
+    <p class="entry-date">
       <time datetime="2019-10-07"> 7 Oct 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Command-query separation principle</h3>
+    <h3 class="entry-title">Command-query separation principle</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/29/septembers-books-and-links/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/29/septembers-books-and-links/">
+    <p class="entry-date">
       <time datetime="2019-09-29">29 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">September&#39;s books and links</h3>
+    <h3 class="entry-title">September&#39;s books and links</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/26/have-fewer-dependencies/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/26/have-fewer-dependencies/">
+    <p class="entry-date">
       <time datetime="2019-09-26">26 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Have fewer dependencies</h3>
+    <h3 class="entry-title">Have fewer dependencies</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/25/programming-language-trends/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/25/programming-language-trends/">
+    <p class="entry-date">
       <time datetime="2019-09-25">25 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Programming language trends</h3>
+    <h3 class="entry-title">Programming language trends</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/10/14/distraction-free-new-tab/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/10/14/distraction-free-new-tab/">
+    <p class="entry-date">
       <time datetime="2018-10-14">14 Oct 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Distraction-free new tab</h3>
+    <h3 class="entry-title">Distraction-free new tab</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/10/03/the-power-of-a-system/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/10/03/the-power-of-a-system/">
+    <p class="entry-date">
       <time datetime="2018-10-03"> 3 Oct 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">The power of a system</h3>
+    <h3 class="entry-title">The power of a system</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/08/15/ynab-api-payees-total/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/08/15/ynab-api-payees-total/">
+    <p class="entry-date">
       <time datetime="2018-08-15">15 Aug 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">YNAB API: Get total amount paid to each payee</h3>
+    <h3 class="entry-title">YNAB API: Get total amount paid to each payee</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2016/10/17/ruby-hash-find_all-select-different/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2016/10/17/ruby-hash-find_all-select-different/">
+    <p class="entry-date">
       <time datetime="2016-10-17">17 Oct 2016</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">In Ruby, #find_all and #select are different (for Hashes)</h3>
+    <h3 class="entry-title">In Ruby, #find_all and #select are different (for Hashes)</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2016/10/11/using-nokogiri-with-pry/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2016/10/11/using-nokogiri-with-pry/">
+    <p class="entry-date">
       <time datetime="2016-10-11">11 Oct 2016</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Using nokogiri with pry</h3>
+    <h3 class="entry-title">Using nokogiri with pry</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2015/02/06/web-scraping-with-morph-io/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2015/02/06/web-scraping-with-morph-io/">
+    <p class="entry-date">
       <time datetime="2015-02-06"> 6 Feb 2015</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Web scraping with morph.io</h3>
+    <h3 class="entry-title">Web scraping with morph.io</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2015/01/22/advanced-web-scraping-with-mechanize/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2015/01/22/advanced-web-scraping-with-mechanize/">
+    <p class="entry-date">
       <time datetime="2015-01-22">22 Jan 2015</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Advanced web scraping with Mechanize</h3>
+    <h3 class="entry-title">Advanced web scraping with Mechanize</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2015/01/19/web-scraping-with-ruby/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2015/01/19/web-scraping-with-ruby/">
+    <p class="entry-date">
       <time datetime="2015-01-19">19 Jan 2015</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Web Scraping with Ruby</h3>
+    <h3 class="entry-title">Web Scraping with Ruby</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2013/07/17/golang-static-http-file-server/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2013/07/17/golang-static-http-file-server/">
+    <p class="entry-date">
       <time datetime="2013-07-17">17 Jul 2013</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Static http file server in Go</h3>
+    <h3 class="entry-title">Static http file server in Go</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2012/12/31/raspberry-pi-hacking/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2012/12/31/raspberry-pi-hacking/">
+    <p class="entry-date">
       <time datetime="2012-12-31">31 Dec 2012</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Raspberry Pi GPIO Hacking</h3>
+    <h3 class="entry-title">Raspberry Pi GPIO Hacking</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2012/12/17/slow-dotfiles/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2012/12/17/slow-dotfiles/">
+    <p class="entry-date">
       <time datetime="2012-12-17">17 Dec 2012</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Slow dotfiles</h3>
+    <h3 class="entry-title">Slow dotfiles</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2012/12/09/removing-code/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2012/12/09/removing-code/">
+    <p class="entry-date">
       <time datetime="2012-12-09"> 9 Dec 2012</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Removing code</h3>
+    <h3 class="entry-title">Removing code</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2012/01/13/resque-rails-auth/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2012/01/13/resque-rails-auth/">
+    <p class="entry-date">
       <time datetime="2012-01-13">13 Jan 2012</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Resque Rails Auth</h3>
+    <h3 class="entry-title">Resque Rails Auth</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2011/03/22/test-driven-development-lifecycle/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2011/03/22/test-driven-development-lifecycle/">
+    <p class="entry-date">
       <time datetime="2011-03-22">22 Mar 2011</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Test Driven Development Lifecycle</h3>
+    <h3 class="entry-title">Test Driven Development Lifecycle</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2010/02/14/an-introduction-to-nodejs/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2010/02/14/an-introduction-to-nodejs/">
+    <p class="entry-date">
       <time datetime="2010-02-14">14 Feb 2010</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">An introduction to node.js</h3>
+    <h3 class="entry-title">An introduction to node.js</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="running">
-        <a class="transition-colors hover:text-accent" href="#running">#running</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/02/17/it-gets-easier/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="running">
+      <a class="link-title" href="#running">#running</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2020/02/17/it-gets-easier/">
+    <p class="entry-date">
       <time datetime="2020-02-17">17 Feb 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">It gets easier</h3>
+    <h3 class="entry-title">It gets easier</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2019/09/22/sunday-morning-runs/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2019/09/22/sunday-morning-runs/">
+    <p class="entry-date">
       <time datetime="2019-09-22">22 Sep 2019</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Sunday morning runs</h3>
+    <h3 class="entry-title">Sunday morning runs</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2018/08/21/running-philosophy/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2018/08/21/running-philosophy/">
+    <p class="entry-date">
       <time datetime="2018-08-21">21 Aug 2018</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Running philosophy</h3>
+    <h3 class="entry-title">Running philosophy</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="scraping">
-        <a class="transition-colors hover:text-accent" href="#scraping">#scraping</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2015/02/06/web-scraping-with-morph-io/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="scraping">
+      <a class="link-title" href="#scraping">#scraping</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2015/02/06/web-scraping-with-morph-io/">
+    <p class="entry-date">
       <time datetime="2015-02-06"> 6 Feb 2015</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Web scraping with morph.io</h3>
+    <h3 class="entry-title">Web scraping with morph.io</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2015/01/22/advanced-web-scraping-with-mechanize/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2015/01/22/advanced-web-scraping-with-mechanize/">
+    <p class="entry-date">
       <time datetime="2015-01-22">22 Jan 2015</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Advanced web scraping with Mechanize</h3>
+    <h3 class="entry-title">Advanced web scraping with Mechanize</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2015/01/19/web-scraping-with-ruby/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2015/01/19/web-scraping-with-ruby/">
+    <p class="entry-date">
       <time datetime="2015-01-19">19 Jan 2015</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Web Scraping with Ruby</h3>
+    <h3 class="entry-title">Web Scraping with Ruby</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="shell">
-        <a class="transition-colors hover:text-accent" href="#shell">#shell</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/how-to-query-csvs-with-sqlite/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="shell">
+      <a class="link-title" href="#shell">#shell</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/how-to-query-csvs-with-sqlite/">
+    <p class="entry-date">
       <time datetime="2023-01-23">23 Jan 2023</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">How to query CSVs with SQLite</h3>
+    <h3 class="entry-title">How to query CSVs with SQLite</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="society">
-        <a class="transition-colors hover:text-accent" href="#society">#society</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/what-land-and-assets-does-cheltenham-council-own/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="society">
+      <a class="link-title" href="#society">#society</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/what-land-and-assets-does-cheltenham-council-own/">
+    <p class="entry-date">
       <time datetime="2023-01-18">18 Jan 2023</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">What land and assets does Cheltenham Council own?</h3>
+    <h3 class="entry-title">What land and assets does Cheltenham Council own?</h3>
   </a>
 </li>
 
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+        <li>
+  <a class="entry" href="/2020/03/24/potential-social-benefits-of-the-coronavirus-pandemic/">
+    <p class="entry-date">
       <time datetime="2020-03-24">24 Mar 2020</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Potential social benefits of the coronavirus pandemic</h3>
+    <h3 class="entry-title">Potential social benefits of the coronavirus pandemic</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="space">
-        <a class="transition-colors hover:text-accent" href="#space">#space</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/space-facts/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="space">
+      <a class="link-title" href="#space">#space</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/space-facts/">
+    <p class="entry-date">
       <time datetime="2024-01-04"> 4 Jan 2024</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Amazing space facts you might not know</h3>
+    <h3 class="entry-title">Amazing space facts you might not know</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="sqlite">
-        <a class="transition-colors hover:text-accent" href="#sqlite">#sqlite</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/how-to-query-csvs-with-sqlite/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="sqlite">
+      <a class="link-title" href="#sqlite">#sqlite</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/how-to-query-csvs-with-sqlite/">
+    <p class="entry-date">
       <time datetime="2023-01-23">23 Jan 2023</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">How to query CSVs with SQLite</h3>
+    <h3 class="entry-title">How to query CSVs with SQLite</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="video">
-        <a class="transition-colors hover:text-accent" href="#video">#video</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/2014/01/01/beer/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="video">
+      <a class="link-title" href="#video">#video</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/2014/01/01/beer/">
+    <p class="entry-date">
       <time datetime="2014-01-01"> 1 Jan 2014</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Beer</h3>
+    <h3 class="entry-title">Beer</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-    <section>
-      <h2 class="mb-3 list-heading" id="writing">
-        <a class="transition-colors hover:text-accent" href="#writing">#writing</a>
-      </h2>
-      <ul class="entry-list">
-          <li>
-  <a class="group grid gap-1 py-4 transition-colors sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6" href="/plain-text-websites/">
-    <p class="text-sm font-sans text-zinc-500 dark:text-zinc-400">
+    </ul>
+  </section>
+  <section class="list-section">
+    <h2 class="list-heading" id="writing">
+      <a class="link-title" href="#writing">#writing</a>
+    </h2>
+    <ul class="entry-list">
+        <li>
+  <a class="entry" href="/plain-text-websites/">
+    <p class="entry-date">
       <time datetime="2024-01-14">14 Jan 2024</time>
     </p>
-    <h3 class="font-display text-lg font-medium leading-snug text-pretty text-zinc-900 transition-colors group-hover:text-accent dark:text-zinc-50">Plain text websites</h3>
+    <h3 class="entry-title">Plain text websites</h3>
   </a>
 </li>
 
-      </ul>
-    </section>
-</div>
+    </ul>
+  </section>
 
     </main>
   </body>
