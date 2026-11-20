@@ -107,7 +107,9 @@ main { margin-bottom: 6rem; }
 
 .site-header {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -341,13 +343,7 @@ main { margin-bottom: 6rem; }
 @media (min-width: 40rem) {
   body { padding: 2rem; }
 
-  .site-header {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-  }
+  .site-header { gap: 1.5rem; margin-bottom: 4rem; }
 
   .site-title { font-size: 1.875rem; }
   .page-title { font-size: 3rem; }
